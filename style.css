@@ -1,0 +1,662 @@
+:root {
+    --header-height: 12vw;
+}
+
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	font-family: Arial, sans-serif;
+}
+
+
+/* Default styles for header, nav, body, and footer */
+header, nav, body, footer {
+    width: 60%;
+    margin: 0 auto; /* Center the elements */
+}
+
+
+.clear {clear: both}
+
+/* Line styles */
+.green-line {
+	width: 100%;
+	height: 4px; 
+	background-color:  #4CAF50;
+	z-index: 1001;
+}
+
+.green-line-small {
+	width: 90%;
+	height: 4px; 
+	background-color:  #4CAF50;
+	z-index: 1001;
+	align-items: center;
+}
+
+/* Header styles */
+header {
+    height: var(--header-height);
+	margin-bottom: 2.1vh;
+	position: fixed;
+	top: 0;
+	padding: 0.8vh;
+	padding-bottom: 4.2vh;
+	z-index: 1000; /* Ensure header is above other content */
+	background-color: white;
+	color: #333;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+#left-header {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 5%; /* Keep 5% above the green line */
+    flex:1;
+}
+
+#logo {
+	width: 20%;
+}
+
+#logo img {
+    height: 8vw;
+    max-width: 175px; /* Ensure it doesn't exceed the header height */
+}
+
+#name {
+    margin-left: 3vw; /* Adjust spacing between logo and name */
+    font-size: clamp(23px, 1.5vw, 36px); /* Use clamp to set min, preferred, and max font size */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+#language-toggle {
+    position: absolute;
+	right: 0;
+	display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons horizontally */
+	align-items: stretch; /* Stretch buttons to fill container width */
+	width: 15%;
+    max-width:150px;
+    flex-shrink: 0; /* Prevent the language toggle from shrinking */
+    top: 1vh; /* Adjust bottom margin */
+}
+
+#language-toggle button {
+    background-color: lightgreen;
+    padding: 5% 9%;
+    border: none;
+    margin: 0;
+    cursor: pointer;
+	transition: background-color 0.3s ease; /* Smooth transition */
+	width: 100%; /* Ensure buttons fill the width of the container */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+
+#language-toggle button:hover {
+    background-color:  #4CAF50;;
+}
+
+#language-toggle button.active {
+    background-color: darkgreen;
+}
+
+/* Body styles */
+body {
+	padding-top: calc(30px + var(--header-height)); /* Adjust to match header and nav bar heights */
+    color: #333;
+	display: flex;
+    flex-direction: column;
+	margin: 0 auto;
+}
+
+main {
+    flex: 1; /* Fill remaining vertical space */
+}
+
+/* Navigation styles */
+nav {
+	position: fixed;
+    top: var(--header-height);
+    background-color: #333;
+	z-index: 999; /* Ensure nav bar is above content */
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around; /* Spread the width of the nav buttons evenly */
+}
+
+nav ul li {
+    position: relative;
+    padding: 1.25% 0;
+    flex-grow: 1; /* Allow li to grow and fill the space evenly */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8%;
+    display: block; /* Make the link fill the li element */
+}
+
+/* Navigation hover styles */
+nav ul li:hover {
+    background-color: #555;
+}
+
+/* Active link styles */
+nav ul li.active {
+    background-color: lightgreen;
+}
+
+nav ul li.active > a {
+    color: #333;
+}
+
+/* Hamburger menu */
+nav .hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Footer styles*/
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 0.8%;
+	position: fixed; /* Push the footer to the bottom */
+    bottom: 0;
+}
+
+/* Scroll button styles */
+#scroll-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color:  #4CAF50;;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Hide initially */
+    z-index: 1000; /* Ensure button is above other content */
+}
+/* About Me styles */
+#home {
+    text-align: center;
+    padding: 100px 0;
+}
+
+#intro {
+	width: 80%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+}
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill {
+    margin: 20px;
+    cursor: pointer;
+	border: 2px solid #4CAF50; /* Green border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px; /* Added padding */
+}
+
+.skill img {
+    width: 100px;
+    height: 100px;
+}
+
+.skill p {
+    margin-top: 10px;
+}
+
+#travel-map {
+	text-align: center;
+}
+
+#mapiframe {height: 40vh;}
+
+/* Styles for the modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: calc(var(--header-height)/2);
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 750px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 70vh; /* Ensure the modal content doesn't exceed the viewport height */
+    overflow-y: auto; /* Enable vertical scrolling for the modal content */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.half-column {
+    width:50%;
+    float: left;
+}
+
+.modal-project-link {
+	text-decoration: none;
+	color: inherit;
+}
+
+.modal-project {
+	transition: background-color 0.3s;
+    padding:1%;
+}
+
+.modal-project-link:hover .modal-project {
+	background-color: #f0f0f0; /* Light grey background on hover */
+	color: #333; /* Darker text color on hover */
+}
+
+.img-white {    
+    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.15); /* Horizontal offset, vertical offset, blur radius, color */
+}
+
+.js-list {
+    padding-left: 3%;
+}
+
+/* Portfolio section styles */
+.accordion-item {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.accordion-header {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.accordion-content {
+    display: none;
+    padding: 10px;
+}
+
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+ /* Search bar styles */
+ .search-bar {
+	width: 100%;
+	margin: 20px 0;
+	text-align: center;
+	position: relative;
+}
+
+.search-bar input {
+	width: 80%;
+	padding: 10px;
+	font-size: 16px;
+	box-sizing: border-box;
+}
+
+.search-bar button {
+	padding: 10px;
+	font-size: 16px;
+	background-color:  #4CAF50;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+/* Autocomplete styles */
+/* Need to dynamically adjust left offset for responsive deisng */
+.autocomplete-list {
+    position: absolute;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    bottom: 42px;
+    width: 60%;
+    left: 6%;
+    background-color: #fff;
+}
+
+.autocomplete-item {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.autocomplete-item:hover {
+    background-color: #eee;
+}
+
+/* Project styles */
+.project {
+    display: none;
+    margin: 20px 0;
+	text-align: left;
+	padding-left: 10%;
+}
+
+/* Error message styles */
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+
+/* Skill box styles */
+#skillContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+.skill-box {
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.skill-box .close-btn {
+    margin-left: 10px;
+    cursor: pointer;
+    color: red;
+}
+
+/* Project styles */
+.project {
+    display: none;
+    margin: 20px 0;
+}
+
+/* Contact link styles on Portfolio page */
+#contact-link {
+    color: blue;
+    text-decoration: none;
+}
+
+#contact-link:visited {
+    color: blue;
+}
+
+#contact-link:hover {
+    text-decoration: underline;
+}
+
+#contact-link:active {
+    color: blue;
+}
+
+/* Contact section styles */
+.contact-container {
+    text-align: center;
+    margin: 5% 0;
+    display: flex;
+    align-items: stretch; /* Align items to stretch equally */
+    gap: 2%; /* Add gap between columns if needed */
+}
+
+.left-column {
+    width: 50%;
+    padding: 2%;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center;
+}
+
+.left-column img {
+    padding-top: 3%;
+    max-height: 100%; /* Ensure the image doesn't exceed the height of the column */
+    object-fit: contain; /* Scale the image to fit without stretching */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.right-column {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Distribute rows evenly */
+}
+
+.right-column > div {
+    padding: 2%;
+    border: 1px solid #ccc;
+    flex: 1 0 auto; /* Allow divs to take up necessary space without stretching */
+}
+  
+  .top-half {
+	grid-row: 1 / span 1; /* Span 1 row */
+    margin-bottom: 2%; /* Add consistent spacing between divs */
+  }
+  
+  .bottom-half {
+	grid-row: 2 / span 1; /* Span 1 row */
+  }
+ 
+/* Resume page */
+#resume-content {
+    margin: 5% 0;
+}
+
+#resume-content ol{
+    list-style-type: none;
+}
+
+#resume-content ol ul {
+    list-style-type: disc;
+    padding-left: 3%;
+}
+
+/* Contact page */
+
+#thankYouMessage {
+    display: none;
+    margin-top: 20px;
+}
+
+/* Responsive design for small-width and nav */
+/* Small screen */
+@media (max-width: 1400px) {
+    header, nav, body, footer {
+        width: 85%;
+        margin: 0 auto; /* Center the elements */
+    }
+    #name {
+        font-size: clamp(17px, 1.5vw, 23px); /* Use clamp to set min, preferred, and max font size */
+    }
+    #left-header {
+        bottom: 3%;
+    }
+}
+
+/* Smaller screen */
+@media (max-width: 800px) {
+    header, nav, body, footer {
+        width: 100%;
+    }
+
+    #name {
+        font-size: clamp(13px, 1.55vw, 17px); /* Use clamp to set min, preferred, and max font size */
+    }
+    
+    nav {
+        height: 60px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #333; /* Ensure background color is the same as nav */
+        width: 100%; /* Make sure the dropdown covers full width */
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: left;
+    }
+
+    nav .hamburger {
+        display: block;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    #language-toggle {
+        position: absolute;
+        width: 100%;
+        flex-direction: row; /* Change to horizontal */
+        justify-content: space-around;
+        margin: 1vh 4.5vw; /* Add margin to position the buttons correctly */
+        max-height: 100px;
+    }
+
+    #language-toggle button {
+        padding: 1%;
+        border: 1px solid #000;
+    }
+
+    .modal-content {
+        margin: 25% auto;
+    }
+
+    .skill img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .skill p {
+        font-size: 14px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 550px) {
+
+    nav {
+        height: 40px;
+    }
+
+    nav .hamburger {
+        font-size: 15px; /* Reduce size by half */
+    }
+}
+
+/* Print styles */
+@media print {
+    header, nav, footer, #scroll-top-btn, .modal {
+        display: none;
+    }
+
+    body, main, .container, .content, .skills, .skill, .project, .contact-container, .left-column, .right-column {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        float: none;
+        box-shadow: none;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    .skills {
+        display: block;
+    }
+
+    .skill {
+        display: inline-block;
+        width: 30%;
+        margin: 10px;
+        padding: 5px;
+        border: 1px solid #000;
+    }
+
+    .project {
+        display: block;
+        margin: 20px 0;
+    }
+
+    .contact-container {
+        display: block;
+    }
+
+    .left-column, .right-column {
+        width: 100%;
+        border: none;
+        padding: 0;
+    }
+
+    .right-column > div {
+        border: none;
+        padding: 0;
+    }
+}
