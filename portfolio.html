@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jackie Harmon's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo_green2-rbg.png" type="image/x-icon">
+</head>
+<body>
+    <div id="small-width">
+        <!-- Header Section -->
+        <header>
+            <div id="left-header">
+                <div id="logo">
+                    <img src="images/logo_green2-rbg.png" alt="Logo">
+                </div>
+                <div id="name">
+                    <h1 data-translate="welcome">Jackie Harmon's Portfolio</h1>
+                </div>
+            </div>
+            <div id="language-toggle">
+                <button onclick="changeLanguage('en')" id="en-btn">English</button>
+                <button onclick="changeLanguage('es')" id="es-btn">Spanish</button>
+                <button onclick="changeLanguage('pt')" id="pt-btn">Portuguese</button>
+            </div>
+        </header>
+        <div class="clear"></div>
+        <!-- Navigation Bar -->
+        <nav>
+            <div class="green-line"></div>
+            <span class="hamburger">&#9776;</span> <!-- Hamburger button -->
+            <ul>
+                <li><a href="index.html" id="welcome" data-translate="welcome">Welcome</a></li>
+                <li><a href="portfolio.html" id="portfolio" data-translate="portfolio">Portfolio</a></li>
+                <li><a href="contact.html" id="contact" data-translate="contact">Contact Me</a></li>
+                <li><a href="resume.html" id="resume" data-translate="resume">Resume</a></li>
+            </ul>
+        </nav>
+
+		<!-- Main Section -->
+		<main>
+			<section id="home">
+				<div class="container">
+					<h1 data-translate="skills">I'm skilled in:</h1>
+					<p data-translate="skillPrompt">Click the icons below to see examples of my skillset, or search by skill. Each project is a hyperlink to the source materials. To view all projects, search for "all".</p>
+					<div class="skills">
+						<div class="skill" onclick="showPopup('website')">
+							<img src="images/website-icon.png" alt="Website Design">
+							<p data-translate="frontend">Front-End Development</p>
+						</div>
+						<div class="skill" onclick="showPopup('app_dev')">
+							<img src="images/gui-icon.png" alt="Application Development">
+							<p data-translate="appDev">Application Development</p>
+						</div>
+						<div class="skill" onclick="showPopup('dataViz')">
+							<img src="images/data-viz-icon.png" alt="Data Visualization">
+							<p data-translate="dataViz">Data Visualization</p>
+						</div>
+						<div class="skill" onclick="showPopup('technical_writing')">
+							<img src="images/tech-writ-icon.png" alt="Technical Writing">
+							<p data-translate="techWriting">Technical Writing</p>
+						</div>
+						<div class="skill" onclick="showPopup('cad_drafting')">
+							<img src="images/cad-icon.png" alt="CAD Drafting">
+							<p data-translate="cadDrafting">CAD Drafting</p>
+						</div>
+						<div class="skill" onclick="showPopup('research')">
+							<img src="images/research-icon.png" alt="Research">
+							<p data-translate="research">Research</p>
+						</div>
+					</div>
+				</div>
+
+		<!-- Popup modals -->
+		<div id="website-modal" class="modal">
+			<div class="modal-content">
+				<span class="close" onclick="closePopup('website')">&times;</span>
+				<h2 data-translate="frontendModal">Front-End Development</h2>
+				<div class = "modal-project" data-skills="HTML, CSS, JavaScript">
+					<p data-translate="frontendContent">This portfolio website is the example of my skillset with HTML, CSS, and JavaScript; below are the skills I've used to create an interactive and dynamic user interface.</p><br>
+					<p data-translate="javascriptSkills">Javascript skills</p>
+					<ol class="js-list">
+						<li data-translate="asyncProgramming"><strong>Asynchronous Programming:</strong> The fetch API is used to asynchronously retrieve JSON data, demonstrating handling of promises with .then() and .catch() for error handling.</li>
+						<li data-translate="domManipulation"><strong>DOM Manipulation:</strong> Manipulating the Document Object Model (DOM) to dynamically change content, styles, and classes based on user actions or data, such as updating text content, showing and hiding elements, and adding or removing CSS classes.</li>
+						<li data-translate="eventHandling"><strong>Event Handling:</strong> Setting up event listeners to handle user interactions like clicks, scrolling, and key presses. This includes custom functions tied to UI events like opening modals, scrolling to the top of the page, and handling form submissions.</li>
+						<li data-translate="conditionalLogic"><strong>Conditional Logic:</strong> Implementing conditions to control the flow of the application, such as displaying elements only when certain conditions are met (e.g., scroll position).</li>
+						<li data-translate="cssManipulation"><strong>CSS Manipulation:</strong> Dynamically adjusting CSS properties through JavaScript to affect the layout and styling of elements based on user interactions or conditions.</li>
+						<li data-translate="arrayOperations"><strong>Array Operations:</strong> Using array methods like forEach, filter, and map to manipulate data sets, particularly in functions that handle autocomplete features and project searching.</li>
+						<li data-translate="templateManipulation"><strong>Template Manipulation:</strong> Using string literals and template manipulation to dynamically generate HTML content based on data.</li>
+						<li data-translate="modularFunctions"><strong>Modular Functions:</strong> Creating reusable functions that encapsulate functionality for specific tasks, such as toggling an accordion or handling form submissions.</li>
+						<li data-translate="errorHandling"><strong>Error Handling:</strong> Implementing basic error handling in asynchronous operations to manage exceptions and provide feedback.</li>
+						<li data-translate="debugging"><strong>Debugging:</strong> Logging information to the console for debugging purposes, particularly in the search functionality to trace computations and results.</li>
+						<li data-translate="uriManipulation"><strong>URI Manipulation:</strong> Manipulating the window's location hash for navigation purposes and using it to trigger specific actions like accordion expansion.</li>
+					</ol>
+					<p data-translate="cssSkills">CSS Skills</p>
+					<ol class="js-list">
+						<li data-translate="cssResets"><strong>CSS Resets:</strong> Setting universal styles such as margin, padding, and box-sizing to ensure consistency across different browsers.</li>
+						<li data-translate="flexbox"><strong>Flexbox:</strong> Utilized extensively for layout management, especially in arranging elements horizontally and vertically within containers (display: flex, flex-direction, justify-content, align-items).</li>
+						<li data-translate="positioning"><strong>Positioning:</strong> Advanced use of positioning (position: fixed, position: absolute, position: relative) to control the placement of elements like headers, navigation bars, and modals relative to other elements or the viewport.</li>
+						<li data-translate="transitions"><strong>Transitions and Hover States:</strong> Implementing smooth transitions (transition) and hover states to enhance interactivity and visual feedback (:hover).</li>
+						<li data-translate="responsiveDesign"><strong>Responsive Design:</strong> Employing media queries to adjust styles based on the viewport size, ensuring the website is responsive and adapts to different device screens.</li>
+						<li data-translate="boxModel"><strong>Box Model Manipulation:</strong> Adjusting element dimensions and spacing with properties like width, height, padding, margin, and border.</li>
+						<li data-translate="zIndex"><strong>Z-Index Management:</strong> Controlling the stack order of elements using z-index, especially useful in layering items like modals and headers above other content.</li>
+						<li data-translate="typography"><strong>Typography and Text Styles:</strong> Setting font properties (font-family, color, text-align) to enhance readability and aesthetic appeal.</li>
+						<li data-translate="backgroundColors"><strong>Background and Colors:</strong> Defining background colors and images to improve visual layout and indicate interactive elements (background-color).</li>
+						<li data-translate="advancedSelectors"><strong>Advanced Selectors:</strong> Using child, descendant, and pseudo-class selectors to target specific elements for styling (nav ul li, :active, :nth-child).</li>
+						<li data-translate="listStyling"><strong>List Styling:</strong> Customizing list appearances with list-style-type and managing spacing and layout within navigational elements.</li>
+						<li data-translate="customScrollbars"><strong>Custom Scrollbars and Visibility:</strong> Controlling the display of elements like scroll-to-top buttons with display: none and toggling visibility based on user interaction.</li>
+						<li data-translate="gridLayout"><strong>Grid Layout:</strong> Partial use of CSS Grid in specific sections to align content into grid formats, enhancing the structural organization of the content.</li>
+					</ol>
+					<p data-translate="htmlSkills">HTML Skills</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="app_dev-modal" class="modal">
+			<div class="modal-content">
+				<span class="close" onclick="closePopup('app_dev')">&times;</span>
+				<h2 data-translate="appDevModal">Application Development</h2><br>
+				<a href="https://github.com/Harmon1713/portfolio/releases/tag/v1.0.0" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+					<div class="modal-project" data-skills="Python, C++">
+						<p>
+							<img src="images/under_construction.png" alt="construction" width="10%" style="transform: translateX(150%)"> <br>
+							<span data-translate="cppApp">Something in c++ Application</span> <br>
+						</p>
+						<div class="green-line"></div><br>
+						<p><strong data-translate="cpp">c++</strong></p><br>
+						<div class="half-column">
+							<p data-translate="cppContent">Not sure yet...</p>
+						</div>
+						<div class="half-column" style="padding-left: 1%;">
+							<img src="images/under_construction.png" alt="Giraffe GUI" width="100%">
+						</div>
+						<div class="clear"></div>
+					</div>
+				</a>
+				<br>
+				<a href="https://github.com/Harmon1713/portfolio/releases/tag/v1.0.0" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+					<div class="modal-project" data-skills="Python, SQLite">
+						<p>
+							<img src="images/giraffe-face-rbg.png" alt="Giraffe" width="10%" style="transform: translateX(30%)"> <br>
+							<span data-translate="giraffeApp">Giraffe Warmer Maintenance Application</span> <br>
+						</p>
+						<div class="green-line"></div><br>
+						<p><strong data-translate="pythonSqlite">Python (tkinter, datetime), SQLite</strong></p><br>
+						<div class="half-column">
+							<p data-translate="giraffeAppContent">This Python program is a maintenance tracking application for Giraffe Warmers, typically used in neonatal care. The application features a user-friendly graphical interface that allows users to add, update, and monitor the maintenance records of Giraffe Warmer machines. It uses SQLite for its backend database to store serial numbers, maintenance dates, and logs, enabling robust data handling through CRUD operations. <br><br>Key technical skills include GUI development, event handling, and date manipulation; it also emphasizes error handling and data validation to ensure smooth operation. This project exemplifies a practical application of combining software development skills with domain-specific knowledge, showcasing the ability to develop a functional and specialized tool for industry-specific needs.</p>
+						</div>
+						<div class="half-column" style="padding-left: 1%;">
+							<img src="images/GUI.png" alt="Giraffe GUI" width="100%">
+						</div>
+						<div class="clear"></div>
+					</div>
+				</a>
+				<br>
+				<a href="https://github.com/Harmon1713/portfolio/releases/tag/v2.1.0" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+					<div class="modal-project" data-skills="Python, SQLite">
+						<p>
+							<img src="images/head_down.png" alt="Snake" width="7%" style="transform: translateX(30%)"> <br>
+							<span data-translate="snakeGame">Snake Game Application</span><br> </p>
+						<div class="green-line"></div><br>
+						<p><strong data-translate="pygameSqlite">Python (Pygame), SQLite</strong></p><br>
+						<div class="half-column">
+							<p data-translate="snakeGameContent">This Python program showcases a fully functional snake game, incorporating advanced game mechanics, GUI elements, and database operations. The gameplay is enhanced with responsive control mechanisms through keyboard inputs and dynamically adjusts the interface with an interactive menu system. Additionally, the code integrates SQLite to manage player usernames, scores, and times. <br><br>Key technical skills displayed include game design principles, object-oriented programming, event handling, and CRUD operations with SQLite, highlighting a comprehensive understanding of both game development and database management.</p>
+						</div>
+						<div class="half-column" style="padding-left: 1%;">
+							<img src="images/snake_game.png" alt="Snake Game" width="100%">
+						</div>
+						<div class="clear"></div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<div id="dataViz-modal" class="modal">
+			<div class="modal-content">
+				<span class="close" onclick="closePopup('dataViz')">&times;</span>
+				<h2 data-translate="dataVizModal">Data Visualization</h2>
+				<a href="#">
+					<div class = "modal-project" data-skills="R, Tableau, Visio, Python">
+						<p data-translate="dataVizContent">Empty. R, Tableu, Visio, Python</p>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<div id="technical_writing-modal" class="modal">
+			<div class="modal-content">
+				<span class="close" onclick="closePopup('technical_writing')">&times;</span>
+				<h2 data-translate="techWritingModal">Technical Writing</h2><br>
+				<a href="https://github.com/Harmon1713/portfolio/releases/tag/v1.0.0" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+					<div class="modal-project" data-skills="Markdown, LaTex, Pandoc">
+						<p>
+							<img src="images/giraffe-face-rbg.png" alt="Github" width="10%" style="transform: translateX(30%)"> <br>
+							<span data-translate="giraffeGuide">User Guide: Giraffe Warmer Maintenance Application</span> <br>
+						</p>
+						<div class="green-line"></div><br>
+						<p><strong data-translate="markdownToPdf">Developed in Markdown; converted to PDF</strong></p><br>
+						<div class="half-column">
+							<p data-translate="giraffeGuideContent">This user guide for a GUI Application helps BMETs operate the software that manages maintenance records for GE Giraffe Warmers. It's designed for ease of use, featuring a clickable table of contents that navigates to specific sections for efficient information retrieval. The guide covers installation, operations, error handling, and troubleshooting. Each section includes annotated screenshots and clear, step-by-step directions. Developed using Markdown for straightforward updates, this guide enables users to optimize the application’s features for improved performance and accuracy, ensuring reliable compliance in medical settings.</p>
+						</div>
+						<div class="half-column" style="padding-left: 1%;">
+							<img src="images/Giraffe_userguide1.png" alt="Giraffe User Guide" width="100%" class="img-white">
+						</div>
+						<div class="clear"></div><br>
+					</div>
+				</a>
+				<br>
+				<a href="https://github.com/Harmon1713/portfolio/releases/tag/v1.0.0" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+					<div class="modal-project" data-skills="Markdown, LaTex, Pandoc">
+						<p>
+							<img src="images/head_down.png" alt="Snake" width="7%" style="transform: translateX(30%)"> <br>
+							<span data-translate="snakeGame">Course Documentation - ITEC2270: Application Development</span><br> </p>
+						<div class="green-line"></div><br>
+						<p><strong data-translate="pygameSqlite">Markdown, LaTex, Pandoc</strong></p><br>
+						<div class="half-column">
+							<p data-translate="snakeGameContent"> This course documentation outlines the design, structure, evolution, and key components of Application Development. It includes an in-depth course overview detailing its primary focus on modifying arcade or tabletop games using Python and SQL, supported by instructional videos, and a comprehensive assessment plan. It reviews the evolution of the course timeline based on student feedback, describing original, adjusted, and proposed future timelines. The course structure is detailed, specifying objectives, required Python libraries, prerequisite knowledge, resources, and student deliverables. Additionally, the documentation evaluates the course assessment criteria, highlights lessons learned, and proposes improvements for future iterations. It also lists instructional materials, including videos, answer keys, and workshops, and discusses project management, including planning, execution, evaluation, and feedback mechanisms. <br><br>Key technical skills displayed include game design principles, object-oriented programming, event handling, and CRUD operations with SQLite, highlighting a comprehensive understanding of both game development and database management.</p>
+						</div>
+						<div class="half-column" style="padding-left: 1%;">
+							<img src="images/snake_game.png" alt="Snake Game" width="100%">
+						</div>
+						<div class="clear"></div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<div id="cad_drafting-modal" class="modal" data-skills="Inventor">
+			<div class="modal-content">
+				<span class="close" onclick="closePopup('cad_drafting')">&times;</span>
+				<h2 data-translate="cad_draftingModal">CAD Drafting</h2>
+				<a href="#" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+					<div class="modal-project" data-skills="Research">
+						<p>
+							<span data-translate="ankle_joint">Development of a Mobile Ankle Joint Attachment For the 
+								Universal Prosthesis</span><br> </p>
+						<div class="green-line"></div><br>
+						<p><strong data-translate="#">Research</strong></p><br>
+						<div class="half-column">
+							<p data-translate="prostheticsmodalcontent"> The "Development of a Mobile Ankle Joint Attachment for the Universal Prosthesis" aimed to address walking complications for below-knee amputees experiencing muscle atrophy. The project involved designing a mobile ankle joint prosthetic attachment to promote muscle rehabilitation and improve gait. Key technical skills utilized included extensive use of CAD software, specifically AutoCAD Inventor, for detailed design and 3D modeling, as well as creating 3D-printed prototypes for initial testing. The project involved developing gears and mechanical components using precision milling machines and MasterCAM for gear manufacturing. Testing included stability and functionality checks, a range of motion tests for dorsiflexion and plantarflexion, and materials testing to ensure durability and safety. Electrical system integration involved programming microcontrollers and creating a circuit to control the motor, simulating natural ankle movements based on pressure inputs. The project spanned several months, requiring effective teamwork and coordination with multiple participants and advisors, resulting in a functional prototype, design sketches, and comprehensive technical documentation.</p>
+						</div>
+						<div class="half-column" style="padding-left: 1%;">
+							<img src="images/ankle_joint.png" alt="MatScan Landing1" width="100%">
+							<br><br>
+							<img src="images/prosthetic_cad.png" alt="MatScan Landing2" width="100%">
+						</div>
+						<div class="clear"></div>
+					</div>
+				</a>
+				<br>
+				<a href="#" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+					<div class="modal-project" data-skills="Research">
+						<p>
+							<span data-translate="ankle_joint">Container Home</span><br> </p>
+						<div class="green-line"></div><br>
+						<p><strong data-translate="#">Documentation Coming Soon</strong></p><br>
+						<div class="half-column">
+							<p data-translate="prostheticsmodalcontent"> This tiny home project planning is ongoing, with full technical documentation coming soon. It will provide detailed information on every aspect of the design, including CAD designs and engineering drawings. Each section of the document is organized to guide the construction process, from initial site preparation to final touches. Additionally, the document outlines materials needed, such as insulation, flooring, and plumbing fixtures, complete with sources and costs. This detailed documentation ensures that the project is executed efficiently and meets all safety and quality standards.</p><br>
+							<img src="images/container_iso.png" alt="Iso view container home" width="100%">
+						</div>
+						<div class="half-column" style="padding-left: 1%;">
+							<img src="images/container_floor.png" alt="Container home floor plans" width="100%">
+							<br><br>
+							<img src="images/container_alldim.png" alt="Container home egr drawing" width="100%">
+						</div>
+						<div class="clear"></div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<div id="research-modal" class="modal" data-skills="Research">
+			<div class="modal-content">
+				<span class="close" onclick="closePopup('research')">&times;</span>
+				<h2 data-translate="researchModal">Research</h2>
+				<a href="#" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+					<div class="modal-project" data-skills="Research">
+						<p>
+							<span data-translate="ankle_joint">Development of a Mobile Ankle Joint Attachment For the 
+								Universal Prosthesis</span><br> </p>
+						<div class="green-line"></div><br>
+						<p><strong data-translate="#">Research</strong></p><br>
+						<div class="half-column">
+							<p data-translate="prostheticsmodalcontent"> The "Development of a Mobile Ankle Joint Attachment for the Universal Prosthesis" aimed to address walking complications for below-knee amputees experiencing muscle atrophy. The project involved designing a mobile ankle joint prosthetic attachment to promote muscle rehabilitation and improve gait. Key technical skills utilized included extensive use of CAD software, specifically AutoCAD Inventor, for detailed design and 3D modeling, as well as creating 3D-printed prototypes for initial testing. The project involved developing gears and mechanical components using precision milling machines and MasterCAM for gear manufacturing. Testing included stability and functionality checks, a range of motion tests for dorsiflexion and plantarflexion, and materials testing to ensure durability and safety. Electrical system integration involved programming microcontrollers and creating a circuit to control the motor, simulating natural ankle movements based on pressure inputs. The project spanned several months, requiring effective teamwork and coordination with multiple participants and advisors, resulting in a functional prototype, design sketches, and comprehensive technical documentation.</p>
+						</div>
+						<div class="half-column" style="padding-left: 1%;">
+							<img src="images/ankle_joint.png" alt="ankle joint testign" width="100%">
+							<br><br>
+							<img src="images/prosthetic_schematic.png" alt="prosthetic scshematic" width="100%">
+						</div>
+						<div class="clear"></div>
+					</div>
+				</a>
+				<br>
+				<a href="#" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+					<div class="modal-project" data-skills="Research">
+						<p>
+							<span data-translate="matscan">The Study of Injury Biomechanics in the 
+								Wrist/Hand and Ankle/Foot for Tumbling Using the MatScan</span><br> </p>
+						<div class="green-line"></div><br>
+						<p><strong data-translate="#">Research</strong></p><br>
+						<div class="half-column">
+							<p data-translate="biomechianicsmodalcontent"> The study "The Study of Injury Biomechanics in the Wrist/Hand and Ankle/Foot for Tumbling Using the MatScan" involved utilizing a range of technical skills integral to biomechanical research and data analysis. These skills included setting up and calibrating the MatScan system for accurate pressure measurements during tumbling exercises, and using specialized software (Tekscan Research 6.70) to capture and analyze detailed pressure data, identifying high-risk injury areas. The study also involved conducting thorough biomechanical assessments to correlate pressure trends with potential injuries. Managing and analyzing video recordings, combined with systematic data interpretation, demonstrated competence in applying advanced research tools and methodologies to enhance injury prevention and performance in sports.</p>
+						</div>
+						<div class="half-column" style="padding-left: 1%;">
+							<img src="images/landing.png" alt="MatScan Landing1" width="100%">
+							<br><br>
+							<img src="images/landing2.png" alt="MatScan Landing2" width="100%">
+						</div>
+						<div class="clear"></div>
+					</div>
+				</a>
+			</a>
+			<a href="#" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+				<div class="modal-project" data-skills="Research">
+					<p>
+						<span data-translate="matscan">Comparing the Mechanical Properties of 
+							Cancellous Bone between Pig Femur Bone, Deer Femur Bone, and Human Humerus Bone</span><br> </p>
+					<div class="green-line"></div><br>
+					<p><strong data-translate="#">Research</strong></p><br>
+					<div class="half-column">
+						<p data-translate="bonemodalcontent"> In the research paper "Comparing the Mechanical Properties of Cancellous Bone between Pig Femur Bone, Deer Femur Bone, and Human Humerus Bone," a variety of technical skills were utilized. The study involved advanced biomaterials research and mechanical testing techniques, particularly focusing on the axial stress, strain, and Young’s modulus of bone samples. The Material Testing System (MTS) was employed to apply controlled compressive forces to the samples, simulating real-world stress conditions and generating detailed data on bone behavior under load. The process required precise sample preparation, including cutting and measuring bone samples, and conducting displacement and force measurements to calculate stress and strain. Data analysis was performed using graphical methods to interpret the stress-strain relationships and determine the elastic modulus for each bone type. This research demonstrated skills in experimental design, advanced material testing, data collection and analysis, computational modeling, and the application of mechanical principles to biomaterials.</p>
+					</div>
+					<div class="half-column" style="padding-left: 1%;">
+						<img src="images/mts.png" alt="bones mts" width="100%">
+						<img src="images/bones.png" alt="bones graph" width="100%">
+					</div>
+					<div class="clear"></div>
+				</div>
+			</a>
+			</div>
+		</div>
+		<br><br><br><br>
+		<!-- Search Bar -->
+		<div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search by skill..." oninput="showAutocomplete()" onkeypress="handleKeyPress(event)">
+            <div id="autocompleteList" class="autocomplete-list"></div>
+            <button onclick="searchProjects()">Search</button>
+			<div id="errorMessage" class="error-message"></div>
+        </div>
+		<br><br><br><br>
+
+		<!-- Projects -->
+		<div id="projects">
+			<div class="project" data-skills="HTML, CSS, JavaScript">
+				<h2>This website</h2>
+				<div class="green-line-small"></div>
+				<p>Uses HTML, CSS, JavaScript</p>
+				<p>Blah</p>
+				<img src="images/logo_green2-rbg.png" alt="Logo" width="17%">
+				<p>More blah.</p>
+			</div>
+			<div class="project" data-skills="Python, SQL, SQlite">
+				<h2>Snake Game</h2>
+				<div class="green-line-small"></div>
+				<p>Uses Python, SQL, SQlite</p>
+				<div class="modal-project" data-skills="Python, SQLite">
+					<p>
+						<img src="images/head_down.png" alt="Snake" width="7%" style="transform: translateX(150%)"> <br>
+						<span data-translate="snakeGame">Snake Game Application</span><br> </p>
+					<div class="green-line"></div><br>
+					<p><strong data-translate="pygameSqlite">Python (Pygame), SQLite</strong></p><br>
+					<div class="half-column">
+						<p data-translate="snakeGameContent">This Python program showcases a fully functional snake game, incorporating advanced game mechanics, GUI elements, and database operations. The gameplay is enhanced with responsive control mechanisms through keyboard inputs and dynamically adjusts the interface with an interactive menu system. Additionally, the code integrates SQLite to manage player usernames, scores, and times. <br><br>Key technical skills displayed include game design principles, object-oriented programming, event handling, and CRUD operations with SQLite, highlighting a comprehensive understanding of both game development and database management.</p>
+					</div>
+					<div class="half-column" style="padding-left: 1%;">
+						<img src="images/snake_game.png" alt="Snake Game" width="100%">
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="project" data-skills="LaTex, Markdown, Pandoc, Python, SQL, SQlite">
+				<h2>Giraffe Warmer</h2>
+				<div class="green-line-small"></div>
+				<p>Uses LaTex, Pandoc, Python, SQL, SQlite</p>
+				<div class="modal-project" data-skills="Markdown, LaTex, Pandoc">
+					<p>
+						<img src="images/giraffe-face-rbg.png" alt="Github" width="10%" style="transform: translateX(150%)"> <br>
+						<span data-translate="giraffeGuide">User Guide: Giraffe Warmer Maintenance Application</span> <br>
+					</p>
+					<div class="green-line"></div><br>
+					<p><strong data-translate="markdownToPdf">Developed in Markdown; converted to PDF</strong></p><br>
+					<div class="half-column">
+						<p data-translate="giraffeGuideContent">This user guide for a GUI Application helps BMETs operate the software that manages maintenance records for GE Giraffe Warmers. It's designed for ease of use, featuring a clickable table of contents that navigates to specific sections for efficient information retrieval. The guide covers installation, operations, error handling, and troubleshooting. Each section includes annotated screenshots and clear, step-by-step directions. Developed using Markdown for straightforward updates, this guide enables users to optimize the application’s features for improved performance and accuracy, ensuring reliable compliance in medical settings.</p>
+					</div>
+					<div class="half-column" style="padding-left: 1%;">
+						<img src="images/Giraffe_userguide1.png" alt="Giraffe User Guide" width="100%" class="img-white">
+					</div>
+					<div class="clear"></div><br>
+				</div>
+			</div>
+			<div class="project" data-skills="Inventor, CAD, Drawings">
+				<h2>Tiny House</h2>
+				<div class="green-line-small"></div>
+				<p>Uses Inventor</p>
+				<img src="images/logo_green2-rbg.png" alt="Logo" width="17%">
+				<p>More blah.</p>
+			</div>
+			<div class="project" data-skills="MatScan, Tekscan">
+				<h2>The Study of Injury Biomechanics in the 
+					Wrist/Hand and Ankle/Foot for 
+					Tumbling Using the MatScan</h2>
+				<div class="green-line-small"></div>
+				<p>Uses Inventor</p>
+				<img src="images/matscan.png" alt="Logo" width="17%">
+				<p>More blah.</p>
+			</div>
+			<div class="project" data-skills="Javascript, Python">
+				<h2>Project 5</h2>
+				<div class="green-line-small"></div>
+				<p>Uses React, Node.js, Express, JavaScript, Python</p>
+				<img src="images/logo_green2-rbg.png" alt="Logo" width="17%">
+				<p>More blah.</p>
+			</div>
+		</div>
+		<br><br>
+		<p>If you need more samples or samples related to a specific field or project, please <a href="contact.html" id="contact-link">contact me</a></p>
+	</section>
+</main>
+
+<button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top">^</button>
+
+<!-- Footer Section -->
+<footer>
+    <p>Copyright &copy; 2024 Jackie Harmon. All rights reserved.</p>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>
