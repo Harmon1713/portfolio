@@ -8,69 +8,67 @@
     <link rel="icon" href="images/logo_green2-rbg.png" type="image/x-icon">
 </head>
 <body>
-        <!-- Header Section -->
-        <header>
-            <div id="left-header">
-                <div id="logo">
-                    <img src="images/logo_green2-rbg.png" alt="Logo">
-                </div>
-                <div id="name">
-                    <h1 data-translate="welcome">Jackie Harmon's Portfolio</h1>
-                </div>
+    <!-- Header Section -->
+    <header>
+        <div id="left-header">
+            <div id="logo">
+                <img src="images/logo_green2-rbg.png" alt="Logo">
             </div>
-            <div id="language-toggle">
-                <button onclick="changeLanguage('en')" id="en-btn">English</button>
-                <button onclick="changeLanguage('es')" id="es-btn">Spanish</button>
-                <button onclick="changeLanguage('pt')" id="pt-btn">Portuguese</button>
+            <div id="name">
+                <h1 data-translate="welcome">Jackie Harmon's Portfolio</h1>
             </div>
-        </header>
-        <div class="clear"></div>
-        <!-- Navigation Bar -->
-        <nav>
-            <div class="green-line"></div>
-            <span class="hamburger">&#9776;</span> <!-- Hamburger button -->
-            <ul>
-                <li><a href="index.html" id="welcome" data-translate="welcome">Welcome</a></li>
-                <li><a href="portfolio.html" id="portfolio" data-translate="portfolio">Portfolio</a></li>
-                <li><a href="contact.html" id="contact" data-translate="contact">Contact Me</a></li>
-                <li><a href="resume.html" id="resume" data-translate="resume">Resume</a></li>
-            </ul>
-        </nav>
-        <div class="body"> <!-- easier than redoing all css-->
-            <!-- Main Section -->
-            <main>
-                <div id="threeparts">
-                    <div id="notmiddlepic"><img src="images/bones.png"></div>
-                    <div id ="middlepic"><img src="images/ankle_joint.png"></div>
-                    <div  id="notmiddlepic"><img src="images/Giraffe_userguide1.png"></div>
-                </div>
-                <div id="intro">
-                        <h3 data-translate="introTitle">Welcome to my portfolio!</h3><br>
-                        <p data-translate="introText">I am a versatile professional with a passion for leveraging technology to enhance efficiency in various industries. My portfolio showcases not only my teaching prowess but also my expertise as a data visualization consultant, biomedical research analyst, and biomedical technician. Additionally, you'll find some of my fun personal projects on my website, offering a glimpse into my creativity and innovation beyond the professional realm. Dive in to explore how my multifaceted skillset can make a difference in your projects and endeavors.</p><br><br>
-                        <p data-translate="authorization"><em>I am authorized to work professionally in both the USA and Brazil.</em></p>
-                </div>
-                <section id="travel-map">
-                    <!-- Embedded Map using iframe -->
-                    <iframe id = "mapiframe" src="https://Harmon1713.github.io/my-travel-map" width="100%"></iframe><br><br>
-                    <br><br>
-                    <p data-translate="github">Check out my GitHub:</p>
-                    <a href="https://github.com/Harmon1713" target="_blank" rel="noopener noreferrer">
-                        <img src="images/github.png" alt="Github" width="10%">
-                    </a>
-                </section>
-                <br><br><br><br>
-            </main>
-            <button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top">^</button>
-
-            
-            <!-- Footer Section -->
-            <footer>
-                <p>Copyright &copy; 2024 Jackie Harmon. All rights reserved.</p>
-            </footer>
-
-            
         </div>
-    </div><!-- end class body-->
+        <div id="language-toggle">
+            <button onclick="changeLanguage('en')" id="en-btn">English</button>
+            <button onclick="changeLanguage('es')" id="es-btn">Spanish</button>
+            <button onclick="changeLanguage('pt')" id="pt-btn">Portuguese</button>
+        </div>
+    </header>
+    <div class="clear"></div>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="green-line"></div>
+        <span class="hamburger">&#9776;</span> <!-- Hamburger button -->
+        <ul>
+            <li><a href="index.html" id="welcome" data-translate="welcome">Welcome</a></li>
+            <li><a href="portfolio.html" id="portfolio" data-translate="portfolio">Portfolio</a></li>
+            <li><a href="contact.html" id="contact" data-translate="contact">Contact Me</a></li>
+            <li><a href="resume.html" id="resume" data-translate="resume">Resume</a></li>
+        </ul>
+    </nav>
+    <div class="body"> <!-- easier than redoing all css-->
+        <!-- Main Section -->
+        <main>
+            <div id="threeparts">
+                <div id="notmiddlepic"><img src="images/bones.png"></div>
+                <div id ="middlepic"><img src="images/ankle_joint.png"></div>
+                <div id="notmiddlepic"><img src="images/Giraffe_userguide1.png"></div>
+            </div>
+            <div id="intro">
+                <h3 data-translate="introTitle">Welcome to my portfolio!</h3><br>
+                <p data-translate="introText">I am a versatile professional with a passion for leveraging technology to enhance efficiency in various industries. My portfolio showcases not only my teaching prowess but also my expertise as a data visualization consultant, biomedical research analyst, and biomedical technician. Additionally, you'll find some of my fun personal projects on my website, offering a glimpse into my creativity and innovation beyond the professional realm. Dive in to explore how my multifaceted skillset can make a difference in your projects and endeavors.</p><br><br>
+                <p data-translate="authorization"><em>I am authorized to work professionally in both the USA and Brazil.</em></p>
+            </div>
+            <section id="travel-map">
+                <!-- Embedded Map using iframe -->
+                <div class="iframe-container">
+                    <iframe id="mapiframe" src="https://Harmon1713.github.io/my-travel-map"></iframe>
+                </div>
+                <br><br>
+                <p data-translate="github">Check out my GitHub:</p>
+                <a href="https://github.com/Harmon1713" target="_blank" rel="noopener noreferrer">
+                    <img src="images/github.png" alt="Github" width="10%">
+                </a>
+            </section>
+            <br><br><br><br>
+        </main>
+        <button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top">^</button>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>Copyright &copy; 2024 Jackie Harmon. All rights reserved.</p>
+        </footer>
+    </div>
 <script src="script.js"></script>
 </body>
 </html>
