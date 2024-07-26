@@ -6,6 +6,7 @@
     <title>Jackie Harmon's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/logo_green2-rbg.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <div id="small-width">
@@ -16,13 +17,14 @@
                     <img src="images/logo_green2-rbg.png" alt="Logo">
                 </div>
                 <div id="name">
-                    <h1 data-translate="welcome">Jackie Harmon's Portfolio</h1>
+                    <h1 data-translate="portfolioTitle">Jackie Harmon's Portfolio</h1>
                 </div>
             </div>
+            <span class="language-hamburger"><i class="fas fa-globe"></i></span> <!-- Language world icon -->
             <div id="language-toggle">
-                <button onclick="changeLanguage('en')" id="en-btn">English</button>
-                <button onclick="changeLanguage('es')" id="es-btn">Spanish</button>
-                <button onclick="changeLanguage('pt')" id="pt-btn">Portuguese</button>
+                <button data-translate="english" data-lang="en" onclick="changeLanguage('en')" id="en-btn">English</button>
+                <button data-translate="spanish" data-lang="es" onclick="changeLanguage('es')" id="es-btn">Spanish</button>
+                <button data-translate="portuguese" data-lang="pt" onclick="changeLanguage('pt')" id="pt-btn">Portuguese</button>
             </div>
         </header>
         <div class="clear"></div>
@@ -31,233 +33,202 @@
             <div class="green-line"></div>
             <span class="hamburger">&#9776;</span> <!-- Hamburger button -->
             <ul>
-                <li><a href="index.html" id="welcome" data-translate="welcome">Welcome</a></li>
-                <li><a href="portfolio.html" id="portfolio" data-translate="portfolio">Portfolio</a></li>
-                <li><a href="contact.html" id="contact" data-translate="contact">Contact Me</a></li>
-                <li><a href="resume.html" id="resume" data-translate="resume">Resume</a></li>
+                <li><a href="index.html" id="welcome" data-translate="welcomeLink">Welcome</a></li>
+                <li><a href="portfolio.html" id="portfolio" data-translate="portfolioLink">Portfolio</a></li>
+                <li><a href="contact.html" id="contact" data-translate="contactLink">Contact Me</a></li>
+                <li><a href="resume.html" id="resume" data-translate="resumeLink">Resume</a></li>
             </ul>
         </nav>
-
-<!-- Main Section -->
-<main>
-    <div id = "resume-content">
-        <p> References are available upon request. Unofficial transcripts, as well as certificates, are hyperlinked. If you want my resume, it is available in PDF format.</p><br>
-        <center><a href="documents/Harmon_Jackie_Resume.pdf" target="_blank" download>
-            <img src="images/PDF_file_icon.svg.png" alt="View PDF Resume" style="width: 50px; height: 60px;">
-
-        </a></center>
-        <br><br>
-		<h3>SUMMARY OF QUALIFICATIONS</h3>
-        <div class="green-line"></div><br>
-        <p>Background in programming and engineering. Skilled in code development and review, including creating 
-        documentation for software and IT processes. Proficient in translating complex technical information into clear, 
-        user-friendly manuals and guides. Excellent organizational and planning abilities, committed to delivering 
-        projects on time and within scope. Proven track record of collaborating with project managers, analysts, and 
-        subject matter experts to produce high-quality materials that meets regulatory requirements.</p>
-        <br>
-        <h4>LANGUAGES</h4>
-        <div class="green-line"></div><br>
-        <p>English (native) | Spanish (fluent) | Portuguese (fluent) | Mandarin (beginner)</p>
-        <br>
-        <h4>TECHNICAL SKILLS</h4>
-        <div class="green-line"></div><br>
-        <p>Technical Writing | HTML | Markdown | Microsoft Office Suite | Project Management | Python | C++ | CSS |
-        JavaScript | Posit Cloud / R | Tableau | MATLAB | LabVIEW | SPSS | MiniTab | MySQL | SQLite3 | AutoDesk 
-        Inventor</p>
-        <br>
-        <h4>MILITARY SERVICE</h4>
-        <div class="green-line"></div><br>
-        <p>US Army 2012-2016</p>
-        <br>
-        <h4>WORK EXPERIENCE</h4>
-        <div class="green-line"></div><br>
-        <ol>
-            <li>
-                <div style="display: flex; justify-content: space-between;">
-                    <span style="font-weight: bold;">Westcliff University</span>
-                    <span style="font-weight: bold;">2/2023 - present</span>
-                </div>
-                ADJUNCT PROFESSOR (COLLEGE OF TECHNOLOGY & ENGINEERING)
-                <ul>
-                    <li>Graduate courses: Introduction to Data Analytics, Cloud Data Visualization, and Data in Artificial 
-                        Intelligence & Machine Learning.
-                    </li>
-                    <li>Undergraduate course in the College of Business: Foundations of Statistics</li>
-                </ul>
-            </li>
+    <!-- Main Section -->
+    <main>
+        <div id="resume-content">
+            <p data-translate="references">References are available upon request. Unofficial transcripts, as well as certificates, are hyperlinked. If you want my resume, it is available in PDF format.</p><br>
+            <center><a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Harmon_Jackie_Resume.pdf" target="_blank" download>
+                <img src="images/PDF_file_icon.svg.png" alt="View PDF Resume" style="width: 50px; height: 60px;">
+            </a></center>
+            <br><br>
+            <h3 data-translate="summaryQualifications">SUMMARY OF QUALIFICATIONS</h3>
+            <div class="green-line"></div><br>
+            <p data-translate="qualifications">Background in programming and engineering. Skilled in code development and review, including creating documentation for software and IT processes. Proficient in translating complex technical information into clear, user-friendly manuals and guides. Excellent organizational and planning abilities, committed to delivering projects on time and within scope. Proven track record of collaborating with project managers, analysts, and subject matter experts to produce high-quality materials that meets regulatory requirements.</p>
             <br>
-            <li>
-                <div style="display: flex; justify-content: space-between;">
-                    <span style="font-weight: bold;">Middle GA State University</span>
-                    <span style="font-weight: bold;">5/2023 – 5/2024</span>
-                </div>
-                LECTURER & ADJUNCT PROFESSOR (SCHOOL OF COMPUTING)
-                <ul>
-                    <li>Undergraduate courses: Introduction to Computer Programming, Application Development, Web 
-                        Development, Human-Computer Interaction, and FinTech.
-                    </li>
-                </ul>
-            </li>
+            <h4 data-translate="languagesTitle">LANGUAGES</h4>
+            <div class="green-line"></div><br>
+            <p data-translate="languages">English (native) | Spanish (fluent) | Portuguese (fluent) | Mandarin (beginner)</p>
             <br>
-            <li>
-                <div style="display: flex; justify-content: space-between;">
-                    <span style="font-weight: bold;">Clayton County School District</span>
-                    <span style="font-weight: bold;">10/2022 - 8/2023</span>
-                </div>
-                SOFTWARE DEVELOPMENT TEACHER
-                <ul>
-                    <li>Created state curriculum documents and faculty training materials for the GADOE 9-12 IST (Intro to 
-                        Software Technology) course, covering Cloud Computing, Computer Science, Game Design, Internet of 
-                        Things, Programming, Web and Digital Design, and Web Development pathways.
-                    </li>
-                </ul>
-            </li>
+            <h4 data-translate="technicalSkillsTitle">TECHNICAL SKILLS</h4>
+            <div class="green-line"></div><br>
+            <p data-translate="technicalSkills">Technical Writing | HTML | Markdown | Microsoft Office Suite | Project Management | Python | C++ | CSS | JavaScript | Posit Cloud / R | Tableau | MATLAB | LabVIEW | SPSS | MiniTab | MySQL | SQLite3 | AutoDesk Inventor</p>
             <br>
-            <li>
-                <div style="display: flex; justify-content: space-between;">
-                    <span style="font-weight: bold;">iFood</span>
-                    <span style="font-weight: bold;">8/2019 - 2/2022</span>
-                </div>
-                DATA VISUALIZATION CONSULTANT (BRASILIA, BRAZIL)
-                <ul>
-                    <li>Collaborated with the cybersecurity team to document the implementation of a temporary Purple Team.</li>
-                    <li>Presented detailed technical reports and developed documentation solutions for international partners, 
-                        facilitating clear communication of complex data insights.
-                    </li>
-                    <li>Created and maintained documentation for data visualization tools and processes.</li>
-                </ul>
-            </li>
+            <h4 data-translate="militaryServiceTitle">MILITARY SERVICE</h4>
+            <div class="green-line"></div><br>
+            <p data-translate="militaryService">US Army 2012-2016</p>
             <br>
-            <li>
-                <div style="display: flex; justify-content: space-between;">
-                    <span style="font-weight: bold;">NuBank</span>
-                    <span style="font-weight: bold;">8/2019 - 2/2022</span>
-                </div>
-                DATA VISUALIZATION CONSULTANT (BRASILIA, BRAZIL)
-                <ul>
-                    <li>Worked closely with market risk analysts to document data analysis processes and create detailed risk 
-                        dashboards, ensuring accuracy and clarity in the presentation of risk data.
-                    </li>
-                    <li>Developed standardized documentation and training guides to support the use of data visualization tools 
-                        and techniques within the team.
-                    </li>
-                </ul>
-            </li>
+            <h4 data-translate="workExperienceTitle">WORK EXPERIENCE</h4>
+            <div class="green-line"></div><br>
+            <ol>
+                <li>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="font-weight: bold;" data-translate="westcliffUniversity">Westcliff University</span>
+                        <span style="font-weight: bold;" data-translate="westcliffDates">2/2023 - present</span>
+                    </div>
+                    <span data-translate="westcliffPosition">ADJUNCT PROFESSOR (COLLEGE OF TECHNOLOGY & ENGINEERING)</span>
+                    <ul>
+                        <li data-translate="westcliffTask1">Graduate courses: Introduction to Data Analytics, Cloud Data Visualization, and Data in Artificial Intelligence & Machine Learning.</li>
+                        <li data-translate="westcliffTask2">Undergraduate course in the College of Business: Foundations of Statistics</li>
+                    </ul>
+                </li>
+                <br>
+                <li>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="font-weight: bold;" data-translate="middleGAStateUniversity">Middle GA State University</span>
+                        <span style="font-weight: bold;" data-translate="middleGADates">5/2023 – 5/2024</span>
+                    </div>
+                    <span data-translate="middleGAPosition">LECTURER & ADJUNCT PROFESSOR (SCHOOL OF COMPUTING)</span>
+                    <ul>
+                        <li data-translate="middleGATask1">Undergraduate courses: Introduction to Computer Programming, Application Development, Web Development, Human-Computer Interaction, and FinTech.</li>
+                    </ul>
+                </li>
+                <br>
+                <li>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="font-weight: bold;" data-translate="claytonCountySchoolDistrict">Clayton County School District</span>
+                        <span style="font-weight: bold;" data-translate="claytonCountyDates">10/2022 - 8/2023</span>
+                    </div>
+                    <span data-translate="claytonCountyPosition">SOFTWARE DEVELOPMENT TEACHER</span>
+                    <ul>
+                        <li data-translate="claytonCountyTask1">Created state curriculum documents and faculty training materials for the GADOE 9-12 IST (Intro to Software Technology) course, covering Cloud Computing, Computer Science, Game Design, Internet of Things, Programming, Web and Digital Design, and Web Development pathways.</li>
+                    </ul>
+                </li>
+                <br>
+                <li>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="font-weight: bold;" data-translate="iFood">iFood</span>
+                        <span style="font-weight: bold;" data-translate="iFoodDates">8/2019 - 2/2022</span>
+                    </div>
+                    <span data-translate="iFoodPosition">DATA VISUALIZATION CONSULTANT (BRASILIA, BRAZIL)</span>
+                    <ul>
+                        <li data-translate="iFoodTask1">Collaborated with the cybersecurity team to document the implementation of a temporary Purple Team.</li>
+                        <li data-translate="iFoodTask2">Presented detailed technical reports and developed documentation solutions for international partners, facilitating clear communication of complex data insights.</li>
+                        <li data-translate="iFoodTask3">Created and maintained documentation for data visualization tools and processes.</li>
+                    </ul>
+                </li>
+                <br>
+                <li>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="font-weight: bold;" data-translate="nuBank">NuBank</span>
+                        <span style="font-weight: bold;" data-translate="nuBankDates">8/2019 - 2/2022</span>
+                    </div>
+                    <span data-translate="nuBankPosition">DATA VISUALIZATION CONSULTANT (BRASILIA, BRAZIL)</span>
+                    <ul>
+                        <li data-translate="nuBankTask1">Worked closely with market risk analysts to document data analysis processes and create detailed risk dashboards, ensuring accuracy and clarity in the presentation of risk data.</li>
+                        <li data-translate="nuBankTask2">Developed standardized documentation and training guides to support the use of data visualization tools and techniques within the team.</li>
+                    </ul>
+                </li>
+                <br>
+                <li>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="font-weight: bold;" data-translate="navicentHealth">Navicent Health Medical Center</span>
+                        <span style="font-weight: bold;" data-translate="navicentHealthDates">10/2016 - 11/2018</span>
+                    </div>
+                    <ol>
+                        <li><span data-translate="navicentHealthPosition1">ROBOTIC SURGERY RESEARCH ANALYST</span>
+                            <ul>
+                                <li data-translate="navicentHealthTask1">Provided prescriptive analytics and developed detailed reports with data collected from reconstructive surgery projects, documenting methodologies and findings until project completion.</li>
+                            </ul>
+                        </li>
+                        <li><span data-translate="navicentHealthPosition2">BIOMEDICAL ENGINEERING TECHNICIAN II</span>
+                            <ul>
+                                <li data-translate="navicentHealthTask2">Debugged hospital equipment for ICU, PICU, and NNICU, maintaining detailed service logs and technical documentation.</li>
+                                <li data-translate="navicentHealthTask3">Mentored two interns, developing training materials that facilitated their successful transition into permanent positions.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
             <br>
-            <li>
-                <div style="display: flex; justify-content: space-between;">
-                    <span style="font-weight: bold;">Navicent Health Medical Center</span>
-                    <span style="font-weight: bold;">10/2016 - 11/2018</span>
-                </div>
-                <ol>
-                    <li>ROBOTIC SURGERY RESEARCH ANALYST
-                        <ul>
-                            <li>Provided prescriptive analytics and developed detailed reports with data collected from reconstructive 
-                                surgery projects, documenting methodologies and findings until project completion.
-                            </li>
-                        </ul>
-                    </li>
-                    <li>BIOMEDICAL ENGINEERING TECHNICIAN II
-                        <ul>
-                            <li>Debugged hospital equipment for ICU, PICU, and NNICU, maintaining detailed service logs and technical 
-                                documentation.
-                            </li>
-                            <li>Mentored two interns, developing training materials that facilitated their successful transition into 
-                                permanent positions.
-                            </li>
-                        </ul>
-                    </li>
-                </ol>
-            </li>
-            
-        </ol>
-        <br>
-        <h4>INTERNSHIPS</h4>
-        <div class="green-line"></div><br>
-        <ol>
-            <li>Navicent Health Medical Center | Fall 2016 | BIOMEDICAL ENGINEERING TECHNICIAN INTERN</li>
-            <li>Vein Specialists of the South | Summer 2014 | BIOFLUIDS / BIOMECHANICS RESEARCH ANALYST INTERN</li>
-            <li>Mercer University | Spring 2014 | NANOPARTICLES RESEARCH ANALYST INTERN</li>
-        </ol>
-        <br>
-        <h4>PROJECTS</h4>
-        <div class="green-line"></div><br>
-        <ol>
-            <li>Development of a Mobile Ankle Joint Attachment for the Universal Prosthesis | 2016</li>
-            <li>Comparing the Mechanical Properties of Cancellous Bone between Pig Femur Bone, Deer Femur Bone, and 
-                Human Humerus Bone | 2016</li>
-            <li>The Study of Injury Biomechanics in the Wrist/Hand and Ankle/Foot for Tumbling Using the MatScan | 2015
-            </li>
-        </ol>
-        <br>
-        <h4>EDUCATION</h4>
-        <div class="green-line"></div><br>
-        <ol>
-            <li><a href="documents/Harmon_MGA_transcripts_unofficial.pdf" target="_blank" download>
-                MSIT Health Informatics | Middle Georgia State University | 2018 | 4.0
-                <img src="images/doc-icon.jpg" alt="View doc" style="width: 15px; height: 20px;"></a></li>
-            <li><a href="documents/Harmon_Mercer_transcripts_unofficial.pdf" target="_blank" download>
-                BSE Biomedical Engineering | Mercer University | 2016 | 3.4
-                <img src="images/doc-icon.jpg" alt="View doc" style="width: 15px; height: 20px;"></a></li>
-            <li><a href="documents/Harmon_Mercer_transcripts_unofficial.pdf" target="_blank" download>
-                BA Spanish | Mercer University | 2016 | 3.4
-                <img src="images/doc-icon.jpg" alt="View doc" style="width: 15px; height: 20px;"></a></li>
-        </ol>
-        <br>
-        <h4>COURSES AND CERTIFICATIONS</h4>
-        <div class="green-line"></div><br>
-        <ol>
-            <li><a href="documents/Harmon_Cert_DataScientist.pdf" target="_blank" download>        
-                Professional Certification in Data Science | Entity Academy & Woz U | 2023
-                <img src="images/doc-icon.jpg" alt="View doc" style="width: 15px; height: 20px;"></a></li>
-            <li><a href="documents/Harmon_GACE_Score_report.pdf" target="_blank" download>
-                Engineering Technology Education I & II | GACE | 2022 | Passed-professional
-                <img src="images/doc-icon.jpg" alt="View doc" style="width: 15px; height: 20px;"></a></li>
-            <li><a href="documents/Harmon_LDAC.pdf" target="_blank" download>
-                Leadership Development and Assessment Course | United States Army | 2016 | Top 15%
-                <img src="images/doc-icon.jpg" alt="View doc" style="width: 15px; height: 20px;"></a></li>
-        </ol>
-        <br>
-        <h4>AWARDS AND HONOR SOCIETIES</h4>
-        <div class="green-line"></div><br>
-        <ol>
-            <li>Distinguished Military Graduate</li>
-            <li>Tau Beta Pi (Engineering Honor Society)</li>
-            <li>Phi Sigma Iota (Foreign Language Honor Society)</li>
-            <li>Alpha Phi Omega (National Service Fraternity)</li>
-            <li>HS Valedictorian</li>
-            <li>HS STAR Student (SAT)</li>
-        </ol>
-        <br>
-        <h4>VOLUNTEERING OPPORTUNITIES</h4>
-        <div class="green-line"></div><br>
-        <ol>
-            <li>Fulbright Scholar Program (Summer 2023)</li>
-            <li>Head Softball Coach (Spring 2022)</li>
-            <li>Missionary (Fall 2019)</li>
-            <li>Honduras Outreach, Inc (Summer 2015)</li>
-        </ol>
-        <br>
-        <h4>GUEST SPEAKING OPPORTUNITIES</h4>
-        <div class="green-line"></div><br>
-        <ol>
-            <li>Rotary Club of Griffin, GA (3/2023, 2/2018, 8/2013, 4/2012)</li>
-            <li>Kiwanis Club of Griffin, GA (4/2018) </li>
-            <li>GA Board of Education Annual Teacher Luncheon and Workshop (4/2014)</li>
-            <li>National Bank Outstanding Student Banquet (3/2013)</li>
-        </ol>
-    </div>
-</main>
+            <h4 data-translate="internshipsTitle">INTERNSHIPS</h4>
+            <div class="green-line"></div><br>
+            <ol>
+                <li data-translate="internship1">Navicent Health Medical Center | Fall 2016 | BIOMEDICAL ENGINEERING TECHNICIAN INTERN</li>
+                <li data-translate="internship2">Vein Specialists of the South | Summer 2014 | BIOFLUIDS / BIOMECHANICS RESEARCH ANALYST INTERN</li>
+                <li data-translate="internship3">Mercer University | Spring 2014 | NANOPARTICLES RESEARCH ANALYST INTERN</li>
+            </ol>
+            <br>
+            <h4 data-translate="projectsTitle">PROJECTS</h4>
+            <div class="green-line"></div><br>
+            <ol>
+                <li data-translate="project1">Development of a Mobile Ankle Joint Attachment for the Universal Prosthesis | 2016</li>
+                <li data-translate="project2">Comparing the Mechanical Properties of Cancellous Bone between Pig Femur Bone, Deer Femur Bone, and Human Humerus Bone | 2016</li>
+                <li data-translate="project3">The Study of Injury Biomechanics in the Wrist/Hand and Ankle/Foot for Tumbling Using the MatScan | 2015</li>
+            </ol>
+            <br>
+            <h4 data-translate="educationTitle">EDUCATION</h4>
+            <div class="green-line"></div><br>
+            <ol>
+                <li><a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Harmon_MGA_transcripts_unofficial.pdf" target="_blank" download>
+                    <span data-translate="education1">MSIT Health Informatics | Middle Georgia State University | 2018 | 4.0</span>
+                    <img src="images/doc-icon.jpg" alt="View doc" style="width: 15px; height: 20px;"></a></li>
+                <li><a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Harmon_Mercer_transcripts_unofficial.pdf" target="_blank" download>
+                    <span data-translate="education2">BSE Biomedical Engineering | Mercer University | 2016 | 3.4</span>
+                    <img src="images/doc-icon.jpg" alt="View doc" style="width: 15px; height: 20px;"></a></li>
+                <li><a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Harmon_Mercer_transcripts_unofficial.pdf" target="_blank" download>
+                    <span data-translate="education3">BA Spanish | Mercer University | 2016 | 3.4</span>
+                    <img src="images/doc-icon.jpg" alt="View doc" style="width: 15px; height: 20px;"></a></li>
+            </ol>
+            <br>
+            <h4 data-translate="coursesCertificationsTitle">COURSES AND CERTIFICATIONS</h4>
+            <div class="green-line"></div><br>
+            <ol>
+                <li><a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Harmon_Cert_DataScientist.pdf" target="_blank" download>        
+                    <span data-translate="certification1">Professional Certification in Data Science | Entity Academy & Woz U | 2023</span>
+                    <img src="images/doc-icon.jpg" alt="View doc" style="width: 15px; height: 20px;"></a></li>
+                <li><a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Harmon_GACE_Score_report.pdf" target="_blank" download>
+                    <span data-translate="certification2">Engineering Technology Education I & II | GACE | 2022 | Passed-professional</span>
+                    <img src="images/doc-icon.jpg" alt="View doc" style="width: 15px; height: 20px;"></a></li>
+                <li><a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Harmon_LDAC.pdf" target="_blank" download>
+                    <span data-translate="certification3">Leadership Development and Assessment Course | United States Army | 2016 | Top 15%</span>
+                    <img src="images/doc-icon.jpg" alt="View doc" style="width: 15px; height: 20px;"></a></li>
+            </ol>
+            <br>
+            <h4 data-translate="awardsHonorSocietiesTitle">AWARDS AND HONOR SOCIETIES</h4>
+            <div class="green-line"></div><br>
+            <ol>
+                <li data-translate="award1">Distinguished Military Graduate</li>
+                <li data-translate="award2">Tau Beta Pi (Engineering Honor Society)</li>
+                <li data-translate="award3">Phi Sigma Iota (Foreign Language Honor Society)</li>
+                <li data-translate="award4">Alpha Phi Omega (National Service Fraternity)</li>
+                <li data-translate="award5">HS Valedictorian</li>
+                <li data-translate="award6">HS STAR Student (SAT)</li>
+            </ol>
+            <br>
+            <h4 data-translate="volunteeringTitle">VOLUNTEERING OPPORTUNITIES</h4>
+            <div class="green-line"></div><br>
+            <ol>
+                <li data-translate="volunteering1">Fulbright Scholar Program (Summer 2023)</li>
+                <li data-translate="volunteering2">Head Softball Coach (Spring 2022)</li>
+                <li data-translate="volunteering3">Missionary (Fall 2019)</li>
+                <li data-translate="volunteering4">Honduras Outreach, Inc (Summer 2015)</li>
+            </ol>
+            <br>
+            <h4 data-translate="guestSpeakingTitle">GUEST SPEAKING OPPORTUNITIES</h4>
+            <div class="green-line"></div><br>
+            <ol>
+                <li data-translate="speaking1">Rotary Club of Griffin, GA (3/2023, 2/2018, 8/2013, 4/2012)</li>
+                <li data-translate="speaking2">Kiwanis Club of Griffin, GA (4/2018) </li>
+                <li data-translate="speaking3">GA Board of Education Annual Teacher Luncheon and Workshop (4/2014)</li>
+                <li data-translate="speaking4">National Bank Outstanding Student Banquet (3/2013)</li>
+            </ol>
+        </div>
+    </main>
 
-<button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top">^</button>
+    <button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top">^</button>
 
-<!-- Footer Section -->
-<footer>
-    <p>Copyright &copy; 2024 Jackie Harmon. All rights reserved.</p>
-</footer>
-
-
-<script src="script.js"></script>
+    <!-- Footer Section -->
+    <footer>
+        <p>Copyright &copy; 2024 Jackie Harmon. All rights reserved.</p>
+    </footer>
+    <script src="translate.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
 
