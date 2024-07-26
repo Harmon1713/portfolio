@@ -17,14 +17,15 @@
                     <img src="images/logo_green2-rbg.png" alt="Logo">
                 </div>
                 <div id="name">
-                    <h1 data-translate="welcome">Jackie Harmon's Portfolio</h1>
+                    <h1 data-translate="portfolioTitle">Jackie Harmon's Portfolio</h1>
                 </div>
             </div>
-			<span class="language-hamburger"><i class="fas fa-globe"></i></span> <!-- Language icon -->
+			<span class="language-hamburger"><i class="fas fa-globe"></i></span> <!-- Language world icon -->
             <div id="language-toggle">
-                <button onclick="changeLanguage('en')" id="en-btn">English</button>
-                <button onclick="changeLanguage('es')" id="es-btn">Spanish</button>
-                <button onclick="changeLanguage('pt')" id="pt-btn">Portuguese</button>
+                <button data-translate="english" data-lang="en" onclick="changeLanguage('en')" id="en-btn">English</button>
+                <button data-translate="spanish" data-lang="es" onclick="changeLanguage('es')" id="es-btn">Spanish</button>
+                <button data-translate="portuguese" data-lang="pt" onclick="changeLanguage('pt')" id="pt-btn">Portuguese</button>
+                
             </div>
         </header>
     <div class="clear"></div>
@@ -33,10 +34,10 @@
         <div class="green-line"></div>
         <span class="hamburger">&#9776;</span> <!-- Hamburger button -->
         <ul>
-            <li><a href="index.html" id="welcome" data-translate="welcome">Welcome</a></li>
-            <li><a href="portfolio.html" id="portfolio" data-translate="portfolio">Portfolio</a></li>
-            <li><a href="contact.html" id="contact" data-translate="contact">Contact Me</a></li>
-            <li><a href="resume.html" id="resume" data-translate="resume">Resume</a></li>
+            <li><a href="index.html" id="welcome" data-translate="welcomeLink">Welcome</a></li>
+            <li><a href="portfolio.html" id="portfolio" data-translate="portfolioLink">Portfolio</a></li>
+            <li><a href="contact.html" id="contact" data-translate="contactLink">Contact Me</a></li>
+            <li><a href="resume.html" id="resume" data-translate="resumeLink">Resume</a></li>
         </ul>
     </nav>
     <div class="body"> <!-- easier than redoing all css-->
@@ -69,9 +70,10 @@
 
         <!-- Footer Section -->
         <footer>
-            <p>Copyright &copy; 2024 Jackie Harmon. All rights reserved.</p>
+            <p data-translate="footer">Copyright &copy; 2024 Jackie Harmon. All rights reserved.</p>
         </footer>
     </div>
-<script src="script.js"></script>
+    <script src="translate.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
