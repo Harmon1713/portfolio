@@ -1,5 +1,5 @@
 :root {
-    --header-height: 12vw;
+    --header-height: 9vw;
 }
 
 /* Reset default browser styles */
@@ -7,9 +7,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-	font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
-
 
 /* Default styles for header, nav, body, and footer */
 header, nav, body, footer {
@@ -17,36 +16,35 @@ header, nav, body, footer {
     margin: 0 auto; /* Center the elements */
 }
 
-
 .clear {clear: both}
 
 /* Line styles */
 .green-line {
-	width: 100%;
-	height: 4px; 
-	background-color:  #4CAF50;
-	z-index: 1001;
+    width: 100%;
+    height: 4px;
+    background-color:  #4CAF50;
+    z-index: 1001;
 }
 
 .green-line-small {
-	width: 90%;
-	height: 4px; 
-	background-color:  #4CAF50;
-	z-index: 1001;
-	align-items: center;
+    width: 90%;
+    height: 4px;
+    background-color:  #4CAF50;
+    z-index: 1001;
+    align-items: center;
 }
 
 /* Header styles */
 header {
     height: var(--header-height);
-	margin-bottom: 2.1vh;
-	position: fixed;
-	top: 0;
-	padding: 0.8vh;
-	padding-bottom: 4.2vh;
-	z-index: 1000; /* Ensure header is above other content */
-	background-color: white;
-	color: #333;
+    margin-bottom: 2.1vh;
+    position: fixed;
+    top: 0;
+    padding: 0.8vh;
+    padding-bottom: 4.2vh;
+    z-index: 1000; /* Ensure header is above other content */
+    background-color: white;
+    color: #333;
     justify-content: space-between;
     align-items: center;
     display: flex;
@@ -57,11 +55,11 @@ header {
     align-items: center;
     position: absolute;
     bottom: 5%; /* Keep 5% above the green line */
-    flex:1;
+    flex: 1;
 }
 
 #logo {
-	width: 20%;
+    width: 20%;
 }
 
 #logo img {
@@ -77,13 +75,13 @@ header {
 
 #language-toggle {
     position: absolute;
-	right: 0;
-	display: flex;
+    right: 0;
+    display: flex;
     flex-direction: column; /* Stack buttons vertically */
     align-items: center; /* Center buttons horizontally */
-	align-items: stretch; /* Stretch buttons to fill container width */
-	width: 15%;
-    max-width:150px;
+    align-items: stretch; /* Stretch buttons to fill container width */
+    width: 15%;
+    max-width: 150px;
     flex-shrink: 0; /* Prevent the language toggle from shrinking */
     top: 1vh; /* Adjust bottom margin */
 }
@@ -94,27 +92,69 @@ header {
     border: none;
     margin: 0;
     cursor: pointer;
-	transition: background-color 0.3s ease; /* Smooth transition */
-	width: 100%; /* Ensure buttons fill the width of the container */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    width: 100%; /* Ensure buttons fill the width of the container */
     box-sizing: border-box; /* Include padding and border in the width */
 }
 
-
 #language-toggle button:hover {
-    background-color:  #4CAF50;;
+    background-color:  #4CAF50;
 }
 
 #language-toggle button.active {
     background-color: darkgreen;
 }
 
+/* Hamburger menu for language toggle */
+.language-hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: black;
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    z-index: 2000; /* Ensure it is above everything else */
+}
+
+.language-dropdown {
+    display: none;
+    flex-direction: column;
+    background-color: lightgreen;
+    position: absolute;
+    right: 10px;
+    top: calc(var(--header-height) + 10px);
+    z-index: 2000;
+}
+
+.language-dropdown.show {
+    display: flex;
+}
+
+.language-dropdown button {
+    background-color: lightgreen;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.language-dropdown button:hover {
+    background-color: #4CAF50;
+}
+
+.language-dropdown button.active {
+    background-color: darkgreen;
+}
+
 /* Body styles */
 body {
-	padding-top: calc(30px + var(--header-height)); /* Adjust to match header and nav bar heights */
+    padding-top: calc(30px + var(--header-height)); /* Adjust to match header and nav bar heights */
     color: #333;
-	display: flex;
+    display: flex;
     flex-direction: column;
-	margin: 0 auto;
+    margin: 0 auto;
 }
 
 main {
@@ -123,10 +163,10 @@ main {
 
 /* Navigation styles */
 nav {
-	position: fixed;
+    position: fixed;
     top: var(--header-height);
     background-color: #333;
-	z-index: 999; /* Ensure nav bar is above content */
+    z-index: 999; /* Ensure nav bar is above content */
 }
 
 nav ul {
@@ -183,13 +223,13 @@ nav .hamburger {
     margin: 0 auto;
 }
 
-/* Footer styles*/
+/* Footer styles */
 footer {
     text-align: center;
     background-color: #333;
     color: #fff;
     padding: 0.8%;
-	position: fixed; /* Push the footer to the bottom */
+    position: fixed; /* Push the footer to the bottom */
     bottom: 0;
 }
 
@@ -198,7 +238,7 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color:  #4CAF50;;
+    background-color:  #4CAF50;
     color: #fff;
     border: none;
     padding: 10px;
@@ -209,29 +249,28 @@ footer {
 }
 
 /* Welcome styles */
-
 #threeparts {
     margin-top: 5%;
     display: flex;
     justify-content: space-between;
-  }
-  
-  #notmiddlepic {
+}
+
+#notmiddlepic {
     width: 32%;
-    max-height: 20vh;
-  }
-  
-  #threeparts img {
+    max-height: 25vh;
+}
+
+#threeparts img {
     width: 100%;
     height: 100%;
     border: 4px solid #333;
-  }
-  
-  #middlepic {
+}
+
+#middlepic {
     margin: 0 2%;
-    width:32%;
-    max-height: 20vh;
-  }
+    width: 32%;
+    max-height: 25vh;
+}
 
 #home {
     text-align: center;
@@ -240,10 +279,11 @@ footer {
 
 #intro {
     text-align: center;
-	width: 80%; /* Adjust the width as needed */
+    width: 80%; /* Adjust the width as needed */
     margin: 0 auto; /* Center the container horizontally */
     padding: 50px 0;
 }
+
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -253,7 +293,7 @@ footer {
 .skill {
     margin: 20px;
     cursor: pointer;
-	border: 2px solid #4CAF50; /* Green border */
+    border: 2px solid #4CAF50; /* Green border */
     border-radius: 10px; /* Rounded corners */
     padding: 10px; /* Added padding */
 }
@@ -268,13 +308,24 @@ footer {
 }
 
 #travel-map {
-	text-align: center;
+    text-align: center;
 }
 
-#mapiframe {
-    height: 75vh;
-    overflow:hidden; 
-    display:block; 
+.iframe-container {
+    position: relative;
+    width: 80%;
+    height: 65vh; /* Fixed height for larger screens */
+    overflow: hidden;
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 /* Styles for the modal */
@@ -283,7 +334,7 @@ footer {
     position: fixed;
     z-index: 1;
     left: 0;
-    top: calc(var(--header-height)/2);
+    top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -292,7 +343,7 @@ footer {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 5% auto; /* Adjust margin to move the modal higher */
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
@@ -301,6 +352,9 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-height: 70vh; /* Ensure the modal content doesn't exceed the viewport height */
     overflow-y: auto; /* Enable vertical scrolling for the modal content */
+    position: relative;
+    top: 28%; /* Adjust top to move the modal higher */
+    transform: translateY(-20%); /* Adjust translateY to move the modal higher */
 }
 
 .close {
@@ -317,27 +371,28 @@ footer {
     cursor: pointer;
 }
 
+
 .half-column {
-    width:50%;
+    width: 50%;
     float: left;
 }
 
 .modal-project-link {
-	text-decoration: none;
-	color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 .modal-project {
-	transition: background-color 0.3s;
-    padding:1%;
+    transition: background-color 0.3s;
+    padding: 1%;
 }
 
 .modal-project-link:hover .modal-project {
-	background-color: #f0f0f0; /* Light grey background on hover */
-	color: #333; /* Darker text color on hover */
+    background-color: #f0f0f0; /* Light grey background on hover */
+    color: #333; /* Darker text color on hover */
 }
 
-.img-white {    
+.img-white {
     box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.15); /* Horizontal offset, vertical offset, blur radius, color */
 }
 
@@ -346,64 +401,39 @@ footer {
 }
 
 /* Portfolio section styles */
-.accordion-item {
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-}
 
-.accordion-header {
-    background-color: #f0f0f0;
-    border: none;
-    padding: 10px;
+/* Search bar styles */
+.search-bar {
     width: 100%;
-    text-align: left;
-    cursor: pointer;
-}
-
-.accordion-content {
-    display: none;
-    padding: 10px;
-}
-
-.accordion-item.active .accordion-content {
-    display: block;
-}
-
- /* Search bar styles */
- .search-bar {
-	width: 100%;
-	margin: 20px 0;
-	text-align: center;
-	position: relative;
+    margin: 20px 0;
+    text-align: center;
+    position: relative;
 }
 
 .search-bar input {
-	width: 80%;
-	padding: 10px;
-	font-size: 16px;
-	box-sizing: border-box;
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
 }
 
 .search-bar button {
-	padding: 10px;
-	font-size: 16px;
-	background-color:  #4CAF50;
-	color: white;
-	border: none;
-	cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    background-color:  #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
 /* Autocomplete styles */
-/* Need to dynamically adjust left offset for responsive deisng */
 .autocomplete-list {
     position: absolute;
     border: 1px solid #ddd;
     border-bottom: none;
     border-top: none;
     z-index: 99;
-    bottom: 42px;
-    width: 60%;
-    left: 6%;
+    bottom: 52px;
     background-color: #fff;
 }
 
@@ -422,9 +452,9 @@ footer {
 /* Project styles */
 .project {
     display: none;
-    margin: 20px 0;
-	text-align: left;
-	padding-left: 10%;
+    text-align: left;
+    padding: 0 10%;
+    margin-bottom: 30px; /* Add space between projects */
 }
 
 /* Error message styles */
@@ -432,7 +462,6 @@ footer {
     color: red;
     margin-top: 10px;
 }
-
 
 /* Skill box styles */
 #skillContainer {
@@ -456,12 +485,6 @@ footer {
     margin-left: 10px;
     cursor: pointer;
     color: red;
-}
-
-/* Project styles */
-.project {
-    display: none;
-    margin: 20px 0;
 }
 
 /* Contact link styles on Portfolio page */
@@ -520,16 +543,16 @@ footer {
     border: 1px solid #ccc;
     flex: 1 0 auto; /* Allow divs to take up necessary space without stretching */
 }
-  
-  .top-half {
-	grid-row: 1 / span 1; /* Span 1 row */
+
+.top-half {
+    grid-row: 1 / span 1; /* Span 1 row */
     margin-bottom: 2%; /* Add consistent spacing between divs */
-  }
-  
-  .bottom-half {
-	grid-row: 2 / span 1; /* Span 1 row */
-  }
- 
+}
+
+.bottom-half {
+    grid-row: 2 / span 1; /* Span 1 row */
+}
+
 /* Resume page */
 #resume-content {
     margin: 5% 0;
@@ -550,7 +573,6 @@ footer {
 }
 
 /* Contact page */
-
 #thankYouMessage {
     display: none;
     margin-top: 20px;
@@ -558,6 +580,18 @@ footer {
 
 /* Responsive design for small-width and nav */
 /* Small screen */
+@media (max-width: 1500px) {
+    #language-toggle {
+        top: 0.5vh; /* Adjust top margin */
+        width: 12%; /* Make the language toggle smaller */
+        max-width: 120px; /* Reduce the max width */
+    }
+
+    #language-toggle button {
+        padding: 4% 8%; /* Reduce the padding */
+    }
+}
+
 @media (max-width: 1400px) {
     header, nav, body, footer {
         width: 85%;
@@ -569,18 +603,42 @@ footer {
     #left-header {
         bottom: 3%;
     }
+
+    #threeparts {
+        margin-top: 5%;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #notmiddlepic {
+        width: 32%;
+        max-height: 20vh;
+    }
+    
+    #threeparts img {
+        width: 100%;
+        height: 100%;
+        border: 4px solid #333;
+    }
+    
+    #middlepic {
+        margin: 0 2%;
+        width: 32%;
+        max-height: 20vh;
+    }
+    
 }
 
 /* Smaller screen */
-@media (max-width: 800px) {
+@media (max-width: 850px) {
     header, nav, body, footer {
-        width: 100%;
+        width: 90%;
     }
 
     #name {
         font-size: clamp(13px, 1.55vw, 17px); /* Use clamp to set min, preferred, and max font size */
     }
-    
+
     nav {
         height: 60px;
     }
@@ -610,7 +668,7 @@ footer {
         width: 100%;
         flex-direction: row; /* Change to horizontal */
         justify-content: space-around;
-        margin: 1vh 4.5vw; /* Add margin to position the buttons correctly */
+        margin: 1vh 6vw; /* Add margin to position the buttons correctly */
         max-height: 100px;
     }
 
@@ -634,14 +692,52 @@ footer {
 }
 
 /* Mobile */
-@media (max-width: 550px) {
-
+@media (max-width: 625px)  {
     nav {
         height: 40px;
     }
 
     nav .hamburger {
         font-size: 15px; /* Reduce size by half */
+    }
+    #language-toggle {
+        display: none;
+    }
+
+    .language-hamburger {
+        display: block;
+        right: 0;
+    }
+
+    .language-dropdown {
+        display: none;
+        flex-direction: column;
+        background-color: lightgreen;
+        position: absolute;
+        right: 10px;
+        top: calc(var(--header-height) + 10px);
+        z-index: 2000;
+    }
+
+    .language-dropdown.show {
+        display: flex;
+    }
+
+    .language-dropdown button {
+        background-color: lightgreen;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+    }
+
+    .language-dropdown button:hover {
+        background-color: #4CAF50;
+    }
+
+    .language-dropdown button.active {
+        background-color: darkgreen;
     }
 }
 
@@ -695,4 +791,19 @@ footer {
         border: none;
         padding: 0;
     }
+}
+
+/* Custom styles for hyperlink and inline image */
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+.link-content {
+    display: flex;
+    align-items: center;
+}
+
+.link-content img {
+    margin-left: 10px;
 }
