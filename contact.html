@@ -6,7 +6,7 @@
     <title>Jackie Harmon's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/logo_green2-rbg.png" type="image/x-icon">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <div id="small-width">
@@ -17,14 +17,14 @@
                     <img src="images/logo_green2-rbg.png" alt="Logo">
                 </div>
                 <div id="name">
-                    <h1 data-translate="welcome">Jackie Harmon's Portfolio</h1>
+                    <h1 data-translate="portfolioTitle">Jackie Harmon's Portfolio</h1>
                 </div>
             </div>
-			<span class="language-hamburger"><i class="fas fa-globe"></i></span> <!-- Language icon -->
+            <span class="language-hamburger"><i class="fas fa-globe"></i></span> <!-- Language world icon -->
             <div id="language-toggle">
-                <button onclick="changeLanguage('en')" id="en-btn">English</button>
-                <button onclick="changeLanguage('es')" id="es-btn">Spanish</button>
-                <button onclick="changeLanguage('pt')" id="pt-btn">Portuguese</button>
+                <button data-translate="english" data-lang="en" onclick="changeLanguage('en')" id="en-btn">English</button>
+                <button data-translate="spanish" data-lang="es" onclick="changeLanguage('es')" id="es-btn">Spanish</button>
+                <button data-translate="portuguese" data-lang="pt" onclick="changeLanguage('pt')" id="pt-btn">Portuguese</button>
             </div>
         </header>
         <div class="clear"></div>
@@ -33,44 +33,41 @@
             <div class="green-line"></div>
             <span class="hamburger">&#9776;</span> <!-- Hamburger button -->
             <ul>
-                <li><a href="index.html" id="welcome" data-translate="welcome">Welcome</a></li>
-                <li><a href="portfolio.html" id="portfolio" data-translate="portfolio">Portfolio</a></li>
-                <li><a href="contact.html" id="contact" data-translate="contact">Contact Me</a></li>
-                <li><a href="resume.html" id="resume" data-translate="resume">Resume</a></li>
+                <li><a href="index.html" id="welcome" data-translate="welcomeLink">Welcome</a></li>
+                <li><a href="portfolio.html" id="portfolio" data-translate="portfolioLink">Portfolio</a></li>
+                <li><a href="contact.html" id="contact" data-translate="contactLink">Contact Me</a></li>
+                <li><a href="resume.html" id="resume" data-translate="resumeLink">Resume</a></li>
             </ul>
         </nav>
-
-<!-- Main Section -->
-<main>
-	<div class="contact-container">
-		<div class="left-column">
-			<h2>Jackie Harmon</h2>
-			<img src="images/prof.png" alt="Logo" width = "80%">
-		</div>
-		<div class="right-column">
-			<div class="top-half">
-				<h2>Details</h2><br>
-				<p>With a Master's degree in Informatics, coupled with Bachelor's degrees in Engineering and Spanish, my academic background reflects a diverse intersection of disciplines. My professional journey includes roles as a professor, data visualization consultant and a biomedical engineering technician. Moreover, my experience working in multiple continents and proficiency in multiple languages allow me to collaborate effectively across borders and cultures. <br><br>Please reach out to me so we can discuss how our skills and experiences can help each other achieve our goals.</p>
-			</div>
-			<div class="bottom-half">
-				<h2>Contact Info</h2><br>
-				<p>Email: jacquelynn.harmon@gmail.com</p>
-				<p>Phone: +1(470)836-5409</p>
-			</div>
-		</div>
-	</div>	
-</main>
-
-<button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top">^</button>
-
-<!-- Footer Section -->
-<footer>
-    <p>Copyright &copy; 2024 Jackie Harmon. All rights reserved.</p>
-</footer>
-
-
-<script src="script.js"></script>
+        <!-- Main Section -->
+        <main>
+            <div class="contact-container">
+                <div class="left-column">
+                    <h2 data-translate="nameTitle">Jackie Harmon</h2>
+                    <img src="images/prof.png" alt="Logo" width="80%">
+                </div>
+                <div class="right-column">
+                    <div class="top-half">
+                        <h2 data-translate="detailsTitle">Details</h2><br>
+                        <p data-translate="detailsText1">With a Master's degree in Informatics, coupled with Bachelor's degrees in Engineering and Spanish, my academic background reflects a diverse intersection of disciplines. My professional journey includes roles as a professor, data visualization consultant and a biomedical engineering technician. Moreover, my experience working in multiple continents and proficiency in multiple languages allow me to collaborate effectively across borders and cultures.</p>
+                        <br><br>
+                        <p data-translate="detailsText2">Please reach out to me so we can discuss how our skills and experiences can help each other achieve our goals.</p>
+                    </div>
+                    <div class="bottom-half">
+                        <h2 data-translate="contactInfoTitle">Contact Info</h2><br>
+                        <p data-translate="email">Email: jacquelynn.harmon@gmail.com</p>
+                        <p data-translate="phone">Phone: +1(470)836-5409</p>
+                    </div>
+                </div>
+            </div>  
+        </main>
+        <button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top">^</button>
+        <!-- Footer Section -->
+        <footer>
+            <p data-translate="footer">Copyright &copy; 2024 Jackie Harmon. All rights reserved.</p>
+        </footer>
+        <script src="translate.js"></script>
+        <script src="script.js"></script>
+    </div>
 </body>
 </html>
-
-
