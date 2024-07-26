@@ -64,6 +64,36 @@ document.addEventListener("DOMContentLoaded", function() {
             navUl.classList.remove("show");
         }
     });
+    // Language toggle hamburger button
+    const languageHamburger = document.querySelector(".language-hamburger");
+    const languageDropdown = document.createElement('div');
+    languageDropdown.classList.add('language-dropdown');
+
+    const languages = [
+        { code: 'en', name: 'English' },
+        { code: 'es', name: 'Spanish' },
+        { code: 'pt', name: 'Portuguese' }
+    ];
+
+    languages.forEach(language => {
+        const button = document.createElement('button');
+        button.textContent = language.name;
+        button.addEventListener('click', () => changeLanguage(language.code));
+        languageDropdown.appendChild(button);
+    });
+
+    document.body.appendChild(languageDropdown);
+
+    languageHamburger.addEventListener("click", function(event) {
+        languageDropdown.classList.toggle("show");
+        event.stopPropagation(); // Prevent the click from propagating to the document
+    });
+
+    document.addEventListener("click", function(event) {
+        if (!languageDropdown.contains(event.target) && !languageHamburger.contains(event.target)) {
+            languageDropdown.classList.remove("show");
+        }
+    });
 });
 
 // Highlight current page's nav item
@@ -118,6 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
     map.style.cursor = 'grab';
 });
 
+
 // Modal
 function showPopup(modalId) {
     const modal = document.getElementById(`${modalId}-modal`);
@@ -129,27 +160,27 @@ function showPopup(modalId) {
         }
     });
 }
-  
+
 function closePopup(modalId) {
     document.getElementById(`${modalId}-modal`).style.display = 'none';
 }
 
 // Search bar
-const skills = ["HTML", "CSS", "JavaScript", "Python", "Django", "React", "Node.js", "Express"];
+const skills = ["HTML", "CSS", "JavaScript", "Python", "pygame", "datetime", "tkinter", "SQLite", "SQL", "matplotlib", "D3.js", "GeoJSON", "json", "SVG", "R", "dplyr", "ggplot2", "ggiraph", "patchwork", "htmlwidgets", "Markdown", "LaTex", "Pandoc", "Material Testing System", "MTS", "Inventor", "CAD", "Drafting", "MatScan", "Tekscan", "Research", "Technical Writing", "Data Visualization", "Application Development", "Front-End Development"];
 
 // Store the original list of projects
 const allProjects = Array.from(document.getElementsByClassName('project'));
 
 function showAutocomplete() {
-    const input = document.getElementById('searchInput').value.toLowerCase();
+    const input = document.getElementById('searchInput');
     const autocompleteList = document.getElementById('autocompleteList');
     autocompleteList.innerHTML = '';
 
-    const lastCommaIndex = input.lastIndexOf(',');
-    const lastSpaceIndex = input.lastIndexOf(' ');
+    const inputValue = input.value.toLowerCase();
+    const lastCommaIndex = inputValue.lastIndexOf(',');
+    const lastSpaceIndex = inputValue.lastIndexOf(' ');
     const lastSeparatorIndex = Math.max(lastCommaIndex, lastSpaceIndex);
-
-    const currentInput = input.substring(lastSeparatorIndex + 1).trim();
+    const currentInput = inputValue.substring(lastSeparatorIndex + 1).trim();
 
     if (currentInput === '') {
         return;
@@ -161,18 +192,28 @@ function showAutocomplete() {
         item.classList.add('autocomplete-item');
         item.innerText = skill;
         item.onclick = () => {
-            const searchInput = document.getElementById('searchInput');
-            const currentInputValue = searchInput.value;
+            const currentInputValue = input.value;
             const newInputValue = currentInputValue.substring(0, lastSeparatorIndex + 1) + ' ' + skill + ', ';
-            searchInput.value = newInputValue.trim();
+            input.value = newInputValue.trim();
             autocompleteList.innerHTML = '';
-            searchInput.focus();
+            input.focus();
         };
         autocompleteList.appendChild(item);
     });
+
+    // Set the position and width of the autocomplete list
+    const searchBarRect = document.querySelector('.search-bar').getBoundingClientRect();
+    const searchInputRect = input.getBoundingClientRect();
+    
+    // Calculate the left position based on the search bar's left offset and the input's left offset
+    const leftPosition = searchInputRect.left - searchBarRect.left;
+
+    autocompleteList.style.left = `${leftPosition}px`;
+    autocompleteList.style.width = `${searchInputRect.width}px`;
+
     // Event listener to close the autocomplete list when clicking outside
     document.addEventListener('click', function(event) {
-        if (!autocompleteList.contains(event.target) && event.target !== document.getElementById('searchInput')) {
+        if (!autocompleteList.contains(event.target) && event.target !== input) {
             autocompleteList.innerHTML = '';
         }
     });
@@ -182,6 +223,26 @@ function searchProjects() {
     const input = document.getElementById('searchInput').value.toLowerCase();
     const errorMessage = document.getElementById('errorMessage');
     const projectsContainer = document.getElementById('projects');
+
+    // Check if the input is "all"
+    if (input === 'all') {
+        // Clear current projects
+        projectsContainer.innerHTML = '';
+
+        // Show all projects without the "Uses" text
+        allProjects.forEach(project => {
+            project.style.display = 'block';
+            const usesElement = project.querySelector('p.uses');
+            if (usesElement) {
+                usesElement.style.display = 'none'; // Hide the "Uses" element
+            }
+            projectsContainer.appendChild(project);
+        });
+
+        // Clear any error message
+        errorMessage.textContent = '';
+        return;
+    }
 
     if (input === '') {
         errorMessage.textContent = 'Please enter a skill, then search :)';
@@ -241,62 +302,3 @@ function handleKeyPress(event) {
         searchProjects();
     }
 }
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Event listener for the "Search" button, if exists
-    const searchButton = document.querySelector('.search-bar button');
-    if (searchButton) {
-        searchButton.addEventListener('click', searchProjects);
-    }
-    // Contact page web app
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        console.log("Form submitted");
-
-        const formData = new FormData(this);
-        const data = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            message: formData.get('message')
-        };
-
-        console.log("Form data:", data);
-
-        fetch('https://script.google.com/macros/s/AKfycbyCcRR05IlqppcdaagcDsROd5xNfGqgPqPiPDnyjZ84vfV2GPFonmbs4HyN-lQR_TMEiw/exec', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => {
-            console.log("Response status:", response.status);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json(); // Convert response to JSON
-        })
-        .then(data => {
-            console.log("Response data:", data);
-            if (data.status === "success") {
-                document.getElementById('contactForm').style.display = 'none';
-                document.getElementById('thankYouMessage').style.display = 'block';
-            } else {
-                alert('Oops! Something went wrong. Please try again later.'); // Error pop up
-            }
-        })
-        .catch(error => {
-            console.error('Fetch error:', error);
-            alert('Oops! Something went wrong. Please try again later.'); // Error pop up
-        });
-    });
-
-    // Toggle thank you message & reset form
-    document.getElementById('resetButton').addEventListener('click', function() {
-        console.log("Reset button clicked");
-        document.getElementById('contactForm').style.display = 'block';
-        document.getElementById('thankYouMessage').style.display = 'none';
-        document.getElementById('contactForm').reset();
-    });
-});
