@@ -29,8 +29,8 @@ const translations = {
       research: "Research",
       frontendModal: "Front-End Development",
       cppApp: "Portfolio Website",
-      cpp: "HTML, CSS, JavaScript",
-      frontendContent: "In this portfolio project, I have leveraged a range of technical skills, utilizing HTML, CSS, and JavaScript (including jQuery and Popper.js) to create a dynamic and responsive web experience. The project employs HTML with Bootstrap for layout and design, ensuring responsive and mobile-friendly content. CSS manipulation is used extensively to dynamically adjust styles based on user interactions. JavaScript ES6 features enhance code readability and efficiency. The portfolio demonstrates asynchronous programming with the Fetch API for retrieving JSON data. DOM manipulation is employed to update content and styles dynamically, while event handling sets up interactions. The project also includes conditional logic to control application flow and array operations using methods like forEach, filter, and map for data manipulation. The use of local storage ensures language preferences are saved, providing a tailored user experience across sessions. Additionally, error handling and debugging techniques are implemented to manage exceptions and trace computations, ensuring reliable functionality throughout the application.",
+      cpp: "HTML (Bootstrap), CSS, JavaScript (jQuery, popper)",
+      frontendContent: "In this portfolio project, I have leveraged a range of technical skills to create a dynamic and responsive web experience. The project employs HTML with Bootstrap for layout and design, ensuring responsive and mobile-friendly content. CSS manipulation is used extensively to dynamically adjust styles based on user interactions. JavaScript ES6 features enhance code readability and efficiency. The portfolio demonstrates asynchronous programming with the Fetch API for retrieving JSON data. DOM manipulation is employed to update content and styles dynamically, while event handling sets up interactions. The project also includes conditional logic to control application flow and array operations using methods like forEach, filter, and map for data manipulation. The use of local storage ensures language preferences are saved, providing a tailored user experience across sessions. Additionally, error handling and debugging techniques are implemented to manage exceptions and trace computations, ensuring reliable functionality throughout the application.",
       appDevModal: "Application Development",
       giraffeApp: "Giraffe Warmer Maintenance Application",
       pythonSqlite: "Python (tkinter, datetime, SQLite), SQL",
@@ -220,8 +220,8 @@ const translations = {
       research: "Investigación",
       frontendModal: "Desarrollo Front-End",
       cppApp: "Sitio Web del Portafolio",
-      cpp: "HTML, CSS, JavaScript",
-      frontendContent: "En este proyecto de portafolio, he aprovechado una gama de habilidades técnicas, utilizando HTML, CSS y JavaScript (incluyendo jQuery y Popper.js) para crear una experiencia web dinámica y receptiva. El proyecto emplea HTML con Bootstrap para el diseño y la disposición, asegurando contenido receptivo y amigable para móviles. Se utiliza ampliamente la manipulación de CSS para ajustar dinámicamente los estilos basados en las interacciones del usuario. Las características de JavaScript ES6 mejoran la legibilidad y eficiencia del código. El portafolio demuestra programación asíncrona con el API Fetch para recuperar datos JSON. La manipulación del DOM se utiliza para actualizar el contenido y los estilos dinámicamente, mientras que el manejo de eventos establece interacciones. El proyecto también incluye lógica condicional para controlar el flujo de la aplicación y operaciones de arrays usando métodos como forEach, filter y map para la manipulación de datos. El uso de almacenamiento local garantiza que las preferencias de idioma se guarden, proporcionando una experiencia de usuario personalizada a través de las sesiones. Además, se implementan técnicas de manejo de errores y depuración para gestionar excepciones y rastrear cálculos, asegurando una funcionalidad confiable en toda la aplicación.",
+      cpp: "HTML (Bootstrap), CSS, JavaScript (jQuery, popper)",
+      frontendContent: "En este proyecto de portafolio, he aprovechado una gama de habilidades técnicas para crear una experiencia web dinámica y receptiva. El proyecto emplea HTML con Bootstrap para el diseño y la disposición, asegurando contenido receptivo y amigable para móviles. Se utiliza ampliamente la manipulación de CSS para ajustar dinámicamente los estilos basados en las interacciones del usuario. Las características de JavaScript ES6 mejoran la legibilidad y eficiencia del código. El portafolio demuestra programación asíncrona con el API Fetch para recuperar datos JSON. La manipulación del DOM se utiliza para actualizar el contenido y los estilos dinámicamente, mientras que el manejo de eventos establece interacciones. El proyecto también incluye lógica condicional para controlar el flujo de la aplicación y operaciones de arrays usando métodos como forEach, filter y map para la manipulación de datos. El uso de almacenamiento local garantiza que las preferencias de idioma se guarden, proporcionando una experiencia de usuario personalizada a través de las sesiones. Además, se implementan técnicas de manejo de errores y depuración para gestionar excepciones y rastrear cálculos, asegurando una funcionalidad confiable en toda la aplicación.",
       appDevModal: "Desarrollo de Aplicaciones",
       giraffeApp: "Aplicación de Mantenimiento de Calentadores Giraffe",
       pythonSqlite: "Python (tkinter, datetime, SQLite), SQL",
@@ -411,8 +411,8 @@ const translations = {
       research: "Pesquisa",
       frontendModal: "Desenvolvimento Front-End",
       cppApp: "Site do Portfólio",
-      cpp: "HTML, CSS, JavaScript",
-      frontendContent:"Neste projeto de portfólio, utilizei uma gama de habilidades técnicas, utilizando HTML, CSS e JavaScript (incluindo jQuery e Popper.js) para criar uma experiência web dinâmica e responsiva. O projeto emprega HTML com Bootstrap para layout e design, garantindo conteúdo responsivo e amigável para dispositivos móveis. A manipulação de CSS é usada extensivamente para ajustar estilos dinamicamente com base nas interações do usuário. As funcionalidades do JavaScript ES6 melhoram a legibilidade e eficiência do código. O portfólio demonstra programação assíncrona com a API Fetch para recuperar dados JSON. A manipulação do DOM é empregada para atualizar o conteúdo e os estilos dinamicamente, enquanto o manuseio de eventos configura interações. O projeto também inclui lógica condicional para controlar o fluxo da aplicação e operações de arrays usando métodos como forEach, filter e map para manipulação de dados. O uso de armazenamento local garante que as preferências de idioma sejam salvas, proporcionando uma experiência de usuário personalizada entre as sessões. Além disso, técnicas de tratamento de erros e depuração são implementadas para gerenciar exceções e rastrear cálculos, garantindo funcionalidade confiável em toda a aplicação.",
+      cpp: "HTML (Bootstrap), CSS, JavaScript (jQuery, popper)",
+      frontendContent:"Neste projeto de portfólio, utilizei uma gama de habilidades técnicas para criar uma experiência web dinâmica e responsiva. O projeto emprega HTML com Bootstrap para layout e design, garantindo conteúdo responsivo e amigável para dispositivos móveis. A manipulação de CSS é usada extensivamente para ajustar estilos dinamicamente com base nas interações do usuário. As funcionalidades do JavaScript ES6 melhoram a legibilidade e eficiência do código. O portfólio demonstra programação assíncrona com a API Fetch para recuperar dados JSON. A manipulação do DOM é empregada para atualizar o conteúdo e os estilos dinamicamente, enquanto o manuseio de eventos configura interações. O projeto também inclui lógica condicional para controlar o fluxo da aplicação e operações de arrays usando métodos como forEach, filter e map para manipulação de dados. O uso de armazenamento local garante que as preferências de idioma sejam salvas, proporcionando uma experiência de usuário personalizada entre as sessões. Além disso, técnicas de tratamento de erros e depuração são implementadas para gerenciar exceções e rastrear cálculos, garantindo funcionalidade confiável em toda a aplicação.",
       appDevModal: "Desenvolvimento de Aplicações",
       giraffeApp: "Aplicativo de Manutenção de Aquecedores Giraffe",
       pythonSqlite: "Python (tkinter, datetime, SQLite), SQL",
@@ -572,27 +572,3 @@ const translations = {
       speaking4: "Banquete de Estudantes Destacados do Banco Nacional (3/2013)",
     },
   };
-  
-  // Function to change the language
-  function changeLanguage(lang) {
-    const elements = document.querySelectorAll("[data-translate]");
-    elements.forEach((el) => {
-      const translateKey = el.getAttribute("data-translate");
-      if (translations[lang] && translations[lang][translateKey]) {
-        el.innerText = translations[lang][translateKey];
-      }
-    });
-    setActiveLanguageButton(lang); // Set the active button
-  }
-  
-  function setActiveLanguageButton(lang) {
-    const languageButtons = document.querySelectorAll("[data-language]");
-    languageButtons.forEach((button) => {
-      if (button.getAttribute("data-language") === lang) {
-        button.classList.add("active");
-      } else {
-        button.classList.remove("active");
-      }
-    });
-  }
-  
