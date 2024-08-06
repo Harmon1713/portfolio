@@ -84,8 +84,8 @@ const translations = {
       detailsText2:
         "Please reach out to me so we can discuss how our skills and experiences can help each other achieve our goals.",
       contactInfoTitle: "Contact Info",
-      email: "Email: jacquelynn.harmon@gmail.com",
-      phone: "Phone: +1(470)836-5409",
+      email: "Email",
+      phone: "Phone",
       // Resume
       references:
         "References are available upon request. Unofficial transcripts, as well as certificates, are hyperlinked. If you want my resume, it is available in PDF format.",
@@ -275,8 +275,8 @@ const translations = {
       detailsText2:
         "Póngase en contacto conmigo para que podamos discutir cómo nuestras habilidades y experiencias pueden ayudarnos a alcanzar nuestros objetivos.",
       contactInfoTitle: "Información de Contacto",
-      email: "Correo Electrónico: jacquelynn.harmon@gmail.com",
-      phone: "Teléfono: +1(470)836-5409",
+      email: "Correo Electrónico",
+      phone: "Teléfono",
       // Currículum
       references:
         "Las referencias están disponibles a pedido. Las transcripciones no oficiales, así como los certificados, están vinculados. Si desea mi currículum, está disponible en formato PDF.",
@@ -464,8 +464,8 @@ const translations = {
       detailsText2:
         "Entre em contato comigo para que possamos discutir como nossas habilidades e experiências podem nos ajudar a alcançar nossos objetivos.",
       contactInfoTitle: "Informações de Contato",
-      email: "Email: jacquelynn.harmon@gmail.com",
-      phone: "Telefone: +1(470)836-5409",
+      email: "Email",
+      phone: "Telefone",
       // Currículo
       references:
         "Referências estão disponíveis mediante solicitação. Transcrições não oficiais, bem como certificados, estão hiperligados. Se você quiser meu currículo, ele está disponível em formato PDF.",
