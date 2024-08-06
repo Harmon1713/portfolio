@@ -114,7 +114,7 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     display: flex; /* Use flexbox to ensure full height */
-    align-items: stretch; /* Center text vertically */
+    align-items: center; /* Center text vertically */
     justify-content: center; /* Center text horizontally */
     width: 100%; /* Make the link fill the li element */
     height: 100%; /* Make the link fill the li element */
@@ -135,12 +135,24 @@ nav ul li.active > a {
     color: #333 !important;
 }
 
-/* Hamburger menu */
-nav .hamburger {
+/* Nav Hamburger menu */
+.hamburger {
+    align-items: center; /* Center text vertically */
+    display: none; /* Initially hidden */
+    cursor: pointer;
+    font-size: 26px;
+    color: white;
+    position: absolute;
+    left: 10px;
+    z-index: 1001;
+}
+
+/* Language Hamburger Menu for Mobile */
+.language-hamburger {
     display: none; /* Initially hidden */
     cursor: pointer;
     font-size: 30px;
-    color: white;
+    color: black;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -299,16 +311,20 @@ footer {
 
 .close {
     color: #aaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
+    position: absolute; /* Use absolute positioning within a relatively positioned container */
+    top: 10px; /* Position it from the top of the modal */
+    right: 15px; /* Position it from the right of the modal */
+    margin: 0; /* Remove margin for precise positioning */
+    cursor: pointer;
+    z-index: 10; /* Ensure it remains above other elements */
 }
 
 .close:hover,
 .close:focus {
     color: black;
     text-decoration: none;
-    cursor: pointer;
 }
 
 .half-column {
@@ -317,13 +333,21 @@ footer {
 }
 
 .modal-project-link {
-    text-decoration: none;
-    color: inherit;
+    text-decoration: none !important;
+    color: inherit !important;
+    display: block;
+    margin-bottom: 10px; /* Add margin between projects */
 }
 
 .modal-project {
-    transition: background-color 0.3s;
-    padding: 1%;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover */
+    padding: 1%; /* Ensure padding around the content */
+}
+
+.modal-project:hover {
+    background-color: #f0f0f0; /* Apply background color when hovering over the project */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer; /* Change the cursor to a pointer to indicate interactivity */
 }
 
 .modal-project-link:hover .modal-project {
@@ -333,10 +357,6 @@ footer {
 
 .img-white {
     box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.15); /* Horizontal offset, vertical offset, blur radius, color */
-}
-
-.js-list {
-    padding-left: 3%;
 }
 
 /* Portfolio section styles */
@@ -482,6 +502,7 @@ footer {
 /* Resume page */
 #resume-content {
     text-align: left; /* Set text alignment to left for the entire section */
+    width: 70%;
     max-width: 1000px; /* Optional: constrain max width for readability */
     margin: 5% auto; /* Center the content block horizontally */
 }
@@ -519,66 +540,42 @@ footer {
     margin-top: 30px; /* Add space above headings */
 }
 
-
-
-/* Responsive design for small-width and nav */
 /* Small screen */
-@media (max-width: 850px) {
-    #name {
-        font-size: clamp(14px, 1.8vw, 24px); /* Smaller font for smaller screens */
+@media (max-width: 769px) {
+    header #name h1 {
+        font-size: clamp(20px, 5vw, 40px) !important;
+    }
+
+    nav {
+        height: 40px;
+        justify-content: flex-start; /* Align items to the start */
+
     }
 
     nav ul {
-        display: none;
+        display: none !important;
         flex-direction: column;
         width: 100%;
+        background-color: #333;
+        position: absolute;
+        left: 0;
+        z-index: 1000;
     }
 
     nav ul.show {
-        display: flex;
+        display: flex !important;
     }
 
-    nav .hamburger {
-        display: block;
-    }
-
-    #language-toggle {
-        flex-direction: row;
-        justify-content: flex-end;
-        width: auto;
-    }
-
-    #language-toggle button {
-        padding: 5px 10px;
-        border: 1px solid #000;
-    }
-
-    .left-column, .right-column {
-        width: 100%; /* Stack columns on top of each other on mobile */
-    }
-
-    .contact-container {
-        flex-direction: column; /* Stack columns vertically */
-    }
-}
-
-/* Mobile */
-@media (max-width: 625px) {
-    nav {
-        height: 40px;
-    }
-
-    nav .hamburger {
-        font-size: 15px; /* Reduce size by half */
+    .hamburger {
+        display: block; /* Show the hamburger icon */
     }
 
     #language-toggle {
-        display: none;
+        display: none !important;
     }
 
     .language-hamburger {
-        display: block;
-        right: 0;
+        display: block; /* Show the globe icon for language toggle */
     }
 
     .language-dropdown {
@@ -587,8 +584,9 @@ footer {
         background-color: lightgreen;
         position: absolute;
         right: 10px;
-        top: calc(var(--header-height) + 10px);
+        top: 50px; /* Adjust top to be below the header */
         z-index: 2000;
+        width: 100px; /* Fixed width for dropdown */
     }
 
     .language-dropdown.show {
@@ -610,6 +608,13 @@ footer {
 
     .language-dropdown button.active {
         background-color: darkgreen;
+    }
+    main {
+        padding-top: 7vh; /* Adjust padding to account for header and nav */
+    }
+
+    #resume-content {
+        width: 90%;
     }
 }
 
