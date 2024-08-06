@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,67 +8,82 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/logo_green2-rbg.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
-    <div id="small-width">
-        <!-- Header Section -->
-        <header>
-            <div id="left-header">
+    <!-- Header Section -->
+    <header class="bg-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div id="left-header" class="d-flex align-items-center">
                 <div id="logo">
                     <img src="images/logo_green2-rbg.png" alt="Logo">
                 </div>
-                <div id="name">
+                <div id="name" class="ml-3">
                     <h1 data-translate="portfolioTitle">Jackie Harmon's Portfolio</h1>
                 </div>
             </div>
-            <span class="language-hamburger"><i class="fas fa-globe"></i></span> <!-- Language world icon -->
-            <div id="language-toggle">
-                <button data-translate="english" data-lang="en" onclick="changeLanguage('en')" id="en-btn">English</button>
-                <button data-translate="spanish" data-lang="es" onclick="changeLanguage('es')" id="es-btn">Spanish</button>
-                <button data-translate="portuguese" data-lang="pt" onclick="changeLanguage('pt')" id="pt-btn">Portuguese</button>
+            <div id="language-toggle" class="d-flex flex-column align-items-end">
+                <button data-translate="english" data-lang="en" onclick="changeLanguage('en')" id="en-btn" class="btn btn-light mb-2">English</button>
+                <button data-translate="spanish" data-lang="es" onclick="changeLanguage('es')" id="es-btn" class="btn btn-light mb-2">Spanish</button>
+                <button data-translate="portuguese" data-lang="pt" onclick="changeLanguage('pt')" id="pt-btn" class="btn btn-light">Portuguese</button>
             </div>
-        </header>
-        <div class="clear"></div>
+        </div>
         <!-- Navigation Bar -->
-        <nav>
-            <div class="green-line"></div>
-            <span class="hamburger">&#9776;</span> <!-- Hamburger button -->
-            <ul>
-                <li><a href="index.html" id="welcome" data-translate="welcomeLink">Welcome</a></li>
-                <li><a href="portfolio.html" id="portfolio" data-translate="portfolioLink">Portfolio</a></li>
-                <li><a href="contact.html" id="contact" data-translate="contactLink">Contact Me</a></li>
-                <li><a href="resume.html" id="resume" data-translate="resumeLink">Resume</a></li>
-            </ul>
+        <nav class="bg-dark">
+            <div class="container">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item"><a href="index.html" class="nav-link text-white" data-translate="welcomeLink">Welcome</a></li>
+                    <li class="nav-item"><a href="portfolio.html" class="nav-link text-white" data-translate="portfolioLink">Portfolio</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link text-white" data-translate="contactLink">Contact Me</a></li>
+                    <li class="nav-item"><a href="resume.html" class="nav-link text-white" data-translate="resumeLink">Resume</a></li>
+                </ul>
+            </div>
         </nav>
+    </header>
         <!-- Main Section -->
-        <main>
-            <div class="contact-container">
-                <div class="left-column">
+        <main class="container"><br>
+            <div class="row contact-container align-items-center">
+                <div class="col-md-4 text-center left-column">
                     <h2 data-translate="nameTitle">Jackie Harmon</h2>
-                    <img src="images/prof.png" alt="Logo" width="80%">
+                    <img src="images/prof.png" alt="Profile Image" class="img-fluid" style="max-width: 100%;">
                 </div>
-                <div class="right-column">
+                <div class="col-md-8 right-column">
                     <div class="top-half">
-                        <h2 data-translate="detailsTitle">Details</h2><br>
+                        <h2 data-translate="detailsTitle">Details</h2>
                         <p data-translate="detailsText1">With a Master's degree in Informatics, coupled with Bachelor's degrees in Engineering and Spanish, my academic background reflects a diverse intersection of disciplines. My professional journey includes roles as a professor, data visualization consultant and a biomedical engineering technician. Moreover, my experience working in multiple continents and proficiency in multiple languages allow me to collaborate effectively across borders and cultures.</p>
-                        <br><br>
                         <p data-translate="detailsText2">Please reach out to me so we can discuss how our skills and experiences can help each other achieve our goals.</p>
                     </div>
                     <div class="bottom-half">
-                        <h2 data-translate="contactInfoTitle">Contact Info</h2><br>
-                        <p data-translate="email">Email: jacquelynn.harmon@gmail.com</p>
-                        <p data-translate="phone">Phone: +1(470)836-5409</p>
+                        <h2 data-translate="contactInfoTitle">Contact Info</h2>
+                        <p data-translate="email"><strong>Email </strong> 
+                            <i class="fas fa-envelope"></i>                    
+                            <a href="mailto:jacquelynn.harmon@gmail.com">jacquelynn.harmon@gmail.com</a>
+                        </p>
+                        <p data-translate="phone"><strong>Phone</strong>
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+14708365409">+1 (470) 836-5409</a>
+                        </p>
                     </div>
                 </div>
             </div>  
         </main>
         <button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top">^</button>
         <!-- Footer Section -->
-        <footer>
-            <p data-translate="footer">Copyright &copy; 2024 Jackie Harmon. All rights reserved.</p>
-        </footer>
-        <script src="translate.js"></script>
-        <script src="script.js"></script>
-    </div>
+    <footer class="bg-dark text-white py-3 text-center">
+        <div class="container">
+            <p data-translate="footer">Copyright © 2024 Jackie Harmon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top">^</button>
+
+    <script src="translate.js"></script>
+    <script src="script.js"></script>
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
