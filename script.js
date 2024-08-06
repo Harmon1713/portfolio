@@ -72,16 +72,16 @@ function scrollToTop() {
 }
 
 // Nav bar hamburger button
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.querySelector(".hamburger");
     const navUl = document.querySelector("nav ul");
 
-    hamburger.addEventListener("click", function(event) {
+    hamburger.addEventListener("click", function (event) {
         navUl.classList.toggle("show");
         event.stopPropagation(); // Prevent the click from propagating to the document
     });
 
-    document.addEventListener("click", function(event) {
+    document.addEventListener("click", function (event) {
         if (!navUl.contains(event.target) && !hamburger.contains(event.target)) {
             navUl.classList.remove("show");
         }
@@ -89,34 +89,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Language toggle hamburger button
     const languageHamburger = document.querySelector(".language-hamburger");
-    const languageDropdown = document.createElement('div');
-    languageDropdown.classList.add('language-dropdown');
 
-    const languages = [
-        { code: 'en', name: 'English' },
-        { code: 'es', name: 'Spanish' },
-        { code: 'pt', name: 'Portuguese' }
-    ];
+    // Check if language dropdown already exists to prevent duplication
+    let languageDropdown = document.querySelector('.language-dropdown');
+    if (!languageDropdown) {
+        languageDropdown = document.createElement('div');
+        languageDropdown.classList.add('language-dropdown');
 
-    languages.forEach(language => {
-        const button = document.createElement('button');
-        button.textContent = language.name;
-        button.setAttribute('data-lang', language.code);
-        button.addEventListener('click', () => {
-            changeLanguage(language.code);
-            setActiveLanguageButton(language.code);
+        const languages = [
+            { code: 'en', name: 'English' },
+            { code: 'es', name: 'Spanish' },
+            { code: 'pt', name: 'Portuguese' }
+        ];
+
+        languages.forEach(language => {
+            const button = document.createElement('button');
+            button.textContent = language.name;
+            button.setAttribute('data-lang', language.code);
+            button.addEventListener('click', () => {
+                changeLanguage(language.code);
+                setActiveLanguageButton(language.code);
+            });
+            languageDropdown.appendChild(button);
         });
-        languageDropdown.appendChild(button);
-    });
 
-    document.body.appendChild(languageDropdown);
+        document.body.appendChild(languageDropdown);
+    }
 
-    languageHamburger.addEventListener("click", function(event) {
+    languageHamburger.addEventListener("click", function (event) {
         languageDropdown.classList.toggle("show");
         event.stopPropagation(); // Prevent the click from propagating to the document
     });
 
-    document.addEventListener("click", function(event) {
+    document.addEventListener("click", function (event) {
         if (!languageDropdown.contains(event.target) && !languageHamburger.contains(event.target)) {
             languageDropdown.classList.remove("show");
         }
@@ -125,7 +130,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Highlight current page's nav item
     highlightCurrentPage();
     // Set the initial active language button and change to default language (English)
-    // Check for stored language in local storage
     const storedLanguage = localStorage.getItem('preferredLanguage') || 'en';
     changeLanguage(storedLanguage); // Set the language based on stored preference or default to English
 });
@@ -143,7 +147,9 @@ function highlightCurrentPage() {
         }
     });
 }
+
 document.addEventListener('DOMContentLoaded', highlightCurrentPage);
+
 
 // Travel map - make draggable inside the iframe
 document.addEventListener('DOMContentLoaded', function() {
