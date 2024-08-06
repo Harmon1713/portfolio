@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="portfolioTitle">Jackie Harmon's Portfolio</title>
+    <title>Jackie Harmon's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/logo_green2-rbg.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
-    <div id="small-width">
-        <!-- Header Section -->
-        <header>
-            <div id="left-header">
+    <!-- Header Section -->
+    <header class="bg-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div id="left-header" class="d-flex align-items-center">
                 <div id="logo">
                     <img src="images/logo_green2-rbg.png" alt="Logo">
                 </div>
-                <div id="name">
+                <div id="name" class="ml-3">
                     <h1 data-translate="portfolioTitle">Jackie Harmon's Portfolio</h1>
                 </div>
             </div>
-            <span class="language-hamburger"><i class="fas fa-globe"></i></span> <!-- Language world icon -->
-            <div id="language-toggle">
-                <button data-translate="english" data-lang="en" onclick="changeLanguage('en')" id="en-btn">English</button>
-                <button data-translate="spanish" data-lang="es" onclick="changeLanguage('es')" id="es-btn">Spanish</button>
-                <button data-translate="portuguese" data-lang="pt" onclick="changeLanguage('pt')" id="pt-btn">Portuguese</button>
-                
+            <div id="language-toggle" class="d-flex flex-column align-items-end">
+                <button data-translate="english" data-lang="en" onclick="changeLanguage('en')" id="en-btn" class="btn btn-light mb-2">English</button>
+                <button data-translate="spanish" data-lang="es" onclick="changeLanguage('es')" id="es-btn" class="btn btn-light mb-2">Spanish</button>
+                <button data-translate="portuguese" data-lang="pt" onclick="changeLanguage('pt')" id="pt-btn" class="btn btn-light">Portuguese</button>
             </div>
-        </header>
-        <div class="clear"></div>
+        </div>
         <!-- Navigation Bar -->
-        <nav>
-            <div class="green-line"></div>
-            <span class="hamburger">&#9776;</span> <!-- Hamburger button -->
-            <ul>
-                <li><a href="index.html" id="welcome" data-translate="welcomeLink">Welcome</a></li>
-                <li><a href="portfolio.html" id="portfolio" data-translate="portfolioLink">Portfolio</a></li>
-                <li><a href="contact.html" id="contact" data-translate="contactLink">Contact Me</a></li>
-                <li><a href="resume.html" id="resume" data-translate="resumeLink">Resume</a></li>
-            </ul>
+        <nav class="bg-dark">
+            <div class="container">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item"><a href="index.html" class="nav-link text-white" data-translate="welcomeLink">Welcome</a></li>
+                    <li class="nav-item"><a href="portfolio.html" class="nav-link text-white" data-translate="portfolioLink">Portfolio</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link text-white" data-translate="contactLink">Contact Me</a></li>
+                    <li class="nav-item"><a href="resume.html" class="nav-link text-white" data-translate="resumeLink">Resume</a></li>
+                </ul>
+            </div>
         </nav>
-
+    </header>
+		
         <!-- Main Section -->
         <main>
             <section id="home">
@@ -87,23 +88,18 @@
                                 <span data-translate="cppApp">Portfolio Website</span> <br>
                             </p>
                             <div class="green-line"></div><br>
-                            <p><strong data-translate="cpp">HTML, CSS, JavaScript</strong></p><br>
+                            <p><strong data-translate="cpp">HTML (Bootstrap), CSS, JavaScript (jQuery, popper)</strong></p><br>
                             <div class="half-column">
-                                <p data-translate="frontendContent">This portfolio website is the example of my skillset with HTML, CSS, and JavaScript; below are the skills I've used to create an interactive and dynamic user interface.</p><br>
-                                <p data-translate="javascriptSkills">Javascript skills</p>
-                                <ol class="js-list">
-                                    <li data-translate="asyncProgramming"><strong>Asynchronous Programming:</strong> The fetch API is used to asynchronously retrieve JSON data, demonstrating handling of promises with .then() and .catch() for error handling.</li>
-                                    <li data-translate="domManipulation"><strong>DOM Manipulation:</strong> Manipulating the Document Object Model (DOM) to dynamically change content, styles, and classes based on user actions or data, such as updating text content, showing and hiding elements, and adding or removing CSS classes.</li>
-                                    <li data-translate="eventHandling"><strong>Event Handling:</strong> Setting up event listeners to handle user interactions like clicks, scrolling, and key presses. This includes custom functions tied to UI events like opening modals, scrolling to the top of the page, and handling form submissions.</li>
-                                    <li data-translate="conditionalLogic"><strong>Conditional Logic:</strong> Implementing conditions to control the flow of the application, such as displaying elements only when certain conditions are met (e.g., scroll position).</li>
-                                    <li data-translate="cssManipulation"><strong>CSS Manipulation:</strong> Dynamically adjusting CSS properties through JavaScript to affect the layout and styling of elements based on user interactions or conditions.</li>
-                                    <li data-translate="arrayOperations"><strong>Array Operations:</strong> Using array methods like forEach, filter, and map to manipulate data sets, particularly in functions that handle autocomplete features and project searching.</li>
-                                    <li data-translate="templateManipulation"><strong>Template Manipulation:</strong> Using string literals and template manipulation to dynamically generate HTML content based on data.</li>
-                                    <li data-translate="modularFunctions"><strong>Modular Functions:</strong> Creating reusable functions that encapsulate functionality for specific tasks, such as toggling an accordion or handling form submissions.</li>
-                                    <li data-translate="errorHandling"><strong>Error Handling:</strong> Implementing basic error handling in asynchronous operations to manage exceptions and provide feedback.</li>
-                                    <li data-translate="debugging"><strong>Debugging:</strong> Logging information to the console for debugging purposes, particularly in the search functionality to trace computations and results.</li>
-                                    <li data-translate="uriManipulation"><strong>URI Manipulation:</strong> Manipulating the window's location hash for navigation purposes and using it to trigger specific actions like accordion expansion.</li>
-                                </ol>
+                                <p data-translate="frontendContent">
+                                    In this portfolio project, I have leveraged a range of technical skills, utilizing HTML, CSS, and JavaScript (including jQuery and Popper.js) 
+                                    to create a dynamic and responsive web experience. The project employs HTML with Bootstrap for layout and design, ensuring responsive and 
+                                    mobile-friendly content. CSS manipulation is used extensively to dynamically adjust styles based on user interactions. JavaScript ES6 features 
+                                    enhance code readability and efficiency. The portfolio demonstrates asynchronous programming with the Fetch API for retrieving JSON data.
+                                    DOM manipulation is employed to update content and styles dynamically, while event handling sets up interactions.
+                                    The project also includes conditional logic to control application flow and array operations using 
+                                    methods like forEach, filter, and map for data manipulation. The use of local storage ensures language preferences are saved, providing a tailored 
+                                    user experience across sessions. Additionally, error handling and debugging techniques are implemented to manage exceptions and trace computations, 
+                                    ensuring reliable functionality throughout the application. </p>
                             </div>
                             <div class="half-column" style="padding-left: 1%;">
                                 <img src="images/portfolio.png" alt="portfolio screenshot" width="100%">
@@ -377,33 +373,29 @@
         <div id="projects">
             <div class="project" data-skills="HTML, CSS, JavaScript">
                 <a href="https://github.com/Harmon1713/portfolio" class="modal-project-link" target="_blank" rel="noopener noreferrer">
-                <h2><span data-translate="cppApp">Portfolio Website</span></h2>
-                <div class="green-line"></div>
-                <p class="uses" data-translate="techUsed">Uses HTML, CSS, JavaScript</p>
-                <div class="modal-project" data-skills="HTML, CSS, JavaScript">
-                    <p><strong data-translate="cpp">HTML, CSS, JavaScript</strong></p><br>
-                    <div class="half-column">
-                        <p data-translate="frontendContent">This portfolio website is the example of my skillset with HTML, CSS, and JavaScript; below are the skills I've used to create an interactive and dynamic user interface.</p><br>
-                        <p data-translate="javascriptSkills">Javascript skills</p>
-                        <ol class="js-list">
-                            <li data-translate="asyncProgramming"><strong>Asynchronous Programming:</strong> The fetch API is used to asynchronously retrieve JSON data, demonstrating handling of promises with .then() and .catch() for error handling.</li>
-                            <li data-translate="domManipulation"><strong>DOM Manipulation:</strong> Manipulating the Document Object Model (DOM) to dynamically change content, styles, and classes based on user actions or data, such as updating text content, showing and hiding elements, and adding or removing CSS classes.</li>
-                            <li data-translate="eventHandling"><strong>Event Handling:</strong> Setting up event listeners to handle user interactions like clicks, scrolling, and key presses. This includes custom functions tied to UI events like opening modals, scrolling to the top of the page, and handling form submissions.</li>
-                            <li data-translate="conditionalLogic"><strong>Conditional Logic:</strong> Implementing conditions to control the flow of the application, such as displaying elements only when certain conditions are met (e.g., scroll position).</li>
-                            <li data-translate="cssManipulation"><strong>CSS Manipulation:</strong> Dynamically adjusting CSS properties through JavaScript to affect the layout and styling of elements based on user interactions or conditions.</li>
-                            <li data-translate="arrayOperations"><strong>Array Operations:</strong> Using array methods like forEach, filter, and map to manipulate data sets, particularly in functions that handle autocomplete features and project searching.</li>
-                            <li data-translate="templateManipulation"><strong>Template Manipulation:</strong> Using string literals and template manipulation to dynamically generate HTML content based on data.</li>
-                            <li data-translate="modularFunctions"><strong>Modular Functions:</strong> Creating reusable functions that encapsulate functionality for specific tasks, such as toggling an accordion or handling form submissions.</li>
-                            <li data-translate="errorHandling"><strong>Error Handling:</strong> Implementing basic error handling in asynchronous operations to manage exceptions and provide feedback.</li>
-                            <li data-translate="debugging"><strong>Debugging:</strong> Logging information to the console for debugging purposes, particularly in the search functionality to trace computations and results.</li>
-                            <li data-translate="uriManipulation"><strong>URI Manipulation:</strong> Manipulating the window's location hash for navigation purposes and using it to trigger specific actions like accordion expansion.</li>
-                        </ol>
+                    <h2><span data-translate="cppApp">Portfolio Website</span></h2>
+                    <div class="green-line"></div>
+                    <p class="uses" data-translate="techUsed">Uses HTML, CSS, JavaScript, jQuery, popper</p>
+                    <div class="modal-project" data-skills="HTML, CSS, JavaScript">
+                        <p><strong data-translate="cpp">HTML (Bootstrap), CSS, JavaScript (jQuery, popper)</strong></p><br>
+                        <div class="half-column">
+                            <p data-translate="frontendContent">
+                                In this portfolio project, I have leveraged a range of technical skills, utilizing HTML, CSS, and JavaScript (including jQuery and Popper.js) 
+                                to create a dynamic and responsive web experience. The project employs HTML with Bootstrap for layout and design, ensuring responsive and 
+                                mobile-friendly content. CSS manipulation is used extensively to dynamically adjust styles based on user interactions. JavaScript ES6 features 
+                                enhance code readability and efficiency. The portfolio demonstrates asynchronous programming with the Fetch API for retrieving JSON data.
+                                DOM manipulation is employed to update content and styles dynamically, while event handling sets up interactions.
+                                The project also includes conditional logic to control application flow and array operations using 
+                                methods like forEach, filter, and map for data manipulation. The use of local storage ensures language preferences are saved, providing a tailored 
+                                user experience across sessions. Additionally, error handling and debugging techniques are implemented to manage exceptions and trace computations, 
+                                ensuring reliable functionality throughout the application. </p>
+                        </div>
+                        <div class="half-column" style="padding-left: 1%;">
+                            <img src="images/portfolio.png" alt="portfolio screenshot" width="100%">
+                        </div>
+                        <div class="clear"></div>
                     </div>
-                    <div class="half-column" style="padding-left: 1%;">
-                        <img src="images/portfolio.png" alt="portfolio screenshot" width="100%">
-                    </div>
-                    <div class="clear"></div>
-                </div></a>
+                </a>
             </div>
 
             <div class="project" data-skills="Application Development, Python, tkinter, datetime, SQL, SQLite">
@@ -598,12 +590,21 @@
 
 <button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top" data-translate="scrollTopBtn">^</button>
 
-<!-- Footer Section -->
-<footer>
-    <p data-translate="footer">Copyright &amp;copy; 2024 Jackie Harmon. All rights reserved.</p>
+ <!-- Footer Section -->
+ <footer class="bg-dark text-white py-3 text-center">
+    <div class="container">
+        <p data-translate="footer">Copyright © 2024 Jackie Harmon. All rights reserved.</p>
+    </div>
 </footer>
+
+<button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top">^</button>
 
 <script src="translate.js"></script>
 <script src="script.js"></script>
+<!-- Include Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
