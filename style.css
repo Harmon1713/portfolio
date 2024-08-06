@@ -1,7 +1,3 @@
-:root {
-    --header-height: 9vw;
-}
-
 /* Reset default browser styles */
 * {
     margin: 0;
@@ -9,218 +5,158 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
-/* Default styles for header, nav, body, and footer */
-header, nav, body, footer {
-    width: 60%;
-    margin: 0 auto; /* Center the elements */
-}
-
-.clear {clear: both}
-
-/* Line styles */
-.green-line {
-    width: 100%;
-    height: 4px;
-    background-color:  #4CAF50;
-    z-index: 1001;
-}
-
-.green-line-small {
-    width: 90%;
-    height: 4px;
-    background-color:  #4CAF50;
-    z-index: 1001;
-    align-items: center;
+html {
+    overflow-y: scroll;
 }
 
 /* Header styles */
 header {
-    height: var(--header-height);
-    margin-bottom: 2.1vh;
     position: fixed;
     top: 0;
-    padding: 0.8vh;
-    padding-bottom: 4.2vh;
-    z-index: 1000; /* Ensure header is above other content */
+    width: 100%;
     background-color: white;
-    color: #333;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
+    z-index: 1000; /* Ensure it stays on top */
 }
 
+/* Adjust logo and name positioning */
 #left-header {
     display: flex;
-    align-items: center;
-    position: absolute;
-    bottom: 5%; /* Keep 5% above the green line */
-    flex: 1;
+    flex-grow: 1;
 }
 
 #logo {
-    width: 20%;
+    width: 10%;
+    max-width: 150px;
 }
 
 #logo img {
-    height: 8vw;
-    max-width: 175px; /* Ensure it doesn't exceed the header height */
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
 }
 
 #name {
-    margin-left: 3vw; /* Adjust spacing between logo and name */
-    font-size: clamp(23px, 1.5vw, 36px); /* Use clamp to set min, preferred, and max font size */
-    white-space: nowrap; /* Prevent text wrapping */
+    margin-left: 20px; /* Space between logo and name */
+    font-size: clamp(16px, 2.5vw, 36px); /* Responsive font size */
+    white-space: nowrap;
 }
 
+/* Language toggle button styles */
 #language-toggle {
-    position: absolute;
-    right: 0;
     display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: center; /* Center buttons horizontally */
-    align-items: stretch; /* Stretch buttons to fill container width */
-    width: 15%;
-    max-width: 150px;
-    flex-shrink: 0; /* Prevent the language toggle from shrinking */
-    top: 1vh; /* Adjust bottom margin */
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 
 #language-toggle button {
     background-color: lightgreen;
-    padding: 5% 9%;
     border: none;
-    margin: 0;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition */
-    width: 100%; /* Ensure buttons fill the width of the container */
-    box-sizing: border-box; /* Include padding and border in the width */
+    transition: background-color 0.3s ease;
+    width: 100%;
+    font-size: clamp(10px, 1.2vw, 16px); /* Ensure responsive font size */
+    line-height: 1; /* Ensure no extra space between lines */
+    border-radius: 0; /* Ensure no rounding causing visual gaps */
+}
+
+#language-toggle button + button {
+    margin-top: -1vh; /* Remove the gap between buttons */
 }
 
 #language-toggle button:hover {
-    background-color:  #4CAF50;
+    background-color: #4CAF50;
 }
 
 #language-toggle button.active {
     background-color: darkgreen;
-    }
-
-/* Hamburger menu for language toggle */
-.language-hamburger {
-    display: none;
-    cursor: pointer;
-    font-size: 20px;
-    color: black;
-    position: absolute;
-    top: 10px;
-    right: 40px;
-    z-index: 2000; /* Ensure it is above everything else */
 }
 
-.language-dropdown {
-    display: none;
-    flex-direction: column;
-    background-color: lightgreen;
-    position: absolute;
-    right: 10px;
-    top: calc(var(--header-height) + 10px);
-    z-index: 2000;
-}
-
-.language-dropdown.show {
-    display: flex;
-}
-
-.language-dropdown button {
-    background-color: lightgreen;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
+/* Green line separator */
+.green-line {
     width: 100%;
-    text-align: left;
-}
-
-.language-dropdown button:hover {
+    height: 4px;
     background-color: #4CAF50;
-}
-
-.language-dropdown button.active {
-    background-color: darkgreen;
-}
-
-/* Body styles */
-body {
-    padding-top: calc(30px + var(--header-height)); /* Adjust to match header and nav bar heights */
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-}
-
-main {
-    flex: 1; /* Fill remaining vertical space */
+    top: auto;
+    left: 0;
+    z-index: 999; /* Ensure it stays on top */
 }
 
 /* Navigation styles */
 nav {
-    position: fixed;
-    top: var(--header-height);
     background-color: #333;
-    z-index: 999; /* Ensure nav bar is above content */
+    z-index: 998;
+    height: auto; /* Set the nav height to adjust with content */
+    display: flex;
+    align-items: stretch;
 }
 
 nav ul {
     list-style-type: none;
-    text-align: center;
-    padding: 0;
-    margin: 0;
     display: flex;
-    justify-content: space-around; /* Spread the width of the nav buttons evenly */
+    width: 100%; /* Ensure ul stretches to full width */
+    padding: 0; /* Remove padding to prevent default indentation */
+    margin: 0; /* Remove margin for a clean layout */
+    text-align: center;
 }
 
 nav ul li {
-    position: relative;
-    padding: 1.25% 0;
-    flex-grow: 1; /* Allow li to grow and fill the space evenly */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    flex-grow: 1;
+    display: flex;
+    align-items: stretch; /* Stretch items to fill the li */
+    justify-content: center; /* Center text horizontally */
+    padding: 5px 0;
+
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 0.8%;
-    display: block; /* Make the link fill the li element */
+    display: flex; /* Use flexbox to ensure full height */
+    align-items: stretch; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    width: 100%; /* Make the link fill the li element */
+    height: 100%; /* Make the link fill the li element */
+    font-size: clamp(14px, 1.8vw, 18px); /* Responsive font size */
+    box-sizing: border-box; /* Include padding and borders in the element's total width and height */
+    padding: 10px 0;
 }
 
-/* Navigation hover styles */
 nav ul li:hover {
     background-color: #555;
 }
 
-/* Active link styles */
 nav ul li.active {
     background-color: lightgreen;
 }
 
 nav ul li.active > a {
-    color: #333;
+    color: #333 !important;
 }
 
 /* Hamburger menu */
 nav .hamburger {
-    display: none;
+    display: none; /* Initially hidden */
     cursor: pointer;
     font-size: 30px;
     color: white;
     position: absolute;
     top: 10px;
     right: 10px;
+    z-index: 1001;
 }
 
-/* Container styles */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+/* Main content styles */
+main {
+    width: 100%;
+    padding-top: 15vh; /* Adjust padding to account for header and nav */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 5vh; /* Adjust padding to account for footer */
 }
 
 /* Footer styles */
@@ -228,9 +164,11 @@ footer {
     text-align: center;
     background-color: #333;
     color: #fff;
-    padding: 0.8%;
-    position: fixed; /* Push the footer to the bottom */
+    width: 100%;
+    position: fixed;
     bottom: 0;
+    z-index: 998;
+    max-height: 5vh;
 }
 
 /* Scroll button styles */
@@ -238,7 +176,7 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color:  #4CAF50;
+    background-color: #4CAF50;
     color: #fff;
     border: none;
     padding: 10px;
@@ -253,6 +191,8 @@ footer {
     margin-top: 5%;
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
 }
 
 #notmiddlepic {
@@ -371,7 +311,6 @@ footer {
     cursor: pointer;
 }
 
-
 .half-column {
     width: 50%;
     float: left;
@@ -420,7 +359,7 @@ footer {
 .search-bar button {
     padding: 10px;
     font-size: 16px;
-    background-color:  #4CAF50;
+    background-color: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
@@ -507,17 +446,11 @@ footer {
 
 /* Contact section styles */
 .contact-container {
-    text-align: center;
     margin: 5% 0;
-    display: flex;
-    align-items: stretch; /* Align items to stretch equally */
-    gap: 2%; /* Add gap between columns if needed */
 }
 
 .left-column {
-    width: 50%;
     padding: 2%;
-    border: 1px solid #ccc;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center content vertically */
@@ -532,39 +465,36 @@ footer {
 }
 
 .right-column {
-    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Distribute rows evenly */
 }
 
-.right-column > div {
+.right-column>div {
     padding: 2%;
-    border: 1px solid #ccc;
     flex: 1 0 auto; /* Allow divs to take up necessary space without stretching */
 }
 
 .top-half {
-    grid-row: 1 / span 1; /* Span 1 row */
     margin-bottom: 2%; /* Add consistent spacing between divs */
-}
-
-.bottom-half {
-    grid-row: 2 / span 1; /* Span 1 row */
 }
 
 /* Resume page */
 #resume-content {
-    margin: 5% 0;
+    text-align: left; /* Set text alignment to left for the entire section */
+    max-width: 1000px; /* Optional: constrain max width for readability */
+    margin: 5% auto; /* Center the content block horizontally */
 }
 
-#resume-content ol{
+#resume-content ol {
     list-style-type: none;
+    padding-left: 20px; /* Add left padding for lists */
+    margin-bottom: 20px; /* Add space between lists and other elements */
 }
 
 #resume-content ol ul {
     list-style-type: disc;
-    padding-left: 3%;
+    padding-left: 20px; /* Ensure proper indentation for nested lists */
 }
 
 #resume-content a {
@@ -572,127 +502,68 @@ footer {
     color: inherit;
 }
 
-/* Contact page */
-#thankYouMessage {
-    display: none;
-    margin-top: 20px;
+#resume-content h3, 
+#resume-content h4, 
+#resume-content p, 
+#resume-content ol, 
+#resume-content ul, 
+#resume-content li {
+    text-align: left; /* Ensure all text inside the resume content is left-aligned */
 }
+
+#resume-content p {
+    margin-bottom: 20px; /* Add space between paragraphs */
+}
+
+#resume-content h3, #resume-content h4 {
+    margin-top: 30px; /* Add space above headings */
+}
+
+
 
 /* Responsive design for small-width and nav */
 /* Small screen */
-@media (max-width: 1500px) {
-    #language-toggle {
-        top: 0.5vh; /* Adjust top margin */
-        width: 12%; /* Make the language toggle smaller */
-        max-width: 120px; /* Reduce the max width */
-    }
-
-    #language-toggle button {
-        padding: 4% 8%; /* Reduce the padding */
-    }
-}
-
-@media (max-width: 1400px) {
-    header, nav, body, footer {
-        width: 85%;
-        margin: 0 auto; /* Center the elements */
-    }
-    #name {
-        font-size: clamp(17px, 1.5vw, 23px); /* Use clamp to set min, preferred, and max font size */
-    }
-    #left-header {
-        bottom: 3%;
-    }
-
-    #threeparts {
-        margin-top: 5%;
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    #notmiddlepic {
-        width: 32%;
-        max-height: 20vh;
-    }
-    
-    #threeparts img {
-        width: 100%;
-        height: 100%;
-        border: 4px solid #333;
-    }
-    
-    #middlepic {
-        margin: 0 2%;
-        width: 32%;
-        max-height: 20vh;
-    }
-    
-}
-
-/* Smaller screen */
 @media (max-width: 850px) {
-    header, nav, body, footer {
-        width: 90%;
-    }
-
     #name {
-        font-size: clamp(13px, 1.55vw, 17px); /* Use clamp to set min, preferred, and max font size */
-    }
-
-    nav {
-        height: 60px;
+        font-size: clamp(14px, 1.8vw, 24px); /* Smaller font for smaller screens */
     }
 
     nav ul {
         display: none;
         flex-direction: column;
-        background-color: #333; /* Ensure background color is the same as nav */
-        width: 100%; /* Make sure the dropdown covers full width */
-    }
-
-    nav ul li {
         width: 100%;
-        text-align: left;
-    }
-
-    nav .hamburger {
-        display: block;
     }
 
     nav ul.show {
         display: flex;
     }
 
+    nav .hamburger {
+        display: block;
+    }
+
     #language-toggle {
-        position: absolute;
-        width: 100%;
-        flex-direction: row; /* Change to horizontal */
-        justify-content: space-around;
-        margin: 1vh 6vw; /* Add margin to position the buttons correctly */
-        max-height: 100px;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: auto;
     }
 
     #language-toggle button {
-        padding: 1%;
+        padding: 5px 10px;
         border: 1px solid #000;
     }
 
-    .modal-content {
-        margin: 25% auto;
+    .left-column, .right-column {
+        width: 100%; /* Stack columns on top of each other on mobile */
     }
 
-    .skill img {
-        width: 80px;
-        height: 80px;
-    }
-
-    .skill p {
-        font-size: 14px;
+    .contact-container {
+        flex-direction: column; /* Stack columns vertically */
     }
 }
 
 /* Mobile */
-@media (max-width: 625px)  {
+@media (max-width: 625px) {
     nav {
         height: 40px;
     }
@@ -700,6 +571,7 @@ footer {
     nav .hamburger {
         font-size: 15px; /* Reduce size by half */
     }
+
     #language-toggle {
         display: none;
     }
@@ -787,7 +659,7 @@ footer {
         padding: 0;
     }
 
-    .right-column > div {
+    .right-column>div {
         border: none;
         padding: 0;
     }
