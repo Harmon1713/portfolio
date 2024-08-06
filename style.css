@@ -63,7 +63,7 @@ header {
 }
 
 #language-toggle button + button {
-    margin-top: -1vh; /* Remove the gap between buttons */
+    margin-top: -0.8vh; /* Remove the gap between buttons */
 }
 
 #language-toggle button:hover {
@@ -239,11 +239,6 @@ footer {
     margin: 0 2%;
     width: 32%;
     max-height: 25vh;
-}
-
-#home {
-    text-align: center;
-    padding: 100px 0;
 }
 
 #intro {
