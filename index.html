@@ -52,7 +52,7 @@
     </header>
 
     <!-- Main Section -->
-    <main class="container my-4 text-center"><br>
+    <main class="container my-4 text-center">
         <div id="threeparts" class="row justify-content-center">
             <div class="col-md-4">
                 <img src="images/bones.png" class="img-fluid" alt="Bones">
@@ -73,10 +73,18 @@
             <!-- Embedded Map using iframe -->
             <div class="iframe-container mx-auto">
                 <iframe id="mapiframe" src="https://harmon1713.github.io/my-travel-map/index.html" scrolling="no"></iframe>
-            </div><br>
+            </div>
+            <!-- Message and Image for Small Screens -->
+            <div id="map-replacement">
+                <p class="mt-3">Due to screen size, click the image to interact with the map.</p>
+                <a href="https://harmon1713.github.io/my-travel-map/index.html" target="_blank" rel="noopener noreferrer">
+                    <img src="images/travelmap-click.png" alt="Travel Map" class="img-fluid">
+                </a>
+            </div>
+            <br>
             <p data-translate="github">Check out my GitHub:</p>
             <a href="https://github.com/Harmon1713" target="_blank" rel="noopener noreferrer">
-                <img src="images/github.png" alt="Github" width="10%">
+                <img src="images/github.png" alt="Github" id="responsive-img-github">
             </a>
         </section>
     </main>
