@@ -30,31 +30,7 @@ const translations = {
       frontendModal: "Front-End Development",
       cppApp: "Portfolio Website",
       cpp: "HTML, CSS, JavaScript",
-      frontendContent:
-        "This portfolio website is the example of my skillset with HTML, CSS, and JavaScript; below are the skills I've used to create an interactive and dynamic user interface.",
-      javascriptSkills: "Javascript skills",
-      asyncProgramming:
-        "Asynchronous Programming: The fetch API is used to asynchronously retrieve JSON data, demonstrating handling of promises with .then() and .catch() for error handling.",
-      domManipulation:
-        "DOM Manipulation: Manipulating the Document Object Model (DOM) to dynamically change content, styles, and classes based on user actions or data, such as updating text content, showing and hiding elements, and adding or removing CSS classes.",
-      eventHandling:
-        "Event Handling: Setting up event listeners to handle user interactions like clicks, scrolling, and key presses. This includes custom functions tied to UI events like opening modals, scrolling to the top of the page, and handling form submissions.",
-      conditionalLogic:
-        "Conditional Logic: Implementing conditions to control the flow of the application, such as displaying elements only when certain conditions are met (e.g., scroll position).",
-      cssManipulation:
-        "CSS Manipulation: Dynamically adjusting CSS properties through JavaScript to affect the layout and styling of elements based on user interactions or conditions.",
-      arrayOperations:
-        "Array Operations: Using array methods like forEach, filter, and map to manipulate data sets, particularly in functions that handle autocomplete features and project searching.",
-      templateManipulation:
-        "Template Manipulation: Using string literals and template manipulation to dynamically generate HTML content based on data.",
-      modularFunctions:
-        "Modular Functions: Creating reusable functions that encapsulate functionality for specific tasks, such as toggling an accordion or handling form submissions.",
-      errorHandling:
-        "Error Handling: Implementing basic error handling in asynchronous operations to manage exceptions and provide feedback.",
-      debugging:
-        "Debugging: Logging information to the console for debugging purposes, particularly in the search functionality to trace computations and results.",
-      uriManipulation:
-        "URI Manipulation: Manipulating the window's location hash for navigation purposes and using it to trigger specific actions like accordion expansion.",
+      frontendContent: "In this portfolio project, I have leveraged a range of technical skills, utilizing HTML, CSS, and JavaScript (including jQuery and Popper.js) to create a dynamic and responsive web experience. The project employs HTML with Bootstrap for layout and design, ensuring responsive and mobile-friendly content. CSS manipulation is used extensively to dynamically adjust styles based on user interactions. JavaScript ES6 features enhance code readability and efficiency. The portfolio demonstrates asynchronous programming with the Fetch API for retrieving JSON data. DOM manipulation is employed to update content and styles dynamically, while event handling sets up interactions. The project also includes conditional logic to control application flow and array operations using methods like forEach, filter, and map for data manipulation. The use of local storage ensures language preferences are saved, providing a tailored user experience across sessions. Additionally, error handling and debugging techniques are implemented to manage exceptions and trace computations, ensuring reliable functionality throughout the application.",
       appDevModal: "Application Development",
       giraffeApp: "Giraffe Warmer Maintenance Application",
       pythonSqlite: "Python (tkinter, datetime, SQLite), SQL",
@@ -99,7 +75,8 @@ const translations = {
       researchMTS:"Research: uses Material Testing System (MTS)",
       bonemodalcontent:
         "In the research paper 'Comparing the Mechanical Properties of Cancellous Bone between Pig Femur Bone, Deer Femur Bone, and Human Humerus Bone,' a variety of technical skills were utilized. The study involved advanced biomaterials research and mechanical testing techniques, particularly focusing on the axial stress, strain, and Young’s modulus of bone samples. The Material Testing System (MTS) was employed to apply controlled compressive forces to the samples, simulating real-world stress conditions and generating detailed data on bone behavior under load. The process required precise sample preparation, including cutting and measuring bone samples, and conducting displacement and force measurements to calculate stress and strain. Data analysis was performed using graphical methods to interpret the stress-strain relationships and determine the elastic modulus for each bone type. This research demonstrated skills in experimental design, advanced material testing, data collection and analysis, computational modeling, and the application of mechanical principles to biomaterials.",
-      // Contact
+      searchButton:"Search",
+        // Contact
       nameTitle: "Jackie Harmon",
       detailsTitle: "Details",
       detailsText1:
@@ -244,31 +221,7 @@ const translations = {
       frontendModal: "Desarrollo Front-End",
       cppApp: "Sitio Web del Portafolio",
       cpp: "HTML, CSS, JavaScript",
-      frontendContent:
-        "Este sitio web de portafolio es un ejemplo de mi conjunto de habilidades con HTML, CSS y JavaScript; a continuación se muestran las habilidades que he utilizado para crear una interfaz de usuario interactiva y dinámica.",
-      javascriptSkills: "Habilidades de JavaScript",
-      asyncProgramming:
-        "Programación Asíncrona: Se utiliza la API fetch para recuperar datos JSON de forma asíncrona, demostrando el manejo de promesas con .then() y .catch() para el manejo de errores.",
-      domManipulation:
-        "Manipulación del DOM: Manipulación del Modelo de Objeto de Documento (DOM) para cambiar dinámicamente el contenido, estilos y clases según las acciones del usuario o datos, como actualizar el contenido del texto, mostrar y ocultar elementos, y agregar o eliminar clases CSS.",
-      eventHandling:
-        "Manejo de Eventos: Configuración de oyentes de eventos para manejar interacciones del usuario, como clics, desplazamientos y pulsaciones de teclas. Esto incluye funciones personalizadas vinculadas a eventos de UI como abrir modales, desplazarse hasta la parte superior de la página y manejar envíos de formularios.",
-      conditionalLogic:
-        "Lógica Condicional: Implementación de condiciones para controlar el flujo de la aplicación, como mostrar elementos solo cuando se cumplen ciertas condiciones (por ejemplo, posición de desplazamiento).",
-      cssManipulation:
-        "Manipulación de CSS: Ajuste dinámico de propiedades CSS a través de JavaScript para afectar la disposición y el estilo de los elementos según las interacciones del usuario o condiciones.",
-      arrayOperations:
-        "Operaciones de Array: Uso de métodos de array como forEach, filter y map para manipular conjuntos de datos, particularmente en funciones que manejan características de autocompletado y búsqueda de proyectos.",
-      templateManipulation:
-        "Manipulación de Plantillas: Uso de literales de cadena y manipulación de plantillas para generar dinámicamente contenido HTML basado en datos.",
-      modularFunctions:
-        "Funciones Modulares: Creación de funciones reutilizables que encapsulan funcionalidad para tareas específicas, como alternar un acordeón o manejar envíos de formularios.",
-      errorHandling:
-        "Manejo de Errores: Implementación de manejo de errores básico en operaciones asíncronas para gestionar excepciones y proporcionar retroalimentación.",
-      debugging:
-        "Depuración: Registro de información en la consola para fines de depuración, particularmente en la funcionalidad de búsqueda para rastrear cálculos y resultados.",
-      uriManipulation:
-        "Manipulación de URI: Manipulación del hash de la ubicación de la ventana para fines de navegación y su uso para activar acciones específicas como la expansión del acordeón.",
+      frontendContent: "En este proyecto de portafolio, he aprovechado una gama de habilidades técnicas, utilizando HTML, CSS y JavaScript (incluyendo jQuery y Popper.js) para crear una experiencia web dinámica y receptiva. El proyecto emplea HTML con Bootstrap para el diseño y la disposición, asegurando contenido receptivo y amigable para móviles. Se utiliza ampliamente la manipulación de CSS para ajustar dinámicamente los estilos basados en las interacciones del usuario. Las características de JavaScript ES6 mejoran la legibilidad y eficiencia del código. El portafolio demuestra programación asíncrona con el API Fetch para recuperar datos JSON. La manipulación del DOM se utiliza para actualizar el contenido y los estilos dinámicamente, mientras que el manejo de eventos establece interacciones. El proyecto también incluye lógica condicional para controlar el flujo de la aplicación y operaciones de arrays usando métodos como forEach, filter y map para la manipulación de datos. El uso de almacenamiento local garantiza que las preferencias de idioma se guarden, proporcionando una experiencia de usuario personalizada a través de las sesiones. Además, se implementan técnicas de manejo de errores y depuración para gestionar excepciones y rastrear cálculos, asegurando una funcionalidad confiable en toda la aplicación.",
       appDevModal: "Desarrollo de Aplicaciones",
       giraffeApp: "Aplicación de Mantenimiento de Calentadores Giraffe",
       pythonSqlite: "Python (tkinter, datetime, SQLite), SQL",
@@ -313,7 +266,8 @@ const translations = {
       researchMTS:"Investigación: utiliza Material Testing System (MTS)",
       bonemodalcontent:
         "En el documento de investigación 'Comparación de las Propiedades Mecánicas del Hueso Esponjoso entre Hueso de Fémur de Cerdo, Hueso de Fémur de Ciervo y Hueso de Húmero Humano,' se utilizaron una variedad de habilidades técnicas. El estudio involucró investigación avanzada de biomateriales y técnicas de pruebas mecánicas, particularmente centrándose en el estrés axial, la deformación y el módulo de Young de las muestras de hueso. Se utilizó el Sistema de Pruebas de Materiales (MTS) para aplicar fuerzas de compresión controladas a las muestras, simulando condiciones de estrés del mundo real y generando datos detallados sobre el comportamiento del hueso bajo carga. El proceso requirió una preparación precisa de muestras, incluyendo el corte y medición de muestras de hueso, y la realización de mediciones de desplazamiento y fuerza para calcular el estrés y la deformación. El análisis de datos se realizó utilizando métodos gráficos para interpretar las relaciones de estrés-deformación y determinar el módulo elástico para cada tipo de hueso. Esta investigación demostró habilidades en diseño experimental, pruebas avanzadas de materiales, recopilación y análisis de datos, modelado computacional y la aplicación de principios mecánicos a biomateriales.",
-      // Contáctame
+        searchButton:"Search",
+        // Contáctame
       nameTitle: "Jackie Harmon",
       detailsTitle: "Detalles",
       detailsText1:
@@ -458,31 +412,7 @@ const translations = {
       frontendModal: "Desenvolvimento Front-End",
       cppApp: "Site do Portfólio",
       cpp: "HTML, CSS, JavaScript",
-      frontendContent:
-        "Este site de portfólio é o exemplo do meu conjunto de habilidades com HTML, CSS e JavaScript; abaixo estão as habilidades que usei para criar uma interface de usuário interativa e dinâmica.",
-      javascriptSkills: "Habilidades de JavaScript",
-      asyncProgramming:
-        "Programação Assíncrona: A API fetch é usada para recuperar dados JSON de forma assíncrona, demonstrando o manuseio de promessas com .then() e .catch() para tratamento de erros.",
-      domManipulation:
-        "Manipulação do DOM: Manipulação do Modelo de Objeto de Documento (DOM) para alterar dinamicamente o conteúdo, estilos e classes com base nas ações do usuário ou dados, como atualizar o conteúdo do texto, mostrar e ocultar elementos e adicionar ou remover classes CSS.",
-      eventHandling:
-        "Manuseio de Eventos: Configuração de ouvintes de eventos para lidar com interações do usuário, como cliques, rolagens e pressionamentos de teclas. Isso inclui funções personalizadas vinculadas a eventos de UI, como abrir modais, rolar para o topo da página e lidar com envios de formulários.",
-      conditionalLogic:
-        "Lógica Condicional: Implementação de condições para controlar o fluxo da aplicação, como exibir elementos apenas quando determinadas condições são atendidas (por exemplo, posição de rolagem).",
-      cssManipulation:
-        "Manipulação de CSS: Ajuste dinâmico das propriedades CSS através do JavaScript para afetar o layout e o estilo dos elementos com base nas interações ou condições do usuário.",
-      arrayOperations:
-        "Operações de Array: Uso de métodos de array como forEach, filter e map para manipular conjuntos de dados, particularmente em funções que lidam com recursos de autocompletar e pesquisa de projetos.",
-      templateManipulation:
-        "Manipulação de Templates: Uso de literais de string e manipulação de templates para gerar dinamicamente conteúdo HTML com base em dados.",
-      modularFunctions:
-        "Funções Modulares: Criação de funções reutilizáveis que encapsulam a funcionalidade para tarefas específicas, como alternar um acordeão ou lidar com envios de formulários.",
-      errorHandling:
-        "Tratamento de Erros: Implementação de tratamento básico de erros em operações assíncronas para gerenciar exceções e fornecer feedback.",
-      debugging:
-        "Depuração: Registro de informações no console para fins de depuração, particularmente na funcionalidade de pesquisa para rastrear cálculos e resultados.",
-      uriManipulation:
-        "Manipulação de URI: Manipulação do hash da localização da janela para fins de navegação e seu uso para acionar ações específicas, como a expansão do acordeão.",
+      frontendContent:"Neste projeto de portfólio, utilizei uma gama de habilidades técnicas, utilizando HTML, CSS e JavaScript (incluindo jQuery e Popper.js) para criar uma experiência web dinâmica e responsiva. O projeto emprega HTML com Bootstrap para layout e design, garantindo conteúdo responsivo e amigável para dispositivos móveis. A manipulação de CSS é usada extensivamente para ajustar estilos dinamicamente com base nas interações do usuário. As funcionalidades do JavaScript ES6 melhoram a legibilidade e eficiência do código. O portfólio demonstra programação assíncrona com a API Fetch para recuperar dados JSON. A manipulação do DOM é empregada para atualizar o conteúdo e os estilos dinamicamente, enquanto o manuseio de eventos configura interações. O projeto também inclui lógica condicional para controlar o fluxo da aplicação e operações de arrays usando métodos como forEach, filter e map para manipulação de dados. O uso de armazenamento local garante que as preferências de idioma sejam salvas, proporcionando uma experiência de usuário personalizada entre as sessões. Além disso, técnicas de tratamento de erros e depuração são implementadas para gerenciar exceções e rastrear cálculos, garantindo funcionalidade confiável em toda a aplicação.",
       appDevModal: "Desenvolvimento de Aplicações",
       giraffeApp: "Aplicativo de Manutenção de Aquecedores Giraffe",
       pythonSqlite: "Python (tkinter, datetime, SQLite), SQL",
