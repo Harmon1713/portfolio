@@ -1,79 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jackie Harmon's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/logo_green2-rbg.png" type="image/x-icon">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
-    <div id="small-width">
-        <!-- Header Section -->
-        <header>
-            <div id="left-header">
+    <!-- Header Section -->
+    <header class="bg-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div id="left-header" class="d-flex align-items-center">
                 <div id="logo">
                     <img src="images/logo_green2-rbg.png" alt="Logo">
                 </div>
-                <div id="name">
+                <div id="name" class="ml-3">
                     <h1 data-translate="portfolioTitle">Jackie Harmon's Portfolio</h1>
                 </div>
             </div>
-			<span class="language-hamburger"><i class="fas fa-globe"></i></span> <!-- Language world icon -->
-            <div id="language-toggle">
-                <button data-translate="english" data-lang="en" onclick="changeLanguage('en')" id="en-btn">English</button>
-                <button data-translate="spanish" data-lang="es" onclick="changeLanguage('es')" id="es-btn">Spanish</button>
-                <button data-translate="portuguese" data-lang="pt" onclick="changeLanguage('pt')" id="pt-btn">Portuguese</button>
-                
+            <div id="language-toggle" class="d-flex flex-column align-items-end">
+                <button data-translate="english" data-lang="en" onclick="changeLanguage('en')" id="en-btn" class="btn btn-light mb-2">English</button>
+                <button data-translate="spanish" data-lang="es" onclick="changeLanguage('es')" id="es-btn" class="btn btn-light mb-2">Spanish</button>
+                <button data-translate="portuguese" data-lang="pt" onclick="changeLanguage('pt')" id="pt-btn" class="btn btn-light">Portuguese</button>
             </div>
-        </header>
-    <div class="clear"></div>
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="green-line"></div>
-        <span class="hamburger">&#9776;</span> <!-- Hamburger button -->
-        <ul>
-            <li><a href="index.html" id="welcome" data-translate="welcomeLink">Welcome</a></li>
-            <li><a href="portfolio.html" id="portfolio" data-translate="portfolioLink">Portfolio</a></li>
-            <li><a href="contact.html" id="contact" data-translate="contactLink">Contact Me</a></li>
-            <li><a href="resume.html" id="resume" data-translate="resumeLink">Resume</a></li>
-        </ul>
-    </nav>
-    <div class="body"> <!-- easier than redoing all css-->
-        <!-- Main Section -->
-        <main>
-            <div id="threeparts">
-                <div id="notmiddlepic"><img src="images/bones.png"></div>
-                <div id ="middlepic"><img src="images/ankle_joint.png"></div>
-                <div id="notmiddlepic"><img src="images/Giraffe_userguide1.png"></div>
+        </div>
+        <!-- Navigation Bar -->
+        <nav class="bg-dark">
+            <div class="container">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item"><a href="index.html" class="nav-link text-white" data-translate="welcomeLink">Welcome</a></li>
+                    <li class="nav-item"><a href="portfolio.html" class="nav-link text-white" data-translate="portfolioLink">Portfolio</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link text-white" data-translate="contactLink">Contact Me</a></li>
+                    <li class="nav-item"><a href="resume.html" class="nav-link text-white" data-translate="resumeLink">Resume</a></li>
+                </ul>
             </div>
-            <div id="intro">
-                <h3 data-translate="introTitle">Welcome to my portfolio!</h3><br>
-                <p data-translate="introText">I am a versatile professional with a passion for leveraging technology to enhance efficiency in various industries. My portfolio showcases not only my teaching prowess but also my expertise as a data visualization consultant, biomedical research analyst, and biomedical technician. Additionally, you'll find some of my fun personal projects on my website, offering a glimpse into my creativity and innovation beyond the professional realm. Dive in to explore how my multifaceted skillset can make a difference in your projects and endeavors.</p><br><br>
-                <p data-translate="authorization"><em>I am authorized to work professionally in both the USA and Brazil.</em></p>
-            </div>
-            <section id="travel-map">
-                <!-- Embedded Map using iframe -->
-                <div class="iframe-container">
-                    <iframe id="mapiframe" src="https://harmon1713.github.io/my-travel-map/index.html" scrolling="no"></iframe>
-                </div>
-                <br><br>
-                <p data-translate="github">Check out my GitHub:</p>
-                <a href="https://github.com/Harmon1713" target="_blank" rel="noopener noreferrer">
-                    <img src="images/github.png" alt="Github" width="10%">
-                </a>
-            </section>
-            <br><br><br><br>
-        </main>
-        <button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top">^</button>
+        </nav>
+    </header>
 
-        <!-- Footer Section -->
-        <footer>
-            <p data-translate="footer">Copyright &copy; 2024 Jackie Harmon. All rights reserved.</p>
-        </footer>
-    </div>
+    <!-- Main Section -->
+    <main class="container my-4 text-center"><br>
+        <div id="threeparts" class="row justify-content-center">
+            <div class="col-md-4">
+                <img src="images/bones.png" class="img-fluid" alt="Bones">
+            </div>
+            <div class="col-md-4">
+                <img src="images/ankle_joint.png" class="img-fluid" alt="Ankle Joint">
+            </div>
+            <div class="col-md-4">
+                <img src="images/Giraffe_userguide1.png" class="img-fluid" alt="Giraffe User Guide">
+            </div>
+        </div>
+        <div id="intro" class="mt-4">
+            <h3 data-translate="introTitle">Welcome to my portfolio!</h3>
+            <p data-translate="introText">I am a versatile professional with a passion for leveraging technology to enhance efficiency in various industries. My portfolio showcases not only my teaching prowess but also my expertise as a data visualization consultant, biomedical research analyst, and biomedical technician. Additionally, you'll find some of my fun personal projects on my website, offering a glimpse into my creativity and innovation beyond the professional realm. Dive in to explore how my multifaceted skillset can make a difference in your projects and endeavors.</p>
+            <p data-translate="authorization"><em>I am authorized to work professionally in both the USA and Brazil.</em></p>
+        </div>
+        <section id="travel-map" class="my-4">
+            <!-- Embedded Map using iframe -->
+            <div class="iframe-container mx-auto">
+                <iframe id="mapiframe" src="https://harmon1713.github.io/my-travel-map/index.html" scrolling="no"></iframe>
+            </div><br>
+            <p data-translate="github">Check out my GitHub:</p>
+            <a href="https://github.com/Harmon1713" target="_blank" rel="noopener noreferrer">
+                <img src="images/github.png" alt="Github" width="10%">
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white py-3 text-center">
+        <div class="container">
+            <p data-translate="footer">Copyright © 2024 Jackie Harmon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top">^</button>
+
     <script src="translate.js"></script>
     <script src="script.js"></script>
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
