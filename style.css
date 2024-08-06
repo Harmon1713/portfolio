@@ -173,6 +173,9 @@ main {
 
 /* Footer styles */
 footer {
+    display: flex;
+    justify-content: center;  /* Center the content horizontally */
+    align-items: center;  /* Center the content vertically */
     text-align: center;
     background-color: #333;
     color: #fff;
@@ -615,6 +618,15 @@ footer {
 
     #resume-content {
         width: 90%;
+    }
+}
+
+@media (max-width: 500px) {
+    footer {
+        max-height: 6vh;
+        font-size: 11px;
+        position: static;
+        bottom: auto;
     }
 }
 
