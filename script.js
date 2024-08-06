@@ -92,14 +92,15 @@ document.addEventListener("DOMContentLoaded", function () {
             navUl.classList.remove("show");
         }
     });
-
     // Language toggle hamburger button
     const languageHamburger = document.querySelector(".language-hamburger");
+    const languageToggle = document.querySelector('#language-toggle');
 
-    // Check if language dropdown already exists to prevent duplication
-    let languageDropdown = document.querySelector('.language-dropdown');
-    if (!languageDropdown) {
-        languageDropdown = document.createElement('div');
+    // Only create the dropdown if it doesn't exist
+    if (!document.querySelector('.language-dropdown')) {
+        console.log("Creating language dropdown...");
+
+        const languageDropdown = document.createElement('div');
         languageDropdown.classList.add('language-dropdown');
 
         const languages = [
@@ -121,10 +122,12 @@ document.addEventListener("DOMContentLoaded", function () {
             });
             languageDropdown.appendChild(button);
         });
-
+        
+        // Append the dropdown to the body to avoid duplicating it under the language toggle
         document.body.appendChild(languageDropdown);
     }
 
+    const languageDropdown = document.querySelector('.language-dropdown');
     languageHamburger.addEventListener("click", function (event) {
         languageDropdown.classList.toggle("show");
         event.stopPropagation(); // Prevent the click from propagating to the document
@@ -198,6 +201,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     map.style.cursor = 'grab';
 });
+
+
 
 // Modal
 function showPopup(modalId) {
