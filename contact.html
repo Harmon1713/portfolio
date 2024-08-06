@@ -23,6 +23,11 @@
                     <h1 data-translate="portfolioTitle">Jackie Harmon's Portfolio</h1>
                 </div>
             </div>
+            <!-- Language Toggle Button for Mobile -->
+            <div class="language-hamburger">
+                <i class="fas fa-globe"></i>
+            </div>
+            <!-- Language Toggle for Desktop -->
             <div id="language-toggle" class="d-flex flex-column align-items-end">
                 <button data-translate="english" data-lang="en" onclick="changeLanguage('en')" id="en-btn" class="btn btn-light mb-2">English</button>
                 <button data-translate="spanish" data-lang="es" onclick="changeLanguage('es')" id="es-btn" class="btn btn-light mb-2">Spanish</button>
@@ -32,6 +37,10 @@
         <!-- Navigation Bar -->
         <nav class="bg-dark">
             <div class="container">
+                <!-- Hamburger Menu for Mobile -->
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
                 <ul class="nav justify-content-center">
                     <li class="nav-item"><a href="index.html" class="nav-link text-white" data-translate="welcomeLink">Welcome</a></li>
                     <li class="nav-item"><a href="portfolio.html" class="nav-link text-white" data-translate="portfolioLink">Portfolio</a></li>
@@ -68,6 +77,8 @@
                 </div>
             </div>  
         </main>
+
+
         <button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top">^</button>
         <!-- Footer Section -->
     <footer class="bg-dark text-white py-3 text-center">
@@ -75,8 +86,6 @@
             <p data-translate="footer">Copyright © 2024 Jackie Harmon. All rights reserved.</p>
         </div>
     </footer>
-
-    <button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top">^</button>
 
     <script src="translate.js"></script>
     <script src="script.js"></script>
