@@ -1,5 +1,3 @@
-// Translate-later goes here
-
 // What I would use with Google Cloud API, but I do not want to get charged
 /*const apiKey = 'KSjkCiNRa8u0ZWIlT47XnTQUeOwSTQErO-jTp-4'; // Left personalized
 
@@ -30,6 +28,30 @@ document.getElementById('english-btnx').addEventListener('click', () => translat
 document.getElementById('spanish-btnx').addEventListener('click', () => translatePage('es'));
 document.getElementById('portuguese-btnx').addEventListener('click', () => translatePage('pt')); */
 
+// Function to change the language
+function changeLanguage(lang) {
+    const elements = document.querySelectorAll('[data-translate]');
+    elements.forEach(el => {
+        const translateKey = el.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][translateKey]) {
+            el.innerText = translations[lang][translateKey];
+        }
+    });
+    setActiveLanguageButton(lang); // Set the active button
+    localStorage.setItem('preferredLanguage', lang); // Store the selected language in local storage
+}
+
+// Function to set the active language button
+function setActiveLanguageButton(lang) {
+    const buttons = document.querySelectorAll('#language-toggle button, .language-dropdown button');
+    buttons.forEach(button => {
+        if (button.getAttribute('data-lang') === lang) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
+}
 
 // Scrolling
 window.onscroll = function() {scrollFunction()};
@@ -64,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
             navUl.classList.remove("show");
         }
     });
+
     // Language toggle hamburger button
     const languageHamburger = document.querySelector(".language-hamburger");
     const languageDropdown = document.createElement('div');
@@ -78,7 +101,11 @@ document.addEventListener("DOMContentLoaded", function() {
     languages.forEach(language => {
         const button = document.createElement('button');
         button.textContent = language.name;
-        button.addEventListener('click', () => changeLanguage(language.code));
+        button.setAttribute('data-lang', language.code);
+        button.addEventListener('click', () => {
+            changeLanguage(language.code);
+            setActiveLanguageButton(language.code);
+        });
         languageDropdown.appendChild(button);
     });
 
@@ -94,6 +121,13 @@ document.addEventListener("DOMContentLoaded", function() {
             languageDropdown.classList.remove("show");
         }
     });
+
+    // Highlight current page's nav item
+    highlightCurrentPage();
+    // Set the initial active language button and change to default language (English)
+    // Check for stored language in local storage
+    const storedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+    changeLanguage(storedLanguage); // Set the language based on stored preference or default to English
 });
 
 // Highlight current page's nav item
@@ -104,6 +138,8 @@ function highlightCurrentPage() {
         const link = item.querySelector('a');
         if (link && currentUrl.includes(link.getAttribute('href'))) {
             item.classList.add('active');
+        } else {
+            item.classList.remove('active');
         }
     });
 }
@@ -148,7 +184,6 @@ document.addEventListener('DOMContentLoaded', function() {
     map.style.cursor = 'grab';
 });
 
-
 // Modal
 function showPopup(modalId) {
     const modal = document.getElementById(`${modalId}-modal`);
@@ -166,7 +201,7 @@ function closePopup(modalId) {
 }
 
 // Search bar
-const skills = ["HTML", "CSS", "JavaScript", "Python", "pygame", "datetime", "tkinter", "SQLite", "SQL", "matplotlib", "D3.js", "GeoJSON", "json", "SVG", "R", "dplyr", "ggplot2", "ggiraph", "patchwork", "htmlwidgets", "Markdown", "LaTex", "Pandoc", "Material Testing System", "MTS", "Inventor", "CAD", "Drafting", "MatScan", "Tekscan", "Research", "Technical Writing", "Data Visualization", "Application Development", "Front-End Development"];
+const skills = ["HTML", "Boostrap", "CSS", "JavaScript", "jQuery", "popper", "Python", "pygame", "datetime", "tkinter", "SQLite", "SQL", "matplotlib", "D3.js", "GeoJSON", "json", "SVG", "R", "dplyr", "ggplot2", "ggiraph", "patchwork", "htmlwidgets", "Markdown", "LaTex", "Pandoc", "Material Testing System", "MTS", "Inventor", "CAD", "Drafting", "MatScan", "Tekscan", "Research", "Technical Writing", "Data Visualization", "Application Development", "Front-End Development"];
 
 // Store the original list of projects
 const allProjects = Array.from(document.getElementsByClassName('project'));
@@ -224,8 +259,18 @@ function searchProjects() {
     const errorMessage = document.getElementById('errorMessage');
     const projectsContainer = document.getElementById('projects');
 
-    // Check if the input is "all"
-    if (input === 'all') {
+    // Determine the current language
+    const currentLanguage = localStorage.getItem('preferredLanguage') || 'en';
+
+    // Define keywords for showing all projects
+    const allKeywords = {
+        en: 'all',
+        es: 'todo',
+        pt: 'todos'
+    };
+
+    // Check if the input matches the keyword "all" for the current language
+    if (input === allKeywords[currentLanguage]) {
         // Clear current projects
         projectsContainer.innerHTML = '';
 
