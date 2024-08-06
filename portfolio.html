@@ -23,6 +23,11 @@
                     <h1 data-translate="portfolioTitle">Jackie Harmon's Portfolio</h1>
                 </div>
             </div>
+            <!-- Language Toggle Button for Mobile -->
+            <div class="language-hamburger">
+                <i class="fas fa-globe"></i>
+            </div>
+            <!-- Language Toggle for Desktop -->
             <div id="language-toggle" class="d-flex flex-column align-items-end">
                 <button data-translate="english" data-lang="en" onclick="changeLanguage('en')" id="en-btn" class="btn btn-light mb-2">English</button>
                 <button data-translate="spanish" data-lang="es" onclick="changeLanguage('es')" id="es-btn" class="btn btn-light mb-2">Spanish</button>
@@ -32,6 +37,10 @@
         <!-- Navigation Bar -->
         <nav class="bg-dark">
             <div class="container">
+                <!-- Hamburger Menu for Mobile -->
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
                 <ul class="nav justify-content-center">
                     <li class="nav-item"><a href="index.html" class="nav-link text-white" data-translate="welcomeLink">Welcome</a></li>
                     <li class="nav-item"><a href="portfolio.html" class="nav-link text-white" data-translate="portfolioLink">Portfolio</a></li>
@@ -81,31 +90,31 @@
             <div class="modal-content">
                 <span class="close" onclick="closePopup('website')">&times;</span>
                 <h2 data-translate="frontendModal">Front-End Development</h2>
+                <div class="modal-project" data-skills="HTML, CSS, JavaScript">
+    
                     <a href="https://github.com/Harmon1713/portfolio" class="modal-project-link" target="_blank" rel="noopener noreferrer">
-                        <div class="modal-project" data-skills="HTML, CSS, JavaScript">
-                            <p>
-                                <img src="images/logo_green2-rbg.png" alt="portfolio logo" width="10%"> <br>
-                                <span data-translate="cppApp">Portfolio Website</span> <br>
-                            </p>
-                            <div class="green-line"></div><br>
-                            <p><strong data-translate="cpp">HTML (Bootstrap), CSS, JavaScript (jQuery, popper)</strong></p><br>
-                            <div class="half-column">
-                                <p data-translate="frontendContent">
-                                    In this portfolio project, I have leveraged a range of technical skills, utilizing HTML, CSS, and JavaScript (including jQuery and Popper.js) 
-                                    to create a dynamic and responsive web experience. The project employs HTML with Bootstrap for layout and design, ensuring responsive and 
-                                    mobile-friendly content. CSS manipulation is used extensively to dynamically adjust styles based on user interactions. JavaScript ES6 features 
-                                    enhance code readability and efficiency. The portfolio demonstrates asynchronous programming with the Fetch API for retrieving JSON data.
-                                    DOM manipulation is employed to update content and styles dynamically, while event handling sets up interactions.
-                                    The project also includes conditional logic to control application flow and array operations using 
-                                    methods like forEach, filter, and map for data manipulation. The use of local storage ensures language preferences are saved, providing a tailored 
-                                    user experience across sessions. Additionally, error handling and debugging techniques are implemented to manage exceptions and trace computations, 
-                                    ensuring reliable functionality throughout the application. </p>
-                            </div>
-                            <div class="half-column" style="padding-left: 1%;">
-                                <img src="images/portfolio.png" alt="portfolio screenshot" width="100%">
-                            </div>
-                            <div class="clear"></div>
+                        <p>
+                            <img src="images/logo_green2-rbg.png" alt="portfolio logo" width="10%"> <br>
+                            <span data-translate="cppApp">Portfolio Website</span> <br>
+                        </p>
+                        <div class="green-line"></div><br>
+                        <p><strong data-translate="cpp">HTML (Bootstrap), CSS, JavaScript (jQuery, popper)</strong></p><br>
+                        <div class="half-column">
+                            <p data-translate="frontendContent">
+                                In this portfolio project, I have leveraged a range of technical skills 
+                                to create a dynamic and responsive web experience. The project employs HTML with Bootstrap for layout and design, ensuring responsive and 
+                                mobile-friendly content. CSS manipulation is used extensively to dynamically adjust styles based on user interactions. JavaScript ES6 features 
+                                enhance code readability and efficiency. The portfolio demonstrates asynchronous programming with the Fetch API for retrieving JSON data.
+                                DOM manipulation is employed to update content and styles dynamically, while event handling sets up interactions.
+                                The project also includes conditional logic to control application flow and array operations using 
+                                methods like forEach, filter, and map for data manipulation. The use of local storage ensures language preferences are saved, providing a tailored 
+                                user experience across sessions. Additionally, error handling and debugging techniques are implemented to manage exceptions and trace computations, 
+                                ensuring reliable functionality throughout the application. </p>
                         </div>
+                        <div class="half-column" style="padding-left: 1%;">
+                            <img src="images/portfolio.png" alt="portfolio screenshot" width="100%">
+                        </div>
+                        <div class="clear"></div>
                     </a>
                 </div>
             </div>
@@ -115,8 +124,8 @@
             <div class="modal-content">
                 <span class="close" onclick="closePopup('app_dev')">&times;</span>
                 <h2 data-translate="appDevModal">Application Development</h2><br>
-                <a href="https://github.com/Harmon1713/portfolio/releases/tag/v1.0.0" class="modal-project-link" target="_blank" rel="noopener noreferrer">
-                    <div class="modal-project" data-skills="Python, SQLite">
+                <div class="modal-project" data-skills="Python, SQLite">
+                    <a href="https://github.com/Harmon1713/portfolio/releases/tag/v1.0.0" class="modal-project-link" target="_blank" rel="noopener noreferrer">
                         <p>
                             <img src="images/giraffe-face-rbg.png" alt="Giraffe" width="10%"> <br>
                             <span data-translate="giraffeApp">Giraffe Warmer Maintenance Application</span> <br>
@@ -130,25 +139,26 @@
                             <img src="images/GUI.png" alt="Giraffe GUI" width="100%">
                         </div>
                         <div class="clear"></div>
-                    </div>
-                </a>
+                    </a>
+                </div>
                 <br>
-                <a href="https://github.com/Harmon1713/portfolio/releases/tag/v2.1.0" class="modal-project-link" target="_blank" rel="noopener noreferrer">
-                    <div class="modal-project" data-skills="Python, Pygame, SQL, SQLite">
-                        <p>
-                            <img src="images/head_down.png" alt="Snake" width="7%"> <br>
-                            <span data-translate="snakeGame">Snake Game Application</span><br> </p>
-                        <div class="green-line"></div><br>
-                        <p><strong data-translate="pygameSqlite">Python (Pygame, SQLite), SQL</strong></p><br>
-                        <div class="half-column">
-                            <p data-translate="snakeGameContent">This Python program showcases a fully functional snake game, incorporating advanced game mechanics, GUI elements, and database operations. The gameplay is enhanced with responsive control mechanisms through keyboard inputs and dynamically adjusts the interface with an interactive menu system. Additionally, the code integrates SQLite to manage player usernames, scores, and times. <br><br>Key technical skills displayed include game design principles, object-oriented programming, event handling, and CRUD operations with SQLite, highlighting a comprehensive understanding of both game development and database management.</p>
+                <div class="modal-project" data-skills="Python, Pygame, SQL, SQLite">
+                    <a href="https://github.com/Harmon1713/portfolio/releases/tag/v2.1.0" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                            <p>
+                                <img src="images/head_down.png" alt="Snake" width="7%"> <br>
+                                <span data-translate="snakeGame">Snake Game Application</span><br> </p>
+                            <div class="green-line"></div><br>
+                            <p><strong data-translate="pygameSqlite">Python (Pygame, SQLite), SQL</strong></p><br>
+                            <div class="half-column">
+                                <p data-translate="snakeGameContent">This Python program showcases a fully functional snake game, incorporating advanced game mechanics, GUI elements, and database operations. The gameplay is enhanced with responsive control mechanisms through keyboard inputs and dynamically adjusts the interface with an interactive menu system. Additionally, the code integrates SQLite to manage player usernames, scores, and times. <br><br>Key technical skills displayed include game design principles, object-oriented programming, event handling, and CRUD operations with SQLite, highlighting a comprehensive understanding of both game development and database management.</p>
+                            </div>
+                            <div class="half-column" style="padding-left: 1%;">
+                                <img src="images/snake_game.png" alt="Snake Game" width="100%">
+                            </div>
+                            <div class="clear"></div>
                         </div>
-                        <div class="half-column" style="padding-left: 1%;">
-                            <img src="images/snake_game.png" alt="Snake Game" width="100%">
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -587,8 +597,6 @@
         <p data-translate="contactPrompt">If you need more samples or samples related to a specific field or project, please <a href="contact.html" id="contact-link" data-translate="contactLink">contact me</a></p>
     </section>
 </main>
-
-<button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top" data-translate="scrollTopBtn">^</button>
 
  <!-- Footer Section -->
  <footer class="bg-dark text-white py-3 text-center">
