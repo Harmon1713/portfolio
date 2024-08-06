@@ -39,6 +39,12 @@ function changeLanguage(lang) {
     });
     setActiveLanguageButton(lang); // Set the active button
     localStorage.setItem('preferredLanguage', lang); // Store the selected language in local storage
+    
+    // Hide the language dropdown after selecting a language
+    const languageDropdown = document.querySelector('.language-dropdown');
+    if (languageDropdown.classList.contains('show')) {
+        languageDropdown.classList.remove('show');
+    }
 }
 
 // Function to set the active language button
@@ -109,6 +115,9 @@ document.addEventListener("DOMContentLoaded", function () {
             button.addEventListener('click', () => {
                 changeLanguage(language.code);
                 setActiveLanguageButton(language.code);
+                    
+                // Hide the dropdown after a selection
+                languageDropdown.classList.remove('show');
             });
             languageDropdown.appendChild(button);
         });
