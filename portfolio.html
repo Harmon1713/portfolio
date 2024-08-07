@@ -372,21 +372,23 @@
 
         <!-- Search Bar -->
         <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Search by skill..." oninput="showAutocomplete()" onkeypress="handleKeyPress(event)">
+            <input type="text" id="searchInput" placeholder="Search by skill..." data-translate="searchPlaceholder" oninput="showAutocomplete()" onkeypress="handleKeyPress(event)">
             <div id="autocompleteList" class="autocomplete-list"></div>
             <button onclick="searchProjects()" data-translate="searchButton">Search</button>
-            <div id="errorMessage" class="error-message"></div>
+            <div id="errorMessage" class="error-message" data-translate="searchErrorMessage"></div>
         </div>
+
+
         <br><br><br><br>
 
         <!-- Projects -->
         <div id="projects">
-            <div class="project" data-skills="HTML, CSS, JavaScript">
+            <div class="project" data-skills="HTML, Bootstrap, CSS, JavaScript, jQuery, popper">
                 <a href="https://github.com/Harmon1713/portfolio" class="modal-project-link" target="_blank" rel="noopener noreferrer">
                     <h2><span data-translate="cppApp">Portfolio Website</span></h2>
                     <div class="green-line"></div>
-                    <p class="uses" data-translate="techUsed">Uses HTML, CSS, JavaScript, jQuery, popper</p>
-                    <div class="modal-project" data-skills="HTML, CSS, JavaScript">
+                    <p class="uses" data-translate="techUsed">Uses HTML, Bootstrap, CSS, JavaScript, jQuery, popper</p>
+                    <div class="modal-project" data-skills="HTML, Bootstrap, CSS, JavaScript, jQuery, popper">
                         <p><strong data-translate="cpp">HTML (Bootstrap), CSS, JavaScript (jQuery, popper)</strong></p><br>
                         <div class="half-column">
                             <p data-translate="frontendContent">
@@ -593,8 +595,8 @@
                 </div></a>
             </div>
         </div>
-        <br><br>
-        <p data-translate="contactPrompt">If you need more samples or samples related to a specific field or project, please <a href="contact.html" id="contact-link" data-translate="contactLinkportfolio">contact me</a></p>
+        <img src="images/under_construction.png" alt="under construction" width="10%"><br><br>
+        <p><span data-translate="contactPrompt">If you need more samples or samples related to a specific field or project, please </span> <a href="contact.html" id="contact-link" data-translate="contactLinkportfolio">contact me</a> </p>
 </main>
 
  <!-- Footer Section -->
