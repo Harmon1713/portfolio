@@ -532,15 +532,14 @@ footer {
     margin: 5% auto; /* Center the content block horizontally */
 }
 
-#resume-content ol {
+#resume-content ol, ul {
     list-style-type: none;
     padding-left: 20px; /* Add left padding for lists */
     margin-bottom: 20px; /* Add space between lists and other elements */
 }
 
-#resume-content ol ul {
+#resume-content ol ul, #resume-content ol ol {
     list-style-type: disc;
-    padding-left: 20px; /* Ensure proper indentation for nested lists */
 }
 
 #resume-content a {
@@ -563,6 +562,10 @@ footer {
 
 #resume-content h3, #resume-content h4 {
     margin-top: 30px; /* Add space above headings */
+}
+
+.bold-text {
+    font-weight: bold;
 }
 
 /* Small screen */
