@@ -33,10 +33,18 @@ function changeLanguage(lang) {
     const elements = document.querySelectorAll('[data-translate]');
     elements.forEach(el => {
         const translateKey = el.getAttribute('data-translate');
+        
         if (translations[lang] && translations[lang][translateKey]) {
-            el.innerText = translations[lang][translateKey];
+            if (el.tagName.toLowerCase() === 'input') {
+                el.setAttribute('placeholder', translations[lang][translateKey]);
+            } else if (el.id === 'errorMessage') {
+                el.textContent = ''; // Clear existing error message
+            } else {
+                el.innerText = translations[lang][translateKey];
+            }
         }
     });
+    
     setActiveLanguageButton(lang); // Set the active button
     localStorage.setItem('preferredLanguage', lang); // Store the selected language in local storage
     
@@ -46,6 +54,7 @@ function changeLanguage(lang) {
         languageDropdown.classList.remove('show');
     }
 }
+
 
 // Function to set the active language button
 function setActiveLanguageButton(lang) {
@@ -221,7 +230,7 @@ function closePopup(modalId) {
 }
 
 // Search bar
-const skills = ["HTML", "Boostrap", "CSS", "JavaScript", "jQuery", "popper", "Python", "pygame", "datetime", "tkinter", "SQLite", "SQL", "matplotlib", "D3.js", "GeoJSON", "json", "SVG", "R", "dplyr", "ggplot2", "ggiraph", "patchwork", "htmlwidgets", "Markdown", "LaTex", "Pandoc", "Material Testing System", "MTS", "Inventor", "CAD", "Drafting", "MatScan", "Tekscan", "Research", "Technical Writing", "Data Visualization", "Application Development", "Front-End Development"];
+const skills = ["HTML", "Bootstrap", "CSS", "JavaScript", "jQuery", "popper", "Python", "pygame", "datetime", "tkinter", "SQLite", "SQL", "matplotlib", "D3.js", "GeoJSON", "json", "SVG", "R", "dplyr", "ggplot2", "ggiraph", "patchwork", "htmlwidgets", "Markdown", "LaTex", "Pandoc", "Material Testing System", "MTS", "Inventor", "CAD", "Drafting", "MatScan", "Tekscan", "Research", "Technical Writing", "Data Visualization", "Application Development", "Front-End Development"];
 
 // Store the original list of projects
 const allProjects = Array.from(document.getElementsByClassName('project'));
@@ -310,7 +319,7 @@ function searchProjects() {
     }
 
     if (input === '') {
-        errorMessage.textContent = 'Please enter a skill, then search :)';
+        errorMessage.textContent = translations[currentLanguage].searchErrorMessage;
         return;
     }
 
@@ -353,10 +362,10 @@ function searchProjects() {
     });
 
     if (results.length === 0) {
-        errorMessage.textContent = 'No projects found with the specified skills.';
+        errorMessage.textContent = translations[currentLanguage].noProjectsFoundMessage;
     } else {
         errorMessage.textContent = '';
-    }
+    }    
 }
 
 function handleKeyPress(event) {
