@@ -75,7 +75,12 @@ const translations = {
       researchMTS:"Research: uses Material Testing System (MTS)",
       bonemodalcontent:
         "In the research paper 'Comparing the Mechanical Properties of Cancellous Bone between Pig Femur Bone, Deer Femur Bone, and Human Humerus Bone,' a variety of technical skills were utilized. The study involved advanced biomaterials research and mechanical testing techniques, particularly focusing on the axial stress, strain, and Young’s modulus of bone samples. The Material Testing System (MTS) was employed to apply controlled compressive forces to the samples, simulating real-world stress conditions and generating detailed data on bone behavior under load. The process required precise sample preparation, including cutting and measuring bone samples, and conducting displacement and force measurements to calculate stress and strain. Data analysis was performed using graphical methods to interpret the stress-strain relationships and determine the elastic modulus for each bone type. This research demonstrated skills in experimental design, advanced material testing, data collection and analysis, computational modeling, and the application of mechanical principles to biomaterials.",
-      searchButton:"Search",
+      searchPlaceholder: "Search by skill...",
+      searchErrorMessage: "Please enter a skill, then search :)",
+      noProjectsFoundMessage: "No projects found with the specified skills.",
+      searchButton: "Search",
+      contactPrompt: 'This website is currently undergoing construction as I upload more of my projects. If you need more samples or samples related to a specific field or project, please ',
+      contactLinkportfolio: 'contact me.',
         // Contact
       nameTitle: "Jackie Harmon",
       detailsTitle: "Details",
@@ -275,7 +280,12 @@ const translations = {
       researchMTS:"Investigación: utiliza Material Testing System (MTS)",
       bonemodalcontent:
         "En el documento de investigación 'Comparación de las Propiedades Mecánicas del Hueso Esponjoso entre Hueso de Fémur de Cerdo, Hueso de Fémur de Ciervo y Hueso de Húmero Humano,' se utilizaron una variedad de habilidades técnicas. El estudio involucró investigación avanzada de biomateriales y técnicas de pruebas mecánicas, particularmente centrándose en el estrés axial, la deformación y el módulo de Young de las muestras de hueso. Se utilizó el Sistema de Pruebas de Materiales (MTS) para aplicar fuerzas de compresión controladas a las muestras, simulando condiciones de estrés del mundo real y generando datos detallados sobre el comportamiento del hueso bajo carga. El proceso requirió una preparación precisa de muestras, incluyendo el corte y medición de muestras de hueso, y la realización de mediciones de desplazamiento y fuerza para calcular el estrés y la deformación. El análisis de datos se realizó utilizando métodos gráficos para interpretar las relaciones de estrés-deformación y determinar el módulo elástico para cada tipo de hueso. Esta investigación demostró habilidades en diseño experimental, pruebas avanzadas de materiales, recopilación y análisis de datos, modelado computacional y la aplicación de principios mecánicos a biomateriales.",
-        searchButton:"Search",
+      searchPlaceholder: "Buscar por habilidad...",
+      searchErrorMessage: "Por favor, ingrese una habilidad y luego busque :)",
+      noProjectsFoundMessage: "No se encontraron proyectos con las habilidades especificadas.",
+      searchButton: "Buscar",
+      contactPrompt: 'Este sitio web está actualmente en construcción mientras subo más de mis proyectos. Si necesita más ejemplos o ejemplos relacionados con un campo o proyecto específico, por favor ',
+      contactLinkportfolio: 'contáctame.',
         // Contáctame
       nameTitle: "Jackie Harmon",
       detailsTitle: "Detalles",
@@ -476,6 +486,12 @@ const translations = {
       boneComparison: "Comparação das Propriedades Mecânicas do Osso Esponjoso entre o Osso do Fêmur de Porco, o Osso do Fêmur de Veado e o Osso do Úmero Humano",
       researchMTS:"Pesquisa: usa Material Testing System (MTS)",
       bonemodalcontent: "No artigo de pesquisa 'Comparando as Propriedades Mecânicas do Osso Esponjoso entre Osso de Fêmur de Porco, Osso de Fêmur de Veado e Osso de Úmero Humano,' foram utilizadas uma variedade de habilidades técnicas. O estudo envolveu pesquisa avançada de biomateriais e técnicas de testes mecânicos, particularmente focando no estresse axial, deformação e módulo de Young das amostras de osso. O Sistema de Testes de Materiais (MTS) foi utilizado para aplicar forças de compressão controladas às amostras, simulando condições de estresse do mundo real e gerando dados detalhados sobre o comportamento do osso sob carga. O processo exigiu uma preparação precisa das amostras, incluindo corte e medição das amostras de osso, e realização de medições de deslocamento e força para calcular o estresse e a deformação. A análise de dados foi realizada usando métodos gráficos para interpretar as relações de estresse-deformação e determinar o módulo elástico para cada tipo de osso. Esta pesquisa demonstrou habilidades em design experimental, testes avançados de materiais, coleta e análise de dados, modelagem computacional e aplicação de princípios mecânicos a biomateriais.",
+      searchPlaceholder: "Buscar por habilidade...",
+      searchErrorMessage: "Por favor, insira uma habilidade e depois pesquise :)",
+      noProjectsFoundMessage: "Nenhum projeto encontrado com as habilidades especificadas.",
+      searchButton: "Pesquisar",
+      contactPrompt: 'Este site está atualmente em construção enquanto carrego mais dos meus projetos. Se você precisar de mais amostras ou amostras relacionadas a um campo ou projeto específico, por favor ',
+      contactLinkportfolio: 'entre em contato comigo.',
       // Contate-me
       nameTitle: "Jackie Harmon",
       detailsTitle: "Detalhes",
