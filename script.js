@@ -44,24 +44,23 @@ function changeLanguage(lang) {
 
     // Update the text for "Uses" and "Missing" in the current results
     const projectsContainer = document.getElementById('projects');
-    const currentProjects = projectsContainer.querySelectorAll('.project');
+    if (projectsContainer) {
+        const currentProjects = projectsContainer.querySelectorAll('.project');
 
-    currentProjects.forEach(project => {
-        const usesElement = project.querySelector('p.uses');
-        if (usesElement && usesElement.getAttribute('data-matched')) {
-            const matchedSkillsText = usesElement.getAttribute('data-matched');
-            const missingSkillsText = usesElement.getAttribute('data-missing');
-            usesElement.innerHTML = `${translations[lang].uses} ${matchedSkillsText}`;
-            if (missingSkillsText) {
-                usesElement.innerHTML += ` <span style="color: red;">${translations[lang].missing} ${missingSkillsText}</span>`;
+        currentProjects.forEach(project => {
+            const usesElement = project.querySelector('p.uses');
+            if (usesElement && usesElement.getAttribute('data-matched')) {
+                const matchedSkillsText = usesElement.getAttribute('data-matched');
+                const missingSkillsText = usesElement.getAttribute('data-missing');
+                usesElement.innerHTML = `${translations[lang].uses} ${matchedSkillsText}`;
+                if (missingSkillsText) {
+                    usesElement.innerHTML += ` <span style="color: red;">${translations[lang].missing} ${missingSkillsText}</span>`;
+                }
             }
-        }
-    });
+        });
+    }
 
     const errorMessage = document.getElementById('errorMessage');
-    if (errorMessage && errorMessage.textContent) {
-        errorMessage.textContent = translations[lang][errorMessage.getAttribute('data-translate')];
-    }
     if (errorMessage) {
         errorMessage.textContent = ''; // Clear the error message when changing languages
     }
@@ -121,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
             navUl.classList.remove("show");
         }
     });
+    
     // Language toggle hamburger button
     const languageHamburger = document.querySelector(".language-hamburger");
     const languageToggle = document.querySelector('#language-toggle');
@@ -170,18 +170,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Highlight current page's nav item
     highlightCurrentPage();
-    // Set the initial active language button and change to default language (English)
-    const storedLanguage = localStorage.getItem('preferredLanguage') || 'en';
-    changeLanguage(storedLanguage); // Set the language based on stored preference or default to English
 });
 
 // Highlight current page's nav item
 function highlightCurrentPage() {
-    const currentUrl = window.location.href;
+    const currentUrl = window.location.pathname.split('/').pop(); // Get the current page name
     const navItems = document.querySelectorAll('nav ul li');
+
     navItems.forEach(item => {
         const link = item.querySelector('a');
-        if (link && currentUrl.includes(link.getAttribute('href'))) {
+        if (link && link.getAttribute('href') === currentUrl) {
             item.classList.add('active');
         } else {
             item.classList.remove('active');
@@ -189,7 +187,12 @@ function highlightCurrentPage() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', highlightCurrentPage);
+document.addEventListener('DOMContentLoaded', function() {
+    highlightCurrentPage(); // Highlight current page's nav item
+    const storedLanguage = localStorage.getItem('preferredLanguage') || 'en'; // Set the initial active language button and change to default language (English)
+    changeLanguage(storedLanguage); // Set the language based on stored preference or default to English
+});
+
 
 // Travel map - make draggable inside the iframe
 document.addEventListener('DOMContentLoaded', function() {
@@ -400,4 +403,3 @@ function handleKeyPress(event) {
         searchProjects();
     }
 }
-
