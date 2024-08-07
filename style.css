@@ -5,7 +5,6 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
 html {
     overflow-y: scroll;
 }
@@ -95,7 +94,7 @@ header {
     background-color: #4CAF50;
     top: auto;
     left: 0;
-    z-index: 999; /* Ensure it stays on top */
+    z-index: 2000; /* Ensure it stays on top */
 }
 
 /* Navigation styles */
@@ -365,19 +364,19 @@ footer {
     margin-bottom: 10px; /* Add margin between projects */
 }
 
-.modal-project {
+.modal-project-style {
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover */
     padding: 1%; /* Ensure padding around the content */
 }
 
-.modal-project:hover {
-    background-color: #f0f0f0; /* Apply background color when hovering over the project */
+.modal-project-style:hover {
+    background-color: #ddd; /* Apply background color when hovering over the project */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     cursor: pointer; /* Change the cursor to a pointer to indicate interactivity */
 }
 
-.modal-project-link:hover .modal-project {
-    background-color: #f0f0f0; /* Light grey background on hover */
+.modal-project-style-link:hover .modal-project-style {
+    background-color: #ddd; /* Light grey background on hover */
     color: #333; /* Darker text color on hover */
 }
 
@@ -439,7 +438,45 @@ footer {
     display: none;
     text-align: left;
     padding: 0 10%;
-    margin-bottom: 30px; /* Add space between projects */
+    margin-bottom: 50px; /* Add space between projects */
+    clear: both; /* Clear floats to prevent overlap */
+}
+
+.project a {
+    text-decoration: none; /* Remove underline from the hyperlink */
+    color: inherit; /* Inherit text color for consistency */
+    display: block; /* Make the anchor tag block-level to cover the entire project content */
+    height: 100%;
+    width: 100%;
+    position: relative; /* Ensure correct positioning within project */
+}
+
+.project-content {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Add smooth transition */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Apply hover effect only once */
+.project a:hover .project-content {
+    background-color: #ddd; /* Ensure highlight effect when hovering */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer; /* Change the cursor to a pointer to indicate interactivity */
+}
+
+.project h2,
+.project p {
+    color: inherit; /* Inherit color for headings and paragraphs */
+}
+
+/* Clear floats after each project */
+.project:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 /* Error message styles */
