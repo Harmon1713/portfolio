@@ -220,7 +220,7 @@ const translations = {
       // Bienvenido
       introTitle: "¡Bienvenido a mi portafolio!",
       introText: "Este sitio web de portafolio sirve como una plataforma personal para mostrar mis experiencias profesionales, habilidades técnicas y proyectos en los que he trabajado. Está diseñado para proporcionar a los visitantes una comprensión detallada de mis capacidades e intereses en tecnología e ingeniería. Además, encontrarás algunos de mis proyectos personales divertidos en mi sitio web, ofreciendo una visión de mi creatividad e innovación más allá del ámbito profesional. Sumérgete para explorar cómo mi conjunto de habilidades multifacéticas puede marcar la diferencia en tus proyectos y emprendimientos. El sitio está en continua construcción mientras subo más de mis proyectos. Si necesitas más muestras o muestras relacionadas con un campo o proyecto específico, por favor ",
-      authorization: "Estoy autorizado para trabajar profesionalmente en los EE. UU. y Brasil.",
+      authorization: "Estoy autorizada para trabajar profesionalmente en los EE. UU. y Brasil.",
       github: "Mira mi GitHub:",
       // Portafolio
       skills: "Tengo habilidades en:",
@@ -428,7 +428,7 @@ const translations = {
       // Bem-vindo
       introTitle: "Bem-vindo ao meu portfólio!",
       introText: "Este site de portfólio serve como uma plataforma pessoal para exibir minhas experiências profissionais, habilidades técnicas e projetos nos quais trabalhei. Foi projetado para fornecer aos visitantes uma compreensão detalhada de minhas capacidades e interesses em tecnologia e engenharia. Além disso, você encontrará alguns dos meus projetos pessoais divertidos no meu site, oferecendo uma visão da minha criatividade e inovação além do âmbito profissional. Mergulhe para explorar como meu conjunto de habilidades multifacetadas pode fazer a diferença em seus projetos e empreendimentos. O site está continuamente em construção à medida que eu carrego mais dos meus projetos. Se você precisar de mais amostras ou amostras relacionadas a um campo ou projeto específico, por favor ",
-      authorization: "Estou autorizado a trabalhar profissionalmente tanto nos EUA quanto no Brasil.",
+      authorization: "Estou autorizada a trabalhar profissionalmente tanto nos EUA quanto no Brasil.",
       github: "Confira meu GitHub:",
       //Portfólio
       skills: "Sou habilidosa em:",
