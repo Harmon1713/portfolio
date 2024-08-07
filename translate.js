@@ -322,24 +322,24 @@ const translations = {
       westcliffUniversity: "Westcliff University",
       westcliffDates: "2/2023 - presente",
       westcliffPosition:
-        "PROFESOR ADJUNTO (FACULTAD DE TECNOLOGÍA E INGENIERÍA)",
+        "PROFESORA ADJUNTA (FACULTAD DE TECNOLOGÍA E INGENIERÍA)",
       westcliffTask1:
         "Cursos de posgrado: Introducción a la Analítica de Datos, Visualización de Datos en la Nube y Datos en Inteligencia Artificial y Aprendizaje Automático.",
       westcliffTask2:
         "Curso de pregrado en la Facultad de Negocios: Fundamentos de Estadística",
       middleGAStateUniversity: "Middle GA State University",
       middleGADates: "5/2023 – 5/2024",
-      middleGAPosition: "PROFESOR TITULAR Y ADJUNTO (ESCUELA DE COMPUTACIÓN)",
+      middleGAPosition: "PROFESORA TITULAR Y ADJUNTA (ESCUELA DE COMPUTACIÓN)",
       middleGATask1:
         "Cursos de pregrado: Introducción a la Programación Informática, Desarrollo de Aplicaciones, Desarrollo Web, Interacción Humano-Computadora y FinTech.",
       claytonCountySchoolDistrict: "Clayton County School District",
       claytonCountyDates: "10/2022 - 8/2023",
-      claytonCountyPosition: "PROFESOR DE DESARROLLO DE SOFTWARE",
+      claytonCountyPosition: "PROFESORA DE DESARROLLO DE SOFTWARE",
       claytonCountyTask1:
         "Creó documentos curriculares estatales y materiales de capacitación para el curso GADOE 9-12 IST (Introducción a la Tecnología de Software), que cubren la Computación en la Nube, Ciencia de la Computación, Diseño de Juegos, Internet de las Cosas, Programación, Diseño Web y Digital, y Vías de Desarrollo Web.",
       iFood: "iFood",
       iFoodDates: "8/2019 - 2/2022",
-      iFoodPosition: "CONSULTOR DE VISUALIZACIÓN DE DATOS (BRASILIA, BRASIL)",
+      iFoodPosition: "CONSULTORA DE VISUALIZACIÓN DE DATOS (BRASILIA, BRASIL)",
       iFoodTask1:
         "Colaboró con el equipo de ciberseguridad para documentar la implementación de un Equipo Púrpura temporal.",
       iFoodTask2:
@@ -348,7 +348,7 @@ const translations = {
         "Creó y mantuvo documentación para herramientas y procesos de visualización de datos.",
       nuBank: "NuBank",
       nuBankDates: "8/2019 - 2/2022",
-      nuBankPosition: "CONSULTOR DE VISUALIZACIÓN DE DATOS (BRASILIA, BRASIL)",
+      nuBankPosition: "CONSULTORA DE VISUALIZACIÓN DE DATOS (BRASILIA, BRASIL)",
       nuBankTask1:
         "Trabajó en estrecha colaboración con analistas de riesgos de mercado para documentar procesos de análisis de datos y crear paneles de riesgos detallados, asegurando precisión y claridad en la presentación de datos de riesgo.",
       nuBankTask2:
@@ -358,19 +358,19 @@ const translations = {
       navicentHealthPosition1: "ANALISTA DE INVESTIGACIÓN DE CIRUGÍA ROBÓTICA",
       navicentHealthTask1:
         "Proporcionó análisis prescriptivos y desarrolló informes detallados con datos recopilados de proyectos de cirugía reconstructiva, documentando metodologías y hallazgos hasta la finalización del proyecto.",
-      navicentHealthPosition2: "TÉCNICO BIOMÉDICO II",
+      navicentHealthPosition2: "TÉCNICA BIOMÉDICA II",
       navicentHealthTask2:
         "Depuró equipos hospitalarios para UCI, UCIP y UNIC, manteniendo registros de servicio detallados y documentación técnica.",
       navicentHealthTask3:
         "Mentoró a dos pasantes, desarrollando materiales de capacitación que facilitaron su transición exitosa a puestos permanentes.",
       militaryService: "Ejército de EE.UU.",
       militaryServiceDates: "08/2012 - 12/2016",
-      USArmyTask1: "Mecánico de vehículos ligeros con ruedas (91B) en la Guardia Nacional de GA alistado",
-      USArmyTask2: "Coordinador de entrenamiento para más de 40 soldados",
+      USArmyTask1: "Mecánica de vehículos ligeros con ruedas (91B) en la Guardia Nacional de GA alistada",
+      USArmyTask2: "Coordinadora de entrenamiento para más de 40 soldados",
       USArmyTask3: "Green to Gold luego ROTC Active Duty Scholarship – Ingeniería de colocación en el Cuerpo de Ingenieros",
       internshipsTitle: "PASANTÍAS",
       internship1:
-        "Navicent Health Medical Center | Otoño 2016 | PASANTE DE TÉCNICO BIOMÉDICO",
+        "Navicent Health Medical Center | Otoño 2016 | PASANTE DE TÉCNICA BIOMÉDICA",
       internship2:
         "Vein Specialists of the South | Verano 2014 | PASANTE DE ANÁLISIS DE BIOFLUIDOS / BIOMECÁNICA",
       internship3:
@@ -394,7 +394,7 @@ const translations = {
       certification3:
         "Curso de Desarrollo y Evaluación de Liderazgo | Ejército de los EE. UU. | 2016 | Top 15%",
       awardsHonorSocietiesTitle: "PREMIOS Y SOCIEDADES DE HONOR",
-      award1: "Graduado Militar Distinguido",
+      award1: "Graduada Militar Distinguida",
       award2: "Tau Beta Pi (Sociedad de Honor de Ingeniería)",
       award3: "Phi Sigma Iota (Sociedad de Honor de Lenguas Extranjeras)",
       award4: "Alpha Phi Omega (Fraternidad Nacional de Servicio)",
@@ -402,10 +402,10 @@ const translations = {
       award6: "Estudiante Estrella de HS (SAT)",
       volunteeringTitle: "OPORTUNIDADES DE VOLUNTARIADO",
       volunteering1: "Programa de Becarios Fulbright (Verano 2023)",
-      volunteering2: "Entrenador Principal de Softbol (Primavera 2022)",
-      volunteering3: "Misionero (Otoño 2019)",
+      volunteering2: "Entrenadora Principal de Softbol (Primavera 2022)",
+      volunteering3: "Misionera (Otoño 2019)",
       volunteering4: "Honduras Outreach, Inc (Verano 2015)",
-      guestSpeakingTitle: "OPORTUNIDADES PARA HABLAR COMO INVITADO",
+      guestSpeakingTitle: "OPORTUNIDADES PARA HABLAR COMO INVITADA",
       speaking1:
         "Club Rotario de Griffin, GA (3/2023, 2/2018, 8/2013, 4/2012)",
       speaking2: "Club Kiwanis de Griffin, GA (4/2018)",
@@ -529,24 +529,24 @@ const translations = {
       westcliffUniversity: "Westcliff University",
       westcliffDates: "2/2023 - presente",
       westcliffPosition:
-        "PROFESSOR ADJUNTO (FACULDADE DE TECNOLOGIA E ENGENHARIA)",
+        "PROFESSORA ADJUNTA (FACULDADE DE TECNOLOGIA E ENGENHARIA)",
       westcliffTask1:
         "Cursos de pós-graduação: Introdução à Análise de Dados, Visualização de Dados na Nuvem e Dados em Inteligência Artificial e Aprendizado de Máquina.",
       westcliffTask2:
         "Curso de graduação na Faculdade de Negócios: Fundamentos de Estatística",
       middleGAStateUniversity: "Middle GA State University",
       middleGADates: "5/2023 – 5/2024",
-      middleGAPosition: "PROFESSOR TITULAR E ADJUNTO (ESCOLA DE COMPUTAÇÃO)",
+      middleGAPosition: "PROFESSORA TITULAR E ADJUNTA (ESCOLA DE COMPUTAÇÃO)",
       middleGATask1:
         "Cursos de graduação: Introdução à Programação de Computadores, Desenvolvimento de Aplicações, Desenvolvimento Web, Interação Humano-Computador e FinTech.",
       claytonCountySchoolDistrict: "Clayton County School District",
       claytonCountyDates: "10/2022 - 8/2023",
-      claytonCountyPosition: "PROFESSOR DE DESENVOLVIMENTO DE SOFTWARE",
+      claytonCountyPosition: "PROFESSORA DE DESENVOLVIMENTO DE SOFTWARE",
       claytonCountyTask1:
         "Criou documentos curriculares estaduais e materiais de treinamento para o curso GADOE 9-12 IST (Introdução à Tecnologia de Software), cobrindo Computação em Nuvem, Ciência da Computação, Design de Jogos, Internet das Coisas, Programação, Design Digital e Web, e Caminhos de Desenvolvimento Web.",
       iFood: "iFood",
       iFoodDates: "8/2019 - 2/2022",
-      iFoodPosition: "CONSULTOR DE VISUALIZAÇÃO DE DADOS (BRASÍLIA, BRASIL)",
+      iFoodPosition: "CONSULTORA DE VISUALIZAÇÃO DE DADOS (BRASÍLIA, BRASIL)",
       iFoodTask1:
         "Colaborou com a equipe de cibersegurança para documentar a implementação de uma Equipe Púrpura temporária.",
       iFoodTask2:
@@ -555,7 +555,7 @@ const translations = {
         "Criou e manteve documentação para ferramentas e processos de visualização de dados.",
       nuBank: "NuBank",
       nuBankDates: "8/2019 - 2/2022",
-      nuBankPosition: "CONSULTOR DE VISUALIZAÇÃO DE DADOS (BRASÍLIA, BRASIL)",
+      nuBankPosition: "CONSULTORA DE VISUALIZAÇÃO DE DADOS (BRASÍLIA, BRASIL)",
       nuBankTask1:
         "Trabalhou em estreita colaboração com analistas de risco de mercado para documentar processos de análise de dados e criar painéis de risco detalhados, garantindo precisão e clareza na apresentação dos dados de risco.",
       nuBankTask2:
@@ -565,23 +565,23 @@ const translations = {
       navicentHealthPosition1: "ANALISTA DE PESQUISA EM CIRURGIA ROBÓTICA",
       navicentHealthTask1:
         "Forneceu análises prescritivas e desenvolveu relatórios detalhados com dados coletados de projetos de cirurgia reconstrutiva, documentando metodologias e descobertas até a conclusão do projeto.",
-      navicentHealthPosition2: "TÉCNICO EM ENGENHARIA BIOMÉDICA II",
+      navicentHealthPosition2: "TÉCNICA EM ENGENHARIA BIOMÉDICA II",
       navicentHealthTask2:
         "Depurou equipamentos hospitalares para UTI, UCIP e UCIN, mantendo registros detalhados de serviço e documentação técnica.",
       navicentHealthTask3:
         "Mentorou dois estagiários, desenvolvendo materiais de treinamento que facilitaram sua transição bem-sucedida para posições permanentes.",
       militaryService: "Exército dos EUA",
       militaryServiceDates: "08/2012 - 12/2016",
-      USArmyTask1: "Mecânico de veículos leves com rodas (91B) na Guarda Nacional da GA alistado",
-      USArmyTask2: "Coordenador de treinamento para mais de 40 soldados",
+      USArmyTask1: "Mecânica de veículos leves com rodas (91B) na Guarda Nacional da GA alistada",
+      USArmyTask2: "Coordenadora de treinamento para mais de 40 soldados",
       USArmyTask3: "Green to Gold depois ROTC Active Duty Scholarship – Colocação no Corpo de Engenharia",
       internshipsTitle: "ESTÁGIOS",
       internship1:
-        "Navicent Health Medical Center | Outono 2016 | ESTAGIÁRIO DE TÉCNICO EM ENGENHARIA BIOMÉDICA",
+        "Navicent Health Medical Center | Outono 2016 | ESTAGIÁRIA DE TÉCNICA EM ENGENHARIA BIOMÉDICA",
       internship2:
-        "Vein Specialists of the South | Verão 2014 | ESTAGIÁRIO DE ANÁLISE DE BIOFLUIDOS / BIOMECÂNICA",
+        "Vein Specialists of the South | Verão 2014 | ESTAGIÁRIA DE ANÁLISE DE BIOFLUIDOS / BIOMECÂNICA",
       internship3:
-        "Mercer University | Primavera 2014 | ESTAGIÁRIO DE ANÁLISE DE NANOPARTÍCULAS",
+        "Mercer University | Primavera 2014 | ESTAGIÁRIA DE ANÁLISE DE NANOPARTÍCULAS",
       projectsTitle: "PROJETOS",
       project1:
         "Desenvolvimento de um Anexo de Articulação de Tornozelo Móvel para a Prótese Universal | 2016",
@@ -602,7 +602,7 @@ const translations = {
       certification3:
         "Curso de Desenvolvimento e Avaliação de Liderança | Exército dos EUA | 2016 | Top 15%",
       awardsHonorSocietiesTitle: "PRÊMIOS E SOCIEDADES DE HONRA",
-      award1: "Graduado Militar Distinto",
+      award1: "Graduada Militar Distinta",
       award2: "Tau Beta Pi (Sociedade de Honra de Engenharia)",
       award3: "Phi Sigma Iota (Sociedade de Honra de Línguas Estrangeiras)",
       award4: "Alpha Phi Omega (Fraternidade Nacional de Serviço)",
@@ -610,10 +610,10 @@ const translations = {
       award6: "HS STAR Student (SAT)",
       volunteeringTitle: "OPORTUNIDADES DE VOLUNTARIADO",
       volunteering1: "Programa de Bolsas Fulbright (Verão 2023)",
-      volunteering2: "Treinador Principal de Softbol (Primavera 2022)",
-      volunteering3: "Missionário (Outono 2019)",
+      volunteering2: "Treinadora Principal de Softbol (Primavera 2022)",
+      volunteering3: "Missionária (Outono 2019)",
       volunteering4: "Honduras Outreach, Inc (Verão 2015)",
-      guestSpeakingTitle: "OPORTUNIDADES PARA FALAR COMO CONVIDADO",
+      guestSpeakingTitle: "OPORTUNIDADES PARA FALAR COMO CONVIDADA",
       speaking1:
         "Rotary Club de Griffin, GA (3/2023, 2/2018, 8/2013, 4/2012)",
       speaking2: "Kiwanis Club de Griffin, GA (4/2018)",
