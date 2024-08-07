@@ -23,6 +23,11 @@
                     <h1 data-translate="portfolioTitle">Jackie Harmon's Portfolio</h1>
                 </div>
             </div>
+            <!-- Language Toggle Button for Mobile -->
+            <div class="language-hamburger">
+                <i class="fas fa-globe"></i>
+            </div>
+            <!-- Language Toggle for Desktop -->
             <div id="language-toggle" class="d-flex flex-column align-items-end">
                 <button data-translate="english" data-lang="en" onclick="changeLanguage('en')" id="en-btn" class="btn btn-light mb-2">English</button>
                 <button data-translate="spanish" data-lang="es" onclick="changeLanguage('es')" id="es-btn" class="btn btn-light mb-2">Spanish</button>
@@ -32,6 +37,10 @@
         <!-- Navigation Bar -->
         <nav class="bg-dark">
             <div class="container">
+                <!-- Hamburger Menu for Mobile -->
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
                 <ul class="nav justify-content-center">
                     <li class="nav-item"><a href="index.html" class="nav-link text-white" data-translate="welcomeLink">Welcome</a></li>
                     <li class="nav-item"><a href="portfolio.html" class="nav-link text-white" data-translate="portfolioLink">Portfolio</a></li>
@@ -48,22 +57,41 @@
             <center><a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Harmon_Jackie_Resume.pdf" target="_blank" download>
                 <img src="images/PDF_file_icon.svg.png" alt="View PDF Resume" style="width: 50px; height: 60px;">
             </a></center>
-            <br><br>
-            <h3 data-translate="summaryQualifications">SUMMARY OF QUALIFICATIONS</h3>
-            <div class="green-line"></div><br>
-            <p data-translate="qualifications">Background in programming and engineering. Skilled in code development and review, including creating documentation for software and IT processes. Proficient in translating complex technical information into clear, user-friendly manuals and guides. Excellent organizational and planning abilities, committed to delivering projects on time and within scope. Proven track record of collaborating with project managers, analysts, and subject matter experts to produce high-quality materials that meets regulatory requirements.</p>
             <br>
+
             <h4 data-translate="languagesTitle">LANGUAGES</h4>
             <div class="green-line"></div><br>
-            <p data-translate="languages">English (native) | Spanish (fluent) | Portuguese (fluent) | Mandarin (beginner)</p>
+            <ol><li span data-translate="languages_spoken">English (native) | Spanish (fluent) | Portuguese (fluent) | Mandarin (beginner)</li></ol></span>
             <br>
-            <h4 data-translate="technicalSkillsTitle">TECHNICAL SKILLS</h4>
+            <h4 data-translate="SkillsTitle">SKILLS</h4>
             <div class="green-line"></div><br>
-            <p data-translate="technicalSkills">Technical Writing | HTML | Markdown | Microsoft Office Suite | Project Management | Python | C++ | CSS | JavaScript | Posit Cloud / R | Tableau | MATLAB | LabVIEW | SPSS | MiniTab | MySQL | SQLite3 | AutoDesk Inventor</p>
-            <br>
-            <h4 data-translate="militaryServiceTitle">MILITARY SERVICE</h4>
-            <div class="green-line"></div><br>
-            <p data-translate="militaryService">US Army 2012-2016</p>
+            <ul>
+                <li>
+                    <span class="bold-text" data-translate="languagesLabel">Languages:</span>
+                    <span data-translate="languagesText"> Python, R, SQL/NoSQL, JavaScript, HTML/Markdown, CSS, C++, MATLAB, HPCC/DAS, LaTex</span>
+                </li>
+                <li>
+                    <span class="bold-text" data-translate="frameworksLabel">Frameworks:</span>
+                    <span data-translate="frameworksText"> jQuery, Bootstrap, Flask, React, FastAPI, Helm</span>
+                </li>
+                <li>
+                    <span class="bold-text" data-translate="toolsLabel">Analysis/Visualization Tools:</span>
+                    <span data-translate="toolsText"> JupyterLab, Posit Cloud, Tableau, Excel, HPCC Systems, SPSS, MiniTab</span>
+                </li>
+                <li>
+                    <span class="bold-text" data-translate="databasesLabel">Databases:</span>
+                    <span data-translate="databasesText"> MySQL, MariaDB, MongoDB, Redis, DynamoDB, GitHub/Git LFS, SQLite3</span>
+                </li>
+                <li>
+                    <span class="bold-text" data-translate="softwareLabel">Software:</span>
+                    <span data-translate="softwareText"> Chocolatey, PuTTY, MiKTeX, Terraform</span>
+                </li>
+                <li>
+                    <span class="bold-text" data-translate="managerialSkillsLabel">Managerial Skills:</span>
+                    <span data-translate="managerialSkillsText"> Team Training, Project Management, Technical writing, Troubleshooting</span>
+                </li>
+            </ul>
+            
             <br>
             <h4 data-translate="workExperienceTitle">WORK EXPERIENCE</h4>
             <div class="green-line"></div><br>
@@ -146,8 +174,19 @@
                         </li>
                     </ol>
                 </li>
+                <li>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="font-weight: bold;" data-translate="militaryService">US Army</span>
+                        <span style="font-weight: bold;" data-translate="militaryServiceDates">08/2012 - 12/2016</span>
+                    </div>
+                    <ol>
+                        <li><span data-translate="USArmyTask1">Light-wheeled vehicle mechanic (91B) in GA National Guard enlisted</span></li>
+                        <li><span data-translate="USArmyTask2">Coordinator of training for 40+ soldiers</span></li>
+                        <li><span data-translate="USArmyTask3">Green to Gold then ROTC Active Duty Scholarship – Engineering Corp placement</span></li>
+                    </ol>
+                </li> 
+                <br>
             </ol>
-            <br>
             <h4 data-translate="internshipsTitle">INTERNSHIPS</h4>
             <div class="green-line"></div><br>
             <ol>
@@ -223,23 +262,21 @@
         </div>
     </main>
 
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white py-3 text-center">
+        <div class="container">
+            <p data-translate="footer">Copyright © 2024 Jackie Harmon. All rights reserved.</p>
+        </div>
+    </footer>
+
     <button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top">^</button>
 
-        <!-- Footer Section -->
-        <footer class="bg-dark text-white py-3 text-center">
-            <div class="container">
-                <p data-translate="footer">Copyright © 2024 Jackie Harmon. All rights reserved.</p>
-            </div>
-        </footer>
-    
-        <button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top">^</button>
-    
-        <script src="translate.js"></script>
-        <script src="script.js"></script>
-        <!-- Include Bootstrap JS and dependencies -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </body>
-    
-    </html>
+    <script src="translate.js"></script>
+    <script src="script.js"></script>
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
