@@ -13,8 +13,7 @@ const translations = {
       scrollTopBtn: "^",
       // Welcome
       introTitle: "Welcome to my portfolio!",
-      introText:
-        "I am a versatile professional with a passion for leveraging technology to enhance efficiency in various industries. My portfolio showcases not only my teaching prowess but also my expertise as a data visualization consultant, biomedical research analyst, and biomedical technician. Additionally, you'll find some of my fun personal projects on my website, offering a glimpse into my creativity and innovation beyond the professional realm. Dive in to explore how my multifaceted skillset can make a difference in your projects and endeavors.",
+      introText: "This portfolio website serves as a personal platform to display my professional experiences, technical skills, and projects I've worked on. It's designed to provide visitors with a thorough understanding of my capabilities and interests in technology and engineering. Additionally, you'll find some of my fun personal projects on my website, offering a glimpse into my creativity and innovation beyond the professional realm. Dive in to explore how my multifaceted skillset can make a difference in your projects and endeavors. The site is continuously undergoing construction as I upload more of my projects. If you need more samples or samples related to a specific field or project, please ",      
       authorization: "I am authorized to work professionally in both the USA and Brazil.",
       github: "Check out my GitHub:",
       //Portfolio
@@ -79,7 +78,7 @@ const translations = {
       searchErrorMessage: "Please enter a skill, then search :)",
       noProjectsFoundMessage: "No projects found with the specified skills.",
       searchButton: "Search",
-      contactPrompt: 'This website is currently undergoing construction as I upload more of my projects. If you need more samples or samples related to a specific field or project, please ',
+      contactPrompt: 'The site is continuously undergoing construction as I upload more of my projects. If you need more samples or samples related to a specific field or project, please ',
       contactLinkportfolio: 'contact me.',
         // Contact
       nameTitle: "Jackie Harmon",
@@ -218,8 +217,7 @@ const translations = {
       scrollTopBtn: "^",
       // Bienvenido
       introTitle: "¡Bienvenido a mi portafolio!",
-      introText:
-        "Soy una profesional versátil con una pasión por aprovechar la tecnología para mejorar la eficiencia en diversas industrias. Mi portafolio muestra no solo mi destreza en la enseñanza, sino también mi experiencia como consultora de visualización de datos, analista de investigación biomédica y técnica biomédica. Además, encontrarás algunos de mis proyectos personales divertidos en mi sitio web, que ofrecen una visión de mi creatividad e innovación más allá del ámbito profesional. Sumérgete para explorar cómo mi conjunto de habilidades multifacéticas puede marcar la diferencia en tus proyectos y esfuerzos.",
+      introText: "Este sitio web de portafolio sirve como una plataforma personal para mostrar mis experiencias profesionales, habilidades técnicas y proyectos en los que he trabajado. Está diseñado para proporcionar a los visitantes una comprensión detallada de mis capacidades e intereses en tecnología e ingeniería. Además, encontrarás algunos de mis proyectos personales divertidos en mi sitio web, ofreciendo una visión de mi creatividad e innovación más allá del ámbito profesional. Sumérgete para explorar cómo mi conjunto de habilidades multifacéticas puede marcar la diferencia en tus proyectos y emprendimientos. El sitio está en continua construcción mientras subo más de mis proyectos. Si necesitas más muestras o muestras relacionadas con un campo o proyecto específico, por favor ",
       authorization: "Estoy autorizado para trabajar profesionalmente en los EE. UU. y Brasil.",
       github: "Mira mi GitHub:",
       // Portafolio
@@ -284,7 +282,7 @@ const translations = {
       searchErrorMessage: "Por favor, ingrese una habilidad y luego busque :)",
       noProjectsFoundMessage: "No se encontraron proyectos con las habilidades especificadas.",
       searchButton: "Buscar",
-      contactPrompt: 'Este sitio web está actualmente en construcción mientras subo más de mis proyectos. Si necesita más ejemplos o ejemplos relacionados con un campo o proyecto específico, por favor ',
+      contactPrompt: 'El sitio está en continua construcción mientras subo más de mis proyectos. Si necesitas más muestras o muestras relacionadas con un campo o proyecto específico, por favor ',
       contactLinkportfolio: 'contáctame.',
         // Contáctame
       nameTitle: "Jackie Harmon",
@@ -425,8 +423,7 @@ const translations = {
       scrollTopBtn: "^",
       // Bem-vindo
       introTitle: "Bem-vindo ao meu portfólio!",
-      introText:
-        "Sou uma profissional versátil com uma paixão por alavancar a tecnologia para aumentar a eficiência em várias indústrias. Meu portfólio mostra não apenas minha destreza no ensino, mas também minha experiência como consultora de visualização de dados, analista de pesquisa biomédica e técnica biomédica. Além disso, você encontrará alguns dos meus projetos pessoais divertidos em meu site, oferecendo um vislumbre de minha criatividade e inovação além do campo profissional. Mergulhe para explorar como meu conjunto de habilidades multifacetadas pode fazer a diferença em seus projetos e empreendimentos.",
+      introText: "Este site de portfólio serve como uma plataforma pessoal para exibir minhas experiências profissionais, habilidades técnicas e projetos nos quais trabalhei. Foi projetado para fornecer aos visitantes uma compreensão detalhada de minhas capacidades e interesses em tecnologia e engenharia. Além disso, você encontrará alguns dos meus projetos pessoais divertidos no meu site, oferecendo uma visão da minha criatividade e inovação além do âmbito profissional. Mergulhe para explorar como meu conjunto de habilidades multifacetadas pode fazer a diferença em seus projetos e empreendimentos. O site está continuamente em construção à medida que eu carrego mais dos meus projetos. Se você precisar de mais amostras ou amostras relacionadas a um campo ou projeto específico, por favor ",
       authorization: "Estou autorizado a trabalhar profissionalmente tanto nos EUA quanto no Brasil.",
       github: "Confira meu GitHub:",
       //Portfólio
@@ -490,7 +487,7 @@ const translations = {
       searchErrorMessage: "Por favor, insira uma habilidade e depois pesquise :)",
       noProjectsFoundMessage: "Nenhum projeto encontrado com as habilidades especificadas.",
       searchButton: "Pesquisar",
-      contactPrompt: 'Este site está atualmente em construção enquanto carrego mais dos meus projetos. Se você precisar de mais amostras ou amostras relacionadas a um campo ou projeto específico, por favor ',
+      contactPrompt: 'O site está continuamente em construção à medida que eu carrego mais dos meus projetos. Se você precisar de mais amostras ou amostras relacionadas a um campo ou projeto específico, por favor ',
       contactLinkportfolio: 'entre em contato comigo.',
       // Contate-me
       nameTitle: "Jackie Harmon",
