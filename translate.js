@@ -77,6 +77,8 @@ const translations = {
       searchPlaceholder: "Search by skill...",
       searchErrorMessage: "Please enter a skill, then search :)",
       noProjectsFoundMessage: "No projects found with the specified skills.",
+      uses: "Uses",
+      missing: "Missing",
       searchButton: "Search",
       contactPrompt: 'The site is continuously undergoing construction as I upload more of my projects. If you need more samples or samples related to a specific field or project, please ',
       contactLinkportfolio: 'contact me.',
@@ -282,6 +284,8 @@ const translations = {
       searchErrorMessage: "Por favor, ingrese una habilidad y luego busque :)",
       noProjectsFoundMessage: "No se encontraron proyectos con las habilidades especificadas.",
       searchButton: "Buscar",
+      uses: "Usa",
+      missing: "Faltante",
       contactPrompt: 'El sitio está en continua construcción mientras subo más de mis proyectos. Si necesitas más muestras o muestras relacionadas con un campo o proyecto específico, por favor ',
       contactLinkportfolio: 'contáctame.',
         // Contáctame
@@ -487,6 +491,8 @@ const translations = {
       searchErrorMessage: "Por favor, insira uma habilidade e depois pesquise :)",
       noProjectsFoundMessage: "Nenhum projeto encontrado com as habilidades especificadas.",
       searchButton: "Pesquisar",
+      uses: "Usa",
+      missing: "Faltando",
       contactPrompt: 'O site está continuamente em construção à medida que eu carrego mais dos meus projetos. Se você precisar de mais amostras ou amostras relacionadas a um campo ou projeto específico, por favor ',
       contactLinkportfolio: 'entre em contato comigo.',
       // Contate-me
