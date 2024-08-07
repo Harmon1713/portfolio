@@ -87,17 +87,23 @@ const translations = {
       // Resume
       references:
         "References are available upon request. Unofficial transcripts, as well as certificates, are hyperlinked. If you want my resume, it is available in PDF format.",
-      summaryQualifications: "SUMMARY OF QUALIFICATIONS",
-      qualifications:
-        "Background in programming and engineering. Skilled in code development and review, including creating documentation for software and IT processes. Proficient in translating complex technical information into clear, user-friendly manuals and guides. Excellent organizational and planning abilities, committed to delivering projects on time and within scope. Proven track record of collaborating with project managers, analysts, and subject matter experts to produce high-quality materials that meets regulatory requirements.",
       languagesTitle: "LANGUAGES",
-      languages:
+      languages_spoken:
         "English (native) | Spanish (fluent) | Portuguese (fluent) | Mandarin (beginner)",
-      technicalSkillsTitle: "TECHNICAL SKILLS",
-      technicalSkills:
-        "Technical Writing | HTML | Markdown | Microsoft Office Suite | Project Management | Python | C++ | CSS | JavaScript | Posit Cloud / R | Tableau | MATLAB | LabVIEW | SPSS | MiniTab | MySQL | SQLite3 | AutoDesk Inventor",
-      militaryServiceTitle: "MILITARY SERVICE",
-      militaryService: "US Army 2012-2016",
+      SkillsTitle: "SKILLS",
+      languages: "Languages: Python, R, SQL/NoSQL, JavaScript, HTML/Markdown, CSS, C++, MATLAB, HPCC/DAS, LaTex",
+      languagesLabel: "Languages:",
+      languagesText: " Python, R, SQL/NoSQL, JavaScript, HTML/Markdown, CSS, C++, MATLAB, HPCC/DAS, LaTex",
+      frameworksLabel: "Frameworks:",
+      frameworksText: " jQuery, Bootstrap, Flask, React, FastAPI, Helm",
+      toolsLabel: "Analysis/Visualization Tools:",
+      toolsText: " JupyterLab, Posit Cloud, Tableau, Excel, HPCC Systems, SPSS, MiniTab",
+      databasesLabel: "Databases:",
+      databasesText: " MySQL, MariaDB, MongoDB, Redis, DynamoDB, GitHub/Git LFS, SQLite3",
+      softwareLabel: "Software:",
+      softwareText: " Chocolatey, PuTTY, MiKTeX, Terraform",
+      managerialSkillsLabel: "Managerial Skills:",
+      managerialSkillsText: " Team Training, Project Management, Technical writing, Troubleshooting",
       workExperienceTitle: "WORK EXPERIENCE",
       westcliffUniversity: "Westcliff University",
       westcliffDates: "2/2023 - present",
@@ -143,6 +149,11 @@ const translations = {
         "Debugged hospital equipment for ICU, PICU, and NNICU, maintaining detailed service logs and technical documentation.",
       navicentHealthTask3:
         "Mentored two interns, developing training materials that facilitated their successful transition into permanent positions.",
+      militaryService: "US Army",
+      militaryServiceDates: "08/2012 - 12/2016",
+      USArmyTask1: "Light-wheeled vehicle mechanic (91B) in GA National Guard enlisted",
+      USArmyTask2: "Coordinator of training for 40+ soldiers",
+      USArmyTask3: "Green to Gold then ROTC Active Duty Scholarship – Engineering Corp placement",
       internshipsTitle: "INTERNSHIPS",
       internship1:
         "Navicent Health Medical Center | Fall 2016 | BIOMEDICAL ENGINEERING TECHNICIAN INTERN",
@@ -280,13 +291,21 @@ const translations = {
       qualifications:
         "Experiencia en programación e ingeniería. Hábil en el desarrollo y revisión de código, incluyendo la creación de documentación para software y procesos de TI. Proficiente en traducir información técnica compleja en manuales y guías fáciles de usar. Excelentes habilidades organizativas y de planificación, comprometida a entregar proyectos a tiempo y dentro del alcance. Historial comprobado de colaboración con gerentes de proyecto, analistas y expertos en la materia para producir materiales de alta calidad que cumplen con los requisitos regulatorios.",
       languagesTitle: "IDIOMAS",
-      languages:
+      languages_spoken:
         "Inglés (nativo) | Español (fluido) | Portugués (fluido) | Mandarín (principiante)",
-      technicalSkillsTitle: "HABILIDADES TÉCNICAS",
-      technicalSkills:
-        "Redacción técnica | HTML | Markdown | Microsoft Office Suite | Gestión de proyectos | Python | C++ | CSS | JavaScript | Posit Cloud / R | Tableau | MATLAB | LabVIEW | SPSS | MiniTab | MySQL | SQLite3 | AutoDesk Inventor",
-      militaryServiceTitle: "SERVICIO MILITAR",
-      militaryService: "Ejército de los EE. UU. 2012-2016",
+      SkillsTitle: "HABILIDADES",
+      languagesLabel: "Idiomas:",
+      languagesText: " Python, R, SQL/NoSQL, JavaScript, HTML/Markdown, CSS, C++, MATLAB, HPCC/DAS, LaTex",
+      frameworksLabel: "Frameworks:",
+      frameworksText: " jQuery, Bootstrap, Flask, React, FastAPI, Helm",
+      toolsLabel: "Herramientas de Análisis/Visualización:",
+      toolsText: " JupyterLab, Posit Cloud, Tableau, Excel, HPCC Systems, SPSS, MiniTab",
+      databasesLabel: "Bases de Datos:",
+      databasesText: " MySQL, MariaDB, MongoDB, Redis, DynamoDB, GitHub/Git LFS, SQLite3",
+      softwareLabel: "Software:",
+      softwareText: " Chocolatey, PuTTY, MiKTeX, Terraform",
+      managerialSkillsLabel: "Habilidades Gerenciales:",
+      managerialSkillsText: " Capacitación de equipos, Gestión de proyectos, Redacción técnica, Solución de problemas",
       workExperienceTitle: "EXPERIENCIA LABORAL",
       westcliffUniversity: "Westcliff University",
       westcliffDates: "2/2023 - presente",
@@ -332,6 +351,11 @@ const translations = {
         "Depuró equipos hospitalarios para UCI, UCIP y UNIC, manteniendo registros de servicio detallados y documentación técnica.",
       navicentHealthTask3:
         "Mentoró a dos pasantes, desarrollando materiales de capacitación que facilitaron su transición exitosa a puestos permanentes.",
+      militaryService: "Ejército de EE.UU.",
+      militaryServiceDates: "08/2012 - 12/2016",
+      USArmyTask1: "Mecánico de vehículos ligeros con ruedas (91B) en la Guardia Nacional de GA alistado",
+      USArmyTask2: "Coordinador de entrenamiento para más de 40 soldados",
+      USArmyTask3: "Green to Gold luego ROTC Active Duty Scholarship – Ingeniería de colocación en el Cuerpo de Ingenieros",
       internshipsTitle: "PASANTÍAS",
       internship1:
         "Navicent Health Medical Center | Otoño 2016 | PASANTE DE TÉCNICO BIOMÉDICO",
@@ -396,7 +420,7 @@ const translations = {
       authorization: "Estou autorizado a trabalhar profissionalmente tanto nos EUA quanto no Brasil.",
       github: "Confira meu GitHub:",
       //Portfólio
-      skills: "Sou habilidoso em:",
+      skills: "Sou habilidosa em:",
       skillPrompt:
         "Clique nos ícones abaixo para ver exemplos do meu conjunto de habilidades ou pesquise por habilidade. Cada projeto é um hiperlink para os materiais de origem. Para ver todos os projetos, pesquise 'todos'.",
       frontend: "Desenvolvimento Front-End",
@@ -467,13 +491,21 @@ const translations = {
       qualifications:
         "Experiência em programação e engenharia. Hábil no desenvolvimento e revisão de código, incluindo a criação de documentação para software e processos de TI. Proficiência em traduzir informações técnicas complexas em manuais e guias fáceis de usar. Excelentes habilidades organizacionais e de planejamento, comprometida com a entrega de projetos no prazo e dentro do escopo. Histórico comprovado de colaboração com gerentes de projeto, analistas e especialistas no assunto para produzir materiais de alta qualidade que atendem aos requisitos regulamentares.",
       languagesTitle: "IDIOMAS",
-      languages:
+      languages_spoken:
         "Inglês (nativo) | Espanhol (fluente) | Português (fluente) | Mandarim (iniciante)",
-      technicalSkillsTitle: "HABILIDADES TÉCNICAS",
-      technicalSkills:
-        "Redação técnica | HTML | Markdown | Microsoft Office Suite | Gerenciamento de Projetos | Python | C++ | CSS | JavaScript | Posit Cloud / R | Tableau | MATLAB | LabVIEW | SPSS | MiniTab | MySQL | SQLite3 | AutoDesk Inventor",
-      militaryServiceTitle: "SERVIÇO MILITAR",
-      militaryService: "Exército dos EUA 2012-2016",
+      SkillsTitle: "HABILIDADES",
+      languagesLabel: "Idiomas:",
+      languagesText: " Python, R, SQL/NoSQL, JavaScript, HTML/Markdown, CSS, C++, MATLAB, HPCC/DAS, LaTex",
+      frameworksLabel: "Frameworks:",
+      frameworksText: " jQuery, Bootstrap, Flask, React, FastAPI, Helm",
+      toolsLabel: "Ferramentas de Análise/Visualização:",
+      toolsText: " JupyterLab, Posit Cloud, Tableau, Excel, HPCC Systems, SPSS, MiniTab",
+      databasesLabel: "Bancos de Dados:",
+      databasesText: " MySQL, MariaDB, MongoDB, Redis, DynamoDB, GitHub/Git LFS, SQLite3",
+      softwareLabel: "Software:",
+      softwareText: " Chocolatey, PuTTY, MiKTeX, Terraform",
+      managerialSkillsLabel: "Habilidades Gerenciais:",
+      managerialSkillsText: " Treinamento de equipe, Gerenciamento de projetos, Redação técnica, Solução de problemas",
       workExperienceTitle: "EXPERIÊNCIA PROFISSIONAL",
       westcliffUniversity: "Westcliff University",
       westcliffDates: "2/2023 - presente",
@@ -519,6 +551,11 @@ const translations = {
         "Depurou equipamentos hospitalares para UTI, UCIP e UCIN, mantendo registros detalhados de serviço e documentação técnica.",
       navicentHealthTask3:
         "Mentorou dois estagiários, desenvolvendo materiais de treinamento que facilitaram sua transição bem-sucedida para posições permanentes.",
+      militaryService: "Exército dos EUA",
+      militaryServiceDates: "08/2012 - 12/2016",
+      USArmyTask1: "Mecânico de veículos leves com rodas (91B) na Guarda Nacional da GA alistado",
+      USArmyTask2: "Coordenador de treinamento para mais de 40 soldados",
+      USArmyTask3: "Green to Gold depois ROTC Active Duty Scholarship – Colocação no Corpo de Engenharia",
       internshipsTitle: "ESTÁGIOS",
       internship1:
         "Navicent Health Medical Center | Outono 2016 | ESTAGIÁRIO DE TÉCNICO EM ENGENHARIA BIOMÉDICA",
