@@ -33,28 +33,48 @@ function changeLanguage(lang) {
     const elements = document.querySelectorAll('[data-translate]');
     elements.forEach(el => {
         const translateKey = el.getAttribute('data-translate');
-        
         if (translations[lang] && translations[lang][translateKey]) {
             if (el.tagName.toLowerCase() === 'input') {
                 el.setAttribute('placeholder', translations[lang][translateKey]);
-            } else if (el.id === 'errorMessage') {
-                el.textContent = ''; // Clear existing error message
             } else {
                 el.innerText = translations[lang][translateKey];
             }
         }
     });
-    
+
+    // Update the text for "Uses" and "Missing" in the current results
+    const projectsContainer = document.getElementById('projects');
+    const currentProjects = projectsContainer.querySelectorAll('.project');
+
+    currentProjects.forEach(project => {
+        const usesElement = project.querySelector('p.uses');
+        if (usesElement && usesElement.getAttribute('data-matched')) {
+            const matchedSkillsText = usesElement.getAttribute('data-matched');
+            const missingSkillsText = usesElement.getAttribute('data-missing');
+            usesElement.innerHTML = `${translations[lang].uses} ${matchedSkillsText}`;
+            if (missingSkillsText) {
+                usesElement.innerHTML += ` <span style="color: red;">${translations[lang].missing} ${missingSkillsText}</span>`;
+            }
+        }
+    });
+
+    const errorMessage = document.getElementById('errorMessage');
+    if (errorMessage && errorMessage.textContent) {
+        errorMessage.textContent = translations[lang][errorMessage.getAttribute('data-translate')];
+    }
+    if (errorMessage) {
+        errorMessage.textContent = ''; // Clear the error message when changing languages
+    }
+
     setActiveLanguageButton(lang); // Set the active button
     localStorage.setItem('preferredLanguage', lang); // Store the selected language in local storage
-    
+
     // Hide the language dropdown after selecting a language
     const languageDropdown = document.querySelector('.language-dropdown');
-    if (languageDropdown.classList.contains('show')) {
+    if (languageDropdown && languageDropdown.classList.contains('show')) {
         languageDropdown.classList.remove('show');
     }
 }
-
 
 // Function to set the active language button
 function setActiveLanguageButton(lang) {
@@ -144,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.addEventListener("click", function (event) {
         if (!languageDropdown.contains(event.target) && !languageHamburger.contains(event.target)) {
-            languageDropdown.classList.remove("show");
+            languageDropdown.classList.remove('show');
         }
     });
 
@@ -170,7 +190,6 @@ function highlightCurrentPage() {
 }
 
 document.addEventListener('DOMContentLoaded', highlightCurrentPage);
-
 
 // Travel map - make draggable inside the iframe
 document.addEventListener('DOMContentLoaded', function() {
@@ -210,8 +229,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     map.style.cursor = 'grab';
 });
-
-
 
 // Modal
 function showPopup(modalId) {
@@ -320,6 +337,7 @@ function searchProjects() {
 
     if (input === '') {
         errorMessage.textContent = translations[currentLanguage].searchErrorMessage;
+        projectsContainer.innerHTML = ''; // Clear previously shown projects
         return;
     }
 
@@ -352,11 +370,17 @@ function searchProjects() {
         const project = result.element;
         project.style.display = 'block';
         const matchedSkillsText = result.matchedSkills.join(', ');
+        const usesElement = project.querySelector('p.uses');
+
         if (result.missingSkills.length > 0) {
             const missingSkillsText = result.missingSkills.join(', ');
-            project.querySelector('p').innerHTML = `Uses ${matchedSkillsText}. <span style="color: red;">Missing ${missingSkillsText}</span>`;
+            usesElement.innerHTML = `${translations[currentLanguage].uses} ${matchedSkillsText}. <span style="color: red;">${translations[currentLanguage].missing} ${missingSkillsText}</span>`;
+            usesElement.setAttribute('data-matched', matchedSkillsText);
+            usesElement.setAttribute('data-missing', missingSkillsText);
         } else {
-            project.querySelector('p').innerHTML = `Uses ${matchedSkillsText}`;
+            usesElement.innerHTML = `${translations[currentLanguage].uses} ${matchedSkillsText}`;
+            usesElement.setAttribute('data-matched', matchedSkillsText);
+            usesElement.removeAttribute('data-missing');
         }
         projectsContainer.appendChild(project); // Append project in sorted order
     });
@@ -376,3 +400,4 @@ function handleKeyPress(event) {
         searchProjects();
     }
 }
+
