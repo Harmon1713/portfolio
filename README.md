@@ -101,62 +101,79 @@ Follow these instructions to set up and run the portfolio website locally on you
 ### Front-End Development
 
 - **Portfolio Website**  
-  Technologies: HTML (Bootstrap), CSS, JavaScript (jQuery, popper)  
-  [GitHub Repository](https://github.com/Harmon1713/portfolio)
+  Technologies: HTML (Bootstrap), CSS, JavaScript (jQuery, popper.js)  
+  [View Project](https://github.com/Harmon1713/portfolio)
 
 ### Application Development
 
 - **Giraffe Warmer Maintenance Application**  
   Technologies: Python (tkinter, datetime, SQLite), SQL  
-  [GitHub Release](https://github.com/Harmon1713/portfolio/releases/tag/v1.0.0)
+  [View Project](https://github.com/Harmon1713/portfolio/releases/tag/v1.0.0)
 
 - **Snake Game Application**  
   Technologies: Python (Pygame, SQLite), SQL  
-  [GitHub Release](https://github.com/Harmon1713/portfolio/releases/tag/v2.1.0)
+  [View Project](https://github.com/Harmon1713/portfolio/releases/tag/v2.1.0)
 
 ### Data Visualization
 
 - **Interactive Travel Map**  
   Technologies: HTML, CSS, JavaScript (D3.js), GeoJSON, SVG  
-  [GitHub Repository](https://github.com/Harmon1713/my-travel-map)
+  [View Project](https://github.com/Harmon1713/my-travel-map)
 
 - **Interactive Graphs**  
   Technologies: R (dplyr, ggplot2, ggiraph, patchwork, htmlwidgets), HTML, CSS  
-  [GitHub Repository](https://github.com/Harmon1713/Plots)
+  [View Project](https://github.com/Harmon1713/Plots)
+
+- **An In-Depth Analysis of the Motor Vehicle Crash Data in Texas for 2013**  
+  Technologies: Python (Pandas, NumPy, SciPy, Statsmodels), R (dplyr, tidyr, readxl, lubridate, stringr, data.table, broom), Tableau  
+  [View Project](https://github.com/Harmon1713/portfolio/blob/main/documents/An%20in-depth%20analysis%20of%20the%20motor%20vehicle%20crash%20Data%20in%20Texas%20for%202013.pdf)
+
+- **A Data-Driven Analysis of Video Game Sales**  
+  Technologies: Python (Pandas, NumPy, SciPy), R (dplyr, tidyr, readr, lubridate, stringr, data.table, broom), Tableau  
+  [View Project](https://github.com/Harmon1713/portfolio/blob/main/documents/A%20Data-Driven%20Analysis%20of%20Video%20Game%20Sales.pdf)
+
+- **A Data-Driven Analysis of Cigarette Consumption Patterns**  
+  Technologies: R (ggplot2, dplyr, Ecdat, RColorBrewer)  
+  [View Project](https://github.com/Harmon1713/portfolio/blob/main/documents/A%20Data-Driven%20Analysis%20of%20Cigarette%20Consumption%20Patterns.pdf)
+
+- **Understanding Height Dynamics Through Regressions**  
+  Technologies: R (ggplot2, lm(), gvlma, predictmeans), Python (Pandas, NumPy, SciPy, Matplotlib, Seaborn, statsmodels, pylab)  
+  [View Project](https://github.com/Harmon1713/portfolio/blob/main/documents/Understanding%20Height%20Dynamics%20Through%20Regression.pdf)
+
 
 ### Technical Writing
 
 - **User Guide: Giraffe Warmer Maintenance Application**  
   Technologies: Markdown  
-  [GitHub Release](https://github.com/Harmon1713/portfolio/releases/tag/v1.0.0)
+  [View Project](https://github.com/Harmon1713/portfolio/releases/tag/v1.0.0)
 
 - **Course Documentation - ITEC2270: Application Development**  
   Technologies: Markdown, LaTex, Pandoc, Python (matplotlib)  
-  [GitHub Documentation](https://github.com/Harmon1713/portfolio/blob/main/Snake%20Game%20Application/ITEC2270_documentation.pdf)
+  [View Project](https://github.com/Harmon1713/portfolio/blob/main/Snake%20Game%20Application/ITEC2270_documentation.pdf)
 
 ### CAD Drafting
 
 - **Development of a Mobile Ankle Joint Attachment For the Universal Prosthesis**  
   Technologies: Inventor, CAD, Drafting  
-  [GitHub Documentation](https://github.com/Harmon1713/portfolio/blob/main/documents/Development%20of%20a%20Mobile%20Ankle%20Joint%20Attachment%20For%20the%20Universal%20Prosthesis.pdf)
+  [View Project](https://github.com/Harmon1713/portfolio/blob/main/documents/Development%20of%20a%20Mobile%20Ankle%20Joint%20Attachment%20For%20the%20Universal%20Prosthesis.pdf)
 
 - **Container Home**  
   Technologies: Inventor, CAD, Drafting  
-  [GitHub Repository](https://github.com/Harmon1713/portfolio/tree/main/Container%20Home)
+  [View Project](https://github.com/Harmon1713/portfolio/tree/main/Container%20Home)
 
 ### Research
 
 - **Development of a Mobile Ankle Joint Attachment For the Universal Prosthesis**  
   Technologies: Inventor, CAD, Drafting  
-  [GitHub Documentation](https://github.com/Harmon1713/portfolio/blob/main/documents/Development%20of%20a%20Mobile%20Ankle%20Joint%20Attachment%20For%20the%20Universal%20Prosthesis.pdf)
+  [View Project](https://github.com/Harmon1713/portfolio/blob/main/documents/Development%20of%20a%20Mobile%20Ankle%20Joint%20Attachment%20For%20the%20Universal%20Prosthesis.pdf)
   
 - **The Study of Injury Biomechanics in the Wrist/Hand and Ankle/Foot for Tumbling Using the MatScan**  
   Technologies: MatScan, Tekscan  
-  [GitHub Documentation](https://github.com/Harmon1713/portfolio/blob/main/documents/The%20Study%20of%20Injury%20Biomechanics%20in%20the%20Wrist_Hand%20and%20Ankle_Foot%20for%20Tumbling%20Using%20the%20MatScan.pdf)
+  [View Project](https://github.com/Harmon1713/portfolio/blob/main/documents/The%20Study%20of%20Injury%20Biomechanics%20in%20the%20Wrist_Hand%20and%20Ankle_Foot%20for%20Tumbling%20Using%20the%20MatScan.pdf)
 
 - **Comparing the Mechanical Properties of Cancellous Bone between Pig Femur Bone, Deer Femur Bone, and Human Humerus Bone**  
   Technologies: Material Testing System (MTS)  
-  [GitHub Documentation](https://github.com/Harmon1713/portfolio/blob/main/documents/Comparing%20the%20Mechanical%20Properties%20of%20Cancellous%20Bone%20between%20Pig%20Femur%20Bone%2C%20Deer%20Femur%20Bone%2C%20and%20Human%20Humerus%20Bone.pdf)
+  [View Project](https://github.com/Harmon1713/portfolio/blob/main/documents/Comparing%20the%20Mechanical%20Properties%20of%20Cancellous%20Bone%20between%20Pig%20Femur%20Bone%2C%20Deer%20Femur%20Bone%2C%20and%20Human%20Humerus%20Bone.pdf)
 
 ## Contact
 
