@@ -2,7 +2,7 @@
 
 Welcome to Jackie Harmon's portfolio website, a showcase of my skills, projects, and experiences across various fields, including web development, application development, data visualization, and more.
 
-[See the GitHub Page here](https://harmon1713.github.io/portfolio/)  ⬅
+[See the Wesbite here](https://harmon1713.github.io/portfolio/)  ⬅
 
 ## Table of Contents
 
