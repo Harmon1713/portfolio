@@ -137,7 +137,7 @@ Follow these instructions to set up and run the portfolio website locally on you
   [View Project](https://github.com/Harmon1713/portfolio/blob/main/documents/A%20Data-Driven%20Analysis%20of%20Cigarette%20Consumption%20Patterns.pdf)
 
 - **Understanding Height Dynamics Through Regressions**  
-  Technologies: R (ggplot2, lm(), gvlma, predictmeans), Python (Pandas, NumPy, SciPy, Matplotlib, Seaborn, statsmodels, pylab)  
+  Technologies: R (ggplot2, lm(), gvlma, predictmeans, car, caret), Python (Pandas, NumPy, SciPy, Matplotlib, Seaborn, statsmodels, pylab)  
   [View Project](https://github.com/Harmon1713/portfolio/blob/main/documents/Understanding%20Height%20Dynamics%20Through%20Regression.pdf)
 
 
