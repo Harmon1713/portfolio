@@ -382,6 +382,7 @@ footer {
 
 .img-white {
     box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.15); /* Horizontal offset, vertical offset, blur radius, color */
+    padding-bottom: 2px;
 }
 
 /* Portfolio section styles */
@@ -507,6 +508,11 @@ footer {
     margin-left: 10px;
     cursor: pointer;
     color: red;
+}
+
+#contactPrompt {
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 /* Contact link styles on Portfolio page */
@@ -729,15 +735,20 @@ footer {
     }
 }
 
+/* mobile */
 @media (max-width: 500px) {
 
     main {
         padding-top: 15vh; /* Adjust padding to account for header and nav */
     }
 
+    .language-dropdown button {
+        color: black; /* Change text color to black */
+    }
+    
     footer {
         max-height: 6vh;
-        font-size: 11px;
+        font-size: 12px;
         position: static;
         bottom: auto;
     }
@@ -762,8 +773,67 @@ footer {
         border: 2px solid #333;
     }
 
+    .skill {
+        width: 40%;
+        text-align: center; /* Center align text */
+    }
+
+    .skill img {
+        width: 75px; /* Half the original size */
+        height: 75px; /* Maintain aspect ratio */
+    }
+
+    .skill p {
+        width: 100%; /* Ensure text takes full width */
+        word-wrap: break-word; /* Break long words to wrap text */
+        margin-top: 10px; /* Add some spacing between the image and the text */
+    }
+    
+    .modal-content {
+        width: 90%; /* 10% smaller than the current size */
+        max-width: 475px; /* Adjust max-width relative to the reduction */
+        top: 31%; /* Adjust top position to maintain visual balance */
+        transform: translateY(-15%); /* Slightly adjust to keep the modal centered */
+    }
+
+    #projects .half-column {
+        width: 100%; /* Make each half-column take up the full width */
+        display: block; /* Ensure each column is displayed as a block element */
+        float: none; /* Remove floating to allow stacking */
+        margin-bottom: 20px; /* Add some space between the stacked columns */
+    }
+
+    #projects .half-column img {
+        width: 100%; /* Make images responsive to the full width */
+        height: auto; /* Maintain the aspect ratio of the images */
+    }
+
+    #projects h2 {
+        font-size: 24px; /* Smaller font size for mobile */
+    }
+    
+    img[alt="under construction"] {
+        width: 15%; /* 50% bigger */
+    }
+    
+    .link-content img[alt="interact"] {
+        width: 5%; /* Increase size by 25% */
+    }
+
+    .link-content img[alt="magnifying glass"] {
+        width: 6%; /* Increase size by 50% */
+    }
+    
     #resume-content {
         padding-top: 6%;
+    }
+}
+
+
+@media (max-width: 450px) {
+    .skill {
+        width: 35%;
+        font-size: 14px; 
     }
 }
 
