@@ -42,6 +42,14 @@ function changeLanguage(lang) {
         }
     });
 
+    // Re-apply language changes to modals that are currently open
+    const openModals = document.querySelectorAll('.modal');
+    openModals.forEach(modal => {
+        if (modal.style.display === 'block') {
+            applyLanguageToModal(modal, lang);
+        }
+    });
+
     // Update the text for "Uses" and "Missing" in the current results
     const projectsContainer = document.getElementById('projects');
     if (projectsContainer) {
@@ -59,6 +67,9 @@ function changeLanguage(lang) {
             }
         });
     }
+
+    // Apply language changes to modals
+    applyLanguageToAllModals(lang);
 
     const errorMessage = document.getElementById('errorMessage');
     if (errorMessage) {
@@ -84,6 +95,20 @@ function setActiveLanguageButton(lang) {
         } else {
             button.classList.remove('active');
         }
+    });
+}
+
+// Function to apply language changes to all modals
+function applyLanguageToAllModals(lang) {
+    const modalProjects = document.querySelectorAll('.modal-project');
+    modalProjects.forEach(project => {
+        const translateKeys = project.querySelectorAll('[data-translate]');
+        translateKeys.forEach(el => {
+            const translateKey = el.getAttribute('data-translate');
+            if (translations[lang] && translations[lang][translateKey]) {
+                el.innerText = translations[lang][translateKey];
+            }
+        });
     });
 }
 
@@ -342,7 +367,7 @@ window.addEventListener('resize', function() {
 
 
 // Search bar
-const skills = ["HTML", "Bootstrap", "CSS", "JavaScript", "jQuery", "popper.js", "Python", "pygame", "datetime", "tkinter", "SQLite", "SQL", "matplotlib", "D3.js", "GeoJSON", "json", "SVG", "R", "dplyr", "ggplot2", "ggiraph", "patchwork", "htmlwidgets", "Markdown", "LaTex", "Pandoc", "Material Testing System", "MTS", "Inventor", "CAD", "Drafting", "MatScan", "Tekscan", "Research", "Technical Writing", "Data Visualization", "Application Development", "Front-End Development", "Tableau", "Data Wrangling", "Pandas", "NumPy", "SciPy", "Statsmodels", "dplyr", "tidyr", "readxl", "lubridate", "stringr", "data.table", "broom", "readr", "Statistical Modeling", "Ecdat", "RColorBrewer", "Linear Regression", "lm()", "gvlma", "predictmeans", "Seaborn", "pylab"];
+const skills = ["HTML", "Bootstrap", "CSS", "JavaScript", "jQuery", "popper.js", "Python", "pygame", "datetime", "tkinter", "SQLite", "SQL", "matplotlib", "D3.js", "GeoJSON", "json", "SVG", "R", "dplyr", "ggplot2", "ggiraph", "patchwork", "htmlwidgets", "Markdown", "LaTex", "Pandoc", "Material Testing System", "MTS", "Inventor", "CAD", "Drafting", "MatScan", "Tekscan", "Research", "Technical Writing", "Data Visualization", "Application Development", "Front-End Development", "Tableau", "Data Wrangling", "Data Analysis", "Pandas", "NumPy", "SciPy", "Statsmodels", "dplyr", "tidyr", "readxl", "lubridate", "stringr", "data.table", "broom", "readr", "Statistical Modeling", "Ecdat", "RColorBrewer", "Linear Regression", "lm()", "gvlma", "predictmeans", "Seaborn", "pylab", "car", "caret", "magrittr", "lmtest", "popbio", "e1071"];
 
 // Store the original list of projects
 const allProjects = Array.from(document.getElementsByClassName('project'));
