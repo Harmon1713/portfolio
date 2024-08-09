@@ -234,20 +234,112 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Modal
+// Function to handle the truncation logic
+function handleTruncation(textContainer, fullText, numImages) {
+    let baseTruncateLength;
+
+    // Base truncation length depending on the number of images at 500px
+    if (numImages === 1) {
+        baseTruncateLength = 250;
+    } else if (numImages === 2) {
+        baseTruncateLength = 400;
+    } else {
+        baseTruncateLength = 300; // Default case if neither 1 nor 2 images
+    }
+
+    // Calculate additional characters allowed based on screen width
+    const additionalChars = Math.floor((window.innerWidth - 500) / 200) * 200 + 50;
+
+    // Final truncate length after considering screen width
+    const truncateLength = baseTruncateLength + additionalChars;
+
+    // Truncate the text if it exceeds the calculated truncate length
+    const truncatedText = fullText.length > truncateLength ? fullText.substring(0, truncateLength) : fullText;
+
+    // Set the truncated text to the container
+    textContainer.innerHTML = truncatedText;
+
+    // If the full text was truncated, add a "..." link for expanding
+    if (fullText.length > truncateLength) {
+        const seeMoreLink = document.createElement('a');
+        seeMoreLink.href = '#';
+        seeMoreLink.style.color = 'blue';
+        seeMoreLink.textContent = '...';
+
+        // Add an event listener to expand the text when "..." is clicked
+        seeMoreLink.addEventListener('click', function (event) {
+            event.preventDefault();
+            textContainer.innerText = fullText;
+        });
+
+        // Append the "..." link to the text container
+        textContainer.appendChild(seeMoreLink);
+    }
+}
+
+// Function to apply truncation to all text containers within a specific modal
+function applyTruncation(modalId) {
+    const modal = document.getElementById(`${modalId}-modal`);
+    const modalContent = modal.querySelector('.modal-content');
+    const textContainers = modalContent.querySelectorAll('.half-column p');
+
+    // Iterate over each text container and apply truncation logic
+    textContainers.forEach((textContainer) => {
+        const fullText = textContainer.getAttribute('data-fulltext'); // Retrieve the original full text from the attribute
+        const images = textContainer.parentElement.nextElementSibling.querySelectorAll('img');
+        const numImages = images.length;
+
+        // Call the handleTruncation function with the appropriate parameters
+        handleTruncation(textContainer, fullText, numImages);
+    });
+}
+
+// Function to show the modal popup and apply truncation
 function showPopup(modalId) {
     const modal = document.getElementById(`${modalId}-modal`);
-    modal.style.display = 'block';
-    // Add event listener to close the modal when clicking outside the modal content
-    window.addEventListener('click', function(event) {
+
+    // Save the full text in a data attribute if not already saved
+    const textContainers = modal.querySelectorAll('.half-column p');
+    textContainers.forEach((textContainer) => {
+        if (!textContainer.getAttribute('data-fulltext')) {
+            textContainer.setAttribute('data-fulltext', textContainer.innerText);
+        }
+    });
+
+    applyTruncation(modalId); // Apply truncation when the modal is opened
+
+    modal.style.display = 'block'; // Display the modal
+
+    // Add an event listener to close the modal when clicking outside of it
+    window.addEventListener('click', function (event) {
         if (event.target == modal) {
             closePopup(modalId);
         }
     });
 }
 
+// Function to close the modal popup
 function closePopup(modalId) {
-    document.getElementById(`${modalId}-modal`).style.display = 'none';
+    const modal = document.getElementById(`${modalId}-modal`);
+    if (modal) {
+        modal.style.display = 'none'; // Hide the modal
+    }
 }
+
+// Event listener for window resize to dynamically adjust truncation
+window.addEventListener('resize', function() {
+    const modals = document.querySelectorAll('.modal');
+
+    // Iterate over each modal and reapply truncation based on the new window size
+    modals.forEach(modal => {
+        if (modal.style.display === 'block') { // Only apply if the modal is currently open
+            const modalId = modal.id.replace('-modal', '');
+            applyTruncation(modalId);
+        }
+    });
+});
+
+
 
 // Search bar
 const skills = ["HTML", "Bootstrap", "CSS", "JavaScript", "jQuery", "popper.js", "Python", "pygame", "datetime", "tkinter", "SQLite", "SQL", "matplotlib", "D3.js", "GeoJSON", "json", "SVG", "R", "dplyr", "ggplot2", "ggiraph", "patchwork", "htmlwidgets", "Markdown", "LaTex", "Pandoc", "Material Testing System", "MTS", "Inventor", "CAD", "Drafting", "MatScan", "Tekscan", "Research", "Technical Writing", "Data Visualization", "Application Development", "Front-End Development", "Tableau", "Data Wrangling", "Pandas", "NumPy", "SciPy", "Statsmodels", "dplyr", "tidyr", "readxl", "lubridate", "stringr", "data.table", "broom", "readr", "Statistical Modeling", "Ecdat", "RColorBrewer", "Linear Regression", "lm()", "gvlma", "predictmeans", "Seaborn", "pylab"];
@@ -303,6 +395,77 @@ function showAutocomplete() {
     });
 }
 
+// Function to dynamically calculate the truncation length based on window size and number of images for search results
+function calculateTruncateLengthForSearch(numImages) {
+    let baseTruncateLength;
+
+    // Base truncation length depending on the number of images at 500px
+    if (numImages === 1) {
+        baseTruncateLength = 250; // Adjusted to match the modal truncation logic
+    } else if (numImages === 2) {
+        baseTruncateLength = 400; // Adjusted to match the modal truncation logic
+    } else {
+        baseTruncateLength = 300; // Default case if neither 1 nor 2 images
+    }
+
+    // Calculate additional characters allowed based on screen width
+    const additionalChars = Math.floor((window.innerWidth - 500) / 100) * 100 + 50;
+
+    // Final truncate length after considering screen width
+    return baseTruncateLength + additionalChars;
+}
+
+// Function to handle truncation based on the calculated length for search results
+function handleTruncationForSearch(textContainer, fullText, numImages) {
+    const truncateLength = calculateTruncateLengthForSearch(numImages);
+
+    // Truncate the text if it exceeds the calculated truncate length
+    const truncatedText = fullText.length > truncateLength ? fullText.substring(0, truncateLength) : fullText;
+
+    // Set the truncated text to the container
+    textContainer.innerHTML = truncatedText;
+
+    // If the full text was truncated, add a "..." link for expanding
+    if (fullText.length > truncateLength) {
+        const seeMoreLink = document.createElement('a');
+        seeMoreLink.href = '#';
+        seeMoreLink.style.color = 'blue';
+        seeMoreLink.textContent = '...';
+
+        // Append the "..." link directly after the truncated text
+        textContainer.appendChild(seeMoreLink);
+
+        // Add an event listener to expand the text when "..." is clicked
+        seeMoreLink.addEventListener('click', function (event) {
+            event.preventDefault();
+            textContainer.innerHTML = fullText;
+        });
+    } else {
+        textContainer.innerText = fullText; // Show full text if it fits within the limit
+    }
+}
+
+
+// Function to apply truncation to all search results
+function applyTruncationToSearchResults() {
+    const projectContainers = document.querySelectorAll('#projects .project');
+
+    // Iterate over each project container and apply truncation logic
+    projectContainers.forEach((projectContainer) => {
+        const textContainer = projectContainer.querySelector('.half-column p');
+        if (textContainer) {
+            const fullText = textContainer.getAttribute('data-fulltext') || textContainer.innerText;
+            textContainer.setAttribute('data-fulltext', fullText); // Save full text if not already saved
+            const images = projectContainer.querySelectorAll('.half-column img');
+            const numImages = images.length;
+
+            // Call the handleTruncation function with the appropriate parameters
+            handleTruncationForSearch(textContainer, fullText, numImages);
+        }
+    });
+}
+
+// Modify this function to apply truncation after displaying search results
 function searchProjects() {
     const input = document.getElementById('searchInput').value.toLowerCase();
     const errorMessage = document.getElementById('errorMessage');
@@ -332,6 +495,9 @@ function searchProjects() {
             }
             projectsContainer.appendChild(project);
         });
+
+        // Apply truncation to all search results
+        applyTruncationToSearchResults();
 
         // Clear any error message
         errorMessage.textContent = '';
@@ -388,12 +554,19 @@ function searchProjects() {
         projectsContainer.appendChild(project); // Append project in sorted order
     });
 
+    // Apply truncation to search results after sorting and appending them
+    applyTruncationToSearchResults();
+
     if (results.length === 0) {
         errorMessage.textContent = translations[currentLanguage].noProjectsFoundMessage;
     } else {
         errorMessage.textContent = '';
     }    
 }
+
+
+// Event listener to handle truncation on window resize
+window.addEventListener('resize', applyTruncationToSearchResults);
 
 function handleKeyPress(event) {
     if (event.key === 'Enter') {
