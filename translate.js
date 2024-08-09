@@ -210,7 +210,7 @@ const translations = {
       volunteeringTitle: "VOLUNTEERING OPPORTUNITIES",
       volunteering1: "Fulbright Scholar Program (Summer 2023)",
       volunteering2: "Head Softball Coach (Spring 2022)",
-      volunteering3: "Missionary (Fall 2019)",
+      volunteering3: "Missionary (Summer & Fall 2019)",
       volunteering4: "Honduras Outreach, Inc (Summer 2015)",
       guestSpeakingTitle: "GUEST SPEAKING OPPORTUNITIES",
       speaking1:
@@ -433,7 +433,7 @@ const translations = {
       volunteeringTitle: "OPORTUNIDADES DE VOLUNTARIADO",
       volunteering1: "Programa de Becarios Fulbright (Verano 2023)",
       volunteering2: "Entrenadora Principal de Softbol (Primavera 2022)",
-      volunteering3: "Misionera (Otoño 2019)",
+      volunteering3: "Misionera (Verano & Otoño 2019)",
       volunteering4: "Honduras Outreach, Inc (Verano 2015)",
       guestSpeakingTitle: "OPORTUNIDADES PARA HABLAR COMO INVITADA",
       speaking1:
@@ -656,7 +656,7 @@ const translations = {
       volunteeringTitle: "OPORTUNIDADES DE VOLUNTARIADO",
       volunteering1: "Programa de Bolsas Fulbright (Verão 2023)",
       volunteering2: "Treinadora Principal de Softbol (Primavera 2022)",
-      volunteering3: "Missionária (Outono 2019)",
+      volunteering3: "Missionária (Verão & Outono 2019)",
       volunteering4: "Honduras Outreach, Inc (Verão 2015)",
       guestSpeakingTitle: "OPORTUNIDADES PARA FALAR COMO CONVIDADA",
       speaking1:
