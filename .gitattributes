@@ -6,3 +6,13 @@
 *.ipynb linguist-language=Jupyter Notebook
 *.R linguist-language=R
 *.sql linguist-language=SQL
+
+# Prioritize JavaScript and CSS
+*.js linguist-detectable=true
+*.css linguist-detectable=true
+
+# Mark HTML files as documentation due to HTML dominating the statistics
+# docs/** linguist-vendored
+# build/** linguist-vendored
+# *.html linguist-documentation
+
