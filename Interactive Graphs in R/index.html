@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Graphs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0 auto;
+      padding: 0 10%;
+      background-color: #f5f5f5;
+    }
+    h1, h3 {
+      text-align: center;
+    }
+    .graph-container {
+      display: flex;
+      justify-content: center;
+      width: 80%;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    iframe {
+      width: 100%;
+      height: 50vw; /* Base height for small to medium screens */
+      border: none;
+    }
+    ul {
+      padding-left: 20px;
+      margin-top: 0;
+    }
+    /* Media queries for responsive iframe height */
+    @media (min-width: 900px) {
+      iframe {
+        height: 55vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>My Interactive Graphs</h1>
+  
+  <h4>Libraries Used:</h4>
+    <ul>
+      <li><b>ggplot2</b>: A plotting system for R, based on the grammar of graphics, which makes it easy to create complex multi-layered graphics.</li>
+      <li><b>ggiraph</b>: An extension of ggplot2 that allows for the creation of interactive graphics.</li>
+      <li><b>patchwork</b>: A library that makes it easy to combine multiple ggplot2 plots into a single cohesive visualization.</li>
+      <li><b>dplyr</b>: A data manipulation package that provides a consistent set of verbs to help solve the most common data manipulation challenges.</li>
+      <li><b>htmlwidgets</b>: A package that provides a framework for creating HTML widgets that can be used in R.</li>
+    </ul>
+  <br>
+  <h3>Interactive ggiraph Graph with Customized Tooltip</h3>
+  <div class="graph-container">
+    <iframe src="interactive_graph1.html" scrolling="no"></iframe>
+  </div>
+  <h4>Dataset Used</h4>
+  <ul>
+    <li><b>mpg</b>: A dataset that comes with ggplot2, which contains fuel economy data for various car models.</li>
+  </ul>
+  <h4>Code Breakdown</h4>
+  <ul>
+    <li><b>mpg dataset</b>: Used to create a scatter plot where displ (engine displacement) is plotted against hwy (highway miles per gallon). The points are colored by the class of the car.</li>
+    <li><b>Customized tooltip</b>: Enhanced dataset by adding a new tooltip column that concatenates the manufacturer, model, and class of each car. The new tooltip column is used to provide more detailed information in the tooltip.</li>
+  </ul>
+  <br>
+  <h3>Linked Interactive Graphs</h3>
+  <div class="graph-container">
+    <iframe src="interactive_graph2.html" scrolling="no"></iframe>
+  </div>
+  <h4>Dataset Used</h4>
+  <ul>
+    <li><b>mtcars</b>: A built-in dataset in R that contains various automobile data extracted from the 1974 Motor Trend US magazine.</li>
+  </ul>
+  <h4>Code Breakdown</h4>
+  <ul>
+    <li><b>mtcars dataset</b>:
+      <ul>
+        <li>p1: A scatter plot where wt (weight) is plotted against mpg (miles per gallon), with tooltips and data IDs set to the row names of the dataset.</li>
+        <li>p2: Another scatter plot where drat (rear axle ratio) is plotted against qsec (1/4 mile time), with similar tooltip and data ID settings.</li>
+        <li>p3: A bar plot of cyl (number of cylinders), with data IDs set to the row names.</li>
+      </ul>
+    </li>
+    <li><b>Linked Plots</b>: The three plots are combined into a single interactive visualization using patchwork.</li>
+  </ul>
+</body>
+</html>
