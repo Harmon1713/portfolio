@@ -1,7 +1,6 @@
 # Specify languages for specific file types
 *.py linguist-language=Python
 *.css linguist-language=CSS
-*.html linguist-language=HTML
 *.js linguist-language=JavaScript
 *.ipynb linguist-language=Jupyter Notebook
 *.R linguist-language=R
@@ -11,8 +10,6 @@
 *.js linguist-detectable=true
 *.css linguist-detectable=true
 
-# Mark HTML files as documentation due to HTML dominating the statistics
-# docs/** linguist-vendored
-# build/** linguist-vendored
-# *.html linguist-documentation
+# Mark HTML files as documentation due to dominating the statistics
+*.html linguist-documentation
 
