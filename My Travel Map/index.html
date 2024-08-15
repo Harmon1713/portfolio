@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="custom-map.css">
+  <title>Interactive World Map</title>
+</head>
+<body>
+  <div id="header">
+    <h1>My Travel Map</h1>
+    <p>Hover over a country to see pictures from my travel scrapbook! <br> To see a full list of countries and territories visited, click the list in the bottom left corner.<p>
+  </div>
+  <div id="map-container">
+    <div id="map"></div>
+    <div id="zoom-controls">
+      <button id="zoom-in">+</button>
+      <button id="zoom-out">-</button>
+    </div>
+  </div>
+  <div id="tooltip"></div>
+  <p id = "message">This map is not yet mobile compatible. Request desktop version, use a different device, or revisit at a later time :) </p>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="custom-map.js"></script>
+</body>
+</html>
