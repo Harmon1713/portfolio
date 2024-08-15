@@ -1,0 +1,8 @@
+# Specify languages for specific file types
+*.py linguist-language=Python
+*.css linguist-language=CSS
+*.html linguist-language=HTML
+*.js linguist-language=JavaScript
+*.ipynb linguist-language=Jupyter Notebook
+*.R linguist-language=R
+*.sql linguist-language=SQL
