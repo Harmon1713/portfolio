@@ -36,7 +36,7 @@ This portfolio website serves as a personal platform to display my professional 
 - **Frontend**: HTML, CSS, JavaScript, Bootstrap
 - **Backend**: Not applicable (static website)
 - **Libraries**: D3.js, jQuery, Popper.js
-- **Languages**: JavaScript, HTML, CSS
+- **Languages**: JavaScript, HTML, CSS, R, SQL, Python
 - **Version Control**: Git/GitHub
 
 ## Getting Started
