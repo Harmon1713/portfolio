@@ -9,17 +9,28 @@
 <body>
   <div id="header">
     <h1>My Travel Map</h1>
-    <p>Hover over a country to see pictures from my travel scrapbook! <br> To see a full list of countries and territories visited, click the list in the bottom left corner.<p>
+    <p>Hover over a country to view my travels, and click the country to lock the image on the screen. <br><br>To see a full list of countries and territories visited, click the list in the bottom left corner.<p>
   </div>
-  <div id="map-container">
-    <div id="map"></div>
-    <div id="zoom-controls">
-      <button id="zoom-in">+</button>
-      <button id="zoom-out">-</button>
+  <div id="content-container">
+    <div id="map-container">
+      <div id="map"></div>
+      <div id="zoom-controls">
+        <button id="zoom-in">+</button>
+        <button id="zoom-out">-</button>
+        <button id="reset-map"><img src="images/reset.png" alt="reset" style="max-width:10px;"></button>
+      </div>
+    </div>
+    <div id="img-container">
+      <div id="country-name">
+      </div>
+      <div id="country-image">
+        <img src="images/default.png" alt="country hover image" width="100%">
+      </div>
+      <div id="no_pic_message">
+      </div>
     </div>
   </div>
   <div id="tooltip"></div>
-  <p id = "message">This map is not yet mobile compatible. Request desktop version, use a different device, or revisit at a later time :) </p>
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <script src="custom-map.js"></script>
 </body>
