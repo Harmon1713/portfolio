@@ -1,6 +1,6 @@
 // Get initial container dimensions based on the screen size
 const containerWidth = document.getElementById('map-container').offsetWidth;
-const containerHeight = containerWidth * 0.625; // Maintain a 16:10 aspect ratio for the map
+const containerHeight = containerWidth * 0.625; // Ratio for the map
 
 // Create the SVG container for the map
 const svgContainer = d3.select("#map")
@@ -10,6 +10,9 @@ const svgContainer = d3.select("#map")
 
 // Create a group element within the SVG to hold the map paths
 const svg = svgContainer.append("g");
+
+// Store the original transform state
+let originalTransform = d3.zoomIdentity;
 
 // Define the map projection and scaling
 const projection = d3.geoMercator()
@@ -21,28 +24,28 @@ const path = d3.geoPath().projection(projection);
 
 // List of visited countries and their respective colors
 const visitedCountries = {
-  "Brazil": "green",
-  "United States of America": "blue",
-  "Mexico": "red",
-  "Guatemala": "orange",
-  "Haiti": "purple",
-  "Dominican Republic": "teal",
-  "Cuba": "darkorange",
-  "Honduras": "cyan",
-  "El Salvador": "lime",
-  "Costa Rica": "magenta",
-  "Panama": "brown",
-  "Puerto Rico": "navy",
-  "Jamaica": "olive",
-  "The Bahamas": "lightcoral",
-  "Belize": "maroon",
-  "Argentina": "peru",
-  "Uruguay": "pink",
-  "Colombia": "lightgreen",
-  "Paraguay": "crimson",
-  "Turkey": "orchid",
-  "Spain": "slateblue",
-  "United Republic of Tanzania": "orangered"
+  "Argentina": "#9467bd",      // Purple
+  "Belize": "#1f77b4",         // Light Blue
+  "Brazil": "#2ca02c",         // Green
+  "Colombia": "#1f77b4",       // Light Blue
+  "Costa Rica": "#c5b0d5",     // Light Purple
+  "Cuba": "#e377c2",           // Pink
+  "Dominican Republic": "#8c564b", // Brownish
+  "El Salvador": "#ff9896",    // Light Red
+  "Guatemala": "#9467bd",      // Purple
+  "Haiti": "#17becf",          // Cyan
+  "Honduras": "#ff7f0e",       // Bright Orange
+  "Jamaica": "#17becf",        // Cyan
+  "Mexico": "#2ca02c",         // Green
+  "Panama": "#17becf",         // Cyan
+  "Paraguay": "#c49c94",       // Tan
+  "Puerto Rico": "#bcbd22",    // Olive Green
+  "Spain": "#ff7f0e",          // Bright Orange
+  "The Bahamas": "#d62728",    // Red
+  "Turkey": "#bcbd22",         // Olive Green
+  "United Republic of Tanzania": "#d62728", // Red
+  "United States of America": "#d62728", // Red
+  "Uruguay": "#e377c2"         // Pink
 };
 
 // List of small countries not shown on the map due to size
@@ -55,6 +58,10 @@ const smallCountries = [
 // Placeholder for filtered world data after removing small countries
 let filteredWorld;
 
+// Track the currently selected country
+let selectedCountry = null;
+let countryNameHovered = null; // Track hover state for country names
+
 // Function to draw the map with a specified horizontal translation (for wrapping)
 function drawMap(translation) {
     svg.append("g")
@@ -64,132 +71,213 @@ function drawMap(translation) {
       .attr("d", path) // Generate the path data for each country
       .attr("transform", `translate(${translation}, 0)`) // Apply horizontal translation for wrapping
       .attr("class", "country")
-      .style("fill", d => (d.properties && visitedCountries[d.properties.name]) ? visitedCountries[d.properties.name] : "lightgray") // Fill color based on visited countries
+      .attr("data-country", d => d.properties.name) // Add data attribute for country name
+      .style("fill", d => {
+          if (selectedCountry === d.properties.name) return "gold";
+          return (d.properties && visitedCountries[d.properties.name]) ? visitedCountries[d.properties.name] : "lightgray";
+      }) // Fill color based on visited countries and selected country
       .style("stroke", "white")
       .style("stroke-width", 0.5)
-      .on("mouseover", function (event, d) { // Tooltip and hover effects
-          if (d.properties) {
-            const countryName = d.properties.name;
-            const visited = visitedCountries[countryName];
-            const imagePath = `images/${countryName}.jpg`;
+      .on("mouseover", function (event, d) {
+          if (!selectedCountry && !countryNameHovered) {
+              const countryName = d.properties.name;
+              const visited = visitedCountries[countryName];
+              d3.selectAll(`path[data-country="${countryName}"]`)
+                .style("fill", visited ? d3.rgb(visited).brighter() : "darkgray");
 
-            // Check if the image for the country exists
-            const imageExists = new Image();
-            imageExists.onload = function () { // If the image exists
-              const tooltip = d3.select("#tooltip")
-                .html(`<strong>${countryName}</strong><br><img src="${imagePath}" class="large-img">`)
-                .style("display", "block")
-                .style("width", "220px")
-                .style("height", "auto");
-
-              const tooltipWidth = 220;
-              const tooltipHeight = tooltip.node().offsetHeight;
-              const cursorX = event.pageX;
-              const cursorY = event.pageY;
-              const mapWidth = svgContainer.node().getBoundingClientRect().width;
-              const mapHeight = svgContainer.node().getBoundingClientRect().height;
-
-              let left, top;
-
-              // Determine horizontal position based on cursor position
-              if (cursorX < mapWidth / 2) {
-                left = cursorX + 5;
-              } else {
-                left = cursorX - tooltipWidth - 5;
-              }
-
-              // Determine vertical position based on cursor position
-              if (cursorY < mapHeight / 3) {
-                top = cursorY + 5;
-              } else if (cursorY > 2 * mapHeight / 3) {
-                top = cursorY - tooltipHeight - 5;
-              } else {
-                top = cursorY - tooltipHeight / 4;
-              }
-
-              // Set the position of the tooltip
-              tooltip.style("left", `${left}px`)
-                .style("top", `${top}px`);
-            };
-
-            imageExists.onerror = function () { // If the image does not exist
-              const tooltip = d3.select("#tooltip");
-              if (visited) {
-                tooltip.html(`<strong>${countryName}</strong><br>Picture coming soon!<br><img src="images/pic_to_come.png" class="normal-img">`)
-                  .style("width", "110px")
-                  .style("height", "auto");
-              } else {
-                tooltip.html(`<strong>${countryName}</strong><br>Not yet visited`)
-                  .style("width", "110px")
-                  .style("height", "auto");
-              }
-              tooltip.style("display", "block");
-
-              const tooltipWidth = 220;
-              const tooltipHeight = tooltip.node().getBoundingClientRect().height;
-              const cursorX = event.pageX;
-              const cursorY = event.pageY;
-              const mapWidth = svgContainer.node().getBoundingClientRect().width;
-              const mapHeight = svgContainer.node().getBoundingClientRect().height;
-
-              let left, top;
-
-              // Determine horizontal position based on cursor position
-              if (cursorX < mapWidth / 2) {
-                left = cursorX + 5;
-              } else {
-                left = cursorX - tooltipWidth - 5;
-              }
-
-              // Determine vertical position based on cursor position
-              if (cursorY < mapHeight / 3) {
-                top = cursorY + 5;
-              } else if (cursorY > 2 * mapHeight / 3) {
-                top = cursorY - tooltipHeight - 5;
-              } else {
-                top = cursorY - tooltipHeight / 4;
-              }
-
-              // Set the position of the tooltip
-              tooltip.style("left", `${left}px`)
-                .style("top", `${top}px`);
-            };
-
-            imageExists.src = imagePath; // Set the image path to check existence
-            d3.select(this).style("fill", visited ? d3.rgb(visited).brighter() : "darkgray"); // Highlight country on hover
+              // Update image container dynamically
+              updateImageContainer(countryName);
           }
       })
-      .on("mouseout", function (event, d) { // Reset fill color and hide tooltip on mouseout
-          d3.select(this).style("fill", d.properties && visitedCountries[d.properties.name] ? visitedCountries[d.properties.name] : "lightgray");
-          d3.select("#tooltip").style("display", "none");
+      .on("mouseout", function (event, d) {
+          if (!selectedCountry && !countryNameHovered) {
+              const countryName = d.properties.name;
+              d3.selectAll(`path[data-country="${countryName}"]`)
+                .style("fill", d.properties && visitedCountries[d.properties.name] ? visitedCountries[d.properties.name] : "lightgray");
+
+              // Reset the img-container to default if no country is selected
+              const defaultImage = window.innerWidth < 1050 ? "images/default-up.png" : "images/default.png";
+              d3.select("#country-image img").attr("src", defaultImage);
+              d3.select("#country-name").text(""); // Clear the country name
+              d3.select("#no_pic_message").text(""); // Clear the message
+          }
+      })
+      .on("click", function (event, d) {
+          const countryName = d.properties.name;
+
+          // If clicking the already selected country, deselect it
+          if (selectedCountry === countryName) {
+              resetMap();
+          } else {
+              // Select the new country
+              selectedCountry = countryName;
+
+              // Update image container
+              updateImageContainer(countryName);
+
+              // Highlight the selected country
+              d3.selectAll("path.country").style("fill", d => {
+                  if (d.properties.name === selectedCountry) return "gold";
+                  return (d.properties && visitedCountries[d.properties.name]) ? visitedCountries[d.properties.name] : "lightgray";
+              });
+          }
       });
+}
+
+// Function to update the image container based on country
+function updateImageContainer(countryName) {
+    const visited = visitedCountries[countryName];
+    const imagePath = `images/${countryName}.jpg`;
+
+    const imageElement = d3.select("#country-image img");
+    const nameElement = d3.select("#country-name");
+    const messageElement = d3.select("#no_pic_message");
+
+    const imageExists = new Image();
+    imageExists.onload = function () { // If the image exists
+        imageElement.attr("src", imagePath);
+        nameElement.text(countryName);
+        messageElement.text(""); // Clear message if image exists
+    };
+
+    imageExists.onerror = function () { // If the image does not exist
+        if (visited) {
+            imageElement.attr("src", "images/pic_to_come.png");
+            nameElement.text(countryName);
+            messageElement.text("I've been here. Picture coming soon!");
+        } else {
+            imageElement.attr("src", "images/bucketlist.png");
+            nameElement.text(countryName);
+            messageElement.text("Not visited yet, but it's on my list!");
+        }
+    };
+
+    imageExists.src = imagePath; // Set the image path to check existence
 }
 
 // Function to resize the map and adjust elements on window resize
 function resizeMap() {
-    const containerWidth = document.getElementById('map-container').offsetWidth;
-    const containerHeight = containerWidth * 0.625; // Maintain the aspect ratio
+  const containerWidth = document.getElementById('map-container').offsetWidth;
+  const containerHeight = containerWidth * 0.625; // Maintain the aspect ratio
 
-    // Update SVG container dimensions
-    svgContainer
-      .attr("width", containerWidth)
-      .attr("height", containerHeight);
+  // Update SVG container dimensions
+  svgContainer
+    .attr("width", containerWidth)
+    .attr("height", containerHeight);
 
-    // Update the map projection scale and translation
-    projection
-      .scale(containerWidth / 5)
-      .translate([containerWidth / 2, containerHeight / 1.5]);
+  // Update the map projection scale and translation
+  projection
+    .scale(containerWidth / 5)
+    .translate([containerWidth / 2, containerHeight / 1.5]);
 
-    // Remove existing map groups to redraw
-    svg.selectAll("g").remove();
+  // Remove existing map groups to redraw
+  svg.selectAll("g").remove();
 
-    // Calculate the horizontal translation for wrapping
-    const offsetX = containerWidth * 1.3;
+  // Calculate the horizontal translation for wrapping
+  const offsetX = containerWidth * 1.3;
 
-    // Redraw the map with updated translations
-    drawMap(0);
-    drawMap(offsetX * 0.967);
-    drawMap(-offsetX * 0.967);
+  // Redraw the map with updated translations
+  drawMap(0);
+  drawMap(offsetX * 0.967);
+  drawMap(-offsetX * 0.967);
+  drawMap(offsetX * 1.934);
+  drawMap(-offsetX * 1.934);
+
+  // Handle img-container position and default image based on screen size
+  const imgContainer = document.getElementById('img-container');
+  if (window.innerWidth < 1050) {
+      imgContainer.style.width = '100%';
+      imgContainer.style.paddingLeft = '0';
+      if (!selectedCountry) {
+          document.getElementById('country-image').querySelector('img').src = "images/default-up.png";
+      }
+  } else {
+      imgContainer.style.width = '20%';
+      imgContainer.style.paddingLeft = '10px';
+      if (!selectedCountry) {
+          document.getElementById('country-image').querySelector('img').src = "images/default.png";
+      }
+  }
+}
+
+// Listen for window resize events and call resizeMap
+window.addEventListener('resize', function() {
+  resizeMap();
+});
+
+// Function to handle zooming with vertical and horizontal locking
+function zoomed(event) {
+  const { x, y, k } = event.transform;
+
+  // Calculate the height of the drawn map area
+  const mapHeight = svg.node().getBoundingClientRect().height;
+  const containerHeight = document.getElementById('map-container').offsetHeight;
+
+  // Adjust the maxTranslateY to allow a little more scrolling up
+  const maxTranslateY = (containerHeight - mapHeight) * k + containerHeight * 0.3; // Add a 30% allowance
+
+  // Lock vertical scrolling when the map reaches the top or bottom edge
+  let newY = y;
+  if (mapHeight * k < containerHeight) {
+      newY = 0; // Lock vertically if the map is smaller than the container
+  } else {
+      if (y > containerHeight * 0.3) { // Allow more vertical scrolling up
+          newY = containerHeight * 0.3;
+      } else if (y < maxTranslateY) {
+          newY = maxTranslateY; // Prevent scrolling beyond the bottom edge
+      }
+  }
+
+  // Calculate the width of the drawn map area
+  const mapWidth = svg.node().getBoundingClientRect().width;
+  const containerWidth = document.getElementById('map-container').offsetWidth;
+
+  // Adjust the maxTranslateX and minTranslateX to allow scrolling up to three times the map width
+  const maxTranslateX = containerWidth * 2.65; // Lock at three times the map width in the positive direction
+  const minTranslateX = -containerWidth * 2.65; // Lock at three times the map width in the negative direction
+
+  // Lock horizontal scrolling when the map reaches the left or right edge
+  let newX = x;
+  if (x > maxTranslateX) {
+      newX = maxTranslateX;
+  } else if (x < minTranslateX) {
+      newX = minTranslateX;
+  }
+
+  // Apply the transform with the adjusted coordinates
+  svg.attr("transform", d3.zoomIdentity.translate(newX, newY).scale(k));
+  originalTransform = d3.zoomIdentity.translate(newX, newY).scale(k); // Update original transform
+}
+
+// Set up zoom behavior with a scale extent of 1 to 8
+const zoom = d3.zoom()
+  .scaleExtent([1, 8])
+  .on("zoom", zoomed);
+
+svgContainer.call(zoom);
+
+// Reset map button functionality
+d3.select("#reset-map").on("click", function () {
+  svgContainer.transition().duration(750).call(zoom.transform, originalTransform); // Reset to the original transform
+});
+
+// Function to reset the map to its original position and remove selected country styling
+function resetMap() {
+  svgContainer.transition().duration(750).call(zoom.transform, d3.zoomIdentity); // Reset the transform to identity (no translation, no scale)
+  originalTransform = d3.zoomIdentity; // Reset original transform to identity
+
+  // Reset image to default
+  const defaultImage = window.innerWidth < 1050 ? "images/default-up.png" : "images/default.png";
+  d3.select("#country-image img").attr("src", defaultImage);
+  d3.select("#country-name").text(""); // Clear the country name
+  d3.select("#no_pic_message").text(""); // Clear the message
+
+  // Deselect the currently selected country
+  selectedCountry = null;
+  countryNameHovered = null;
+
+  // Reset all countries to their original colors
+  d3.selectAll("path.country").style("fill", d => (d.properties && visitedCountries[d.properties.name]) ? visitedCountries[d.properties.name] : "lightgray");
 }
 
 // Initial load of the map data and rendering
@@ -219,7 +307,7 @@ Promise.all([
     .style("cursor", "pointer")
     .html(`Countries and Territories Visited: ${totalVisitedCount}`);
 
-    // Create the list of visited countries and territories
+  // Create the list of visited countries and territories
   const listContainer = counterContainer
     .append("div")
     .attr("id", "visited-list")
@@ -246,10 +334,51 @@ Promise.all([
     .style("width", "50%")
     .html(d => `<div style="width: 20px; height: 20px; background-color: ${visitedCountries[d]}; margin-right: 5px;"></div>${d}`)
     .on("mouseover", function (event, d) {
-      d3.selectAll("path.country").filter(country => country.properties.name === d).style("fill", "gold");
+      if (!selectedCountry) {
+          const countryName = d;
+          countryNameHovered = countryName;
+
+          // Highlight the country on the map
+          d3.selectAll("path.country").filter(country => country.properties.name === countryName).style("fill", "gold");
+
+          // Update the image container dynamically
+          updateImageContainer(countryName);
+      }
     })
     .on("mouseout", function (event, d) {
-      d3.selectAll("path.country").filter(country => country.properties.name === d).style("fill", visitedCountries[d]);
+      if (!selectedCountry) {
+          const countryName = d;
+          countryNameHovered = null;
+
+          // Reset the color for the country on the map
+          d3.selectAll("path.country").filter(country => country.properties.name === countryName).style("fill", visitedCountries[countryName]);
+
+          // Reset the img-container to default if no country is selected
+          const defaultImage = window.innerWidth < 1050 ? "images/default-up.png" : "images/default.png";
+          d3.select("#country-image img").attr("src", defaultImage);
+          d3.select("#country-name").text(""); // Clear the country name
+          d3.select("#no_pic_message").text(""); // Clear the message
+      }
+    })
+    .on("click", function (event, d) {
+      const countryName = d;
+
+      // If clicking the already selected country, deselect it
+      if (selectedCountry === countryName) {
+          resetMap();
+      } else {
+          // Select the new country
+          selectedCountry = countryName;
+
+          // Update image container
+          updateImageContainer(countryName);
+
+          // Highlight the selected country
+          d3.selectAll("path.country").style("fill", d => {
+              if (d.properties.name === selectedCountry) return "gold";
+              return (d.properties && visitedCountries[d.properties.name]) ? visitedCountries[d.properties.name] : "lightgray";
+          });
+      }
     });
 
   // Add the list of small countries to the counter
@@ -278,6 +407,19 @@ Promise.all([
     event.stopPropagation();
     const list = d3.select("#visited-list");
     const isVisible = list.style("display") === "block";
+
+    if (window.innerWidth < 900) {
+        const mapContainer = document.getElementById('map-container');
+        const mapContainerBottom = mapContainer.getBoundingClientRect().bottom;
+
+        // Set the top of the list to be at the bottom of the map container
+        list.style("top", `${mapContainerBottom}px`);
+        list.style("bottom", "auto");
+    } else {
+        list.style("top", "auto");
+        list.style("bottom", isVisible ? "10px" : "auto");
+    }
+
     list.style("display", isVisible ? "none" : "block");
   });
 
@@ -287,20 +429,13 @@ Promise.all([
   });
 
   d3.select("#map-container").on("click", function (event) {
-    event.stopPropagation();
-    d3.select("#visited-list").style("display", "none");
+    if (event.target.tagName !== 'path') {
+        resetMap(); // Deselect any selected country if the user clicks outside of a country
+    }
   });
 
   d3.select("#visited-list").on("click", function (event) {
     event.stopPropagation();
-  });
-
-  // Hide tooltip when moving over the map with no country hover
-  svgContainer.on("mousemove", function (event) {
-    const isHoveringCountry = d3.selectAll("path.country:hover").size() > 0;
-    if (!isHoveringCountry) {
-      d3.select("#tooltip").style("display", "none");
-    }
   });
 
   // Hide the visited list on map click
@@ -310,35 +445,4 @@ Promise.all([
 
 }).catch(error => {
   console.error("Error loading or processing data:", error);
-});
-
-// Set up zoom behavior with a scale extent of 1 to 8
-const zoom = d3.zoom()
-  .scaleExtent([1, 8])
-  .on("zoom", zoomed);
-
-svgContainer.call(zoom);
-
-// Function to handle zooming
-function zoomed(event) {
-    const { x, y, k } = event.transform;
-    svg.attr("transform", event.transform);
-
-    if (x > containerWidth) {
-        event.transform.x = x - containerWidth;
-        svg.attr("transform", event.transform);
-    } else if (x < -containerWidth) {
-        event.transform.x = x + containerWidth;
-        svg.attr("transform", event.transform);
-    }
-}
-
-// Zoom-in button functionality
-d3.select("#zoom-in").on("click", function () {
-    svgContainer.transition().call(zoom.scaleBy, 1.2);
-});
-
-// Zoom-out button functionality
-d3.select("#zoom-out").on("click", function () {
-    svgContainer.transition().call(zoom.scaleBy, 0.8);
 });
