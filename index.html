@@ -1,3 +1,5 @@
+<!--iframe container min-width restriction needed for 1050px to 1200px because reize hides the img container-->
+<!--the travel map iframe container size needs to adjust on screens smaller thn 1050px, since the img container is located underneath and not to the right-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-    
+
 <body>
     <!-- Header Section -->
     <header class="bg-white py-3">
@@ -81,7 +83,7 @@
             </div>
             <!-- Message and Image for Small Screens -->
             <div id="map-replacement">
-                <p class="mt-3">Due to screen size, click the image to interact with the map.</p>
+                <p class="mt-3">I have detected a small screen. <br>For a better experience, please click the image below to interact with the map on its own page.</p><br>
                 <a href="https://harmon1713.github.io/portfolio/My Travel Map/index.html" target="_blank" rel="noopener noreferrer">
                     <img src="images/travelmap-click.png" alt="Travel Map" class="img-fluid">
                 </a>
