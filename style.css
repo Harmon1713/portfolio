@@ -288,6 +288,7 @@ footer {
     display: none; /* Ensure it is displayed when needed */
     text-align: center; /* Center the content */
     margin: 20px auto; /* Add margin for spacing */
+    color: red;
 }
 
 .iframe-container iframe {
@@ -412,17 +413,19 @@ footer {
 }
 
 /* Autocomplete styles */
-.autocomplete-list {
+#dropdownlist {
     position: absolute;
     border: 1px solid #ddd;
-    border-bottom: none;
-    border-top: none;
     z-index: 99;
     bottom: 52px;
     background-color: #fff;
+    max-height: 200px; /* Adjust as needed */
+    overflow-y: auto; /* Add scroll if content exceeds max-height */
+    z-index: 1000; /* Ensure it appears above other elements */
+    display: none; /* Initially hidden */
 }
 
-.autocomplete-item {
+.dropdown-item {
     padding: 10px;
     cursor: pointer;
     background-color: #fff;
@@ -430,7 +433,7 @@ footer {
     text-align: left;
 }
 
-.autocomplete-item:hover {
+.dropdown-item:hover {
     background-color: #eee;
 }
 
@@ -510,12 +513,12 @@ footer {
     color: red;
 }
 
+/* Contact link styles on Portfolio page */
 #contactPrompt {
     margin-left: 5%;
     margin-right: 5%;
 }
 
-/* Contact link styles on Portfolio page */
 #contact-link {
     color: blue;
     text-decoration: none;
@@ -612,23 +615,48 @@ footer {
     font-weight: bold;
 }
 
-/* Small screen */
-@media (max-width: 992px) {
-.iframe-container {
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    main.container {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+    }
+
+    section#travel-map {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .iframe-container,
+    #map-replacement {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 1050px) {
+    .iframe-container {
     display: none; /* Hide the iframe on smaller screens */
 }
 
 #map-replacement {
-    display: block; /* Show the replacement text and image */
+    display: inline-block; /* Show the replacement text and image */
     text-align: center; /* Center the content */
-    margin: 20px auto; /* Add margin for spacing */
-}
 }
 
 #map-replacement img {
     width: 100%; /* Make the image responsive */
-    max-width: 700px; /* Limit the maximum width */
     height: auto; /* Maintain aspect ratio */
+}
+
+#map-replacement p {
+    margin: 0 1%; /* Make the image responsive */
+}
 }
 
 
@@ -727,9 +755,6 @@ footer {
         padding-top: 7vh; /* Adjust padding to account for header and nav */
     }
 
-    #map-replacement img {
-        max-width: 300px; /* Limit the maximum width */
-    }
     #resume-content {
         width: 90%;
     }
@@ -798,9 +823,7 @@ footer {
 
     #projects .half-column {
         width: 100%; /* Make each half-column take up the full width */
-        display: block; /* Ensure each column is displayed as a block element */
         float: none; /* Remove floating to allow stacking */
-        margin-bottom: 20px; /* Add some space between the stacked columns */
     }
 
     #projects .half-column img {
