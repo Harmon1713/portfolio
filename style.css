@@ -262,6 +262,10 @@ footer {
     padding: 10px; /* Added padding */
 }
 
+.skill:hover {
+    background-color: #ddd;
+}
+
 .skill img {
     width: 100px;
     height: 100px;
@@ -307,6 +311,15 @@ footer {
 }
 
 /* Styles for the modal */
+/* Class to lock the main screen when modal is open */
+.modal-open {
+    overflow: hidden;
+    height: 100%;  /* Optional: Ensures the body doesn't extend beyond the viewport height */
+    position: fixed;  /* Prevent scrolling */
+    width: 100%;  /* Prevent horizontal scrolling */
+}
+
+
 .modal {
     display: none;
     position: fixed;
@@ -413,19 +426,18 @@ footer {
 }
 
 /* Autocomplete styles */
-#dropdownlist {
+.autocomplete-list {
     position: absolute;
     border: 1px solid #ddd;
     z-index: 99;
-    bottom: 52px;
     background-color: #fff;
-    max-height: 200px; /* Adjust as needed */
-    overflow-y: auto; /* Add scroll if content exceeds max-height */
-    z-index: 1000; /* Ensure it appears above other elements */
-    display: none; /* Initially hidden */
+    max-height: 200px;
+    overflow-y: auto;
+    display: none; /* Hidden by default */
+    left: 0; /* Adjust positioning */
 }
 
-.dropdown-item {
+.autocomplete-item {
     padding: 10px;
     cursor: pointer;
     background-color: #fff;
@@ -433,9 +445,10 @@ footer {
     text-align: left;
 }
 
-.dropdown-item:hover {
-    background-color: #eee;
+.autocomplete-item:hover {
+    background-color: #ddd;
 }
+
 
 /* Project styles */
 .project {
