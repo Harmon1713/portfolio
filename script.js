@@ -42,6 +42,9 @@ function changeLanguage(lang) {
         }
     });
 
+    // Translate skills in the dropdown
+    translateSkillsDropdown(lang);
+
     // Re-apply language changes to modals that are currently open
     const openModals = document.querySelectorAll('.modal');
     openModals.forEach(modal => {
@@ -216,8 +219,15 @@ document.addEventListener('DOMContentLoaded', function() {
     highlightCurrentPage(); // Highlight current page's nav item
     const storedLanguage = localStorage.getItem('preferredLanguage') || 'en'; // Set the initial active language button and change to default language (English)
     changeLanguage(storedLanguage); // Set the language based on stored preference or default to English
+    translateSkillsDropdown(storedLanguage); // Translate skills in the dropdown on page load
 });
 
+// When the search bar is clicked or input is focused
+document.getElementById('searchInput').addEventListener('focus', () => {
+    showFullAutocompleteList();
+    const currentLanguage = localStorage.getItem('preferredLanguage') || 'en';
+    translateSkillsDropdown(currentLanguage);
+});
 
 // Travel map - make draggable inside the iframe
 document.addEventListener('DOMContentLoaded', function() {
@@ -319,7 +329,7 @@ function applyTruncation(modalId) {
     });
 }
 
-// Function to show the modal popup and apply truncation
+// Function to show the modal popup and lock the main screen scroll
 function showPopup(modalId) {
     const modal = document.getElementById(`${modalId}-modal`);
 
@@ -335,6 +345,9 @@ function showPopup(modalId) {
 
     modal.style.display = 'block'; // Display the modal
 
+    // Lock the main screen scroll by adding a class to the body
+    document.body.classList.add('modal-open');
+
     // Add an event listener to close the modal when clicking outside of it
     window.addEventListener('click', function (event) {
         if (event.target == modal) {
@@ -343,12 +356,15 @@ function showPopup(modalId) {
     });
 }
 
-// Function to close the modal popup
+// Function to close the modal popup and unlock the main screen scroll
 function closePopup(modalId) {
     const modal = document.getElementById(`${modalId}-modal`);
     if (modal) {
         modal.style.display = 'none'; // Hide the modal
     }
+
+    // Unlock the main screen scroll by removing the class from the body
+    document.body.classList.remove('modal-open');
 }
 
 // Event listener for window resize to dynamically adjust truncation
@@ -364,59 +380,215 @@ window.addEventListener('resize', function() {
     });
 });
 
-
-
 // Search bar
 const skills = ["HTML", "Bootstrap", "CSS", "JavaScript", "jQuery", "popper.js", "Python", "pygame", "datetime", "tkinter", "SQLite", "SQL", "matplotlib", "D3.js", "GeoJSON", "json", "SVG", "R", "dplyr", "ggplot2", "ggiraph", "patchwork", "htmlwidgets", "Markdown", "LaTex", "Pandoc", "Material Testing System", "MTS", "Inventor", "CAD", "Drafting", "MatScan", "Tekscan", "Research", "Technical Writing", "Data Visualization", "Application Development", "Front-End Development", "Tableau", "Data Wrangling", "Data Analysis", "Pandas", "NumPy", "SciPy", "Statsmodels", "dplyr", "tidyr", "readxl", "lubridate", "stringr", "data.table", "broom", "readr", "Statistical Modeling", "Ecdat", "RColorBrewer", "Linear Regression", "lm()", "gvlma", "predictmeans", "Seaborn", "pylab", "car", "caret", "magrittr", "lmtest", "popbio", "e1071", "API Integration", "plotly", "Retool", "Plotly JSON", "requests"];
 
 // Store the original list of projects
 const allProjects = Array.from(document.getElementsByClassName('project'));
 
-function showAutocomplete() {
+// Helper function to normalize skill names by removing periods, dashes, spaces, and parentheses
+function normalizeSkillName(skill) {
+    return skill.replace(/[.\-\s()]/g, '');
+}
+
+// Function to show the full autocomplete list when the search bar is clicked or a skill is selected
+function showFullAutocompleteList() {
     const input = document.getElementById('searchInput');
     const autocompleteList = document.getElementById('autocompleteList');
+    const currentLanguage = localStorage.getItem('preferredLanguage') || 'en';
+
+    // Translate and sort the skills array alphabetically based on the translated names
+    const translatedSkills = skills.map(skill => {
+        const skillKey = `skill_${normalizeSkillName(skill.trim())}`;
+        const translatedSkill = translations[currentLanguage] && translations[currentLanguage][skillKey]
+            ? translations[currentLanguage][skillKey]
+            : skill; // Fallback to original skill name if translation is not found
+        return {
+            original: skill,
+            translated: translatedSkill
+        };
+    }).sort((a, b) => a.translated.localeCompare(b.translated));
+
+    // Clear the current list
     autocompleteList.innerHTML = '';
 
-    const inputValue = input.value.toLowerCase();
-    const lastCommaIndex = inputValue.lastIndexOf(',');
-    const lastSpaceIndex = inputValue.lastIndexOf(' ');
-    const lastSeparatorIndex = Math.max(lastCommaIndex, lastSpaceIndex);
-    const currentInput = inputValue.substring(lastSeparatorIndex + 1).trim();
+    // Get the currently selected skills
+    let selectedSkills = input.value.split(',').map(skill => skill.trim()).filter(skill => skill !== '');
 
-    if (currentInput === '') {
-        return;
-    }
-
-    const filteredSkills = skills.filter(skill => skill.toLowerCase().startsWith(currentInput));
-    filteredSkills.forEach(skill => {
+    // Display the translated and sorted skills in the autocomplete list
+    translatedSkills.forEach(skillObj => {
         const item = document.createElement('div');
         item.classList.add('autocomplete-item');
-        item.innerText = skill;
-        item.onclick = () => {
-            const currentInputValue = input.value;
-            const newInputValue = currentInputValue.substring(0, lastSeparatorIndex + 1) + ' ' + skill + ', ';
-            input.value = newInputValue.trim();
-            autocompleteList.innerHTML = '';
-            input.focus();
+        item.innerText = skillObj.translated;
+
+        // Highlight the selected skill with a green background
+        if (selectedSkills.includes(skillObj.translated)) {
+            item.style.backgroundColor = '#4CAF50';
+            item.style.color = 'white';
+        }
+
+        item.onclick = (e) => {
+            e.stopPropagation(); // Prevent the click event from closing the dropdown
+
+            // Check if the skill is already selected
+            if (selectedSkills.includes(skillObj.translated)) {
+                // Unselect the skill
+                selectedSkills = selectedSkills.filter(skill => skill !== skillObj.translated);
+                input.value = selectedSkills.join(', ');
+                item.style.backgroundColor = ''; // Remove the green background
+                item.style.color = ''; // Reset text color
+            } else {
+                // Add the selected skill in the translated language
+                input.value += (input.value.trim() ? ', ' : '') + skillObj.translated;
+                selectedSkills.push(skillObj.translated);
+            }
+
+            // Rebuild the list to reflect the selected/unselected skills
+            showFullAutocompleteList();
+
+            input.focus(); // Keep the focus on the input field
         };
+
         autocompleteList.appendChild(item);
     });
 
     // Set the position and width of the autocomplete list
     const searchBarRect = document.querySelector('.search-bar').getBoundingClientRect();
     const searchInputRect = input.getBoundingClientRect();
-    
-    // Calculate the left position based on the search bar's left offset and the input's left offset
     const leftPosition = searchInputRect.left - searchBarRect.left;
 
     autocompleteList.style.left = `${leftPosition}px`;
     autocompleteList.style.width = `${searchInputRect.width}px`;
+    autocompleteList.style.display = 'block'; // Ensure the list is visible
 
-    // Event listener to close the autocomplete list when clicking outside
+    // Prevent the list from closing when clicking on it
+    autocompleteList.addEventListener('mousedown', function(event) {
+        event.preventDefault();
+    });
+
+    // Close the autocomplete list only when clicking outside the input and list
     document.addEventListener('click', function(event) {
         if (!autocompleteList.contains(event.target) && event.target !== input) {
             autocompleteList.innerHTML = '';
+            autocompleteList.style.display = 'none';
         }
+    });
+}
+
+// Function to filter and show the autocomplete list as the user types
+function showAutocomplete() {
+    const input = document.getElementById('searchInput');
+    const autocompleteList = document.getElementById('autocompleteList');
+    const inputValue = input.value.toLowerCase();
+    const lastCommaIndex = inputValue.lastIndexOf(',');
+    const lastSpaceIndex = inputValue.lastIndexOf(' ');
+    const lastSeparatorIndex = Math.max(lastCommaIndex, lastSpaceIndex);
+    const currentInput = inputValue.substring(lastSeparatorIndex + 1).trim();
+
+    const currentLanguage = localStorage.getItem('preferredLanguage') || 'en';
+
+    // Filter the skills list based on the current input and translate them
+    const filteredSkills = skills
+        .filter(skill => skill.toLowerCase().startsWith(currentInput))
+        .map(skill => {
+            const skillKey = `skill_${normalizeSkillName(skill.trim())}`;
+            const translatedSkill = translations[currentLanguage] && translations[currentLanguage][skillKey]
+                ? translations[currentLanguage][skillKey]
+                : skill; // Fallback to original skill name if translation is not found
+            return {
+                original: skill,
+                translated: translatedSkill
+            };
+        })
+        .sort((a, b) => a.translated.localeCompare(b.translated));
+
+    // Clear the current list
+    autocompleteList.innerHTML = '';
+
+    // Get the currently selected skills
+    let selectedSkills = input.value.split(',').map(skill => skill.trim()).filter(skill => skill !== '');
+
+    // Display the filtered and translated skills in the autocomplete list
+    filteredSkills.forEach(skillObj => {
+        const item = document.createElement('div');
+        item.classList.add('autocomplete-item');
+        item.innerText = skillObj.translated;
+
+        // Highlight the selected skill with a green background
+        if (selectedSkills.includes(skillObj.translated)) {
+            item.style.backgroundColor = '#4CAF50';
+            item.style.color = 'white';
+        }
+
+        item.onclick = (e) => {
+            e.stopPropagation(); // Prevent the click event from closing the dropdown
+
+            // Check if the skill is already selected
+            if (selectedSkills.includes(skillObj.translated)) {
+                // Unselect the skill
+                selectedSkills = selectedSkills.filter(skill => skill !== skillObj.translated);
+                input.value = selectedSkills.join(', ');
+                item.style.backgroundColor = ''; // Remove the green background
+                item.style.color = ''; // Reset text color
+            } else {
+                // Add the selected skill in the translated language
+                input.value += (input.value.trim() ? ', ' : '') + skillObj.translated;
+                selectedSkills.push(skillObj.translated);
+            }
+
+            // Rebuild the list to reflect the selected/unselected skills
+            showFullAutocompleteList();
+
+            input.focus(); // Keep the focus on the input field
+        };
+
+        autocompleteList.appendChild(item);
+    });
+
+    // Ensure the dropdown stays visible while filtering
+    if (filteredSkills.length > 0) {
+        autocompleteList.style.display = 'block';
+    } else {
+        autocompleteList.style.display = 'none';
+    }
+}
+
+// Attach the function to show the full autocomplete list when the search bar is clicked
+document.getElementById('searchInput').addEventListener('focus', showFullAutocompleteList);
+
+// Attach the function to filter the list as the user types
+document.getElementById('searchInput').addEventListener('input', showAutocomplete);
+
+// Function to translate the skills in the dropdown list
+function translateSkillsDropdown(lang) {
+    const autocompleteItems = document.querySelectorAll('.autocomplete-item');
+    const translatedItems = [];
+
+    autocompleteItems.forEach(item => {
+        const skillKey = `skill_${normalizeSkillName(item.innerText.trim())}`;
+        console.log(`Translating ${item.innerText.trim()} with key ${skillKey}`);
+        const translatedSkill = translations[lang] && translations[lang][skillKey]
+            ? translations[lang][skillKey]
+            : item.innerText; // Fallback to original text if translation is not found
+        translatedItems.push({
+            element: item,
+            translatedText: translatedSkill
+        });
+        console.log(`Translated to ${translatedSkill}`);
+    });
+
+    // Sort the items based on the translated text
+    translatedItems.sort((a, b) => a.translatedText.localeCompare(b.translatedText));
+
+    // Apply the sorted and translated text back to the autocomplete list
+    translatedItems.forEach(({ element, translatedText }) => {
+        element.innerText = translatedText;
+
+        // Force re-render to ensure sorting is applied
+        const parent = element.parentNode;
+        const nextSibling = element.nextSibling;
+        parent.removeChild(element);
+        parent.insertBefore(element, nextSibling);
     });
 }
 
@@ -469,7 +641,6 @@ function handleTruncationForSearch(textContainer, fullText, numImages) {
         textContainer.innerText = fullText; // Show full text if it fits within the limit
     }
 }
-
 
 // Function to apply truncation to all search results
 function applyTruncationToSearchResults() {
@@ -589,7 +760,6 @@ function searchProjects() {
     }    
 }
 
-
 // Event listener to handle truncation on window resize
 window.addEventListener('resize', applyTruncationToSearchResults);
 
@@ -601,3 +771,6 @@ function handleKeyPress(event) {
         searchProjects();
     }
 }
+
+// Attach the keypress handler to the search input
+document.getElementById('searchInput').addEventListener('keypress', handleKeyPress);
