@@ -45,6 +45,9 @@ function changeLanguage(lang) {
     // Translate skills in the dropdown
     translateSkillsDropdown(lang);
 
+    // Translate skills in the search bar
+    translateSkillsInSearchBar(lang);
+
     // Re-apply language changes to modals that are currently open
     const openModals = document.querySelectorAll('.modal');
     openModals.forEach(modal => {
@@ -430,18 +433,14 @@ function showFullAutocompleteList() {
         item.onclick = (e) => {
             e.stopPropagation(); // Prevent the click event from closing the dropdown
 
-            // Check if the skill is already selected
-            if (selectedSkills.includes(skillObj.translated)) {
-                // Unselect the skill
-                selectedSkills = selectedSkills.filter(skill => skill !== skillObj.translated);
-                input.value = selectedSkills.join(', ');
-                item.style.backgroundColor = ''; // Remove the green background
-                item.style.color = ''; // Reset text color
-            } else {
-                // Add the selected skill in the translated language
-                input.value += (input.value.trim() ? ', ' : '') + skillObj.translated;
-                selectedSkills.push(skillObj.translated);
-            }
+            // Replace the last incomplete skill with the selected one
+            const lastCommaIndex = input.value.lastIndexOf(',');
+            const lastSpaceIndex = input.value.lastIndexOf(' ');
+            const lastSeparatorIndex = Math.max(lastCommaIndex, lastSpaceIndex);
+            const newValue = input.value.substring(0, lastSeparatorIndex + 1) + skillObj.translated;
+            input.value = newValue.trim();
+
+            selectedSkills.push(skillObj.translated);
 
             // Rebuild the list to reflect the selected/unselected skills
             showFullAutocompleteList();
@@ -523,18 +522,14 @@ function showAutocomplete() {
         item.onclick = (e) => {
             e.stopPropagation(); // Prevent the click event from closing the dropdown
 
-            // Check if the skill is already selected
-            if (selectedSkills.includes(skillObj.translated)) {
-                // Unselect the skill
-                selectedSkills = selectedSkills.filter(skill => skill !== skillObj.translated);
-                input.value = selectedSkills.join(', ');
-                item.style.backgroundColor = ''; // Remove the green background
-                item.style.color = ''; // Reset text color
-            } else {
-                // Add the selected skill in the translated language
-                input.value += (input.value.trim() ? ', ' : '') + skillObj.translated;
-                selectedSkills.push(skillObj.translated);
-            }
+            // Replace the last incomplete skill with the selected one
+            const lastCommaIndex = input.value.lastIndexOf(',');
+            const lastSpaceIndex = input.value.lastIndexOf(' ');
+            const lastSeparatorIndex = Math.max(lastCommaIndex, lastSpaceIndex);
+            const newValue = input.value.substring(0, lastSeparatorIndex + 1) + skillObj.translated;
+            input.value = newValue.trim();
+
+            selectedSkills.push(skillObj.translated);
 
             // Rebuild the list to reflect the selected/unselected skills
             showFullAutocompleteList();
@@ -566,7 +561,6 @@ function translateSkillsDropdown(lang) {
 
     autocompleteItems.forEach(item => {
         const skillKey = `skill_${normalizeSkillName(item.innerText.trim())}`;
-        console.log(`Translating ${item.innerText.trim()} with key ${skillKey}`);
         const translatedSkill = translations[lang] && translations[lang][skillKey]
             ? translations[lang][skillKey]
             : item.innerText; // Fallback to original text if translation is not found
@@ -574,7 +568,6 @@ function translateSkillsDropdown(lang) {
             element: item,
             translatedText: translatedSkill
         });
-        console.log(`Translated to ${translatedSkill}`);
     });
 
     // Sort the items based on the translated text
@@ -590,6 +583,19 @@ function translateSkillsDropdown(lang) {
         parent.removeChild(element);
         parent.insertBefore(element, nextSibling);
     });
+}
+
+// Function to translate skills in the search bar
+function translateSkillsInSearchBar(lang) {
+    const input = document.getElementById('searchInput');
+    const currentSkills = input.value.split(',').map(skill => skill.trim()).filter(skill => skill !== '');
+    const translatedSkills = currentSkills.map(skill => {
+        const skillKey = `skill_${normalizeSkillName(skill)}`;
+        return translations[lang] && translations[lang][skillKey]
+            ? translations[lang][skillKey]
+            : skill; // Fallback to original skill name if translation is not found
+    });
+    input.value = translatedSkills.join(', ');
 }
 
 // Function to dynamically calculate the truncation length based on window size and number of images for search results
