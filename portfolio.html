@@ -69,6 +69,10 @@
                             <img src="images/data-viz-icon.png" alt="Data Visualization">
                             <p data-translate="dataViz">Data Analysis & Visualization</p>
                         </div>
+                        <div class="skill" onclick="showPopup('workflow')">
+                            <img src="images/flowchart-icon.png" alt="Workflow Automation">
+                            <p data-translate="workflow">Workflow Automation</p>
+                        </div>
                         <div class="skill" onclick="showPopup('technical_writing')">
                             <img src="images/tech-writ-icon.png" alt="Technical Writing">
                             <p data-translate="techWriting">Technical Writing</p>
@@ -383,6 +387,41 @@
             </div>
         </div>
 
+        <div id="workflow-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closePopup('workflow')">&times;</span>
+                <h2 data-translate="workflowModal">Workflow Automation</h2>
+                <div class="modal-project modal-project-style" data-skills="Make, API Integration, Google Workspace">
+    
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/ValidateHTML.mp4" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <h3>
+                            <img src="images/make.png" alt="Make logo" width="10%"> <br>
+                            <span data-translate="ValHTMLApp">ITEC 2380 Lab File Validation for HTML</span> <br>
+                        </h3>
+                        <div class="green-line"></div><br>
+                        <p><strong data-translate="ValHTML">Make, API Integration, Google Workspace</strong></p><br>
+                        <div class="half-column">
+                            <p data-translate="workflow_makeContent">
+                                The "ITEC 2380 Lab File Validation for HTML" project is designed to automate the process of grading HTML
+                                files submitted by students. By grabbing the zip files from students and running each through the W3C HTML
+                                Validator, this workflow significantly reduces grading time from 15-45 minutes per student to just 5-10
+                                minutes (50%-78% more efficient). The automation leverages advanced technical skills, including API integration, 
+                                data extraction, file handling, and web content validation, to enhance efficiency and 
+                                accuracy in an educational setting. </p> <br> <p data-translate="workflow_makeContentvid">Watch the video to see the workflow explanation.</p>
+                        </div>
+                        <br><br>
+                        <div class="half-column img-white">
+                            <video width="100%" controls>
+                                <source src="documents/ValidateHTML.mp4" type="video/mp4">
+                                <p data-translate="vid_error">Your browser does not support the video tag. Click the project to download the video on GitHub.</p>
+                              </video>
+                        </div>
+                        <div class="clear"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <div id="technical_writing-modal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closePopup('technical_writing')">&times;</span>
@@ -422,8 +461,31 @@
                             <div class="clear"></div>
                     </a>
                 </div>
+            <br><br>
+            <div class="modal-project modal-project-style" data-skills="Markdown, HTML">
+                <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Automation_Workflow_SetUp_Guide_ITEC_2380_Lab_File_Validation_for_HTML.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <h3>
+                            <img src="images/make.png" alt="Make logo" width="7%"> <br>
+                            <span data-translate="ValHTMLGuide">Automation Workflow Set-Up Guide: ITEC 2380 Lab File Validation for HTML </span><br> 
+                        </h3>
+                        <div class="green-line"></div><br>
+                        <p><strong data-translate="ValHTMLGuideSkills">Markdown, HTML</strong></p><br>
+                        <div class="half-column">
+                            <p data-translate="ValHTMLGuideContent"> The "ITEC 2380 Lab File Validation for HTML" project is designed to automate the process of grading HTML
+                                files submitted by students. By grabbing the zip files from students and running each through the W3C HTML
+                                Validator, this workflow significantly reduces grading time from 15-45 minutes per student to just 5-10
+                                minutes (50%-78% more efficient). This guide will walk you through creating an automation workflow in Make
+                                that monitors a Google Drive folder for new files, processes those files, and validates HTML files using the
+                                W3C HTML Validator API. </p>
+                        </div><br><br>
+                        <div class="half-column" style="padding-left: 1%;">
+                            <img src="images/step5.png" alt="Step 5 in Guide" width="100%">
+                        </div>
+                        <div class="clear"></div>
+                </a>
             </div>
         </div>
+    </div>
 
         <div id="cad_drafting-modal" class="modal" data-skills="Inventor, CAD, Drafting">
             <div class="modal-content">
@@ -847,6 +909,37 @@
                     </a>
                 </div>
 
+                <div class="project" data-skills="Workflow Automation, Make, API Integration, Google Workspace">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/ValidateHTML.mp4" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->
+                            <h2><span data-translate="ValHTMLApp">ITEC 2380 Lab File Validation for HTML</span></h2>
+                            <div class="green-line"></div>
+                            <p class="uses" data-translate="techUsed">Uses Make, API Integration, Google Workspace</p>
+                            <div class="modal-project" data-skills="Make, API Integration, Google Workspace">
+                                <p><strong data-translate="ValHTML">Make, API Integration, Google Workspace</strong></p><br>
+                                <div class="half-column">
+                                    <p data-translate="workflow_makeContent">
+                                        The "ITEC 2380 Lab File Validation for HTML" project is designed to automate the process of grading HTML
+                                        files submitted by students. By grabbing the zip files from students and running each through the W3C HTML
+                                        Validator, this workflow significantly reduces grading time from 15-45 minutes per student to just 5-10
+                                        minutes (50%-78% more efficient). The automation leverages advanced technical skills, including API integration, 
+                                        data extraction, file handling, and web content validation, to enhance efficiency and accuracy in an educational setting. 
+                                    </p><br>
+                                    <p>Watch the video to see the workflow explanation.</p>
+                                </div>
+                                <div class="half-column img-white">
+                                    <video width="100%" controls>
+                                        <source src="documents/ValidateHTML.mp4" type="video/mp4">
+                                        Your browser does not support the video tag. Click the project to download the video on GitHub.
+                                    </video>
+                                </div>
+                                <div class="clear"></div>
+                                <br>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
                 <div class="project" data-skills="Technical Writing, Markdown">
                     <a href="https://github.com/Harmon1713/portfolio/blob/main/Giraffe Warmer Maintenance Application/User_Guide_Giraffe_Warmer_GUI.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
                         <div class="project-content"> <!-- Wrapper div for styling -->
@@ -887,6 +980,34 @@
                         </div>
                     </a>
                 </div>
+
+                <div class="project" data-skills="Technical Documentation, Markdown, HTML">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Automation_Workflow_SetUp_Guide_ITEC_2380_Lab_File_Validation_for_HTML.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->
+                            <h2><span data-translate="ValHTMLGuide">Automation Workflow Set-Up Guide: ITEC 2380 Lab File Validation for HTML</span></h2>
+                            <div class="green-line"></div>
+                            <p class="uses" data-translate="techUsed">Uses Markdown, HTML</p>
+                            <div class="modal-project" data-skills="Markdown, HTML">
+                                <p><strong data-translate="ValHTMLGuideSkills">Markdown, HTML</strong></p><br>
+                                <div class="half-column">
+                                    <p data-translate="ValHTMLGuideContent"> 
+                                        The "ITEC 2380 Lab File Validation for HTML" project is designed to automate the process of grading HTML
+                                        files submitted by students. By grabbing the zip files from students and running each through the W3C HTML
+                                        Validator, this workflow significantly reduces grading time from 15-45 minutes per student to just 5-10
+                                        minutes (50%-78% more efficient). This guide will walk you through creating an automation workflow in Make
+                                        that monitors a Google Drive folder for new files, processes those files, and validates HTML files using the
+                                        W3C HTML Validator API.
+                                    </p>
+                                </div>
+                                <div class="half-column" style="padding-left: 1%;">
+                                    <img src="images/step5.png" alt="Step 5 in Guide" width="100%">
+                                </div>
+                                <div class="clear"></div>
+                                <br>
+                            </div>
+                        </div>
+                    </a>
+                </div>                
                 
                 <div class="project" data-skills="Research, Inventor, CAD, Drafting">
                     <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Development%20of%20a%20Mobile%20Ankle%20Joint%20Attachment%20For%20the%20Universal%20Prosthesis.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
