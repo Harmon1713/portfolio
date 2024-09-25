@@ -30,10 +30,14 @@ document.getElementById('portuguese-btnx').addEventListener('click', () => trans
 
 // Function to change the language
 function changeLanguage(lang) {
+    console.log("changeLanguage called with lang:", lang);
     const elements = document.querySelectorAll('[data-translate]');
+    
+    // Update all elements with data-translate attributes
     elements.forEach(el => {
         const translateKey = el.getAttribute('data-translate');
         if (translations[lang] && translations[lang][translateKey]) {
+            // Handle inputs separately (e.g., placeholders)
             if (el.tagName.toLowerCase() === 'input') {
                 el.setAttribute('placeholder', translations[lang][translateKey]);
             } else {
@@ -42,25 +46,100 @@ function changeLanguage(lang) {
         }
     });
 
-    // Translate skills in the dropdown
+    // Translate specific components like dropdown and search bar
     translateSkillsDropdown(lang);
-
-    // Translate skills in the search bar
     translateSkillsInSearchBar(lang);
 
-    // Re-apply language changes to modals that are currently open
-    const openModals = document.querySelectorAll('.modal');
-    openModals.forEach(modal => {
-        if (modal.style.display === 'block') {
-            applyLanguageToModal(modal, lang);
-        }
-    });
+    // Clear any cached modal content so modals are forced to update
+    clearCachedModalContent();
 
-    // Update the text for "Uses" and "Missing" in the current results
+    // Update modals (both open and closed)
+    console.log("Applying language to all modals");
+    applyLanguageToAllModals(lang);
+
+    // Update modals (open modals will also be updated immediately)
+    console.log("Refreshing all modals with new language");
+    refreshAllModals(lang);
+
+    // Update project 'Uses' and 'Missing' text
+    updateProjectsText(lang);
+
+    // Clear error messages if any
+    clearErrorMessage();
+
+    // Update the active language button
+    setActiveLanguageButton(lang);
+
+    // Store the preferred language in local storage
+    console.log("Storing preferred language in localStorage:", lang);
+    localStorage.setItem('preferredLanguage', lang);
+
+    // Hide the language dropdown if visible
+    hideLanguageDropdown();
+}
+
+// Function to clear cached modal content
+function clearCachedModalContent() {
+    const modals = document.querySelectorAll('.modal');
+    
+    modals.forEach(modal => {
+        const textContainers = modal.querySelectorAll('.half-column p');
+        textContainers.forEach(textContainer => {
+            // Remove cached full text so the content can be updated
+            textContainer.removeAttribute('data-fulltext');
+        });
+    });
+}
+
+
+// Function to set the active language button
+function setActiveLanguageButton(lang) {
+    const buttons = document.querySelectorAll('#language-toggle button, .language-dropdown button');
+    buttons.forEach(button => {
+        button.classList.toggle('active', button.getAttribute('data-lang') === lang);
+    });
+}
+
+// Function to refresh the content of all modals based on the selected language
+function refreshAllModals(lang) {
+    console.log("Refreshing all modals with lang:", lang);
+    const modals = document.querySelectorAll('.modal');
+
+    modals.forEach(modal => {
+        console.log("Applying language to modal:", modal.id);
+        applyLanguageToModal(modal, lang);
+
+        // Reapply truncation logic to ensure content is displayed properly
+        const modalId = modal.id.replace('-modal', '');
+        console.log("Reapplying truncation for modalId:", modalId);
+        applyTruncation(modalId);
+    });
+}
+
+// Function to apply language changes to all modals, regardless of whether they are open or not
+function applyLanguageToAllModals(lang) {
+    console.log("Applying language to all modals:", lang);
+    const modals = document.querySelectorAll('.modal');
+    
+    modals.forEach(modal => {
+        const translateKeys = modal.querySelectorAll('[data-translate]');
+        translateKeys.forEach(el => {
+            const translateKey = el.getAttribute('data-translate');
+            if (translations[lang] && translations[lang][translateKey]) {
+                console.log("Updating modal element:", el, "with translation:", lang);
+                el.innerText = translations[lang][translateKey];
+            }
+        });
+    });
+}
+
+// Function to update the "Uses" and "Missing" text in project containers
+function updateProjectsText(lang) {
     const projectsContainer = document.getElementById('projects');
+    
     if (projectsContainer) {
         const currentProjects = projectsContainer.querySelectorAll('.project');
-
+        
         currentProjects.forEach(project => {
             const usesElement = project.querySelector('p.uses');
             if (usesElement && usesElement.getAttribute('data-matched')) {
@@ -73,49 +152,22 @@ function changeLanguage(lang) {
             }
         });
     }
+}
 
-    // Apply language changes to modals
-    applyLanguageToAllModals(lang);
-
+// Function to clear error messages
+function clearErrorMessage() {
     const errorMessage = document.getElementById('errorMessage');
     if (errorMessage) {
-        errorMessage.textContent = ''; // Clear the error message when changing languages
+        errorMessage.textContent = ''; // Clear error messages on language change
     }
+}
 
-    setActiveLanguageButton(lang); // Set the active button
-    localStorage.setItem('preferredLanguage', lang); // Store the selected language in local storage
-
-    // Hide the language dropdown after selecting a language
+// Function to hide the language dropdown
+function hideLanguageDropdown() {
     const languageDropdown = document.querySelector('.language-dropdown');
     if (languageDropdown && languageDropdown.classList.contains('show')) {
         languageDropdown.classList.remove('show');
     }
-}
-
-// Function to set the active language button
-function setActiveLanguageButton(lang) {
-    const buttons = document.querySelectorAll('#language-toggle button, .language-dropdown button');
-    buttons.forEach(button => {
-        if (button.getAttribute('data-lang') === lang) {
-            button.classList.add('active');
-        } else {
-            button.classList.remove('active');
-        }
-    });
-}
-
-// Function to apply language changes to all modals
-function applyLanguageToAllModals(lang) {
-    const modalProjects = document.querySelectorAll('.modal-project');
-    modalProjects.forEach(project => {
-        const translateKeys = project.querySelectorAll('[data-translate]');
-        translateKeys.forEach(el => {
-            const translateKey = el.getAttribute('data-translate');
-            if (translations[lang] && translations[lang][translateKey]) {
-                el.innerText = translations[lang][translateKey];
-            }
-        });
-    });
 }
 
 // Scrolling
@@ -219,18 +271,22 @@ function highlightCurrentPage() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOMContentLoaded event triggered'); // Debug line
     highlightCurrentPage(); // Highlight current page's nav item
-    const storedLanguage = localStorage.getItem('preferredLanguage') || 'en'; // Set the initial active language button and change to default language (English)
-    changeLanguage(storedLanguage); // Set the language based on stored preference or default to English
-    translateSkillsDropdown(storedLanguage); // Translate skills in the dropdown on page load
+    const storedLanguage = localStorage.getItem('preferredLanguage') || 'en'; 
+    changeLanguage(storedLanguage); // Apply the stored language preference
+    translateSkillsDropdown(storedLanguage); // Translate skills in the dropdown
 });
 
 // When the search bar is clicked or input is focused
-document.getElementById('searchInput').addEventListener('focus', () => {
-    showFullAutocompleteList();
-    const currentLanguage = localStorage.getItem('preferredLanguage') || 'en';
-    translateSkillsDropdown(currentLanguage);
-});
+const searchInput = document.getElementById('searchInput');
+if (searchInput) {  // Check if search bar exists
+    searchInput.addEventListener('focus', () => {
+        showFullAutocompleteList();
+        const currentLanguage = localStorage.getItem('preferredLanguage') || 'en';
+        translateSkillsDropdown(currentLanguage);
+    });
+}
 
 // Travel map - make draggable inside the iframe
 document.addEventListener('DOMContentLoaded', function() {
@@ -318,13 +374,26 @@ function handleTruncation(textContainer, fullText, numImages) {
 // Function to apply truncation to all text containers within a specific modal
 function applyTruncation(modalId) {
     const modal = document.getElementById(`${modalId}-modal`);
+    if (!modal) {
+        console.error(`Modal with ID ${modalId}-modal not found`);
+        return;
+    }
+    
     const modalContent = modal.querySelector('.modal-content');
+    if (!modalContent) {
+        console.error('Modal content not found');
+        return;
+    }
+
     const textContainers = modalContent.querySelectorAll('.half-column p');
 
     // Iterate over each text container and apply truncation logic
     textContainers.forEach((textContainer) => {
-        const fullText = textContainer.getAttribute('data-fulltext'); // Retrieve the original full text from the attribute
-        const images = textContainer.parentElement.nextElementSibling.querySelectorAll('img');
+        const fullText = textContainer.getAttribute('data-fulltext') || textContainer.innerText; // Retrieve full text from attribute or inner text
+
+        // Safely check if the nextElementSibling exists and contains images
+        const imagesContainer = textContainer.parentElement.nextElementSibling;
+        const images = imagesContainer ? imagesContainer.querySelectorAll('img') : [];
         const numImages = images.length;
 
         // Call the handleTruncation function with the appropriate parameters
@@ -334,21 +403,37 @@ function applyTruncation(modalId) {
 
 // Function to show the modal popup and lock the main screen scroll
 function showPopup(modalId) {
+    console.log("showPopup called for modalId:", modalId);
     const modal = document.getElementById(`${modalId}-modal`);
+
+    if (!modal) {
+        console.error(`Modal with ID ${modalId} not found.`);
+        return;
+    }
+
+    // Always apply the current language when opening the modal
+    const currentLanguage = localStorage.getItem('preferredLanguage') || 'en';
+    console.log("Reapplying language to modal:", modalId, "with language:", currentLanguage);
+    applyLanguageToModal(modal, currentLanguage); // Reapply language every time the modal is opened
 
     // Save the full text in a data attribute if not already saved
     const textContainers = modal.querySelectorAll('.half-column p');
     textContainers.forEach((textContainer) => {
         if (!textContainer.getAttribute('data-fulltext')) {
+            console.log("Saving full text for text container:", textContainer);
             textContainer.setAttribute('data-fulltext', textContainer.innerText);
         }
     });
 
-    applyTruncation(modalId); // Apply truncation when the modal is opened
+    // Apply truncation now that the language and full text have been handled
+    applyTruncation(modalId);
+    console.log("Truncation applied for modalId:", modalId);
 
-    modal.style.display = 'block'; // Display the modal
+    // Show the modal
+    modal.style.display = 'block';
+    console.log("Modal displayed:", modalId);
 
-    // Lock the main screen scroll by adding a class to the body
+    // Lock the main screen scroll
     document.body.classList.add('modal-open');
 
     // Add an event listener to close the modal when clicking outside of it
@@ -359,16 +444,35 @@ function showPopup(modalId) {
     });
 }
 
+
+
 // Function to close the modal popup and unlock the main screen scroll
 function closePopup(modalId) {
+    console.log("closePopup called for modalId:", modalId);
     const modal = document.getElementById(`${modalId}-modal`);
     if (modal) {
         modal.style.display = 'none'; // Hide the modal
+        console.log("Modal hidden:", modalId);
     }
 
     // Unlock the main screen scroll by removing the class from the body
     document.body.classList.remove('modal-open');
+    console.log("Scroll unlocked for body");
 }
+
+// Function to apply language to the modal content
+function applyLanguageToModal(modal, lang) {
+    console.log("applyLanguageToModal called for modal:", modal.id, "with language:", lang);
+    const elements = modal.querySelectorAll('[data-translate]');
+    elements.forEach(el => {
+        const translateKey = el.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][translateKey]) {
+            console.log("Updating modal element:", el, "with translation key:", translateKey, "to:", lang);
+            el.innerText = translations[lang][translateKey];
+        }
+    });
+}
+
 
 // Event listener for window resize to dynamically adjust truncation
 window.addEventListener('resize', function() {
@@ -384,7 +488,17 @@ window.addEventListener('resize', function() {
 });
 
 // Search bar
-const skills = ["HTML", "Bootstrap", "CSS", "JavaScript", "jQuery", "popper.js", "Python", "pygame", "datetime", "tkinter", "SQLite", "SQL", "matplotlib", "D3.js", "GeoJSON", "json", "SVG", "R", "dplyr", "ggplot2", "ggiraph", "patchwork", "htmlwidgets", "Markdown", "LaTex", "Pandoc", "Material Testing System", "MTS", "Inventor", "CAD", "Drafting", "MatScan", "Tekscan", "Research", "Technical Writing", "Data Visualization", "Application Development", "Front-End Development", "Tableau", "Data Wrangling", "Data Analysis", "Pandas", "NumPy", "SciPy", "Statsmodels", "dplyr", "tidyr", "readxl", "lubridate", "stringr", "data.table", "broom", "readr", "Statistical Modeling", "Ecdat", "RColorBrewer", "Linear Regression", "lm()", "gvlma", "predictmeans", "Seaborn", "pylab", "car", "caret", "magrittr", "lmtest", "popbio", "e1071", "API Integration", "plotly", "Retool", "Plotly JSON", "requests"];
+const skills = ["HTML", "Bootstrap", "CSS", "JavaScript", "jQuery", "popper.js", "Python", 
+    "pygame", "datetime", "tkinter", "SQLite", "SQL", "matplotlib", "D3.js", "GeoJSON", 
+    "json", "SVG", "R", "dplyr", "ggplot2", "ggiraph", "patchwork", "htmlwidgets", "Markdown", 
+    "LaTex", "Pandoc", "Material Testing System", "MTS", "Inventor", "CAD", "Drafting", 
+    "MatScan", "Tekscan", "Research", "Technical Writing", "Data Visualization", 
+    "Application Development", "Front-End Development", "Tableau", "Data Wrangling", 
+    "Data Analysis", "Pandas", "NumPy", "SciPy", "Statsmodels", "dplyr", "tidyr", "readxl", 
+    "lubridate", "stringr", "data.table", "broom", "readr", "Statistical Modeling", "Ecdat", 
+    "RColorBrewer", "Linear Regression", "lm()", "gvlma", "predictmeans", "Seaborn", "pylab", 
+    "car", "caret", "magrittr", "lmtest", "popbio", "e1071", "API Integration", "plotly", 
+    "Retool", "Plotly JSON", "requests", "Workflow Automation", "Make", "Google Workspace"];
 
 // Store the original list of projects
 const allProjects = Array.from(document.getElementsByClassName('project'));
@@ -549,10 +663,13 @@ function showAutocomplete() {
 }
 
 // Attach the function to show the full autocomplete list when the search bar is clicked
-document.getElementById('searchInput').addEventListener('focus', showFullAutocompleteList);
+if (searchInput) {  // Check if search bar exists
+    searchInput.addEventListener('focus', showFullAutocompleteList);
 
-// Attach the function to filter the list as the user types
-document.getElementById('searchInput').addEventListener('input', showAutocomplete);
+    // Attach the function to filter the list as the user types
+    searchInput.addEventListener('input', showAutocomplete);
+}
+
 
 // Function to translate the skills in the dropdown list
 function translateSkillsDropdown(lang) {
@@ -588,6 +705,8 @@ function translateSkillsDropdown(lang) {
 // Function to translate skills in the search bar
 function translateSkillsInSearchBar(lang) {
     const input = document.getElementById('searchInput');
+    if (!input) return; // Check if searchInput exists before proceeding
+
     const currentSkills = input.value.split(',').map(skill => skill.trim()).filter(skill => skill !== '');
     const translatedSkills = currentSkills.map(skill => {
         const skillKey = `skill_${normalizeSkillName(skill)}`;
@@ -597,6 +716,7 @@ function translateSkillsInSearchBar(lang) {
     });
     input.value = translatedSkills.join(', ');
 }
+
 
 // Function to dynamically calculate the truncation length based on window size and number of images for search results
 function calculateTruncateLengthForSearch(numImages) {
@@ -779,4 +899,7 @@ function handleKeyPress(event) {
 }
 
 // Attach the keypress handler to the search input
-document.getElementById('searchInput').addEventListener('keypress', handleKeyPress);
+if (searchInput) {  // Check if search bar exists
+    searchInput.addEventListener('keypress', handleKeyPress);
+}
+
