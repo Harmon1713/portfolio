@@ -27,7 +27,6 @@
             <div class="language-hamburger">
                 <i class="fas fa-globe"></i>
             </div>
-            
             <!-- Language Toggle for Desktop -->
             <div id="language-toggle" class="d-flex flex-column align-items-end">
                 <button data-translate="english" data-lang="en" onclick="changeLanguage('en')" id="en-btn" class="btn btn-light mb-2">English</button>
@@ -55,7 +54,7 @@
     <main>
         <div id="resume-content">
             <p data-translate="references">References are available upon request. Unofficial transcripts, as well as certificates, are hyperlinked. If you want my resume, it is available in PDF format.</p>
-            <center><a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Harmon_Jackie_Resume.pdf" target="_blank" download>
+            <center><a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Harmon_Jackie_Resume_2024.pdf" target="_blank" download>
                 <img src="images/PDF_file_icon.svg.png" alt="View PDF Resume" style="width: 50px; height: 60px;">
             </a></center>
             <br>
@@ -88,6 +87,10 @@
                     <span data-translate="softwareText"> Chocolatey, PuTTY, MiKTeX, Terraform</span>
                 </li>
                 <li>
+                    <span class="bold-text" data-translate="engineeringLabel">Engineering:</span>
+                    <span data-translate="engineeringText"> LabVIEW, AutoDesk Inventor, Soldering, Machine Shop tools proficiency, Test and Measurement Equipmen</span>
+                </li>
+                <li>
                     <span class="bold-text" data-translate="managerialSkillsLabel">Managerial Skills:</span>
                     <span data-translate="managerialSkillsText"> Team Training, Project Management, Technical writing, Troubleshooting</span>
                 </li>
@@ -104,7 +107,7 @@
                     </div>
                     <span data-translate="westcliffPosition">ADJUNCT PROFESSOR (COLLEGE OF TECHNOLOGY & ENGINEERING)</span>
                     <ul>
-                        <li data-translate="westcliffTask1">Graduate courses: Introduction to Data Analytics, Cloud Data Visualization, and Data in Artificial Intelligence & Machine Learning.</li>
+                        <li data-translate="westcliffTask1">Graduate courses: Introduction to Data Analytics, Cloud Data Visualization, and Data in Artificial Intelligence & Machine Learning, Database Design & Management</li>
                         <li data-translate="westcliffTask2">Undergraduate course in the College of Business: Foundations of Statistics</li>
                     </ul>
                 </li>
@@ -117,6 +120,8 @@
                     <span data-translate="middleGAPosition">LECTURER & ADJUNCT PROFESSOR (SCHOOL OF COMPUTING)</span>
                     <ul>
                         <li data-translate="middleGATask1">Undergraduate courses: Introduction to Computer Programming, Application Development, Web Development, Human-Computer Interaction, and FinTech.</li>
+                        <li data-translate="middleGATask2">Developed the Intro to Computer Programming course, transitioning the curriculum from C# to Python to align with industry standards and student needs.</li>
+                        <li data-translate="middleGATask3">Actively contributed to the Student Engagement Committee, fostering student involvement and enhancing campus life, including organizing and facilitating the annual Academic Cybersecurity Seminar.</li>
                     </ul>
                 </li>
                 <br>
@@ -161,20 +166,23 @@
                         <span style="font-weight: bold;" data-translate="navicentHealth">Navicent Health Medical Center</span>
                         <span style="font-weight: bold;" data-translate="navicentHealthDates">10/2016 - 11/2018</span>
                     </div>
-                    <ol>
-                        <li><span data-translate="navicentHealthPosition1">ROBOTIC SURGERY RESEARCH ANALYST</span>
+                        <span data-translate="navicentHealthPosition1">ROBOTIC SURGERY RESEARCH ANALYST</span>
                             <ul>
-                                <li data-translate="navicentHealthTask1">Provided prescriptive analytics and developed detailed reports with data collected from reconstructive surgery projects, documenting methodologies and findings until project completion.</li>
+                                <li data-translate="navicentHealthTask1">Conducted in vivo testing of various fluorescent liquids on lab rats to evaluate their efficacy and visibility during transvaginal mesh reconstructive surgery.</li>
+                                <li data-translate="navicentHealthTask2">Utilized optical fluorescence imaging systems to monitor the distribution and intensity of fluorescent agents.</li>
+                                <li data-translate="navicentHealthTask3">Operated the Da Vinci Surgical System, completing several units of surgical training, including proficiency in robotic suturing, dissection, and tissue manipulation.</li>
+                                <li data-translate="navicentHealthTask4">Performed calibration and maintenance of the robotic system to ensure accuracy and reliability during surgical simulations.</li>
+                                <li data-translate="navicentHealthTask5">Provided prescriptive analytics and developed detailed reports with data collected from reconstructive surgery projects, documenting methodologies and findings until project completion.</li>
                             </ul>
-                        </li>
-                        <li><span data-translate="navicentHealthPosition2">BIOMEDICAL ENGINEERING TECHNICIAN II</span>
+                        <span data-translate="navicentHealthPosition2">BIOMEDICAL EQUIPMENT TECHNICIAN II</span>
                             <ul>
-                                <li data-translate="navicentHealthTask2">Debugged hospital equipment for ICU, PICU, and NNICU, maintaining detailed service logs and technical documentation.</li>
-                                <li data-translate="navicentHealthTask3">Mentored two interns, developing training materials that facilitated their successful transition into permanent positions.</li>
+                                <li data-translate="navicentHealthTask6">Performed complex troubleshooting and debugging of critical hospital equipment in the Intensive Care Unit (ICU), Pediatric Intensive Care Unit (PICU), and Neonatal Intensive Care Unit (NNICU).</li>
+                                <li data-translate="navicentHealthTask7">Utilized biomedical diagnostic tools such as multimeters, oscilloscopes, and patient simulators to test, repair, and calibrate life-support systems, ventilators, infusion pumps, and patient monitoring devices.</li>
+                                <li data-translate="navicentHealthTask8">Maintained detailed service logs and created technical documentation for equipment performance, preventive maintenance, and repair history, ensuring compliance with safety and regulatory standards.</li>
+                                <li data-translate="navicentHealthTask9">Mentored and trained two interns in biomedical engineering best practices, creating and delivering training materials on equipment diagnostics, repair techniques, and regulatory compliance; facilitated their successful transition into permanent roles.</li>
                             </ul>
-                        </li>
-                    </ol>
                 </li>
+                <br>
                 <li>
                     <div style="display: flex; justify-content: space-between;">
                         <span style="font-weight: bold;" data-translate="militaryService">US Army</span>
@@ -191,17 +199,61 @@
             <h4 data-translate="internshipsTitle">INTERNSHIPS</h4>
             <div class="green-line"></div><br>
             <ol>
-                <li data-translate="internship1">Navicent Health Medical Center | Fall 2016 | BIOMEDICAL ENGINEERING TECHNICIAN INTERN</li>
-                <li data-translate="internship2">Vein Specialists of the South | Summer 2014 | BIOFLUIDS / BIOMECHANICS RESEARCH ANALYST INTERN</li>
-                <li data-translate="internship3">Mercer University | Spring 2014 | NANOPARTICLES RESEARCH ANALYST INTERN</li>
+                <span style="font-weight: bold;" data-translate="internship1.1">Navicent Health Medical Center | Fall 2016 |</span> <span data-translate="internship1.2">BIOMEDICAL EQUIPMENT TECHNICIAN INTERN </span>
+                    <ul>
+                        <li data-translate="navInterntask1">Assisted BMET III in performing diagnostics and repairs on a wide range of biomedical equipment, including patient monitors, ventilators, and infusion pumps.</li>
+                        <li data-translate="navInterntask2">Gained proficiency in interpreting machine technical guides to understand operational principles and diagnose technical issues effectively.</li>
+                        <li data-translate="navInterntask3">Conducted routine maintenance and troubleshooting, ensuring equipment met safety and performance standards.</li>
+                        <li data-translate="navInterntask4">Learned to perform both hardware and software updates on biomedical devices, ensuring they operated with the latest technology and compliance standards.</li>
+                        <li data-translate="navInterntask5">Managed the ordering of parts required for equipment repairs, ensuring timely availability and cost-effective sourcing.</li>
+                        <li data-translate="navInterntask6">Assisted in the end-of-life (EOL) processing of outdated or non-functional equipment, including decommissioning and documentation in compliance with hospital policies.</li>
+                        <li data-translate="navInterntask7">Internship developed into a full-time position due to demonstrated technical skills and effective performance.</li>
+                    </ul>
+                    <br>
+                <span style="font-weight: bold;" data-translate="internship2.1">Vein Specialists of the South | Summer 2014 | </span> <span data-translate="internship2.2">BIOFLUIDS / BIOMECHANICS RESEARCH ANALYST INTERN</span>
+                    <ul>
+                        <li data-translate="veinInterntask1">Collaborated with phlebologists to interpret venous reflux patterns in ultrasound imaging for patients undergoing venous insufficiency treatment.</li>
+                        <li data-translate="veinInterntask2">Employed Doppler ultrasound technology to assess pre- and post-therapeutic hemodynamics, focusing on the efficacy of sclerotherapy and endovenous laser ablation (EVLA).</li>
+                        <li data-translate="veinInterntask3">Analyzed and compiled hemodynamic data, generating formal reports that included quantitative analysis of venous reflux improvement, presented at a regional medical conference. 
+                        </li>
+                    </ul>
+                    <br>
+                <span style="font-weight: bold;" data-translate="internship3.1">Mercer University | Spring 2014 | </span> <span data-translate="internship3.2">NANOPARTICLES RESEARCH ANALYST INTERN</span>
+                    <ul>
+                        <li data-translate="nanoInterntask1">Conducted research on bronchial nanoparticle concentrations using direct-reading instruments such as the Scanning Mobility Particle Sizer (SMPS) and Condensation Particle Counter (CPC).</li>
+                        <li data-translate="nanoInterntask2">Performed aerosol mapping and task monitoring in a controlled environment to evaluate exposure levels and potential respiratory hazards.</li>
+                        <li data-translate="nanoInterntask3">Analyzed the size distribution and concentration of airborne nanoparticles during various tasks, contributing to the development of safety protocols for nanoparticle handling in laboratory settings.</li>
+                    </ul>
             </ol>
             <br>
             <h4 data-translate="projectsTitle">PROJECTS</h4>
             <div class="green-line"></div><br>
             <ol>
-                <li data-translate="project1">Development of a Mobile Ankle Joint Attachment for the Universal Prosthesis | 2016</li>
-                <li data-translate="project2">Comparing the Mechanical Properties of Cancellous Bone between Pig Femur Bone, Deer Femur Bone, and Human Humerus Bone | 2016</li>
-                <li data-translate="project3">The Study of Injury Biomechanics in the Wrist/Hand and Ankle/Foot for Tumbling Using the MatScan | 2015</li>
+                <span style="font-weight: bold;" data-translate="project1">Development of a Mobile Ankle Joint Attachment for the Universal Prosthesis | 2016</span>
+                <ul>
+                    <li data-translate="ankleprojecttask1">Utilized 3D modeling software, including SolidWorks and Mastercam, to design an ankle joint attachment aimed at preventing muscular dystrophy in lower limb amputees.</li>
+                    <li data-translate="ankleprojecttask2">Conducted finite element analysis (FEA) to simulate stress distribution and optimize the design for durability and mobility. </li>
+                    <li data-translate="ankleprojecttask3">Fabricated fully-working prototypes using CNC machining and 3D printing techniques to improve upon prosthetics previously used in Mercer on Mission trips to Vietnam, specifically by incorporating an ankle joint that was missing in earlier designs.</li>
+                    <li data-translate="ankleprojecttask4">Conducted gait analysis using Tekscan software, integrating multiple sensors into the prosthetic to visualize real-time motion on the wearer, ensuring the functional efficacy of the ankle joint attachment design.</li>
+                    <li data-translate="ankleprojecttask5">Performed mechanical testing, including load-bearing and range-of-motion tests, to validate the attachment’s performance under various conditions.</li>
+                    <li data-translate="ankleprojecttask6">Integrated electronic sensors for real-time monitoring of joint angles and load distribution.</li>
+                    <li data-translate="ankleprojecttask7">Designed and implemented a microcontroller-based control system to enhance the prosthetic’s adaptive capabilities.</li>
+                </ul>
+                <br>
+                <span style="font-weight: bold;" data-translate="project2">Comparing the Mechanical Properties of Cancellous Bone between Pig Femur Bone, Deer Femur Bone, and Human Humerus Bone | 2016</span>
+                <ul>
+                    <li data-translate="bonesprojecttask1">Employed a Material Testing System (MTS) machine to perform compression tests on bone samples, measuring axial stress, strain, and Young’s modulus. </li>
+                    <li data-translate="bonesprojecttask2">Used digital calipers for precise sample measurements and a water displacement method for volume calculations. </li>
+                    <li data-translate="bonesprojecttask3">Analyzed the stress-strain curves to determine the mechanical properties and compared the results across species, considering factors like bone density and structural integrity.</li>
+                </ul>
+                <br>
+                <span style="font-weight: bold;" data-translate="project3">The Study of Injury Biomechanics in the Wrist/Hand and Ankle/Foot for Tumbling Using the MatScan | 2015</span>
+                <ul>
+                    <li data-translate="tumbleprojecttask1">Utilized the Tekscan MatScan system to capture and analyze pressure distributions on the hands and feet during tumbling exercises. </li>
+                    <li data-translate="tumbleprojecttask2">Conducted a series of trials with participants, recording pressure changes over time. </li>
+                    <li data-translate="tumbleprojecttask3">Analyzed the data to identify potential injury risks, such as high-impact zones and abnormal pressure patterns, and correlated these findings with common gymnastic injuries. </li>
+                    <li data-translate="tumbleprojecttask4">Developed recommendations for injury prevention based on the biomechanical data.</li>
+                </ul>
             </ol>
             <br>
             <h4 data-translate="educationTitle">EDUCATION</h4>
@@ -246,10 +298,21 @@
             <h4 data-translate="volunteeringTitle">VOLUNTEERING OPPORTUNITIES</h4>
             <div class="green-line"></div><br>
             <ol>
-                <li data-translate="volunteering1">Fulbright Scholar Program (Summer 2023)</li>
-                <li data-translate="volunteering2">Head Softball Coach (Spring 2022)</li>
-                <li data-translate="volunteering3">Missionary (Summer & Fall 2019)</li>
-                <li data-translate="volunteering4">Honduras Outreach, Inc (Summer 2015)</li>
+                <span style="font-weight: bold;" data-translate="volunteering1">Fulbright Scholar Program in collaboration with the University of Georgia (Summer 2023)</span>
+                <ul>
+                    <li data-translate="fulbrighttask1">Conducted workshops across multiple secondary schools and universities in various cities in Tanzania, training educators and students in robotics and programming.</li>
+                    <li data-translate="fulbrighttask2">Taught secondary school educators how to build and operate RoboRobo robots using Rogic software, ensuring they could effectively teach their students these skills.</li>
+                    <li data-translate="fulbrighttask3">Guided university students in working with VEX V5 Robotics and V5 Workcell, focusing on building and programming robots with industrial applications, including color, light, and motion sensors.</li>
+                    <li data-translate="fulbrighttask4">Provided hands-on training in VEXcode, teaching students to code their V5 Workcell robots using Python and C++.</li>
+                    <li data-translate="fulbrighttask5">Facilitated a final presentation where university students showcased their robots, demonstrating their programming and engineering skills.</li>
+                    <li data-translate="fulbrighttask6">Awarded VEX Robotics certificates to university students upon successful completion of the program, recognizing their achievements in robotics and programming.</li>
+                </ul>
+                <br>
+                <span style="font-weight: bold;" data-translate="volunteering2">Head Softball Coach (Spring 2022)</span>
+                <br>
+                <span style="font-weight: bold;" data-translate="volunteering3">Missionary (Summer & Fall 2019)</span>
+                <br>
+                <span style="font-weight: bold;" data-translate="volunteering4">Honduras Outreach, Inc in collaboration with Mercer University (Summer 2015)</span>
             </ol>
             <br>
             <h4 data-translate="guestSpeakingTitle">GUEST SPEAKING OPPORTUNITIES</h4>
