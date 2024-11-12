@@ -175,7 +175,7 @@ const translations = {
         // Contact
       nameTitle: "Mika Harmon",
       detailsTitle: "Details",
-      detailsText1: "With a Master's degree in Informatics, coupled with Bachelor's degrees in Engineering and Spanish, my academic background reflects a diverse intersection of disciplines. My professional journey includes roles as a professor, data visualization consultant and a biomedical engineering technician. Moreover, my experience working in multiple continents and proficiency in multiple languages allow me to collaborate effectively across borders and cultures.",
+      detailsText1: "With a Master's degree in Informatics, coupled with Bachelor's degrees in Engineering and Spanish, my academic background reflects a diverse intersection of disciplines. My professional journey includes roles as a professor, data visualization consultant and a biomedical equipment technician. Moreover, my experience working in multiple continents and proficiency in multiple languages allow me to collaborate effectively across borders and cultures.",
       detailsText2: "Please reach out to me so we can discuss how our skills and experiences can help each other achieve our goals.",
       contactInfoTitle: "Contact Info",
       // Resume
@@ -487,7 +487,7 @@ const translations = {
         // Contáctame
       nameTitle: "Mika Harmon",
       detailsTitle: "Detalles",
-      detailsText1: "Con una maestría en informática, junto con licenciaturas en ingeniería y español, mi formación académica refleja una intersección diversa de disciplinas. Mi trayectoria profesional incluye roles como profesora, consultora de visualización de datos y técnica en ingeniería biomédica. Además, mi experiencia trabajando en múltiples continentes y mi dominio de varios idiomas me permiten colaborar eficazmente a través de fronteras y culturas.",
+      detailsText1: "Con una maestría en informática, junto con licenciaturas en ingeniería y español, mi formación académica refleja una intersección diversa de disciplinas. Mi trayectoria profesional incluye roles como profesora, consultora de visualización de datos y técnico de equipos biomédicos. Además, mi experiencia trabajando en múltiples continentes y mi dominio de varios idiomas me permiten colaborar eficazmente a través de fronteras y culturas.",
       detailsText2: "Póngase en contacto conmigo para que podamos discutir cómo nuestras habilidades y experiencias pueden ayudarnos a alcanzar nuestros objetivos.",
       contactInfoTitle: "Información de Contacto",
       // Currículum
@@ -800,7 +800,7 @@ const translations = {
       // Contate-me
       nameTitle: "Mika Harmon",
       detailsTitle: "Detalhes",
-      detailsText1: "Com um mestrado em Informática, junto com bacharelados em Engenharia e Espanhol, minha formação acadêmica reflete uma interseção diversificada de disciplinas. Minha trajetória profissional inclui funções como professora, consultora de visualização de dados e técnica em engenharia biomédica. Além disso, minha experiência de trabalho em vários continentes e minha proficiência em vários idiomas me permitem colaborar efetivamente através de fronteiras e culturas.",
+      detailsText1: "Com um mestrado em Informática, junto com bacharelados em Engenharia e Espanhol, minha formação acadêmica reflete uma interseção diversificada de disciplinas. Minha trajetória profissional inclui funções como professora, consultora de visualização de dados e técnico de equipamentos biomédicos. Além disso, minha experiência de trabalho em vários continentes e minha proficiência em vários idiomas me permitem colaborar efetivamente através de fronteiras e culturas.",
       detailsText2: "Entre em contato comigo para que possamos discutir como nossas habilidades e experiências podem nos ajudar a alcançar nossos objetivos.",
       contactInfoTitle: "Informações de Contato",
       // Currículo
