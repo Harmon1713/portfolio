@@ -5,7 +5,7 @@ async function translateText(text, targetLanguage) {
     const response = await fetch(`https://translation.googleapis.com/language/translate/v2?key=${apiKey}`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json', 
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify({
             q: text,
@@ -60,6 +60,15 @@ function changeLanguage(lang) {
     // Update modals (open modals will also be updated immediately)
     console.log("Refreshing all modals with new language");
     refreshAllModals(lang);
+
+    // Translate project skills for current language
+    translateProjectSkills(lang);
+    
+    // Translate search input text
+    updateSearchInputTranslation(lang); 
+
+    // Translate displayed "Uses" section
+    updateUsesSectionTranslation(lang); 
 
     // Update project 'Uses' and 'Missing' text
     updateProjectsText(lang);
@@ -132,6 +141,33 @@ function applyLanguageToAllModals(lang) {
         });
     });
 }
+
+// Ensure `data-original-skills` is set initially with the original skills in English
+document.addEventListener("DOMContentLoaded", function() {
+    allProjects.forEach(project => {
+        if (!project.hasAttribute('data-original-skills')) {
+            project.setAttribute('data-original-skills', project.getAttribute('data-skills'));
+        }
+    });
+});
+
+// Function to translate the skills in each project's data-skills attribute
+function translateProjectSkills(lang) {
+    allProjects.forEach(project => {
+        const skills = project.getAttribute('data-original-skills').split(',').map(skill => skill.trim());
+
+        const translatedSkills = skills.map(skill => {
+            const skillKey = `skill_${normalizeSkillName(skill)}`;
+            return translations[lang] && translations[lang][skillKey] 
+                ? translations[lang][skillKey] 
+                : skill; // Fallback to the original skill if translation is not found
+        });
+
+        // Update the data-skills attribute with the translated skills
+        project.setAttribute('data-skills', translatedSkills.join(', ').toLowerCase());
+    });
+}
+
 
 // Function to update the "Uses" and "Missing" text in project containers
 function updateProjectsText(lang) {
@@ -276,7 +312,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const storedLanguage = localStorage.getItem('preferredLanguage') || 'en'; 
     changeLanguage(storedLanguage); // Apply the stored language preference
     translateSkillsDropdown(storedLanguage); // Translate skills in the dropdown
+    translateProjectSkills(storedLanguage); // Ensure projects are translated on load
+    updateSearchInputTranslation(lang);
+    updateUsesSectionTranslation(lang);
 });
+
+setTimeout(() => {
+    updateSearchInputTranslation(lang);
+    updateUsesSectionTranslation(lang);
+    translateProjectSkills(lang);
+}, 0); // Executes immediately after current execution context
 
 // When the search bar is clicked or input is focused
 const searchInput = document.getElementById('searchInput');
@@ -285,6 +330,65 @@ if (searchInput) {  // Check if search bar exists
         showFullAutocompleteList();
         const currentLanguage = localStorage.getItem('preferredLanguage') || 'en';
         translateSkillsDropdown(currentLanguage);
+    });
+}
+
+// Update the skill language already in the search bar
+function updateSearchInputTranslation(lang) {
+    const searchInput = document.getElementById('searchInput');
+    if (!searchInput) return;
+
+    // Get the current skills in the input
+    const currentSkills = searchInput.value.split(',').map(skill => skill.trim()).filter(skill => skill !== '');
+
+    // Translate each skill in the search input
+    const translatedSkills = currentSkills.map(skill => {
+        const skillKey = `skill_${normalizeSkillName(skill)}`;
+        return translations[lang] && translations[lang][skillKey] 
+            ? translations[lang][skillKey] 
+            : skill; // Fallback to original if translation not found
+    });
+
+    // Update the search input with translated skills
+    searchInput.value = translatedSkills.join(', ');
+}
+
+// Update what comes after uses in the resulting projects
+function updateUsesSectionTranslation(lang) {
+    const projectsContainer = document.getElementById('projects');
+    if (!projectsContainer) return;
+
+    const projects = projectsContainer.querySelectorAll('.project');
+    
+    projects.forEach(project => {
+        const usesElement = project.querySelector('p.uses');
+        if (usesElement && usesElement.getAttribute('data-matched')) {
+            // Retrieve the data-matched and data-missing attributes
+            const matchedSkills = usesElement.getAttribute('data-matched').split(',').map(skill => skill.trim());
+            const missingSkills = usesElement.getAttribute('data-missing') ? usesElement.getAttribute('data-missing').split(',').map(skill => skill.trim()) : [];
+
+            // Translate matched skills
+            const translatedMatchedSkills = matchedSkills.map(skill => {
+                const skillKey = `skill_${normalizeSkillName(skill)}`;
+                return translations[lang] && translations[lang][skillKey] 
+                    ? translations[lang][skillKey] 
+                    : skill;
+            }).join(', ');
+
+            // Translate missing skills
+            const translatedMissingSkills = missingSkills.map(skill => {
+                const skillKey = `skill_${normalizeSkillName(skill)}`;
+                return translations[lang] && translations[lang][skillKey] 
+                    ? translations[lang][skillKey] 
+                    : skill;
+            }).join(', ');
+
+            // Update the "Uses" section text
+            usesElement.innerHTML = `${translations[lang].uses} ${translatedMatchedSkills}`;
+            if (translatedMissingSkills) {
+                usesElement.innerHTML += ` <span style="color: red;">${translations[lang].missing} ${translatedMissingSkills}</span>`;
+            }
+        }
     });
 }
 
@@ -795,6 +899,7 @@ function searchProjects() {
 
     // Determine the current language
     const currentLanguage = localStorage.getItem('preferredLanguage') || 'en';
+    translateProjectSkills(currentLanguage); // Re-translate skills for the active language
 
     // Define keywords for showing all projects
     const allKeywords = {
@@ -832,7 +937,13 @@ function searchProjects() {
         return;
     }
 
+    // Translate search skills to English for consistent matching with data-skills
     const searchSkills = input.split(',').map(skill => skill.trim()).filter(skill => skill !== '');
+    const translatedSearchSkills = searchSkills.map(skill => {
+        const skillKey = `skill_${normalizeSkillName(skill)}`;
+        return translations['en'] && translations['en'][skillKey] ? translations['en'][skillKey].toLowerCase() : skill;
+    });
+    
     const results = [];
 
     // Clear current projects
