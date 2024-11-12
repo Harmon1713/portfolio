@@ -1,7 +1,7 @@
 const translations = {
     en: {
       // All
-      portfolioTitle: "Mika's Portfolio",
+      portfolioTitle: "Mika Harmon's Portfolio",
       english: "English",
       spanish: "Spanish",
       portuguese: "Portuguese",
