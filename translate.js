@@ -1,7 +1,7 @@
 const translations = {
     en: {
       // All
-      portfolioTitle: "Jackie Harmon's Portfolio",
+      portfolioTitle: "Mika's Portfolio",
       english: "English",
       spanish: "Spanish",
       portuguese: "Portuguese",
@@ -9,7 +9,7 @@ const translations = {
       portfolioLink: "Portfolio",
       contactLink: "Contact Me",
       resumeLink: "Resume",
-      footer: "Copyright © 2024 Jackie Harmon. All rights reserved.",
+      footer: "Copyright © 2024 Mika Harmon. All rights reserved.",
       scrollTopBtn: "^",
       // Welcome
       introTitle: "Welcome to my portfolio!",
@@ -173,7 +173,7 @@ const translations = {
       contactPrompt: 'The site is continuously undergoing construction as I upload more of my projects. If you need more samples or samples related to a specific field or project, please ',
       contactLinkportfolio: 'contact me.',
         // Contact
-      nameTitle: "Jackie Harmon",
+      nameTitle: "Mika Harmon",
       detailsTitle: "Details",
       detailsText1: "With a Master's degree in Informatics, coupled with Bachelor's degrees in Engineering and Spanish, my academic background reflects a diverse intersection of disciplines. My professional journey includes roles as a professor, data visualization consultant and a biomedical engineering technician. Moreover, my experience working in multiple continents and proficiency in multiple languages allow me to collaborate effectively across borders and cultures.",
       detailsText2: "Please reach out to me so we can discuss how our skills and experiences can help each other achieve our goals.",
@@ -313,7 +313,7 @@ const translations = {
     },
     es: {
       // Todo
-      portfolioTitle: "Portafolio de Jackie Harmon",
+      portfolioTitle: "Portafolio de Mika Harmon",
       english: "Inglés",
       spanish: "Español",
       portuguese: "Portugués",
@@ -321,7 +321,7 @@ const translations = {
       portfolioLink: "Portafolio",
       contactLink: "Contáctame",
       resumeLink: "Currículum",
-      footer: "Derechos de autor © 2024 Jackie Harmon. Todos los derechos reservados.",
+      footer: "Derechos de autor © 2024 Mika Harmon. Todos los derechos reservados.",
       scrollTopBtn: "^",
       // Bienvenido
       introTitle: "¡Bienvenido a mi portafolio!",
@@ -485,7 +485,7 @@ const translations = {
       contactPrompt: 'El sitio está en continua construcción mientras subo más de mis proyectos. Si necesitas más muestras o muestras relacionadas con un campo o proyecto específico, por favor ',
       contactLinkportfolio: 'contáctame.',
         // Contáctame
-      nameTitle: "Jackie Harmon",
+      nameTitle: "Mika Harmon",
       detailsTitle: "Detalles",
       detailsText1: "Con una maestría en informática, junto con licenciaturas en ingeniería y español, mi formación académica refleja una intersección diversa de disciplinas. Mi trayectoria profesional incluye roles como profesora, consultora de visualización de datos y técnica en ingeniería biomédica. Además, mi experiencia trabajando en múltiples continentes y mi dominio de varios idiomas me permiten colaborar eficazmente a través de fronteras y culturas.",
       detailsText2: "Póngase en contacto conmigo para que podamos discutir cómo nuestras habilidades y experiencias pueden ayudarnos a alcanzar nuestros objetivos.",
@@ -626,7 +626,7 @@ const translations = {
     },
     pt: {
       // Todo
-      portfolioTitle: "Portfólio de Jackie Harmon",
+      portfolioTitle: "Portfólio de Mika Harmon",
       english: "Inglês",
       spanish: "Espanhol",
       portuguese: "Português",
@@ -634,7 +634,7 @@ const translations = {
       portfolioLink: "Portfólio",
       contactLink: "Contate-me",
       resumeLink: "Currículo",
-      footer: "Direitos autorais © 2024 Jackie Harmon. Todos os direitos reservados.",
+      footer: "Direitos autorais © 2024 Mika Harmon. Todos os direitos reservados.",
       scrollTopBtn: "^",
       // Bem-vindo
       introTitle: "Bem-vindo ao meu portfólio!",
@@ -798,7 +798,7 @@ const translations = {
       contactPrompt: 'O site está continuamente em construção à medida que eu carrego mais dos meus projetos. Se você precisar de mais amostras ou amostras relacionadas a um campo ou projeto específico, por favor ',
       contactLinkportfolio: 'entre em contato comigo.',
       // Contate-me
-      nameTitle: "Jackie Harmon",
+      nameTitle: "Mika Harmon",
       detailsTitle: "Detalhes",
       detailsText1: "Com um mestrado em Informática, junto com bacharelados em Engenharia e Espanhol, minha formação acadêmica reflete uma interseção diversificada de disciplinas. Minha trajetória profissional inclui funções como professora, consultora de visualização de dados e técnica em engenharia biomédica. Além disso, minha experiência de trabalho em vários continentes e minha proficiência em vários idiomas me permitem colaborar efetivamente através de fronteiras e culturas.",
       detailsText2: "Entre em contato comigo para que possamos discutir como nossas habilidades e experiências podem nos ajudar a alcançar nossos objetivos.",
