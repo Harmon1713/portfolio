@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  background-color: #333; /* Background color outside the map */
+  transform: scale(0.9);
+  transform-origin: top; /* Ensure scaling happens from the top */
+  overflow-y: scroll;   /* Ensure a vertical scrollbar is always visible */
+}
+
+#header {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white; /* Header text color */
+  font-family: 'Bubblegum Sans', cursive;
+
+}
+
+#header h1 {
+  font-size: 2.5em;
+}
+
+#header p {
+  font-size: 1.2em;
+
+}
+
+#content-container{
+  display: flex;
+  width: 100%; /* Account for the 2px margin on both sides */
+  height: 100%; /* Ensure it takes up the full height */
+}
+
+#map-container {
+  position: relative;
+  width: 80%;
+  padding-bottom: 50%; /* Aspect ratio of 16:10 */
+  height: 100%;
+  margin-bottom: 0; /* Ensure no extra margin */
+}
+
+#img-container {
+  width: 20%;
+  display: flex;
+  flex-direction: column; /* Stack the child divs vertically */
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+}
+
+#country-name {
+  font-family: 'Bubblegum Sans', cursive;
+  margin-bottom: 10px; /* Space between name and image */
+  text-align: center; /* Center the text */
+  font-weight: bold; /* Make the country name bold */
+  font-size: clamp(1em, 5vw, 4em); /* Dynamically adjust font size */
+  color: white;
+}
+
+#country-image img {
+  width: 100%; /* Ensure the image fills the container width */
+  max-width: 100%;
+  height: auto; /* Maintain the aspect ratio */
+}
+
+#no_pic_message {
+  font-family: 'Bubblegum Sans', cursive;
+  margin-top: 10px; /* Space between image and message */
+  text-align: center; /* Center the text */
+  font-size: clamp(0.8em, 3vw, 2em); /* Dynamically adjust font size */
+  color: white;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #333;
+  background-color: lightblue; /* Ocean color */
+  cursor: grab;
+}
+
+#map:active {
+  cursor: grabbing;
+}
+
+#zoom-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#zoom-controls button {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 2px;
+  cursor: pointer;
+  max-width: 25px; /* Limit button width to 20px */
+  max-height: 30px;
+}
+
+#reset-map {
+  margin-top: 10px; /* Add space between zoom buttons and reset button */
+  max-width: 25px; /* Limit button width to 20px */
+  max-height: 30px;
+}
+
+#visited-counter {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#visited-list {
+  display: none;
+  margin-top: 10px;
+  width: 90%; /* Reduce the width to half of 33% (i.e., 16.5%) */
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px; /* Reduce padding */
+  border-radius: 5px;
+  font-size: 0.8em; /* Reduce font size */
+  position: absolute; /* Ensure it does not affect the layout */
+  left: 10px; /* Align with the counter */
+  bottom: 60px; /* Position above the counter */
+}
+
+#normal-list div, #small-list div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  color: black; /* Ensures list text is black */
+}
+
+@media screen and (max-width: 1050px) {
+  #content-container {
+    flex-direction: column; /* Stack map and image container vertically */
+  }
+
+  #map-container {
+    width: 100%; /* Map takes full width */
+    padding-bottom: 62.5%; /* Maintain the aspect ratio */
+  }
+
+  #img-container {
+    width: 100%; /* Image container also takes full width */
+    padding-left: 0; /* Remove left padding */
+    margin-top: 20px; /* Add some space between map and image container */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #country-name,
+  #no_pic_message {
+    text-align: center;
+  }
+
+  #country-image img {
+    display: block;
+    margin: 0 auto;
+    max-width: 50%; /* Adjust as needed */
+}
+  
+}
+
+@media screen and (max-width: 900px) {
+  #visited-list {
+    position: absolute;
+    width: 100%; /* Make the list as wide as the map container */
+    top: auto; /* Remove any top positioning */
+    bottom: 0; /* Make the top of the list start at the bottom of the map container */
+  }
+}
+
