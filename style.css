@@ -1,0 +1,345 @@
+/* Reset and base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    width: 100%;
+    background-color: white;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+}
+
+/* Logo */
+#left-header {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+#logo {
+    width: 10%;
+    max-width: 150px;
+    min-width: 50px;
+}
+
+#logo img {
+    width: 100%;
+    height: auto;
+}
+
+#name {
+    margin-left: 20px;
+    font-size: clamp(16px, 2.5vw, 36px);
+    white-space: nowrap;
+}
+
+/* Language Toggle */
+#language-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+#language-toggle button {
+    background-color: lightgreen;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    line-height: 1;
+    border-radius: 0;
+    transition: background-color 0.3s ease;
+}
+
+#language-toggle button + button {
+    margin-top: -0.8vh;
+}
+
+#language-toggle button:hover {
+    background-color: #4CAF50;
+}
+
+#language-toggle button.active {
+    background-color: darkgreen;
+}
+
+/* Nav */
+nav {
+    background-color: #333;
+    z-index: 998;
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(14px, 1.8vw, 18px);
+    padding: 10px 0;
+}
+
+nav ul li:hover {
+    background-color: #555;
+}
+
+nav ul li.active {
+    background-color: lightgreen;
+}
+
+nav ul li.active > a {
+    color: #333 !important;
+}
+
+/* Hamburger and Language hamburger */
+.hamburger, .language-hamburger {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    font-size: 26px;
+    color: white;
+    z-index: 1001;
+}
+
+.hamburger {
+    left: 10px;
+}
+
+.language-hamburger {
+    right: 10px;
+    color: black;
+}
+
+/* Main */
+main {
+    width: 100%;
+    padding-top: 18vh;
+    padding-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 998;
+    max-height: 5vh;
+}
+
+/* Scroll-to-top button */
+#scroll-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+}
+
+/* Travel Map Section */
+.iframe-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 500px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+#map-replacement {
+    display: none;
+    text-align: center;
+    margin: 20px auto;
+    color: red;
+}
+
+#responsive-img-github {
+    width: 10%;
+    min-width: 100px;
+    height: auto;
+}
+
+/* Images in the welcome section */
+#threeparts {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+#threeparts img {
+    width: 100%;
+    height: 100%;
+    border: 4px solid #333;
+}
+
+/* Intro text */
+#intro {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+/* GitHub */
+#responsive-img-github {
+    width: 10%;
+    min-width: 100px;
+    height: auto;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    main.container {
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 1050px) {
+    .iframe-container {
+        display: none;
+    }
+
+    #map-replacement {
+        display: inline-block;
+    }
+
+    #map-replacement img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    header #name h1 {
+        font-size: clamp(20px, 5vw, 40px);
+    }
+
+    nav {
+        height: 40px;
+        justify-content: flex-start;
+    }
+
+    nav ul {
+        display: none !important;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        left: 0;
+        z-index: 1000;
+    }
+
+    nav ul.show {
+        display: flex !important;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    #language-toggle {
+        display: none !important;
+    }
+
+    .language-hamburger {
+        display: block;
+    }
+}
+
+@media (max-width: 500px) {
+    main {
+        padding-top: 15vh;
+    }
+
+    footer {
+        max-height: 6vh;
+        font-size: 12px;
+        position: static;
+    }
+
+    #threeparts {
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        margin: 5% auto;
+    }
+
+    #threeparts .col-md-4 {
+        flex: 0 0 30%;
+        max-width: 30%;
+        padding: 0 5px;
+    }
+
+    #threeparts img {
+        width: 100%;
+        height: 100%;
+        max-height: 20vh;
+        border: 2px solid #333;
+    }
+}
