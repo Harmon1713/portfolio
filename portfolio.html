@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mika's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo_green2-rbg.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="bg-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div id="left-header" class="d-flex align-items-center">
+                <div id="logo">
+                    <img src="images/logo_green2-rbg.png" alt="Logo">
+                </div>
+                <div id="name" class="ml-3">
+                    <h1 data-translate="portfolioTitle">Mika Harmon's Portfolio</h1>
+                </div>
+            </div>
+            <!-- Language Toggle Button for Mobile -->
+            <div class="language-hamburger">
+                <i class="fas fa-globe"></i>
+            </div>
+            <!-- Language Toggle for Desktop -->
+            <div id="language-toggle" class="d-flex flex-column align-items-end">
+                <button data-translate="english" data-lang="en" onclick="changeLanguage('en')" id="en-btn" class="btn btn-light mb-2">English</button>
+                <button data-translate="spanish" data-lang="es" onclick="changeLanguage('es')" id="es-btn" class="btn btn-light mb-2">Spanish</button>
+                <button data-translate="portuguese" data-lang="pt" onclick="changeLanguage('pt')" id="pt-btn" class="btn btn-light">Portuguese</button>
+            </div>
+        </div>
+        <!-- Navigation Bar -->
+        <nav class="bg-dark">
+            <div class="container">
+                <!-- Hamburger Menu for Mobile -->
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item"><a href="index.html" class="nav-link text-white" data-translate="welcomeLink">Welcome</a></li>
+                    <li class="nav-item"><a href="portfolio.html" class="nav-link text-white" data-translate="portfolioLink">Portfolio</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link text-white" data-translate="contactLink">Contact Me</a></li>
+                    <li class="nav-item"><a href="resume.html" class="nav-link text-white" data-translate="resumeLink">Resume</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+		
+        <!-- Main Section -->
+        <main>
+                <div class="container"><br><br>
+                    <h1 data-translate="skilledIn">I'm skilled in:</h1>
+                    <p data-translate="skillPrompt">Click the icons below to see examples of my skillset, or search by skill. Each project is a hyperlink to the source materials. To view all projects, search for "all".</p>
+                    <div class="skills">
+                        <div class="skill" onclick="showPopup('website')">
+                            <img src="images/website-icon.png" alt="Website Design">
+                            <p data-translate="frontend">Front-End Development</p>
+                        </div>
+                        <div class="skill" onclick="showPopup('app_dev')">
+                            <img src="images/gui-icon.png" alt="Application Development">
+                            <p data-translate="appDev">Application Development</p>
+                        </div>
+                        <div class="skill" onclick="showPopup('dataViz')">
+                            <img src="images/data-viz-icon.png" alt="Data Visualization">
+                            <p data-translate="dataViz">Data Analysis & Visualization</p>
+                        </div>
+                        <div class="skill" onclick="showPopup('workflow')">
+                            <img src="images/flowchart-icon.png" alt="Workflow Automation">
+                            <p data-translate="workflow">Workflow Automation</p>
+                        </div>
+                        <div class="skill" onclick="showPopup('technical_writing')">
+                            <img src="images/tech-writ-icon.png" alt="Technical Writing">
+                            <p data-translate="techWriting">Technical Writing</p>
+                        </div>
+                        <div class="skill" onclick="showPopup('cad_drafting')">
+                            <img src="images/cad-icon.png" alt="CAD Drafting">
+                            <p data-translate="cadDrafting">CAD Drafting</p>
+                        </div>
+                        <div class="skill" onclick="showPopup('research')">
+                            <img src="images/research-icon.png" alt="Research">
+                            <p data-translate="research">Research</p>
+                        </div>
+                    </div>
+                </div>
+
+        <!-- Popup modals -->
+        <div id="website-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closePopup('website')">&times;</span>
+                <h2 data-translate="frontendModal">Front-End Development</h2>
+                <div class="modal-project modal-project-style" data-skills="HTML, CSS, JavaScript, Bootstrap, jQuery, popper.js">
+    
+                    <a href="https://github.com/Harmon1713/portfolio" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <h3>
+                            <img src="images/logo_green2-rbg.png" alt="portfolio logo" width="10%"> <br>
+                            <span data-translate="cppApp">Portfolio Website</span> <br>
+                        </h3>
+                        <div class="green-line"></div><br>
+                        <p><strong data-translate="cpp">HTML (Bootstrap), CSS, JavaScript (jQuery, popper.js)</strong></p><br>
+                        <div class="half-column">
+                            <p data-translate="frontendContent">
+                                In this portfolio project, I have leveraged a range of technical skills 
+                                to create a dynamic and responsive web experience. The project employs HTML with Bootstrap for layout and design, ensuring responsive and 
+                                mobile-friendly content. CSS manipulation is used extensively to dynamically adjust styles based on user interactions. JavaScript ES6 features 
+                                enhance code readability and efficiency. The portfolio demonstrates asynchronous programming with the Fetch API for retrieving JSON data.
+                                DOM manipulation is employed to update content and styles dynamically, while event handling sets up interactions.
+                                The project also includes conditional logic to control application flow and array operations using 
+                                methods like forEach, filter, and map for data manipulation. The use of local storage ensures language preferences are saved, providing a tailored 
+                                user experience across sessions. Additionally, error handling and debugging techniques are implemented to manage exceptions and trace computations, 
+                                ensuring reliable functionality throughout the application. </p>
+                        </div>
+                        <div class="half-column img-white" style="padding-left: 1%;">
+                            <img src="images/portfolio_mh.png" alt="portfolio screenshot" width="100%">
+                        </div>
+                        <div class="clear"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="app_dev-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closePopup('app_dev')">&times;</span>
+                <h2 data-translate="appDevModal">Application Development</h2><br>
+                <div class="modal-project modal-project-style" data-skills="Python, SQLite">
+                    <a href="https://github.com/Harmon1713/portfolio/tree/main/Giraffe Warmer Maintenance Application" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <h3>
+                            <img src="images/giraffe-face-rbg.png" alt="Giraffe" width="10%"> <br>
+                            <span data-translate="giraffeApp">Giraffe Warmer Maintenance Application</span> <br>
+                        </h3>
+                        <div class="green-line"></div><br>
+                        <p><strong data-translate="pythonSqlite">Python (tkinter, datetime, SQLite), SQL</strong></p><br>
+                        <div class="half-column">
+                            <p data-translate="giraffeAppContent">This Python program is a maintenance tracking application for Giraffe Warmers, typically used in neonatal care. The application features a user-friendly graphical interface that allows users to add, update, and monitor the maintenance records of Giraffe Warmer machines. It uses SQLite for its backend database to store serial numbers, maintenance dates, and logs, enabling robust data handling through CRUD operations. <br><br>Key technical skills include GUI development, event handling, and date manipulation; it also emphasizes error handling and data validation to ensure smooth operation. This project exemplifies a practical application of combining software development skills with domain-specific knowledge, showcasing the ability to develop a functional and specialized tool for industry-specific needs.</p>
+                        </div>
+                        <div class="half-column" style="padding-left: 1%;">
+                            <img src="images/GUI.png" alt="Giraffe GUI" width="100%">
+                        </div>
+                        <div class="clear"></div>
+                    </a>
+                </div>
+                <br><br>
+                <div class="modal-project modal-project-style" data-skills="Python, Pygame, SQL, SQLite">
+                    <a href="https://github.com/Harmon1713/portfolio/tree/main/Snake Game Application" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                            <h3>
+                                <img src="images/head_down.png" alt="Snake" width="7%"> <br>
+                                <span data-translate="snakeGame">Snake Game Application</span><br> 
+                            </h3>
+                            <div class="green-line"></div><br>
+                            <p><strong data-translate="pygameSqlite">Python (Pygame, SQLite), SQL</strong></p><br>
+                            <div class="half-column">
+                                <p data-translate="snakeGameContent">This Python program showcases a fully functional snake game, incorporating advanced game mechanics, GUI elements, and database operations. The gameplay is enhanced with responsive control mechanisms through keyboard inputs and dynamically adjusts the interface with an interactive menu system. Additionally, the code integrates SQLite to manage player usernames, scores, and times. <br><br>Key technical skills displayed include game design principles, object-oriented programming, event handling, and CRUD operations with SQLite, highlighting a comprehensive understanding of both game development and database management.</p>
+                            </div>
+                            <div class="half-column" style="padding-left: 1%;">
+                                <img src="images/snake_game.png" alt="Snake Game" width="100%">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="dataViz-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closePopup('dataViz')">&times;</span>                
+                <h2 data-translate="dataVizModal">Data Analysis & Visualization</h2>
+                <div class="modal-project modal-project-style" data-skills="HTML, CSS, Javascript, Plotly JSON, Python, requests, pandas, plotly, SQL, Retool">
+                    <a href="https://github.com/Harmon1713/portfolio/tree/main/The Happiness Index" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <br>
+                        <h3>
+                            <span data-translate="Happiness">The Happiness Index: Analyzing Economic and Environmental Factors</span> 
+                        </h3>
+                        <div class="green-line"></div>
+                        <p><strong data-translate="happinessTech">Python (requests, pandas, plotly), SQL, JavaScript (Plotly JSON), Retool, HTML, CSS</strong></p>
+                        <br>
+                        <div class="half-column">
+                            <p data-translate="HappinessContent">This project involved an in-depth analysis of gas prices, cheese prices, and temperature data to determine the "Happiest Day" based on a combined happiness score. Data was retrieved using APIs to grab historical gas prices and weather data, processed using Python for data wrangling, and stored in a database. The analysis involved normalizing gas and cheese prices, calculating happiness scores, and visualizing the data using Plotly in Python and Retool. The interactive graph created allows users to explore the relationship between these factors and highlights the happiest day with a gold star, along with additional details like the actual prices/temperatures and happiness rating on hover. The project demonstrates strong skills in API integration, the ability to integrate data from various sources and perform complex data manipulations, data processing with Python, SQL database management, and interactive data visualization.</p>
+                        </div>
+                        <div class="half-column" style="padding-left: 1%;">
+                            <br>
+                            <img src="images/happiness.png" alt="Happiness Index 1" width="100%" class="img-white"><br><br>
+                        </div>
+                        <div class="clear"></div>
+                        <br>
+                    </a>
+                </div>
+                <a href="https://harmon1713.github.io/portfolio/The Happiness Index/index.html" target="_blank">
+                    <div class="link-content">
+                        <span style="color:blue;" data-translate="clickToInteract">Click here to interact with the visualization:</span>
+                        <img src="images/interactive-icon.png" alt="interact" width="3%">
+                    </div>
+                </a>
+                <br><br>
+                <div class="modal-project modal-project-style" data-skills="HTML, CSS, Javascript">
+                    <a href="https://github.com/Harmon1713/portfolio/tree/main/My Travel Map" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <br>
+                        <h3>
+                            <span data-translate="TravelMap">Interactive Travel Map</span> 
+                        </h3>
+                        <div class="green-line"></div>
+                        <p><strong data-translate="d3jsTech">HTML, CSS, JavaScript (D3.js), GeoJSON, SVG</strong></p>
+                        <br>
+                        <div class="half-column">
+                            <p data-translate="TravelMapContent">This interactive map showcases my travels, demonstrating advanced technical skills in data manipulation, visualization, and web applications. The map is created using D3.js and rendered using GeoJSON data fetched from an external source and filtered into a custom dataset to highlight visited countries. The projection and path functions of D3.js are utilized to convert the GeoJSON data into precise Scalable Vector Graphics (SVG) paths. Interactive features include zoom controls and custom tooltips, which provide images from my travels when hovering over a country. This project not only highlights my proficiency in HTML, CSS, and JavaScript, but also my ability to create rich, interactive web applications that combine technical precision with engaging storytelling.</p>
+                        </div>
+                        <div class="half-column" style="padding-left: 1%;">
+                            <br>
+                            <img src="images/travelmap.png" alt="Travel Map" width="100%" class="img-white">
+                        </div>
+                        <div class="clear"></div>
+                        <br>
+                    </a>
+                </div>
+                <a href="https://harmon1713.github.io/portfolio/My Travel Map/index.html" target="_blank">
+                    <div class="link-content">
+                        <span style="color:blue;" data-translate="clickToInteract">Click here to interact with the visualization:</span>
+                        <img src="images/interactive-icon.png" alt="interact" width="3%">
+                    </div>
+                </a>
+                <br><br>
+                <div class="modal-project modal-project-style" data-skills="HTML, R">
+                    <a href="https://github.com/Harmon1713/portfolio/tree/main/Interactive%20Graphs%20in%20R" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                            <br>
+                            <h3>
+                                <span data-translate="Graphs">Interactive Graphs in R</span>
+                            </h3>
+                            <div class="green-line"></div><br>
+                            <p><strong data-translate="rSkills">R (dplyr, ggplot2, ggiraph, patchwork, htmlwidgets), HTML, CSS </strong></p><br>
+                            <div class="half-column">
+                                <p data-translate="GraphsContent">These interactive graphs were developed using a combination of advanced R programming techniques and data visualization tools. To add interactivity, the ggiraph package was utilized, enabling the inclusion of interactive tooltips and dynamic elements that enhance user engagement. Additionally, the patchwork package was used to combine multiple graphs into cohesive visualizations, while htmlwidgets facilitated the export of these interactive plots as standalone HTML files. <br><br> This seamless integration of R's data manipulation, visualization, and interactivity capabilities demonstrates a strong understanding of data science and web technologies, culminating in an engaging and interactive user experience. The integration of these graphs into web applications enables real-time updates and interactions, making the visualizations a dynamic part of the web experience. <br><br>This approach not only engages users but also makes complex data more accessible and understandable to a broader audience, ensuring that insights and findings are effectively communicated and shared.</p>
+                            </div>
+                            <div class="half-column" style="padding-left: 1%;">
+                                <br>
+                                <img src="images/int-graph1.png" alt="Interactive Graph 1" width="100%" class="img-white"><br><br>
+                                <img src="images/int-graph2.png" alt="Interactive Graph 2" width="100%" class="img-white">
+                            </div>
+                            <div class="clear"></div>
+                            <br>
+                    </a>
+                </div>
+                <a href="https://harmon1713.github.io/portfolio/Interactive Graphs in R/index.html" target="_blank">
+                    <div class="link-content">
+                        <span style="color:blue;" data-translate="clickToInteract">Click here to interact with the visualization:</span>
+                        <img src="images/interactive-icon.png" alt="interact" width="3%">
+                    </div>
+                </a>
+                <br><br>
+                <div class="modal-project modal-project-style" data-skills="R, Python, Data Wrangling, Data Visualization, Linear Regression, ggplot2, lm(), gvlma, predictmeans, car, caret, Pandas, NumPy, SciPy, Matplotlib, Seaborn, statsmodels, pylab">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Understanding%20Height%20Dynamics%20Through%20Regression.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                            <br>
+                            <h3>
+                                <span data-translate="height">Understanding Height Dynamics Through Regressions</span>
+                            </h3>
+                            <div class="green-line"></div><br>
+                            <p><strong data-translate="heightSkills">R (ggplot2, lm(), gvlma, predictmeans, car, caret), Python (Pandas, NumPy, SciPy, Matplotlib, Seaborn, statsmodels, pylab)</strong></p><br>
+                            <div class="half-column">
+                                <p data-translate="heightContent">The project "Understanding Height Dynamics Through Regressions" examines the effect of gravitational compression on human height by analyzing morning and evening measurements from students at a boarding school in India, aiming to quantify this impact using regression analysis. Technical skills used included data wrangling with Pandas and dplyr, numerical operations with NumPy, statistical testing with SciPy, and data visualization with Matplotlib, Seaborn, and ggplot2. Linear regression models were fitted using Statsmodels in Python and the lm function in R. Assumptions testing included checking for linearity, normality (Shapiro-Wilk test), and homoscedasticity (Breusch-Pagan test), as well as identifying influential data points using Cook's distance and leverage values. The analysis confirmed a strong positive linear relationship between AM_Height and PM_Height, with models explaining a significant portion of the variance in evening heights. This project demonstrated proficiency in data analysis, statistical modeling, and assumption validation using both R and Python, highlighting the measurable impact of gravitational compression on daily height variations.
+                                </p>
+                            </div>
+                            <div class="half-column" style="padding-left: 1%;">
+                                <br>
+                                <img src="images/height.png" alt="height Graph1" width="100%" class="img-white"><br><br>
+                                <img src="images/height2.png" alt="height Graph 2" width="100%" class="img-white">
+                            </div>
+                            <div class="clear"></div>
+                            <br>
+                    </a>
+                </div>
+                <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/heightanalysis_R.ipynb" target="_blank">
+                    <div class="link-content">
+                        <span style="color:blue;" data-translate="clickToViewCodeR">Click here to view the R source code:</span>
+                        <img src="images/code-icon.png" alt="magnifying glass" width="4%">
+                    </div>
+                </a>
+                <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/heightanalysis_Py.ipynb" target="_blank">
+                    <div class="link-content">
+                        <span style="color:blue;" data-translate="clickToViewCodePy">Click here to view the Python source code:</span>
+                        <img src="images/code-icon.png" alt="magnifying glass" width="4%">
+                    </div>
+                </a>
+                <br><br>
+                <div class="modal-project modal-project-style" data-skills="R, Data Wrangling, Data Visualization, Logistic Regression, caret, magrittr, dplyr, tidyr, ggplot2, lmtest, popbio, e1071, readxl">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/goldanalysis_R.ipynb" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                            <br>
+                            <h3>
+                                <span data-translate="gold">Predicting Gold Presence Through Antimony Levels Using Logistic Regression</span>
+                            </h3>
+                            <div class="green-line"></div><br>
+                            <p><strong data-translate="goldSkills">R (caret, magrittr, dplyr, tidyr, ggplot2, lmtest, popbio, e1071, readxl)</strong></p><br>
+                            <div class="half-column">
+                                <p data-translate="goldContent">In this project, logistic regression was employed to predict the presence of gold in a given location based on antimony levels. The analysis involved the use of several R packages, including caret for creating the confusion matrix, dplyr and tidyr for data manipulation, and ggplot2 for visualization. The model was built using the glm function, specifying a binomial family to handle the binary nature of the response variable (presence of gold). After fitting the model, predictions were made, and a confusion matrix was generated to assess the model's accuracy. Additionally, diagnostic checks were performed to evaluate model assumptions, including the Durbin-Watson test for autocorrelation and the inspection of residuals and influence measures. Visualizations were created to assess the relationship between the log-odds (logit) and predictor variables, aiding in the interpretation of the logistic regression model.
+
+                                    The results indicated that higher antimony levels are associated with an increased likelihood of finding gold, as shown by the positive coefficient for antimony in the logistic regression model. The model's performance, as evaluated by the confusion matrix, suggested it was reasonably accurate in predicting gold presence, making it a useful tool for geologists in identifying potential gold deposits.
+                                </p>
+                            </div>
+                            <div class="half-column" style="padding-left: 1%;">
+                                <br>
+                                <img src="images/gold.png" alt="gold Graph1" width="100%"><br><br>
+                                <img src="images/gold2.png" alt="gold Graph 2" width="100%" class="img-white">
+                            </div>
+                            <div class="clear"></div>
+                            <br>
+                    </a>
+                </div>
+                <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/goldanalysis_R.ipynb" target="_blank">
+                    <div class="link-content">
+                        <span style="color:blue;" data-translate="clickToViewCodeR">Click here to view the R source code:</span>
+                        <img src="images/code-icon.png" alt="magnifying glass" width="4%">
+                    </div>
+                </a>
+                <br><br>
+                <div class="modal-project modal-project-style" data-skills="Python, R, Pandas, NumPy, SciPy, Statsmodels, dplyr, tidyr, readxl, lubridate, stringr, data.table, broom, Tableau">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/An%20in-depth%20analysis%20of%20the%20motor%20vehicle%20crash%20Data%20in%20Texas%20for%202013.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                            <br>
+                            <h3>
+                                <span data-translate="crashes">An in-depth analysis of the motor vehicle crash Data in Texas for 2013</span>
+                            </h3>
+                            <div class="green-line"></div><br>
+                            <p><strong data-translate="CrashSkills">Python (Pandas, NumPy, SciPy, Statsmodels), R (dplyr, tidyr, readxl, lubridate, stringr, data.table, broom), Tableau</strong></p><br>
+                            <div class="half-column">
+                                <p data-translate="crashesContent">An In-Depth Analysis of the Motor Vehicle Crash Data in Texas for 2013 required a detailed approach to data analysis, leveraging various technical skills to uncover insights and present findings effectively. The project involved data cleaning and preprocessing, identifying categorical variables, and handling missing data. Advanced data visualization techniques were employed using tools such as Tableau, Python, and R, allowing for the creation of informative graphs and charts that highlighted key trends, such as the correlation between crash frequency and factors like time of day, speed limits, and geographical location. The use of Python and R enabled detailed data manipulation and statistical analysis, providing a deeper understanding of patterns within the dataset. Additionally, the project emphasized the importance of storytelling in data science, requiring clear and concise communication of findings through visualizations and written summaries. The skills demonstrated in this project reflect a strong foundation in data analysis, visualization, and the ability to derive actionable insights from complex datasets.</p>
+                            </div>
+                            <div class="half-column" style="padding-left: 1%;">
+                                <br>
+                                <img src="images/crashes.png" alt="crashes Graph1" width="100%" class="img-white"><br><br>
+                                <img src="images/crashes2.png" alt="crashes Graph 2" width="100%" class="img-white">
+                            </div>
+                            <div class="clear"></div>
+                            <br>
+                    </a>
+                </div>
+                <br><br>
+                <div class="modal-project modal-project-style" data-skills="Python, R, Data Wrangling, Data Visualization, Pandas, NumPy, SciPy, Statsmodels, dplyr, tidyr, readxl, lubridate, stringr, data.table, broom, Tableau">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/A%20Data-Driven%20Analysis%20of%20Video%20Game%20Sales.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                            <br>
+                            <h3>
+                                <span data-translate="videogames">A Data-Driven Analysis of Video Game Sales</span>
+                            </h3>
+                            <div class="green-line"></div><br>
+                            <p><strong data-translate="videogamesSkills">Python (Pandas, NumPy, SciPy), R (dplyr, tidyr, readr, lubridate, stringr, data.table, broom), Tableau</strong></p><br>
+                            <div class="half-column">
+                                <p data-translate="videogamesContent">A Data-Driven Analysis of Video Game Sales required a combination of technical skills to extract actionable insights from the dataset and create an impactful presentation. The project involved data wrangling, including joining datasets and filtering relevant data, using Python libraries such as Pandas for data manipulation and NumPy for numerical operations. In R, libraries like dplyr and tidyr were utilized to tidy and transform the data, ensuring a clean and structured format for analysis. Visualization played a crucial role, with Tableau used to create engaging and informative visualizations that illustrated trends in video game sales over time, the most popular genres, and platform comparisons by genre. The analysis revealed key insights, such as the dominance of action games and the potential for growth in underrepresented genres on specific platforms. This project showcased the ability to leverage data analysis and visualization tools effectively, combining Python and R for data handling and Tableau for creating a compelling narrative through visual storytelling, ultimately leading to strategic recommendations for enhancing video game sales.</p>
+                            </div>
+                            <div class="half-column" style="padding-left: 1%;">
+                                <br>
+                                <img src="images/videogames.png" alt="video games Graph1" width="100%" class="img-white"><br><br>
+                                <img src="images/videogames2.png" alt="video games Graph 2" width="100%" class="img-white">
+                            </div>
+                            <div class="clear"></div>
+                            <br>
+                    </a>
+                </div>
+                <br><br>
+                <div class="modal-project modal-project-style" data-skills="R, Data Wrangling, Data Visualization, Statistical Modeling, ggplot2, dplyr, Ecdat, RColorBrewer">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/A%20Data-Driven%20Analysis%20of%20Cigarette%20Consumption%20Patterns.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                            <br>
+                            <h3>
+                                <span data-translate="cigarettes">A Data-Driven Analysis of Cigarette Consumption Patterns</span>
+                            </h3>
+                            <div class="green-line"></div><br>
+                            <p><strong data-translate="cigarettesSkills">R (ggplot2, dplyr, Ecdat, RColorBrewer)</strong></p><br>
+                            <div class="half-column">
+                                <p data-translate="cigarettesContent">The "A Data-Driven Analysis of Cigarette Consumption Patterns" project leveraged R programming to analyze the Cigarette dataset from the Ecdat package, focusing on data wrangling, visualization, and statistical modeling. The analysis involved creating boxplots to identify states with the highest and lowest cigarette consumption per capita, calculating median consumption trends from 1985 to 1995, and examining the relationship between cigarette prices and consumption through scatter plots and linear regression. Adjustments for inflation were made to refine the analysis. Additionally, a paired t-test was conducted to compare consumption levels between 1985 and 1995. The project concluded with an investigation into the negative correlation between state income and cigarette consumption, highlighting key insights into consumption patterns over time.</p>
+                            </div>
+                            <div class="half-column" style="padding-left: 1%;">
+                                <br>
+                                <img src="images/cigarettes.png" alt="video games Graph1" width="100%" class="img-white"><br><br>
+                                <img src="images/cigarettes2.png" alt="video games Graph 2" width="100%" class="img-white">
+                            </div>
+                            <div class="clear"></div>
+                            <br>
+                    </a>
+                </div>
+                <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/cigarette_analysis.R" target="_blank">
+                    <div class="link-content">
+                        <span style="color:blue;" data-translate="clickToViewCode">Click here to view the source code:</span>
+                        <img src="images/code-icon.png" alt="magnifying glass" width="4%">
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+        <div id="workflow-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closePopup('workflow')">&times;</span>
+                <h2 data-translate="workflowModal">Workflow Automation</h2>
+                <div class="modal-project modal-project-style" data-skills="Make, API Integration, Google Workspace">
+    
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/ValidateHTML.mp4" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <h3>
+                            <img src="images/make.png" alt="Make logo" width="10%"> <br>
+                            <span data-translate="ValHTMLApp">ITEC 2380 Lab File Validation for HTML</span> <br>
+                        </h3>
+                        <div class="green-line"></div><br>
+                        <p><strong data-translate="ValHTML">Make, API Integration, Google Workspace</strong></p><br>
+                        <div class="half-column">
+                            <p data-translate="workflow_makeContent">
+                                The "ITEC 2380 Lab File Validation for HTML" project is designed to automate the process of grading HTML
+                                files submitted by students. By grabbing the zip files from students and running each through the W3C HTML
+                                Validator, this workflow significantly reduces grading time from 15-45 minutes per student to just 5-10
+                                minutes (50%-78% more efficient). The automation leverages advanced technical skills, including API integration, 
+                                data extraction, file handling, and web content validation, to enhance efficiency and 
+                                accuracy in an educational setting. </p> <br> <p data-translate="workflow_makeContentvid">Watch the video to see the workflow explanation.</p>
+                        </div>
+                        <br><br>
+                        <div class="half-column img-white">
+                            <video width="100%" controls>
+                                <source src="documents/ValidateHTML.mp4" type="video/mp4">
+                                <p data-translate="vid_error">Your browser does not support the video tag. Click the project to download the video on GitHub.</p>
+                              </video>
+                        </div>
+                        <div class="clear"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="technical_writing-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closePopup('technical_writing')">&times;</span>
+                <h2 data-translate="techWritingModal">Technical Writing</h2><br>
+                <div class="modal-project modal-project-style" data-skills="Markdown, LaTex, Pandoc">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/Giraffe Warmer Maintenance Application/User_Guide_Giraffe_Warmer_GUI.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                            <h3>
+                                <img src="images/giraffe-face-rbg.png" alt="Github" width="10%"> <br>
+                                <span data-translate="giraffeGuide">User Guide: Giraffe Warmer Maintenance Application</span> <br>
+                            </h3>
+                            <div class="green-line"></div><br>
+                            <p><strong data-translate="markdownToPdf">Developed in Markdown; converted to PDF</strong></p><br>
+                            <div class="half-column">
+                                <p data-translate="giraffeGuideContent">This user guide for a GUI Application helps BMETs operate the software that manages maintenance records for GE Giraffe Warmers. It's designed for ease of use, featuring a clickable table of contents that navigates to specific sections for efficient information retrieval. The guide covers installation, operations, error handling, and troubleshooting. Each section includes annotated screenshots and clear, step-by-step directions. Developed using Markdown for straightforward updates, this guide enables users to optimize the application’s features for improved performance and accuracy, ensuring reliable compliance in medical settings.</p>
+                            </div>
+                            <div class="half-column" style="padding-left: 1%;">
+                                <img src="images/GUI.png" alt="Giraffe User Guide" width="100%" class="img-white">
+                            </div>
+                            <div class="clear"></div><br>
+                    </a>
+                </div>
+                <br><br>
+                <div class="modal-project modal-project-style" data-skills="Markdown, LaTex, Pandoc">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/Snake Game Application/ITEC2270_documentation.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                            <h3>
+                                <img src="images/head_down.png" alt="Snake" width="7%"> <br>
+                                <span data-translate="snakeGameGuide">Course Documentation - ITEC2270: Application Development</span><br> 
+                            </h3>
+                            <div class="green-line"></div><br>
+                            <p><strong data-translate="pygameSqlite">Markdown, LaTex, Pandoc, Python (matplotlib)</strong></p><br>
+                            <div class="half-column">
+                                <p data-translate="snakeGameGuideContent"> This course documentation outlines the design, structure, evolution, and key components of Application Development. It includes an in-depth course overview detailing its primary focus on modifying arcade or tabletop games using Python and SQL. It reviews the evolution of the course timeline based on student feedback, describing original, adjusted, and proposed future timelines. The course structure is detailed, specifying objectives, required Python libraries, prerequisite knowledge, resources, and student deliverables. Additionally, the documentation evaluates the course assessment criteria, highlights lessons learned, and proposes improvements for future iterations. It also lists instructional materials, including videos, answer keys, and workshops, and discusses project management, including planning, execution, evaluation, and feedback mechanisms. </p>
+                            </div>
+                            <div class="half-column" style="padding-left: 1%;">
+                                <img src="images/project_timelines_gantt_chart.png" alt="Snake Game" width="100%">
+                            </div>
+                            <div class="clear"></div>
+                    </a>
+                </div>
+            <br><br>
+            <div class="modal-project modal-project-style" data-skills="Markdown, HTML">
+                <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Automation_Workflow_SetUp_Guide_ITEC_2380_Lab_File_Validation_for_HTML.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <h3>
+                            <img src="images/make.png" alt="Make logo" width="7%"> <br>
+                            <span data-translate="ValHTMLGuide">Automation Workflow Set-Up Guide: ITEC 2380 Lab File Validation for HTML </span><br> 
+                        </h3>
+                        <div class="green-line"></div><br>
+                        <p><strong data-translate="ValHTMLGuideSkills">Markdown, HTML</strong></p><br>
+                        <div class="half-column">
+                            <p data-translate="ValHTMLGuideContent"> The "ITEC 2380 Lab File Validation for HTML" project is designed to automate the process of grading HTML
+                                files submitted by students. By grabbing the zip files from students and running each through the W3C HTML
+                                Validator, this workflow significantly reduces grading time from 15-45 minutes per student to just 5-10
+                                minutes (50%-78% more efficient). This guide will walk you through creating an automation workflow in Make
+                                that monitors a Google Drive folder for new files, processes those files, and validates HTML files using the
+                                W3C HTML Validator API. </p>
+                        </div><br><br>
+                        <div class="half-column" style="padding-left: 1%;">
+                            <img src="images/step5.png" alt="Step 5 in Guide" width="100%">
+                        </div>
+                        <div class="clear"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+        <div id="cad_drafting-modal" class="modal" data-skills="Inventor, CAD, Drafting">
+            <div class="modal-content">
+                <span class="close" onclick="closePopup('cad_drafting')">&times;</span>
+                <h2 data-translate="cad_draftingModal">CAD Drafting</h2>
+                <div class="modal-project modal-project-style" data-skills="Inventor, CAD, Drafting">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Development of a Mobile Ankle Joint Attachment For the Universal Prosthesis.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                            <h3>
+                                <span data-translate="ankle_joint">Development of a Mobile Ankle Joint Attachment For the Universal Prosthesis</span><br> 
+                            </h3>
+                            <div class="green-line"></div><br>
+                            <p><strong data-translate="inventorSkills">Inventor, CAD, Drafting</strong></p><br>
+                            <div class="half-column">
+                                <p data-translate="prostheticsmodalcontent"> The "Development of a Mobile Ankle Joint Attachment for the Universal Prosthesis" aimed to address walking complications for below-knee amputees experiencing muscle atrophy. The project involved designing a mobile ankle joint prosthetic attachment to promote muscle rehabilitation and improve gait. Key technical skills utilized included extensive use of CAD software, specifically AutoCAD Inventor, for detailed design and 3D modeling, as well as creating 3D-printed prototypes for initial testing. The project involved developing gears and mechanical components using precision milling machines and MasterCAM for gear manufacturing. Testing included stability and functionality checks, a range of motion tests for dorsiflexion and plantarflexion, and materials testing to ensure durability and safety. Electrical system integration involved programming microcontrollers and creating a circuit to control the motor, simulating natural ankle movements based on pressure inputs. The project spanned several months, requiring effective teamwork and coordination with multiple participants and advisors, resulting in a functional prototype, design sketches, and comprehensive technical documentation.</p>
+                            </div>
+                            <div class="half-column" style="padding-left: 1%;">
+                                <img src="images/ankle_joint.png" alt="MatScan Landing1" width="100%">
+                                <br><br>
+                                <img src="images/prosthetic_cad.png" alt="MatScan Landing2" width="100%">
+                            </div>
+                            <div class="clear"></div>
+                    </a>
+                </div>
+                <br><br>
+                <div class="modal-project modal-project-style" data-skills="Inventor, CAD, Drafting">
+                    <a href="https://github.com/Harmon1713/portfolio/tree/main/Container Home" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <h3>
+                            <span data-translate="container_home">Container Home</span><br> 
+                        </h3>
+                        <div class="green-line"></div><br>
+                        <p><strong data-translate="inventorSkills">Inventor, CAD, Drafting</strong></p><br>
+                        <p><strong data-translate="techDocComingSoon">Technical documentation coming soon</strong></p><br>
+                        <div class="half-column">
+                            <p data-translate="containerHomeModalContent"> This tiny home project planning is ongoing, with full technical documentation coming soon. It will provide detailed information on every aspect of the design, including CAD designs and engineering drawings. Each section of the document is organized to guide the construction process, from initial site preparation to final touches. Additionally, the document outlines materials needed, such as insulation, flooring, and plumbing fixtures, complete with sources and costs. This detailed documentation ensures that the project is executed efficiently and meets all safety and quality standards.</p><br>
+                            <img src="images/container_iso.png" alt="Iso view container home" width="100%">
+                        </div>
+                        <div class="half-column" style="padding-left: 1%;">
+                            <img src="images/container_floor.png" alt="Container home floor plans" width="100%">
+                            <br><br>
+                            <img src="images/container_alldim.png" alt="Container home egr drawing" width="100%">
+                        </div>
+                        <div class="clear"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="research-modal" class="modal" data-skills="Research, Inventor, CAD, Drafting">
+            <div class="modal-content">
+                <span class="close" onclick="closePopup('research')">&times;</span>
+                <h2 data-translate="researchModal">Research</h2>
+                <div class="modal-project modal-project-style" data-skills="Research, Inventor, CAD, Drafting">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Development of a Mobile Ankle Joint Attachment For the Universal Prosthesis.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <h3>
+                            <span data-translate="ankle_joint">Development of a Mobile Ankle Joint Attachment For the Universal Prosthesis</span><br> 
+                        </h3>
+                        <div class="green-line"></div><br>
+                        <p><strong data-translate="researchInventor">Research: uses Inventor, CAD, Drafting</strong></p><br>
+                        <div class="half-column">
+                            <p data-translate="prostheticsmodalcontent"> The "Development of a Mobile Ankle Joint Attachment for the Universal Prosthesis" aimed to address walking complications for below-knee amputees experiencing muscle atrophy. The project involved designing a mobile ankle joint prosthetic attachment to promote muscle rehabilitation and improve gait. Key technical skills utilized included extensive use of CAD software, specifically AutoCAD Inventor, for detailed design and 3D modeling, as well as creating 3D-printed prototypes for initial testing. The project involved developing gears and mechanical components using precision milling machines and MasterCAM for gear manufacturing. Testing included stability and functionality checks, a range of motion tests for dorsiflexion and plantarflexion, and materials testing to ensure durability and safety. Electrical system integration involved programming microcontrollers and creating a circuit to control the motor, simulating natural ankle movements based on pressure inputs. The project spanned several months, requiring effective teamwork and coordination with multiple participants and advisors, resulting in a functional prototype, design sketches, and comprehensive technical documentation.</p>
+                        </div>
+                        <div class="half-column" style="padding-left: 1%;">
+                            <img src="images/ankle_joint.png" alt="ankle joint testing" width="100%">
+                            <br><br>
+                            <img src="images/prosthetic_schematic.png" alt="prosthetic schematic" width="100%">
+                        </div>
+                        <div class="clear"></div>
+                    </a>
+                </div>
+                <br><br>
+                <div class="modal-project modal-project-style" data-skills="Research, MatScan, Tekscan">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/The Study of Injury Biomechanics in the Wrist_Hand and Ankle_Foot for Tumbling Using the MatScan.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                            <h3>
+                                <span data-translate="matscan">The Study of Injury Biomechanics in the Wrist/Hand and Ankle/Foot for Tumbling Using the MatScan</span><br> 
+                            </h3>
+                            <div class="green-line"></div><br>
+                            <p><strong data-translate="researchMatScan">Research: uses MatScan, Tekscan</strong></p><br>
+                            <div class="half-column">
+                                <p data-translate="biomechanicsmodalcontent"> The study "The Study of Injury Biomechanics in the Wrist/Hand and Ankle/Foot for Tumbling Using the MatScan" involved utilizing a range of technical skills integral to biomechanical research and data analysis. These skills included setting up and calibrating the MatScan system for accurate pressure measurements during tumbling exercises, and using specialized software (Tekscan Research 6.70) to capture and analyze detailed pressure data, identifying high-risk injury areas. The study also involved conducting thorough biomechanical assessments to correlate pressure trends with potential injuries. Managing and analyzing video recordings, combined with systematic data interpretation, demonstrated competence in applying advanced research tools and methodologies to enhance injury prevention and performance in sports.</p>
+                            </div>
+                            <div class="half-column" style="padding-left: 1%;">
+                                <img src="images/landing.png" alt="MatScan Landing1" width="100%">
+                                <br><br>
+                                <img src="images/landing2.png" alt="MatScan Landing2" width="100%">
+                            </div>
+                            <div class="clear"></div>
+                    </a>
+                </div>
+                <br><br>
+                </a>
+                <div class="modal-project modal-project-style" data-skills="Research, Material Testing System (MTS)">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Comparing the Mechanical Properties of Cancellous Bone between Pig Femur Bone%2C Deer Femur Bone%2C and Human Humerus Bone.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                            <h3>
+                                <span data-translate="boneComparison">Comparing the Mechanical Properties of Cancellous Bone between Pig Femur Bone, Deer Femur Bone, and Human Humerus Bone</span><br> 
+                            </h3>
+                            <div class="green-line"></div><br>
+                            <p><strong data-translate="researchMTS">Research: uses Material Testing System (MTS) </strong></p><br>
+                            <div class="half-column">
+                                <p data-translate="bonemodalcontent"> In the research paper "Comparing the Mechanical Properties of Cancellous Bone between Pig Femur Bone, Deer Femur Bone, and Human Humerus Bone," a variety of technical skills were utilized. The study involved advanced biomaterials research and mechanical testing techniques, particularly focusing on the axial stress, strain, and Young’s modulus of bone samples. The Material Testing System (MTS) was employed to apply controlled compressive forces to the samples, simulating real-world stress conditions and generating detailed data on bone behavior under load. The process required precise sample preparation, including cutting and measuring bone samples, and conducting displacement and force measurements to calculate stress and strain. Data analysis was performed using graphical methods to interpret the stress-strain relationships and determine the elastic modulus for each bone type. This research demonstrated skills in experimental design, advanced material testing, data collection and analysis, computational modeling, and the application of mechanical principles to biomaterials.</p>
+                            </div>
+                            <div class="half-column" style="padding-left: 1%;">
+                                <img src="images/mts.png" alt="bones mts" width="100%"><br><br>
+                                <img src="images/bones.png" alt="bones graph" width="100%">
+                            </div>
+                            <div class="clear"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br><br><br><br>
+        <div class="container">
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search by skill..." data-translate="searchPlaceholder" oninput="showAutocomplete()" onkeypress="handleKeyPress(event)">
+                <div id="autocompleteList" class="autocomplete-list"></div>
+                <button onclick="searchProjects()" data-translate="searchButton">Search</button>
+                <div id="errorMessage" class="error-message" data-translate="searchErrorMessage"></div>
+            </div>
+
+            <br><br><br><br>
+
+            <!-- Projects -->
+            <div id="projects">
+                <div class="project" data-skills="HTML, Bootstrap, CSS, JavaScript, jQuery, popper.js">
+                    <a href="https://github.com/Harmon1713/portfolio" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->
+                            <h2><span data-translate="cppApp">Portfolio Website</span></h2>
+                            <div class="green-line"></div>
+                            <p class="uses" data-translate="techUsed">Uses HTML, Bootstrap, CSS, JavaScript, jQuery, popper.js</p>
+                            <div class="modal-project" data-skills="HTML, Bootstrap, CSS, JavaScript, jQuery, popper.js">
+                                <p><strong data-translate="cpp">HTML (Bootstrap), CSS, JavaScript (jQuery, popper.js)</strong></p><br>
+                                <div class="half-column">
+                                    <p data-translate="frontendContent">
+                                        In this portfolio project, I have leveraged a range of technical skills to create a dynamic and responsive web experience. The project employs HTML with Bootstrap for layout and design, ensuring responsive and mobile-friendly content. CSS manipulation is used extensively to dynamically adjust styles based on user interactions. JavaScript ES6 features enhance code readability and efficiency. The portfolio demonstrates asynchronous programming with the Fetch API for retrieving JSON data. DOM manipulation is employed to update content and styles dynamically, while event handling sets up interactions. The project also includes conditional logic to control application flow and array operations using methods like forEach, filter, and map for data manipulation. The use of local storage ensures language preferences are saved, providing a tailored user experience across sessions. Additionally, error handling and debugging techniques are implemented to manage exceptions and trace computations, ensuring reliable functionality throughout the application.
+                                    </p>
+                                </div>
+                                <div class="half-column" style="padding-left: 1%;">
+                                    <img src="images/portfolio_mh.png" alt="portfolio screenshot" width="100%">
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="project" data-skills="Application Development, Python, tkinter, datetime, SQL, SQLite">
+                    <a href="https://github.com/Harmon1713/portfolio/tree/main/Giraffe Warmer Maintenance Application" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->
+                            <h2><span data-translate="giraffeApp">Giraffe Warmer Maintenance Application</span></h2>
+                            <div class="green-line"></div>
+                            <p class="uses" data-translate="techUsed">Uses Application Development, Python, tkinter, datetime, SQL, SQLite</p>
+                            <div class="modal-project" data-skills="Application Development, Python, tkinter, datetime, SQL, SQLite">
+                                <p><strong data-translate="pythonSqlite">Python (tkinter, datetime, SQLite), SQL </strong></p><br>
+                                <div class="half-column">
+                                    <p data-translate="giraffeAppContent">This Python program is a maintenance tracking application for Giraffe Warmers, typically used in neonatal care. The application features a user-friendly graphical interface that allows users to add, update, and monitor the maintenance records of Giraffe Warmer machines. It uses SQLite for its backend database to store serial numbers, maintenance dates, and logs, enabling robust data handling through CRUD operations. <br><br>Key technical skills include GUI development, event handling, and date manipulation; it also emphasizes error handling and data validation to ensure smooth operation. This project exemplifies a practical application of combining software development skills with domain-specific knowledge, showcasing the ability to develop a functional and specialized tool for industry-specific needs.</p>
+                                </div>
+                                <div class="half-column" style="padding-left: 1%;">
+                                    <img src="images/GUI.png" alt="Giraffe GUI" width="100%">
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="project" data-skills="Application Development, Python, Pygame, SQL, SQLite">
+                    <a href="https://github.com/Harmon1713/portfolio/tree/main/Snake Game Application" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->
+                            <h2><span data-translate="snakeGame">Snake Game Application</span></h2>
+                            <div class="green-line"></div>
+                            <p class="uses" data-translate="techUsed">Uses Application Development, Python, Pygame, SQL, SQLite</p>
+                            <div class="modal-project" data-skills="Application Development, Python, Pygame, SQL, SQLite">
+                                <p><strong data-translate="pygameSqlite">Python (Pygame, SQLite), SQL</strong></p><br>
+                                <div class="half-column">
+                                    <p data-translate="snakeGameContent">This Python program showcases a fully functional snake game, incorporating advanced game mechanics, GUI elements, and database operations. The gameplay is enhanced with responsive control mechanisms through keyboard inputs and dynamically adjusts the interface with an interactive menu system. Additionally, the code integrates SQLite to manage player usernames, scores, and times. <br><br>Key technical skills displayed include game design principles, object-oriented programming, event handling, and CRUD operations with SQLite, highlighting a comprehensive understanding of both game development and database management.</p>
+                                </div>
+                                <div class="half-column" style="padding-left: 1%;">
+                                    <img src="images/snake_game.png" alt="Snake Game" width="100%">
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project" data-skills="Data Analysis, Data Visualization, API Integration, Python, requests, pandas, plotly, SQL, JavaScript, Plotly JSON, Plotly, Retool, HTML, CSS">
+                    <a href="https://github.com/Harmon1713/portfolio/tree/main/The Happiness Index" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->
+                            <h2><span data-translate="Happiness">The Happiness Index: Analyzing Economic and Environmental Factors</span></h2>
+                            <div class="green-line"></div>
+                            <p class="uses" data-translate="techUsed">Uses API Integration, Data Analysis, Data Visualization, Python (requests, pandas, plotly), SQL, JavaScript (Plotly JSON), Retool, HTML, CSS</p>
+                            <div class="modal-project" data-skills="API Integration, Data Analysis, Data Visualization, Python, requests, pandas, plotly, SQL, JavaScript, Plotly JSON, Retool, HTML, CSS">
+                                <p><strong data-translate="happinessTech">Python (requests, pandas, plotly), SQL, JavaScript (Plotly JSON), Retool, HTML, CSS</strong></p>
+                                <br>
+                                <div class="half-column">
+                                    <p data-translate="HappinessContent">This project involved an in-depth analysis of gas prices, cheese prices, and temperature data to determine the "Happiest Day" based on a combined happiness score. Data was retrieved using APIs to grab historical gas prices and weather data, processed using Python for data wrangling, and stored in a database. The analysis involved normalizing gas and cheese prices, calculating happiness scores, and visualizing the data using Plotly in Python and Retool. The interactive graph created allows users to explore the relationship between these factors and highlights the happiest day with a gold star, along with additional details like the actual prices/temperatures and happiness rating on hover. The project demonstrates strong skills in API integration, the ability to integrate data from various sources and perform complex data manipulations, data processing with Python, SQL database management, and interactive data visualization.</p>
+                                </div>
+                                <div class="half-column" style="padding-left: 1%;">
+                                    <br>
+                                    <img src="images/happiness.png" alt="Happiness Index 1" width="100%" class="img-white"><br><br>
+                                </div>
+                                <div class="clear"></div>
+                                <br>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://harmon1713.github.io/portfolio/The Happiness Index/index.html" target="_blank">
+                        <div class="link-content">
+                            <span style="color: blue;" data-translate="clickToInteract">Click here to interact with the visualization:</span>
+                            <img src="images/interactive-icon.png" alt="interact" width="3%">
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="project" data-skills="Data Visualization, Data Analysis, HTML, CSS, JavaScript, D3.js, GeoJSON, JSON, SVG">
+                    <a href="https://github.com/Harmon1713/portfolio/tree/main/My Travel Map" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->
+                            <h2><span data-translate="TravelMap">Interactive Travel Map</span></h2>
+                            <div class="green-line"></div>
+                            <p class="uses" data-translate="techUsed">Uses Data Visualization, HTML, CSS, JavaScript (D3.js), GeoJSON, SVG</p>
+                            <div class="modal-project" data-skills="Data Visualization, Data Analysis, HTML, CSS, JavaScript, D3.js, GeoJSON, JSON, SVG">
+                                <p><strong data-translate="d3jsTech">HTML, CSS, JavaScript (D3.js), GeoJSON, SVG</strong></p>
+                                <br>
+                                <div class="half-column">
+                                    <p data-translate="TravelMapContent">This interactive map showcases my travels, demonstrating advanced technical skills in data manipulation, visualization, and web applications. The map is created using D3.js and rendered using GeoJSON data fetched from an external source and filtered into a custom dataset to highlight visited countries. The projection and path functions of D3.js are utilized to convert the GeoJSON data into precise Scalable Vector Graphics (SVG) paths. Interactive features include zoom controls and custom tooltips, which provide images from my travels when hovering over a country. This project not only highlights my proficiency in HTML, CSS, and JavaScript, but also my ability to create rich, interactive web applications that combine technical precision with engaging storytelling.</p>
+                                </div>
+                                <div class="half-column" style="padding-left: 1%;">
+                                    <br>
+                                    <img src="images/travelmap.png" alt="Travel Map" width="100%" class="img-white">
+                                </div>
+                                <div class="clear"></div>
+                                <br>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://harmon1713.github.io/portfolio/My Travel Map/index.html" target="_blank">
+                        <div class="link-content">
+                            <span style="color: blue;" data-translate="clickToInteract">Click here to interact with the visualization:</span>
+                            <img src="images/interactive-icon.png" alt="interact" width="3%">
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="project" data-skills="Data Wrangling, Data Visualization, Data Analysis, R, dplyr, ggplot2, ggiraph, patchwork, htmlwidgets, HTML, CSS">
+                    <a href="https://github.com/Harmon1713/portfolio/tree/main/Interactive%20Graphs%20in%20R" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->
+                            <h2><span data-translate="Graphs">Interactive Graphs in R</span></h2>
+                            <div class="green-line"></div>
+                            <p class="uses" data-translate="techUsed">Uses Data Visualization, R (dplyr, ggplot2, ggiraph, patchwork, htmlwidgets), HTML, CSS</p>
+                            <div class="modal-project" data-skills="Data Visualization, Data Analysis, R, dplyr, ggplot2, ggiraph, patchwork, htmlwidgets HTML, CSS">
+                                <p><strong data-translate="rSkills">R (dplyr, ggplot2, ggiraph, patchwork, htmlwidgets), HTML, CSS</strong></p><br>
+                                <div class="half-column">
+                                    <p data-translate="GraphsContent">These interactive graphs were developed using a combination of advanced R programming techniques and data visualization tools. To add interactivity, the ggiraph package was utilized, enabling the inclusion of interactive tooltips and dynamic elements that enhance user engagement. Additionally, the patchwork package was used to combine multiple graphs into cohesive visualizations, while htmlwidgets facilitated the export of these interactive plots as standalone HTML files. <br><br> This seamless integration of R's data manipulation, visualization, and interactivity capabilities demonstrates a strong understanding of data science and web technologies, culminating in an engaging and interactive user experience. The integration of these graphs into web applications enables real-time updates and interactions, making the visualizations a dynamic part of the web experience. <br><br>This approach not only engages users but also makes complex data more accessible and understandable to a broader audience, ensuring that insights and findings are effectively communicated and shared.</p>
+                                </div>
+                                <div class="half-column" style="padding-left: 1%;">
+                                    <br>
+                                    <img src="images/int-graph1.png" alt="Interactive Graph1" width="100%" class="img-white">
+                                    <img src="images//int-graph2.png" alt="Interactive Graph 2" width="100%" class="img-white">
+                                </div>
+                                <div class="clear"></div>
+                                <br>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://harmon1713.github.io/portfolio/Interactive Graphs in R/index.html" target="_blank">
+                        <div class="link-content">
+                            <span style="color:blue;" data-translate="clickToInteract">Click here to interact with the visualization:</span>
+                            <img src="images/interactive-icon.png" alt="interact" width="3%">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project" data-skills="R, Python, Data Wrangling, Data Visualization, Data Analysis, Linear Regression, ggplot2, lm(), gvlma, predictmeans, car, caret, Pandas, NumPy, SciPy, Matplotlib, Seaborn, statsmodels, pylab">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Understanding%20Height%20Dynamics%20Through%20Regression.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->    
+                            <h2>
+                                <span data-translate="height">Understanding Height Dynamics Through Regressions</span>
+                            </h2>
+                            <div class="green-line"></div><br>
+                            <p class="uses" data-translate="heightSkills">R (ggplot2, lm(), gvlma, predictmeans, car, caret), Python (Pandas, NumPy, SciPy, Matplotlib, Seaborn, statsmodels, pylab)</p>
+                            <div class="modal-project" data-skills="R, Python, Data Wrangling, Data Visualization, Data Analysis, Linear Regression, ggplot2, lm(), gvlma, predictmeans, car, caret, Pandas, NumPy, SciPy, Matplotlib, Seaborn, statsmodels, pylab">
+                                <p><strong data-translate="heightSkills">R (ggplot2, lm(), gvlma, predictmeans, car, caret), Python (Pandas, NumPy, SciPy, Matplotlib, Seaborn, statsmodels, pylab)</strong></p><br>
+                                <div class="half-column">
+                                    <p data-translate="heightContent">The project "Understanding Height Dynamics Through Regressions" examines the effect of gravitational compression on human height by analyzing morning and evening measurements from students at a boarding school in India, aiming to quantify this impact using regression analysis. Technical skills used included data wrangling with Pandas and dplyr, numerical operations with NumPy, statistical testing with SciPy, and data visualization with Matplotlib, Seaborn, and ggplot2. Linear regression models were fitted using Statsmodels in Python and the lm function in R. Assumptions testing included checking for linearity, normality (Shapiro-Wilk test), and homoscedasticity (Breusch-Pagan test), as well as identifying influential data points using Cook's distance and leverage values. The analysis confirmed a strong positive linear relationship between AM_Height and PM_Height, with models explaining a significant portion of the variance in evening heights. This project demonstrated proficiency in data analysis, statistical modeling, and assumption validation using both R and Python, highlighting the measurable impact of gravitational compression on daily height variations.</p>
+                                </div>
+                                <div class="half-column" style="padding-left: 1%;">
+                                    <br>
+                                    <img src="images/height.png" alt="height Graph1" width="100%" class="img-white"><br><br>
+                                    <img src="images/height2.png" alt="height Graph 2" width="100%" class="img-white">
+                                </div>
+                                <div class="clear"></div>
+                                <br>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/heightanalysis_R.ipynb" target="_blank">
+                        <div class="link-content">
+                            <span style="color:blue;" data-translate="clickToViewCodeR">Click here to view the R source code:</span>
+                            <img src="images/code-icon.png" alt="magnifying glass" width="4%">
+                        </div>
+                    </a>
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/heightanalysis_Py.ipynb" target="_blank">
+                        <div class="link-content">
+                            <span style="color:blue;" data-translate="clickToViewCodePy">Click here to view the Python source code:</span>
+                            <img src="images/code-icon.png" alt="magnifying glass" width="4%">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project" data-skills="R, Data Wrangling, Data Visualization, Logistic Regression, caret, magrittr, dplyr, tidyr, ggplot2, lmtest, popbio, e1071, readxl">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/goldanalysis_R.ipynb" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->    
+                            <h2>
+                                <span data-translate="gold">Predicting Gold Presence Through Antimony Levels Using Logistic Regression</span>
+                            </h2>
+                            <div class="green-line"></div><br>
+                            <p class="uses" data-translate="goldSkills">R (caret, magrittr, dplyr, tidyr, ggplot2, lmtest, popbio, e1071, readxl)</p>
+                            <div class="modal-project" data-skills="R, Data Wrangling, Data Visualization, Logistic Regression, caret, magrittr, dplyr, tidyr, ggplot2, lmtest, popbio, e1071, readxl">
+                                <p><strong data-translate="goldSkills">R (caret, magrittr, dplyr, tidyr, ggplot2, lmtest, popbio, e1071, readxl)</strong></p><br>
+                                <div class="half-column">
+                                    <p data-translate="goldContent">In this project, logistic regression was employed to predict the presence of gold in a given location based on antimony levels. The analysis involved the use of several R packages, including caret for creating the confusion matrix, dplyr and tidyr for data manipulation, and ggplot2 for visualization. The model was built using the glm function, specifying a binomial family to handle the binary nature of the response variable (presence of gold). After fitting the model, predictions were made, and a confusion matrix was generated to assess the model's accuracy. Additionally, diagnostic checks were performed to evaluate model assumptions, including the Durbin-Watson test for autocorrelation and the inspection of residuals and influence measures. Visualizations were created to assess the relationship between the log-odds (logit) and predictor variables, aiding in the interpretation of the logistic regression model.
+                                    <br><br>The results indicated that higher antimony levels are associated with an increased likelihood of finding gold, as shown by the positive coefficient for antimony in the logistic regression model. The model's performance, as evaluated by the confusion matrix, suggested it was reasonably accurate in predicting gold presence, making it a useful tool for geologists in identifying potential gold deposits.
+                                    </p>
+                                </div>
+                                <div class="half-column" style="padding-left: 1%;">
+                                    <br>
+                                    <img src="images/gold.png" alt="gold Graph1" width="100%"><br><br>
+                                    <img src="images/gold2.png" alt="gold Graph 2" width="100%" class="img-white">
+                                </div>
+                                <div class="clear"></div>
+                                <br>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/goldanalysis_R.ipynb" target="_blank">
+                        <div class="link-content">
+                            <span style="color:blue;" data-translate="clickToViewCodeR">Click here to view the R source code:</span>
+                            <img src="images/code-icon.png" alt="magnifying glass" width="4%">
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="project" data-skills="Data Wrangling, Data Visualization, Data Analysis, Python, Pandas, NumPy, SciPy, Statsmodels, R, dplyr, tidyr, readxl, lubridate, stringr, data.table, broom, Tableau">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/An%20in-depth%20analysis%20of%20the%20motor%20vehicle%20crash%20Data%20in%20Texas%20for%202013.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->
+                            <h2>
+                                <span data-translate="crashes">An in-depth analysis of the motor vehicle crash Data in Texas for 2013</span>
+                            </h2>
+                            <div class="green-line"></div><br>
+                            <p class="uses" data-translate="CrashSkills">Python (Pandas, NumPy, SciPy, Statsmodels), R (dplyr, tidyr, readxl, lubridate, stringr, data.table, broom), Tableau</p>
+                            <div class="modal-project" data-skills="Data Wrangling, Data Visualization, Data Analysis, Python, R, Pandas, NumPy, SciPy, Statsmodels, dplyr, tidyr, readxl, lubridate, stringr, data.table, broom">
+                                <p><strong data-translate="CrashSkills">Python (Pandas, NumPy, SciPy, Statsmodels), R (dplyr, tidyr, readxl, lubridate, stringr, data.table, broom), Tableau</strong></p><br>
+                                <div class="half-column">
+                                    <p data-translate="crashesContent">An In-Depth Analysis of the Motor Vehicle Crash Data in Texas for 2013 required a detailed approach to data analysis, leveraging various technical skills to uncover insights and present findings effectively. The project involved data cleaning and preprocessing, identifying categorical variables, and handling missing data. Advanced data visualization techniques were employed using tools such as Tableau, Python, and R, allowing for the creation of informative graphs and charts that highlighted key trends, such as the correlation between crash frequency and factors like time of day, speed limits, and geographical location. The use of Python and R enabled detailed data manipulation and statistical analysis, providing a deeper understanding of patterns within the dataset. Additionally, the project emphasized the importance of storytelling in data science, requiring clear and concise communication of findings through visualizations and written summaries. The skills demonstrated in this project reflect a strong foundation in data analysis, visualization, and the ability to derive actionable insights from complex datasets.</p>
+                                </div>
+                                <div class="half-column" style="padding-left: 1%;">
+                                    <br>
+                                    <img src="images/crashes.png" alt="Interactive Graph1" width="100%" class="img-white">
+                                    <img src="images/crashes2.png" alt="Interactive Graph 2" width="100%" class="img-white">
+                                </div>
+                                <div class="clear"></div>
+                                <br>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project" data-skills="Python, R, Data Wrangling, Data Visualization, Data Analysis, Pandas, NumPy, SciPy, dplyr, tidyr, readr, lubridate, stringr, data.table, broom, Tableau">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/A%20Data-Driven%20Analysis%20of%20Video%20Game%20Sales.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->    
+                            <h2>
+                                <span data-translate="videogames">A Data-Driven Analysis of Video Game Sales</span>
+                            </h2>
+                            <div class="green-line"></div><br>
+                            <p class="uses" data-translate="videogamesSkills">Python (Pandas, NumPy, SciPy), R (dplyr, tidyr, readr, lubridate, stringr, data.table, broom), Tableau</p>
+                            <div class="modal-project" data-skills="Python, R, Data Wrangling, Data Visualization, Data Analysis, Pandas, NumPy, SciPy, dplyr, tidyr, readr, lubridate, stringr, data.table, broom, Tableau">
+                                <p><strong data-translate="videogamesSkills">Python (Pandas, NumPy, SciPy), R (dplyr, tidyr, readr, lubridate, stringr, data.table, broom), Tableau</strong></p><br>
+                                <div class="half-column">
+                                    <p data-translate="videogamesContent">A Data-Driven Analysis of Video Game Sales required a combination of technical skills to extract actionable insights from the dataset and create an impactful presentation. The project involved data wrangling, including joining datasets and filtering relevant data, using Python libraries such as Pandas for data manipulation and NumPy for numerical operations. In R, libraries like dplyr and tidyr were utilized to tidy and transform the data, ensuring a clean and structured format for analysis. Visualization played a crucial role, with Tableau used to create engaging and informative visualizations that illustrated trends in video game sales over time, the most popular genres, and platform comparisons by genre. The analysis revealed key insights, such as the dominance of action games and the potential for growth in underrepresented genres on specific platforms. This project showcased the ability to leverage data analysis and visualization tools effectively, combining Python and R for data handling and Tableau for creating a compelling narrative through visual storytelling, ultimately leading to strategic recommendations for enhancing video game sales.</p>
+                                </div>
+                                <div class="half-column" style="padding-left: 1%;">
+                                    <br>
+                                    <img src="images/videogames.png" alt="video games Graph1" width="100%" class="img-white"><br><br>
+                                    <img src="images/videogames2.png" alt="video games Graph 2" width="100%" class="img-white">
+                                </div>
+                                <div class="clear"></div>
+                                <br>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project" data-skills="R, Data Wrangling, Data Visualization, Data Analysis, Statistical Modeling, ggplot2, dplyr, Ecdat, RColorBrewer">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/A%20Data-Driven%20Analysis%20of%20Cigarette%20Consumption%20Patterns.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->    
+                            <h2>
+                                <span data-translate="cigarettes">A Data-Driven Analysis of Cigarette Consumption Patterns</span>
+                            </h2>
+                            <div class="green-line"></div><br>
+                            <p class="uses" data-translate="cigarettesSkills">R (ggplot2, dplyr, Ecdat, RColorBrewer)</p>
+                            <div class="modal-project" data-skills="R, Data Wrangling, Data Visualization, Data Analysis, Statistical Modeling, ggplot2, dplyr, Ecdat, RColorBrewer">
+                                <p><strong data-translate="cigarettesSkills">R (ggplot2, dplyr, Ecdat, RColorBrewer)</strong></p><br>
+                                <div class="half-column">
+                                    <p data-translate="cigarettesContent">The "A Data-Driven Analysis of Cigarette Consumption Patterns" project leveraged R programming to analyze the Cigarette dataset from the Ecdat package, focusing on data wrangling, visualization, and statistical modeling. The analysis involved creating boxplots to identify states with the highest and lowest cigarette consumption per capita, calculating median consumption trends from 1985 to 1995, and examining the relationship between cigarette prices and consumption through scatter plots and linear regression. Adjustments for inflation were made to refine the analysis. Additionally, a paired t-test was conducted to compare consumption levels between 1985 and 1995. The project concluded with an investigation into the negative correlation between state income and cigarette consumption, highlighting key insights into consumption patterns over time.</p>
+                                </div>
+                                <div class="half-column" style="padding-left: 1%;">
+                                    <br>
+                                    <img src="images/cigarettes.png" alt="cigarette consumption graph 1" width="100%" class="img-white"><br><br>
+                                    <img src="images/cigarettes2.png" alt="cigarette consumption graph 2" width="100%" class="img-white">
+                                </div>
+                                <div class="clear"></div>
+                                <br>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/cigarette_analysis.R" target="_blank">
+                        <div class="link-content">
+                            <span style="color:blue;" data-translate="clickToViewCode">Click here to view the source code:</span>
+                            <img src="images/code-icon.png" alt="magnifying glass" width="4%">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project" data-skills="Workflow Automation, Make, API Integration, Google Workspace">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/ValidateHTML.mp4" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->
+                            <h2><span data-translate="ValHTMLApp">ITEC 2380 Lab File Validation for HTML</span></h2>
+                            <div class="green-line"></div>
+                            <p class="uses" data-translate="techUsed">Uses Make, API Integration, Google Workspace</p>
+                            <div class="modal-project" data-skills="Make, API Integration, Google Workspace">
+                                <p><strong data-translate="ValHTML">Make, API Integration, Google Workspace</strong></p><br>
+                                <div class="half-column">
+                                    <p data-translate="workflow_makeContent">
+                                        The "ITEC 2380 Lab File Validation for HTML" project is designed to automate the process of grading HTML
+                                        files submitted by students. By grabbing the zip files from students and running each through the W3C HTML
+                                        Validator, this workflow significantly reduces grading time from 15-45 minutes per student to just 5-10
+                                        minutes (50%-78% more efficient). The automation leverages advanced technical skills, including API integration, 
+                                        data extraction, file handling, and web content validation, to enhance efficiency and accuracy in an educational setting. 
+                                    </p><br>
+                                    <p>Watch the video to see the workflow explanation.</p>
+                                </div>
+                                <div class="half-column img-white">
+                                    <video width="100%" controls>
+                                        <source src="documents/ValidateHTML.mp4" type="video/mp4">
+                                        Your browser does not support the video tag. Click the project to download the video on GitHub.
+                                    </video>
+                                </div>
+                                <div class="clear"></div>
+                                <br>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project" data-skills="Technical Writing, Markdown">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/Giraffe Warmer Maintenance Application/User_Guide_Giraffe_Warmer_GUI.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->
+                            <h2><span data-translate="giraffeGuide">User Guide: Giraffe Warmer Maintenance Application</span></h2>
+                            <div class="green-line"></div>
+                            <p class="uses" data-translate="techUsed">Uses Technical Writing, Markdown</p>
+                            <div class="modal-project" data-skills="Technical Writing, Markdown">
+                                <p><strong data-translate="markdownToPdf">Developed in Markdown; converted to PDF</strong></p><br>
+                                <div class="half-column">
+                                    <p data-translate="giraffeGuideContent">This user guide for a GUI Application helps BMETs operate the software that manages maintenance records for GE Giraffe Warmers. It's designed for ease of use, featuring a clickable table of contents that navigates to specific sections for efficient information retrieval. The guide covers installation, operations, error handling, and troubleshooting. Each section includes annotated screenshots and clear, step-by-step directions. Developed using Markdown for straightforward updates, this guide enables users to optimize the application’s features for improved performance and accuracy, ensuring reliable compliance in medical settings.</p>
+                                </div>
+                                <div class="half-column" style="padding-left: 1%;">
+                                    <img src="images/Giraffe_userguide1.png" alt="Giraffe User Guide" width="100%" class="img-white">
+                                </div>
+                                <div class="clear"></div>
+                                <br>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="project" data-skills="Technical Writing, Markdown, LaTex, Pandoc, Python, matplotlib">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/Snake%20Game%20Application/ITEC2270_documentation.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->
+                            <h2><span data-translate="snakeGameGuide">Course Documentation - ITEC2270: Application Development</span></h2>
+                            <div class="green-line"></div>
+                            <p class="uses" data-translate="techUsed">Uses Technical Writing, Markdown, LaTex, Pandoc, Python, matplotlib</p>
+                            <div class="modal-project" data-skills="Technical Writing, Markdown, LaTex, Pandoc, Python, matplotlib">
+                                <p><strong data-translate="pygameSqlite">Markdown, LaTex, Pandoc, Python (matplotlib)</strong></p><br>
+                                <div class="half-column">
+                                    <p data-translate="snakeGameGuideContent">This course documentation outlines the design, structure, evolution, and key components of Application Development. It includes an in-depth course overview detailing its primary focus on modifying arcade or tabletop games using Python and SQL. It reviews the evolution of the course timeline based on student feedback, describing original, adjusted, and proposed future timelines. The course structure is detailed, specifying objectives, required Python libraries, prerequisite knowledge, resources, and student deliverables. Additionally, the documentation evaluates the course assessment criteria, highlights lessons learned, and proposes improvements for future iterations. It also lists instructional materials, including videos, answer keys, and workshops, and discusses project management, including planning, execution, evaluation, and feedback mechanisms.</p>
+                                </div>
+                                <div class="half-column" style="padding-left: 1%;">
+                                    <img src="images/project_timelines_gantt_chart.png" alt="Snake Game" width="100%">
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project" data-skills="Technical Documentation, Markdown, HTML">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Automation_Workflow_SetUp_Guide_ITEC_2380_Lab_File_Validation_for_HTML.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->
+                            <h2><span data-translate="ValHTMLGuide">Automation Workflow Set-Up Guide: ITEC 2380 Lab File Validation for HTML</span></h2>
+                            <div class="green-line"></div>
+                            <p class="uses" data-translate="techUsed">Uses Markdown, HTML</p>
+                            <div class="modal-project" data-skills="Markdown, HTML">
+                                <p><strong data-translate="ValHTMLGuideSkills">Markdown, HTML</strong></p><br>
+                                <div class="half-column">
+                                    <p data-translate="ValHTMLGuideContent"> 
+                                        The "ITEC 2380 Lab File Validation for HTML" project is designed to automate the process of grading HTML
+                                        files submitted by students. By grabbing the zip files from students and running each through the W3C HTML
+                                        Validator, this workflow significantly reduces grading time from 15-45 minutes per student to just 5-10
+                                        minutes (50%-78% more efficient). This guide will walk you through creating an automation workflow in Make
+                                        that monitors a Google Drive folder for new files, processes those files, and validates HTML files using the
+                                        W3C HTML Validator API.
+                                    </p>
+                                </div>
+                                <div class="half-column" style="padding-left: 1%;">
+                                    <img src="images/step5.png" alt="Step 5 in Guide" width="100%">
+                                </div>
+                                <div class="clear"></div>
+                                <br>
+                            </div>
+                        </div>
+                    </a>
+                </div>                
+                
+                <div class="project" data-skills="Research, Inventor, CAD, Drafting">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Development%20of%20a%20Mobile%20Ankle%20Joint%20Attachment%20For%20the%20Universal%20Prosthesis.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->    
+                            <h2><span data-translate="ankle_joint">Development of a Mobile Ankle Joint Attachment For the Universal Prosthesis</span></h2>
+                            <div class="green-line"></div>
+                            <p class="uses" data-translate="techUsed">Uses Research, Inventor, CAD, Drafting</p>
+                            <div class="modal-project" data-skills="Research, Inventor, CAD, Drafting">
+                                <p><strong data-translate="researchInventor">Research: uses Inventor, CAD, Drafting</strong></p><br>
+                                <div class="half-column">
+                                    <p data-translate="prostheticsmodalcontent"> The "Development of a Mobile Ankle Joint Attachment for the Universal Prosthesis" aimed to address walking complications for below-knee amputees experiencing muscle atrophy. The project involved designing a mobile ankle joint prosthetic attachment to promote muscle rehabilitation and improve gait. Key technical skills utilized included extensive use of CAD software, specifically AutoCAD Inventor, for detailed design and 3D modeling, as well as creating 3D-printed prototypes for initial testing. The project involved developing gears and mechanical components using precision milling machines and MasterCAM for gear manufacturing. Testing included stability and functionality checks, a range of motion tests for dorsiflexion and plantarflexion, and materials testing to ensure durability and safety. Electrical system integration involved programming microcontrollers and creating a circuit to control the motor, simulating natural ankle movements based on pressure inputs. The project spanned several months, requiring effective teamwork and coordination with multiple participants and advisors, resulting in a functional prototype, design sketches, and comprehensive technical documentation.</p>
+                                </div>
+                                <div class="half-column" style="padding-left: 1%;">
+                                    <img src="images/ankle_joint.png" alt="MatScan Landing1" width="100%">
+                                    <br><br>
+                                    <img src="images/prosthetic_cad.png" alt="MatScan Landing2" width="100%">
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project" data-skills="Inventor, CAD, Drafting">
+                    <a href="https://github.com/Harmon1713/portfolio/tree/main/Container Home" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->
+                            <h2><span data-translate="container_home">Container Home</span></h2>
+                            <div class="green-line"></div>
+                            <p class="uses" data-translate="techUsed">Uses Inventor, CAD, Drafting</p>
+                            <div class="modal-project" data-skills="Inventor, CAD, Drafting">
+                                <p><strong data-translate="inventorSkills">Inventor, CAD, Drafting</strong></p><br>
+                                <p><strong data-translate="techDocComingSoon">Technical documentation coming soon</strong></p><br>
+                                <div class="half-column">
+                                    <p data-translate="containerHomeModalContent">This tiny home project planning is ongoing, with full technical documentation coming soon. It will provide detailed information on every aspect of the design, including CAD designs and engineering drawings. Each section of the document is organized to guide the construction process, from initial site preparation to final touches. Additionally, the document outlines materials needed, such as insulation, flooring, and plumbing fixtures, complete with sources and costs. This detailed documentation ensures that the project is executed efficiently and meets all safety and quality standards.</p><br>
+                                    <img src="images/container_iso.png" alt="Iso view container home" width="100%">
+                                </div>
+                                <div class="half-column" style="padding-left: 1%;">
+                                    <img src="images/container_floor.png" alt="Container home floor plans" width="100%">
+                                    <br><br>
+                                    <img src="images/container_alldim.png" alt="Container home egr drawing" width="100%">
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="project" data-skills="Research, MatScan, Tekscan">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/The%20Study%20of%20Injury%20Biomechanics%20in%20the%20Wrist_Hand%20and%20Ankle_Foot%20for%20Tumbling%20Using%20the%20MatScan.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->
+                            <h2><span data-translate="matscan">The Study of Injury Biomechanics in the Wrist/Hand and Ankle/Foot for Tumbling Using the MatScan</span></h2>
+                            <div class="green-line"></div>
+                            <p class="uses" data-translate="techUsed">Uses Research, MatScan, Tekscan</p>
+                            <div class="modal-project" data-skills="Research, MatScan, Tekscan">
+                                <p><strong data-translate="researchMatScan">Research: uses MatScan, Tekscan</strong></p><br>
+                                <div class="half-column">
+                                    <p data-translate="biomechanicsmodalcontent">The study "The Study of Injury Biomechanics in the Wrist/Hand and Ankle/Foot for Tumbling Using the MatScan" involved utilizing a range of technical skills integral to biomechanical research and data analysis. These skills included setting up and calibrating the MatScan system for accurate pressure measurements during tumbling exercises, and using specialized software (Tekscan Research 6.70) to capture and analyze detailed pressure data, identifying high-risk injury areas. The study also involved conducting thorough biomechanical assessments to correlate pressure trends with potential injuries. Managing and analyzing video recordings, combined with systematic data interpretation, demonstrated competence in applying advanced research tools and methodologies to enhance injury prevention and performance in sports.</p>
+                                </div>
+                                <div class="half-column" style="padding-left: 1%;">
+                                    <img src="images/landing.png" alt="MatScan Landing1" width="100%">
+                                    <br><br>
+                                    <img src="images/landing2.png" alt="MatScan Landing2" width="100%">
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="project" data-skills="Research, Material Testing System (MTS)">
+                    <a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Comparing%20the%20Mechanical%20Properties%20of%20Cancellous%20Bone%20between%20Pig%20Femur%20Bone%2C%20Deer%20Femur%20Bone%2C%20and%20Human%20Humerus%20Bone.pdf" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->
+                            <h2><span data-translate="boneComparison">Comparing the Mechanical Properties of Cancellous Bone between Pig Femur Bone, Deer Femur Bone, and Human Humerus Bone</span></h2>
+                            <div class="green-line"></div>
+                            <p class="uses" data-translate="techUsed">Uses Research, Material Testing System (MTS)</p>
+                            <div class="modal-project" data-skills="Research, Material Testing System (MTS)">
+                                <p><strong data-translate="researchMTS">Research: uses Material Testing System (MTS)</strong></p><br>
+                                <div class="half-column">
+                                    <p data-translate="bonemodalcontent">In the research paper "Comparing the Mechanical Properties of Cancellous Bone between Pig Femur Bone, Deer Femur Bone, and Human Humerus Bone," a variety of technical skills were utilized. The study involved advanced biomaterials research and mechanical testing techniques, particularly focusing on the axial stress, strain, and Young’s modulus of bone samples. The Material Testing System (MTS) was employed to apply controlled compressive forces to the samples, simulating real-world stress conditions and generating detailed data on bone behavior under load. The process required precise sample preparation, including cutting and measuring bone samples, and conducting displacement and force measurements to calculate stress and strain. Data analysis was performed using graphical methods to interpret the stress-strain relationships and determine the elastic modulus for each bone type. This research demonstrated skills in experimental design, advanced material testing, data collection and analysis, computational modeling, and the application of mechanical principles to biomaterials.</p>
+                                </div>
+                                <div class="half-column" style="padding-left: 1%;">
+                                    <img src="images/mts.png" alt="bones mts" width="100%">
+                                    <img src="images/bones.png" alt="bones graph" width="100%">
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <img src="images/under_construction.png" alt="under construction" width="10%"><br><br>
+        <p id="contactPrompt"><span data-translate="contactPrompt">If you need more samples or samples related to a specific field or project, please </span> <a href="contact.html" id="contact-link" data-translate="contactLinkportfolio">contact me</a> </p>
+</main>
+
+ <!-- Footer Section -->
+ <footer class="bg-dark text-white py-3 text-center">
+    <div class="container">
+        <p data-translate="footer">Copyright © 2024 Mika Harmon. All rights reserved.</p>
+    </div>
+</footer>
+
+<button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top">^</button>
+
+<script src="translate.js"></script>
+<script src="script.js"></script>
+<!-- Include Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

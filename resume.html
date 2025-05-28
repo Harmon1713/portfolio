@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mika's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo_green2-rbg.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="bg-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div id="left-header" class="d-flex align-items-center">
+                <div id="logo">
+                    <img src="images/logo_green2-rbg.png" alt="Logo">
+                </div>
+                <div id="name" class="ml-3">
+                    <h1 data-translate="portfolioTitle">Mika Harmon's Portfolio</h1> 
+                </div>
+            </div>
+            <!-- Language Toggle Button for Mobile -->
+            <div class="language-hamburger">
+                <i class="fas fa-globe"></i>
+            </div>
+            <!-- Language Toggle for Desktop -->
+            <div id="language-toggle" class="d-flex flex-column align-items-end">
+                <button data-translate="english" data-lang="en" onclick="changeLanguage('en')" id="en-btn" class="btn btn-light mb-2">English</button>
+                <button data-translate="spanish" data-lang="es" onclick="changeLanguage('es')" id="es-btn" class="btn btn-light mb-2">Spanish</button>
+                <button data-translate="portuguese" data-lang="pt" onclick="changeLanguage('pt')" id="pt-btn" class="btn btn-light">Portuguese</button>
+            </div>
+        </div>
+        <!-- Navigation Bar -->
+        <nav class="bg-dark">
+            <div class="container">
+                <!-- Hamburger Menu for Mobile -->
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item"><a href="index.html" class="nav-link text-white" data-translate="welcomeLink">Welcome</a></li>
+                    <li class="nav-item"><a href="portfolio.html" class="nav-link text-white" data-translate="portfolioLink">Portfolio</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link text-white" data-translate="contactLink">Contact Me</a></li>
+                    <li class="nav-item"><a href="resume.html" class="nav-link text-white" data-translate="resumeLink">Resume</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Main Section -->
+    <main>
+        <div id="resume-content">
+            <p data-translate="references">References are available upon request. Unofficial transcripts, as well as certificates, are hyperlinked. If you want my resume, it is available in PDF format.</p>
+            <center><a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Harmon_Curriculum_Vitae_CV.pdf" target="_blank" download>
+                <img src="images/PDF_file_icon.svg.png" alt="View PDF Resume" style="width: 50px; height: 60px;">
+            </a></center>
+            <br>
+
+            <h4 data-translate="languagesTitle">LANGUAGES</h4>
+            <div class="green-line"></div><br>
+            <ol><li span data-translate="languages_spoken">English (native) | Spanish (fluent) | Portuguese (fluent) | Mandarin (beginner)</li></ol></span>
+            <br>
+            <h4 data-translate="SkillsTitle">SKILLS</h4>
+            <div class="green-line"></div><br>
+            <ul>
+                <li>
+                    <span class="bold-text" data-translate="languagesLabel">Languages:</span>
+                    <span data-translate="languagesText"> Python, R, SQL/NoSQL, JavaScript, HTML/Markdown, CSS, C++, MATLAB, HPCC/DAS, LaTex</span>
+                </li>
+                <li>
+                    <span class="bold-text" data-translate="frameworksLabel">Frameworks:</span>
+                    <span data-translate="frameworksText"> jQuery, Bootstrap, Flask, React, FastAPI, Helm</span>
+                </li>
+                <li>
+                    <span class="bold-text" data-translate="toolsLabel">Analysis/Visualization Tools:</span>
+                    <span data-translate="toolsText"> JupyterLab, Posit Cloud, Tableau, Excel, HPCC Systems, SPSS, MiniTab</span>
+                </li>
+                <li>
+                    <span class="bold-text" data-translate="databasesLabel">Databases:</span>
+                    <span data-translate="databasesText"> MySQL, MariaDB, MongoDB, Redis, DynamoDB, GitHub/Git LFS, SQLite3</span>
+                </li>
+                <li>
+                    <span class="bold-text" data-translate="softwareLabel">Software:</span>
+                    <span data-translate="softwareText"> Chocolatey, PuTTY, MiKTeX, Terraform</span>
+                </li>
+                <li>
+                    <span class="bold-text" data-translate="engineeringLabel">Engineering:</span>
+                    <span data-translate="engineeringText"> LabVIEW, AutoDesk Inventor, Soldering, Machine Shop tools proficiency, Test and Measurement Equipmen</span>
+                </li>
+                <li>
+                    <span class="bold-text" data-translate="managerialSkillsLabel">Managerial Skills:</span>
+                    <span data-translate="managerialSkillsText"> Team Training, Project Management, Technical writing, Troubleshooting</span>
+                </li>
+            </ul>
+            
+            <br>
+            <h4 data-translate="workExperienceTitle">WORK EXPERIENCE</h4>
+            <div class="green-line"></div><br>
+            <ol>
+                <li>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="font-weight: bold;" data-translate="westcliffUniversity">Westcliff University</span>
+                        <span style="font-weight: bold;" data-translate="westcliffDates">2/2023 - present</span>
+                    </div>
+                    <span data-translate="westcliffPosition">ADJUNCT PROFESSOR (COLLEGE OF TECHNOLOGY & ENGINEERING)</span>
+                    <ul>
+                        <li data-translate="westcliffTask1">Graduate courses: Cloud Data Visualization, and Data in Artificial Intelligence & Machine Learning, Database Design & Management</li>
+                        <li data-translate="westcliffTask2">Undergraduate course in the College of Business: Foundations of Statistics (formerly: Introduction to Data Analytics)</li>
+                    </ul>
+                </li>
+                <br>
+                <li>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="font-weight: bold;" data-translate="middleGAStateUniversity">Middle GA State University</span>
+                        <span style="font-weight: bold;" data-translate="middleGADates">5/2023 – 5/2024</span>
+                    </div>
+                    <span data-translate="middleGAPosition">LECTURER & ADJUNCT PROFESSOR (SCHOOL OF COMPUTING)</span>
+                    <ul>
+                        <li data-translate="middleGATask1">Undergraduate courses: Introduction to Computer Programming, Application Development, Web Development, Human-Computer Interaction, and FinTech.</li>
+                        <li data-translate="middleGATask2">Developed the Intro to Computer Programming course, transitioning the curriculum from C# to Python to align with industry standards and student needs.</li>
+                        <li data-translate="middleGATask3">Actively contributed to the Student Engagement Committee, fostering student involvement and enhancing campus life, including organizing and facilitating the annual Academic Cybersecurity Seminar.</li>
+                        <li data-translate="middleGATask4">Collaborated with the International Center for Automotive Research at Clemson University to assist with the Human-Computer Interaction aspect of prototyping the autonomous vehicle projects.</li>
+                    </ul>
+                </li>
+                <br>
+                <li>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="font-weight: bold;" data-translate="claytonCountySchoolDistrict">Clayton County School District</span>
+                        <span style="font-weight: bold;" data-translate="claytonCountyDates">10/2022 - 8/2023</span>
+                    </div>
+                    <span data-translate="claytonCountyPosition">SOFTWARE DEVELOPMENT TEACHER</span>
+                    <ul>
+                        <li data-translate="claytonCountyTask1">Created state curriculum documents and faculty training materials for the GADOE 9-12 IST (Intro to Software Technology) course, covering Cloud Computing, Computer Science, Game Design, Internet of Things, Programming, Web and Digital Design, and Web Development pathways.</li>
+                    </ul>
+                </li>
+                <br>
+                <li>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="font-weight: bold;" data-translate="iFood">iFood</span>
+                        <span style="font-weight: bold;" data-translate="iFoodDates">8/2019 - 2/2022</span>
+                    </div>
+                    <span data-translate="iFoodPosition">DATA VISUALIZATION CONSULTANT (BRASILIA, BRAZIL)</span>
+                    <ul>
+                        <li data-translate="iFoodTask1">Collaborated with the cybersecurity team to document the implementation of a temporary Purple Team.</li>
+                        <li data-translate="iFoodTask2">Presented detailed technical reports and developed documentation solutions for international partners, facilitating clear communication of complex data insights.</li>
+                        <li data-translate="iFoodTask3">Created and maintained documentation for data visualization tools and processes.</li>
+                    </ul>
+                </li>
+                <br>
+                <li>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="font-weight: bold;" data-translate="nuBank">NuBank</span>
+                        <span style="font-weight: bold;" data-translate="nuBankDates">8/2019 - 2/2022</span>
+                    </div>
+                    <span data-translate="nuBankPosition">DATA VISUALIZATION CONSULTANT (BRASILIA, BRAZIL)</span>
+                    <ul>
+                        <li data-translate="nuBankTask1">Worked closely with market risk analysts to document data analysis processes and create detailed risk dashboards, ensuring accuracy and clarity in the presentation of risk data.</li>
+                        <li data-translate="nuBankTask2">Developed standardized documentation and training guides to support the use of data visualization tools and techniques within the team.</li>
+                    </ul>
+                </li>
+                <br>
+                <li>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="font-weight: bold;" data-translate="navicentHealth">Navicent Health Medical Center</span>
+                        <span style="font-weight: bold;" data-translate="navicentHealthDates">10/2016 - 11/2018</span>
+                    </div>
+                        <span data-translate="navicentHealthPosition1">ROBOTIC SURGERY RESEARCH ANALYST</span>
+                            <ul>
+                                <li data-translate="navicentHealthTask1">Conducted in vivo testing of various fluorescent liquids on lab rats to evaluate their efficacy and visibility during transvaginal mesh reconstructive surgery.</li>
+                                <li data-translate="navicentHealthTask2">Utilized optical fluorescence imaging systems to monitor the distribution and intensity of fluorescent agents.</li>
+                                <li data-translate="navicentHealthTask3">Operated the Da Vinci Surgical System, completing several units of surgical training, including proficiency in robotic suturing, dissection, and tissue manipulation.</li>
+                                <li data-translate="navicentHealthTask4">Performed calibration and maintenance of the robotic system to ensure accuracy and reliability during surgical simulations.</li>
+                                <li data-translate="navicentHealthTask5">Provided prescriptive analytics and developed detailed reports with data collected from reconstructive surgery projects, documenting methodologies and findings until project completion.</li>
+                            </ul>
+                        <span data-translate="navicentHealthPosition2">BIOMEDICAL EQUIPMENT TECHNICIAN II</span>
+                            <ul>
+                                <li data-translate="navicentHealthTask6">Performed complex troubleshooting and debugging of critical hospital equipment in the Intensive Care Unit (ICU), Pediatric Intensive Care Unit (PICU), and Neonatal Intensive Care Unit (NNICU).</li>
+                                <li data-translate="navicentHealthTask7">Utilized biomedical diagnostic tools such as multimeters, oscilloscopes, and patient simulators to test, repair, and calibrate life-support systems, ventilators, infusion pumps, and patient monitoring devices.</li>
+                                <li data-translate="navicentHealthTask8">Maintained detailed service logs and created technical documentation for equipment performance, preventive maintenance, and repair history, ensuring compliance with safety and regulatory standards.</li>
+                                <li data-translate="navicentHealthTask9">Mentored and trained two interns in biomedical engineering best practices, creating and delivering training materials on equipment diagnostics, repair techniques, and regulatory compliance; facilitated their successful transition into permanent roles.</li>
+                            </ul>
+                </li>
+                <br>
+                <li>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="font-weight: bold;" data-translate="militaryService">US Army</span>
+                        <span style="font-weight: bold;" data-translate="militaryServiceDates">08/2012 - 12/2016</span>
+                    </div>
+                    <ol>
+                        <li><span data-translate="USArmyTask1">AROTC Active Duty Scholarship – Engineering Corp placement</span></li>
+                        <li><span data-translate="USArmyTask2">SMP Cadet</span></li>
+                        <li><span data-translate="USArmyTask3">Light-wheeled vehicle mechanic (91B) in GA National Guard enlisted</span></li>
+                    </ol>
+                </li> 
+                <br>
+            </ol>
+            <h4 data-translate="internshipsTitle">INTERNSHIPS</h4>
+            <div class="green-line"></div><br>
+            <ol>
+                <span style="font-weight: bold;" data-translate="internship2.1">Vein Specialists of the South | Summer 2014 | </span> <span data-translate="internship2.2">BIOFLUIDS / BIOMECHANICS RESEARCH ANALYST INTERN</span>
+                    <ul>
+                        <li data-translate="veinInterntask1">Collaborated with phlebologists to interpret venous reflux patterns in ultrasound imaging for patients undergoing venous insufficiency treatment.</li>
+                        <li data-translate="veinInterntask2">Employed Doppler ultrasound technology to assess pre- and post-therapeutic hemodynamics, focusing on the efficacy of sclerotherapy and endovenous laser ablation (EVLA).</li>
+                        <li data-translate="veinInterntask3">Analyzed and compiled hemodynamic data, generating formal reports that included quantitative analysis of venous reflux improvement, presented at a regional medical conference. 
+                        </li>
+                    </ul>
+                    <br>
+                <span style="font-weight: bold;" data-translate="internship3.1">Mercer University | Spring 2014 | </span> <span data-translate="internship3.2">NANOPARTICLES RESEARCH ANALYST INTERN</span>
+                    <ul>
+                        <li data-translate="nanoInterntask1">Conducted research on bronchial nanoparticle concentrations using direct-reading instruments such as the Scanning Mobility Particle Sizer (SMPS) and Condensation Particle Counter (CPC).</li>
+                        <li data-translate="nanoInterntask2">Performed aerosol mapping and task monitoring in a controlled environment to evaluate exposure levels and potential respiratory hazards.</li>
+                        <li data-translate="nanoInterntask3">Analyzed the size distribution and concentration of airborne nanoparticles during various tasks, contributing to the development of safety protocols for nanoparticle handling in laboratory settings.</li>
+                    </ul>
+            </ol>
+            <br>
+            <h4 data-translate="projectsTitle">PROJECTS</h4>
+            <div class="green-line"></div><br>
+            <ol>
+                <span style="font-weight: bold;" data-translate="project2">Comparing the Mechanical Properties of Cancellous Bone between Pig Femur Bone, Deer Femur Bone, and Human Humerus Bone | 2016</span>
+                <ul>
+                    <li data-translate="bonesprojecttask1">Employed a Material Testing System (MTS) machine to perform compression tests on bone samples, measuring axial stress, strain, and Young’s modulus. </li>
+                    <li data-translate="bonesprojecttask2">Used digital calipers for precise sample measurements and a water displacement method for volume calculations. </li>
+                    <li data-translate="bonesprojecttask3">Analyzed the stress-strain curves to determine the mechanical properties and compared the results across species, considering factors like bone density and structural integrity.</li>
+                </ul>
+                <br>
+                <span style="font-weight: bold;" data-translate="project1">Development of a Mobile Ankle Joint Attachment for the Universal Prosthesis | 2016</span>
+                <ul>
+                    <li data-translate="ankleprojecttask1">Utilized 3D modeling software, including SolidWorks and Mastercam, to design an ankle joint attachment aimed at preventing muscular dystrophy in lower limb amputees.</li>
+                    <li data-translate="ankleprojecttask2">Conducted finite element analysis (FEA) to simulate stress distribution and optimize the design for durability and mobility. </li>
+                    <li data-translate="ankleprojecttask3">Fabricated fully-working prototypes using CNC machining and 3D printing techniques to improve upon prosthetics previously used in Mercer on Mission trips to Vietnam, specifically by incorporating an ankle joint that was missing in earlier designs.</li>
+                    <li data-translate="ankleprojecttask4">Conducted gait analysis using Tekscan software, integrating multiple sensors into the prosthetic to visualize real-time motion on the wearer, ensuring the functional efficacy of the ankle joint attachment design.</li>
+                    <li data-translate="ankleprojecttask5">Performed mechanical testing, including load-bearing and range-of-motion tests, to validate the attachment’s performance under various conditions.</li>
+                    <li data-translate="ankleprojecttask6">Integrated electronic sensors for real-time monitoring of joint angles and load distribution.</li>
+                    <li data-translate="ankleprojecttask7">Designed and implemented a microcontroller-based control system to enhance the prosthetic’s adaptive capabilities.</li>
+                </ul>
+                <br>
+                <span style="font-weight: bold;" data-translate="project3">The Study of Injury Biomechanics in the Wrist/Hand and Ankle/Foot for Tumbling Using the MatScan | 2015</span>
+                <ul>
+                    <li data-translate="tumbleprojecttask1">Utilized the Tekscan MatScan system to capture and analyze pressure distributions on the hands and feet during tumbling exercises. </li>
+                    <li data-translate="tumbleprojecttask2">Conducted a series of trials with participants, recording pressure changes over time. </li>
+                    <li data-translate="tumbleprojecttask3">Analyzed the data to identify potential injury risks, such as high-impact zones and abnormal pressure patterns, and correlated these findings with common gymnastic injuries. </li>
+                    <li data-translate="tumbleprojecttask4">Developed recommendations for injury prevention based on the biomechanical data.</li>
+                </ul>
+            </ol>
+            <br>
+            <h4 data-translate="educationTitle">EDUCATION</h4>
+            <div class="green-line"></div><br>
+            <ol>
+                <li><a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Harmon_MGA_transcripts_unofficial.pdf" target="_blank" download>
+                    <span data-translate="education1">MSIT Health Informatics | Middle Georgia State University | 2018 | 4.0</span>
+                    <img src="images/doc-icon.jpg" alt="View doc" style="width: 15px; height: 20px;"></a></li>
+                <li><a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Harmon_Mercer_transcripts_unofficial.pdf" target="_blank" download>
+                    <span data-translate="education2">BSE Biomedical Engineering | Mercer University | 2016 | 3.4</span>
+                    <img src="images/doc-icon.jpg" alt="View doc" style="width: 15px; height: 20px;"></a></li>
+                <li><a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Harmon_Mercer_transcripts_unofficial.pdf" target="_blank" download>
+                    <span data-translate="education3">BA Spanish | Mercer University | 2016 | 3.4</span>
+                    <img src="images/doc-icon.jpg" alt="View doc" style="width: 15px; height: 20px;"></a></li>
+            </ol>
+            <br>
+            <h4 data-translate="coursesCertificationsTitle">COURSES AND CERTIFICATIONS</h4>
+            <div class="green-line"></div><br>
+            <ol>
+                <li><a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Harmon_Cert_DataScientist.pdf" target="_blank" download>        
+                    <span data-translate="certification1">Professional Certification in Data Science | Entity Academy & Woz U | 2023</span>
+                    <img src="images/doc-icon.jpg" alt="View doc" style="width: 15px; height: 20px;"></a></li>
+                <li><a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Harmon_GACE_Score_report.pdf" target="_blank" download>
+                    <span data-translate="certification2">Engineering Technology Education I & II | GACE | 2022 | Passed-professional</span>
+                    <img src="images/doc-icon.jpg" alt="View doc" style="width: 15px; height: 20px;"></a></li>
+                <li><a href="https://github.com/Harmon1713/portfolio/blob/main/documents/Harmon_LDAC.pdf" target="_blank" download>
+                    <span data-translate="certification3">Leadership Development and Assessment Course | United States Army | 2016 | Top 15%</span>
+                    <img src="images/doc-icon.jpg" alt="View doc" style="width: 15px; height: 20px;"></a></li>
+            </ol>
+            <br>
+            <h4 data-translate="awardsHonorSocietiesTitle">AWARDS AND HONOR SOCIETIES</h4>
+            <div class="green-line"></div><br>
+            <ol>
+                <li data-translate="award1">Distinguished Military Graduate</li>
+                <li data-translate="award2">Georgia International Leadership Conference Participant</li>
+                <li data-translate="award3">Tau Beta Pi (Engineering Honor Society)</li>
+                <li data-translate="award4">Phi Sigma Iota (Foreign Language Honor Society)</li>
+                <li data-translate="award5">Alpha Phi Omega (National Service Fraternity)</li>
+                <li data-translate="award6">HS AP Scholar Award</li>
+                <li data-translate="award7">HS Laws of Life Essay Winner</li>
+                <li data-translate="award8">HS Valedictorian (Highest GPA)</li>
+                <li data-translate="award9">HS STAR Student (Highest SATs)</li>
+                <li data-translate="award10">HS National Honor Society</li>
+                <li data-translate="award11">HS Odessey of the Mind World Finals Participant</li>
+                <li data-translate="award12">HS Odessey of the Mind Regional & State Finals Winner</li>
+            </ol>
+            <br>
+            <h4 data-translate="volunteeringTitle">OTHER OPPORTUNITIES</h4>
+            <div class="green-line"></div><br>
+            <ol>
+                <span style="font-weight: bold;" data-translate="volunteering1">Fulbright Scholar Program in collaboration with the University of Georgia (Summer 2023)</span>
+                <ul>
+                    <li data-translate="fulbrighttask1">Conducted workshops across multiple secondary schools and universities in various cities in Tanzania, training educators and students in robotics and programming.</li>
+                    <li data-translate="fulbrighttask2">Taught secondary school educators how to build and operate RoboRobo robots using Rogic software, ensuring they could effectively teach their students these skills.</li>
+                    <li data-translate="fulbrighttask3">Guided university students in working with VEX V5 Robotics and V5 Workcell, focusing on building and programming robots with industrial applications, including color, light, and motion sensors.</li>
+                    <li data-translate="fulbrighttask4">Provided hands-on training in VEXcode, teaching students to code their V5 Workcell robots using Python and C++.</li>
+                    <li data-translate="fulbrighttask5">Facilitated a final presentation where university students showcased their robots, demonstrating their programming and engineering skills.</li>
+                    <li data-translate="fulbrighttask6">Awarded VEX Robotics certificates to university students upon successful completion of the program, recognizing their achievements in robotics and programming.</li>
+                </ul>
+                <br>
+                <span style="font-weight: bold;" data-translate="volunteering2">Head Softball Coach (Spring 2022)</span>
+                <br>
+                <span style="font-weight: bold;" data-translate="volunteering3">Missionary (Summer & Fall 2019)</span>
+                <br>
+                <span style="font-weight: bold;" data-translate="volunteering4">Solar Eclipse High-Altitude Balloon Research through NASA in collaboration with Mercer Robotics Club (Spring, Summer, & Fall 2017)</span>
+                <br>
+                <span style="font-weight: bold;" data-translate="volunteering5">Honduras Outreach, Inc in collaboration with Mercer University (Summer 2015)</span>
+            </ol>
+            <br>
+            <h4 data-translate="guestSpeakingTitle">GUEST SPEAKING OPPORTUNITIES</h4>
+            <div class="green-line"></div><br>
+            <ol>
+                <li data-translate="speaking1">Rotary Club of Griffin, GA (3/2023, 2/2018, 8/2013, 4/2012)</li>
+                <li data-translate="speaking2">Kiwanis Club of Griffin, GA (4/2018) </li>
+                <li data-translate="speaking3">GA Board of Education Annual Teacher Luncheon and Workshop (4/2014)</li>
+                <li data-translate="speaking4">National Bank Outstanding Student Banquet (3/2013)</li>
+            </ol>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white py-3 text-center">
+        <div class="container">
+            <p data-translate="footer">Copyright © 2024 Mika Harmon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top">^</button>
+
+    <script src="translate.js"></script>
+    <script src="script.js"></script>
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

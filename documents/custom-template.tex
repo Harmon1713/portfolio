@@ -1,0 +1,57 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\setkeys{Gin}{keepaspectratio} % Ensure images keep aspect ratio
+\usepackage[margin=0.9in]{geometry}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Define the bgcolor
+\definecolor{bgcolor}{rgb}{0.95, 0.95, 0.95}
+
+% Configure listings package
+\lstset{
+  basicstyle=\ttfamily,
+  backgroundcolor=\color{bgcolor},
+  frame=single,
+  rulecolor=\color{gray!50},
+  breaklines=true,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  stepnumber=1,
+  numbersep=5pt
+}
+
+% Define the passthrough command
+\newcommand{\passthrough}[1]{#1}
+
+% Manually input metadata below.
+\title{Automation Workflow Set-Up Guide: ITEC 2380 Lab File Validation for HTML}
+\author{Jackie Harmon}
+\date{2024-09-10}
+
+\begin{document}
+\maketitle
+\newpage % Page break after title page
+
+\tableofcontents
+\newpage % Page break after table of contents
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Custom command to ensure images are left-aligned and inline
+\let\Oldincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{%
+  \noindent\begin{flushleft} % Use flushleft to left-align images
+    \Oldincludegraphics[#1]{#2}%
+  \end{flushleft}
+}
+
+$body$
+
+\end{document}
