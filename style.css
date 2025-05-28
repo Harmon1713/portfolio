@@ -1,33 +1,26 @@
-/* Reset and base */
+/* Reset default browser styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
 html {
     overflow-y: scroll;
 }
 
-body {
-    width: 100%;
-    background-color: white;
-}
-
-/* Header */
+/* Header styles */
 header {
     position: fixed;
     top: 0;
     width: 100%;
     background-color: white;
-    z-index: 1000;
+    z-index: 1000; /* Ensure it stays on top */
 }
 
-/* Logo */
+/* Adjust logo and name positioning */
 #left-header {
     display: flex;
-    align-items: center;
     flex-grow: 1;
 }
 
@@ -39,16 +32,16 @@ header {
 
 #logo img {
     width: 100%;
-    height: auto;
+    height: auto; /* Maintain aspect ratio */
 }
 
 #name {
-    margin-left: 20px;
-    font-size: clamp(16px, 2.5vw, 36px);
+    margin-left: 20px; /* Space between logo and name */
+    font-size: clamp(16px, 2.5vw, 36px); /* Responsive font size */
     white-space: nowrap;
 }
 
-/* Language Toggle */
+/* Language toggle button styles */
 #language-toggle {
     display: flex;
     flex-direction: column;
@@ -62,14 +55,15 @@ header {
     background-color: lightgreen;
     border: none;
     cursor: pointer;
-    width: 100%;
-    line-height: 1;
-    border-radius: 0;
     transition: background-color 0.3s ease;
+    width: 100%;
+    font-size: clamp(10px, 1.2vw, 16px); /* Ensure responsive font size */
+    line-height: 1; /* Ensure no extra space between lines */
+    border-radius: 0; /* Ensure no rounding causing visual gaps */
 }
 
 #language-toggle button + button {
-    margin-top: -0.8vh;
+    margin-top: -0.8vh; /* Remove the gap between buttons */
 }
 
 #language-toggle button:hover {
@@ -80,39 +74,66 @@ header {
     background-color: darkgreen;
 }
 
-/* Nav */
+.language-dropdown {
+    display: none;
+    position: absolute; /* Adjust position as needed */
+    right: 10px; /* Position it correctly according to design */
+    top: 50px; /* Adjust this top position relative to the language button */
+    background-color: lightgreen;
+    z-index: 2000;
+}
+
+.language-dropdown.show {
+    display: block; /* Ensure visibility when toggled */
+}
+
+/* Green line separator */
+.green-line {
+    width: 100%;
+    height: 4px;
+    background-color: #4CAF50;
+    top: auto;
+    left: 0;
+    z-index: 2000; /* Ensure it stays on top */
+}
+
+/* Navigation styles */
 nav {
     background-color: #333;
     z-index: 998;
+    height: auto; /* Set the nav height to adjust with content */
     display: flex;
-    align-items: center;
+    align-items: stretch;
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     display: flex;
-    width: 100%;
-    padding: 0;
-    margin: 0;
+    width: 100%; /* Ensure ul stretches to full width */
+    padding: 0; /* Remove padding to prevent default indentation */
+    margin: 0; /* Remove margin for a clean layout */
     text-align: center;
 }
 
 nav ul li {
     flex-grow: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: stretch; /* Stretch items to fill the li */
+    justify-content: center; /* Center text horizontally */
+    padding: 5px 0;
+
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: clamp(14px, 1.8vw, 18px);
+    display: flex; /* Use flexbox to ensure full height */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    width: 100%; /* Make the link fill the li element */
+    height: 100%; /* Make the link fill the li element */
+    font-size: clamp(14px, 1.8vw, 18px); /* Responsive font size */
+    box-sizing: border-box; /* Include padding and borders in the element's total width and height */
     padding: 10px 0;
 }
 
@@ -128,42 +149,47 @@ nav ul li.active > a {
     color: #333 !important;
 }
 
-/* Hamburger and Language hamburger */
-.hamburger, .language-hamburger {
-    display: none;
+/* Nav Hamburger menu */
+.hamburger {
+    align-items: center; /* Center text vertically */
+    display: none; /* Initially hidden */
     cursor: pointer;
-    position: absolute;
     font-size: 26px;
     color: white;
+    position: absolute;
+    left: 10px;
     z-index: 1001;
 }
 
-.hamburger {
-    left: 10px;
-}
-
+/* Language Hamburger Menu for Mobile */
 .language-hamburger {
-    right: 10px;
+    display: none; /* Initially hidden */
+    cursor: pointer;
+    font-size: 30px;
     color: black;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1001;
 }
 
-/* Main */
+/* Main content styles */
 main {
     width: 100%;
-    padding-top: 18vh;
-    padding-bottom: 5vh;
+    padding-top: 18vh; /* Adjust padding to account for header and nav */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding-bottom: 5vh; /* Adjust padding to account for footer */
 }
 
-/* Footer */
+/* Footer styles */
 footer {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center;  /* Center the content horizontally */
+    align-items: center;  /* Center the content vertically */
     text-align: center;
     background-color: #333;
     color: #fff;
@@ -174,7 +200,7 @@ footer {
     max-height: 5vh;
 }
 
-/* Scroll-to-top button */
+/* Scroll button styles */
 #scroll-top-btn {
     position: fixed;
     bottom: 20px;
@@ -185,43 +211,11 @@ footer {
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
-    display: none;
-    z-index: 1000;
+    display: none; /* Hide initially */
+    z-index: 1000; /* Ensure button is above other content */
 }
 
-/* Travel Map Section */
-.iframe-container {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    min-height: 500px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.iframe-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-#map-replacement {
-    display: none;
-    text-align: center;
-    margin: 20px auto;
-    color: red;
-}
-
-#responsive-img-github {
-    width: 10%;
-    min-width: 100px;
-    height: auto;
-}
-
-/* Images in the welcome section */
+/* Welcome styles */
 #threeparts {
     margin-top: 5%;
     display: flex;
@@ -230,60 +224,464 @@ footer {
     max-width: 1200px;
 }
 
+#notmiddlepic {
+    width: 32%;
+    max-height: 25vh;
+}
+
 #threeparts img {
     width: 100%;
     height: 100%;
     border: 4px solid #333;
 }
 
-/* Intro text */
+#middlepic {
+    margin: 0 2%;
+    width: 32%;
+    max-height: 25vh;
+}
+
 #intro {
     text-align: center;
-    width: 80%;
-    margin: 0 auto;
+    width: 80%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the container horizontally */
     padding: 50px 0;
 }
 
-/* GitHub */
-#responsive-img-github {
-    width: 10%;
-    min-width: 100px;
-    height: auto;
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-/* Media Queries */
+.skill {
+    margin: 20px;
+    cursor: pointer;
+    border: 2px solid #4CAF50; /* Green border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px; /* Added padding */
+}
+
+.skill:hover {
+    background-color: #ddd;
+}
+
+.skill img {
+    width: 100px;
+    height: 100px;
+}
+
+.skill p {
+    margin-top: 10px;
+}
+
+#travel-map {
+    text-align: center;
+}
+
+.iframe-container {
+    position: relative;
+    width: 100%;
+    height: 65vh; /* Fixed height for larger screens */
+    overflow: hidden;
+    margin: 0 auto; /* Center the container horizontally */
+    display: block;
+}
+
+#map-replacement {
+    display: none; /* Ensure it is displayed when needed */
+    text-align: center; /* Center the content */
+    margin: 20px auto; /* Add margin for spacing */
+    color: red;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+#responsive-img-github {
+    width: 10%;         /* Sets the image width to 10% of the parent container */
+    min-width: 100px;   /* Ensures the image won't be smaller than 100px */
+    height: auto;       /* Keeps the aspect ratio of the image */
+}
+
+/* Styles for the modal */
+/* Class to lock the main screen when modal is open */
+.modal-open {
+    overflow: hidden;
+    height: 100%;  /* Optional: Ensures the body doesn't extend beyond the viewport height */
+    position: fixed;  /* Prevent scrolling */
+    width: 100%;  /* Prevent horizontal scrolling */
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* Adjust margin to move the modal higher */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 750px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 70vh; /* Ensure the modal content doesn't exceed the viewport height */
+    overflow-y: auto; /* Enable vertical scrolling for the modal content */
+    position: relative;
+    top: 28%; /* Adjust top to move the modal higher */
+    transform: translateY(-20%); /* Adjust translateY to move the modal higher */
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute; /* Use absolute positioning within a relatively positioned container */
+    top: 10px; /* Position it from the top of the modal */
+    right: 15px; /* Position it from the right of the modal */
+    margin: 0; /* Remove margin for precise positioning */
+    cursor: pointer;
+    z-index: 10; /* Ensure it remains above other elements */
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.half-column {
+    width: 50%;
+    float: left;
+}
+
+.modal-project-link {
+    text-decoration: none !important;
+    color: inherit !important;
+    display: block;
+    margin-bottom: 10px; /* Add margin between projects */
+}
+
+.modal-project-style {
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover */
+    padding: 1%; /* Ensure padding around the content */
+}
+
+.modal-project-style:hover {
+    background-color: #ddd; /* Apply background color when hovering over the project */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer; /* Change the cursor to a pointer to indicate interactivity */
+}
+
+.modal-project-style-link:hover .modal-project-style {
+    background-color: #ddd; /* Light grey background on hover */
+    color: #333; /* Darker text color on hover */
+}
+
+.img-white {
+    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.15); /* Horizontal offset, vertical offset, blur radius, color */
+    padding-bottom: 2px;
+}
+
+/* Portfolio section styles */
+
+/* Search bar styles */
+.search-bar {
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+.search-bar input {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.search-bar button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Autocomplete styles */
+.autocomplete-list {
+    position: absolute;
+    border: 1px solid #ddd;
+    z-index: 99;
+    background-color: #fff;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none; /* Hidden by default */
+    left: 0; /* Adjust positioning */
+}
+
+.autocomplete-item {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.autocomplete-item:hover {
+    background-color: #ddd;
+}
+
+
+/* Project styles */
+.project {
+    display: none;
+    text-align: left;
+    padding: 0 10%;
+    margin-bottom: 50px; /* Add space between projects */
+    clear: both; /* Clear floats to prevent overlap */
+}
+
+.project a {
+    text-decoration: none; /* Remove underline from the hyperlink */
+    color: inherit; /* Inherit text color for consistency */
+    display: block; /* Make the anchor tag block-level to cover the entire project content */
+    height: 100%;
+    width: 100%;
+    position: relative; /* Ensure correct positioning within project */
+}
+
+.project-content {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Add smooth transition */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Apply hover effect only once */
+.project a:hover .project-content {
+    background-color: #ddd; /* Ensure highlight effect when hovering */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer; /* Change the cursor to a pointer to indicate interactivity */
+}
+
+.project h2,
+.project p {
+    color: inherit; /* Inherit color for headings and paragraphs */
+}
+
+/* Clear floats after each project */
+.project:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Error message styles */
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Skill box styles */
+#skillContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+.skill-box {
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.skill-box .close-btn {
+    margin-left: 10px;
+    cursor: pointer;
+    color: red;
+}
+
+/* Contact link styles on Portfolio page */
+#contactPrompt {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#contact-link {
+    color: blue;
+    text-decoration: none;
+}
+
+#contact-link:visited {
+    color: blue;
+}
+
+#contact-link:hover {
+    text-decoration: underline;
+}
+
+#contact-link:active {
+    color: blue;
+}
+
+/* Contact section styles */
+.contact-container {
+    margin: 5% 0;
+}
+
+.left-column {
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center;
+}
+
+.left-column img {
+    padding-top: 3%;
+    max-height: 100%; /* Ensure the image doesn't exceed the height of the column */
+    object-fit: contain; /* Scale the image to fit without stretching */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Distribute rows evenly */
+}
+
+.right-column>div {
+    padding: 2%;
+    flex: 1 0 auto; /* Allow divs to take up necessary space without stretching */
+}
+
+.top-half {
+    margin-bottom: 2%; /* Add consistent spacing between divs */
+}
+
+/* Resume page */
+#resume-content {
+    text-align: left; /* Set text alignment to left for the entire section */
+    width: 70%;
+    max-width: 1000px; /* Optional: constrain max width for readability */
+    margin: 5% auto; /* Center the content block horizontally */
+}
+
+#resume-content ol, ul {
+    list-style-type: none;
+    padding-left: 20px; /* Add left padding for lists */
+    margin-bottom: 20px; /* Add space between lists and other elements */
+}
+
+#resume-content ol ul, #resume-content ol ol {
+    list-style-type: disc;
+}
+
+#resume-content a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#resume-content h3, 
+#resume-content h4, 
+#resume-content p, 
+#resume-content ol, 
+#resume-content ul, 
+#resume-content li {
+    text-align: left; /* Ensure all text inside the resume content is left-aligned */
+}
+
+#resume-content p {
+    margin-bottom: 20px; /* Add space between paragraphs */
+}
+
+#resume-content h3, #resume-content h4 {
+    margin-top: 30px; /* Add space above headings */
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+/* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
     main.container {
         padding-left: 0;
         padding-right: 0;
-        margin: 0;
+        margin-left: 0;
+        margin-right: 0;
         max-width: 100%;
+    }
+
+    section#travel-map {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .iframe-container,
+    #map-replacement {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
     }
 }
 
 @media (max-width: 1050px) {
     .iframe-container {
-        display: none;
-    }
-
-    #map-replacement {
-        display: inline-block;
-    }
-
-    #map-replacement img {
-        width: 100%;
-        height: auto;
-    }
+    display: none; /* Hide the iframe on smaller screens */
 }
+
+#map-replacement {
+    display: inline-block; /* Show the replacement text and image */
+    text-align: center; /* Center the content */
+}
+
+#map-replacement img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#map-replacement p {
+    margin: 0 1%; /* Make the image responsive */
+}
+}
+
 
 @media (max-width: 768px) {
     header #name h1 {
-        font-size: clamp(20px, 5vw, 40px);
+        font-size: clamp(20px, 5vw, 40px) !important;
     }
 
     nav {
         height: 40px;
-        justify-content: flex-start;
+        justify-content: flex-start; /* Align items to the start */
+
     }
 
     nav ul {
@@ -301,7 +699,7 @@ footer {
     }
 
     .hamburger {
-        display: block;
+        display: block; /* Show the hamburger icon */
     }
 
     #language-toggle {
@@ -309,37 +707,235 @@ footer {
     }
 
     .language-hamburger {
-        display: block;
+        display: block; /* Show the globe icon for language toggle */
+    }
+
+    .language-dropdown {
+        display: none;
+        flex-direction: column;
+        background-color: lightgreen;
+        position: absolute;
+        right: 10px;
+        top: 50px; /* Adjust top to be below the header */
+        z-index: 2000;
+        width: 100px; /* Fixed width for dropdown */
+    }
+
+    .language-dropdown.show {
+        display: flex;
+    }
+
+    .language-dropdown button {
+        background-color: lightgreen;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+    }
+
+    .language-dropdown button:hover {
+        background-color: #4CAF50;
+    }
+
+    .language-dropdown button.active {
+        background-color: darkgreen;
+    }
+
+    #threeparts {
+        flex-wrap: nowrap; /* Prevent wrapping */
+        margin-top: 12%;
+    }
+    
+    #notmiddlepic {
+        width: 32%;
+        max-height: 25vh;
+    }
+    
+    #threeparts img {
+        width: 100%;
+        height: 100%;
+        border: 4px solid #333;
+    }
+    
+    #middlepic {
+        margin: 0 2%;
+        width: 32%;
+        max-height: 25vh;
+    }
+
+    main {
+        padding-top: 7vh; /* Adjust padding to account for header and nav */
+    }
+
+    #resume-content {
+        width: 90%;
     }
 }
 
+/* mobile */
 @media (max-width: 500px) {
+
     main {
-        padding-top: 15vh;
+        padding-top: 15vh; /* Adjust padding to account for header and nav */
     }
 
+    .language-dropdown button {
+        color: black; /* Change text color to black */
+    }
+    
     footer {
         max-height: 6vh;
         font-size: 12px;
         position: static;
+        bottom: auto;
     }
 
     #threeparts {
-        flex-wrap: nowrap;
-        justify-content: space-around;
+        display: flex; /* Ensure flex display */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        justify-content: space-around; /* Evenly space the images */
         margin: 5% auto;
     }
 
     #threeparts .col-md-4 {
-        flex: 0 0 30%;
-        max-width: 30%;
-        padding: 0 5px;
+        flex: 0 0 30%; /* Make sure each column takes up 30% of the space */
+        max-width: 30%; /* Ensure columns don't exceed 30% */
+        padding: 0 5px; /* Add slight padding for spacing */
     }
 
     #threeparts img {
         width: 100%;
         height: 100%;
-        max-height: 20vh;
+        max-height: 20vh; /* Limit the height to ensure consistent sizing */
         border: 2px solid #333;
     }
+
+    .skill {
+        width: 40%;
+        text-align: center; /* Center align text */
+    }
+
+    .skill img {
+        width: 75px; /* Half the original size */
+        height: 75px; /* Maintain aspect ratio */
+    }
+
+    .skill p {
+        width: 100%; /* Ensure text takes full width */
+        word-wrap: break-word; /* Break long words to wrap text */
+        margin-top: 10px; /* Add some spacing between the image and the text */
+    }
+    
+    .modal-content {
+        width: 90%; /* 10% smaller than the current size */
+        max-width: 475px; /* Adjust max-width relative to the reduction */
+        top: 31%; /* Adjust top position to maintain visual balance */
+        transform: translateY(-15%); /* Slightly adjust to keep the modal centered */
+    }
+
+    #projects .half-column {
+        width: 100%; /* Make each half-column take up the full width */
+        float: none; /* Remove floating to allow stacking */
+    }
+
+    #projects .half-column img {
+        width: 100%; /* Make images responsive to the full width */
+        height: auto; /* Maintain the aspect ratio of the images */
+    }
+
+    #projects h2 {
+        font-size: 24px; /* Smaller font size for mobile */
+    }
+    
+    img[alt="under construction"] {
+        width: 15%; /* 50% bigger */
+    }
+    
+    .link-content img[alt="interact"] {
+        width: 5%; /* Increase size by 25% */
+    }
+
+    .link-content img[alt="magnifying glass"] {
+        width: 6%; /* Increase size by 50% */
+    }
+    
+    #resume-content {
+        padding-top: 6%;
+    }
+}
+
+
+@media (max-width: 450px) {
+    .skill {
+        width: 35%;
+        font-size: 14px; 
+    }
+}
+
+/* Print styles */
+@media print {
+    header, nav, footer, #scroll-top-btn, .modal {
+        display: none;
+    }
+
+    body, main, .container, .content, .skills, .skill, .project, .contact-container, .left-column, .right-column {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        float: none;
+        box-shadow: none;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    .skills {
+        display: block;
+    }
+
+    .skill {
+        display: inline-block;
+        width: 30%;
+        margin: 10px;
+        padding: 5px;
+        border: 1px solid #000;
+    }
+
+    .project {
+        display: block;
+        margin: 20px 0;
+    }
+
+    .contact-container {
+        display: block;
+    }
+
+    .left-column, .right-column {
+        width: 100%;
+        border: none;
+        padding: 0;
+    }
+
+    .right-column>div {
+        border: none;
+        padding: 0;
+    }
+}
+
+/* Custom styles for hyperlink and inline image */
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+.link-content {
+    display: flex;
+    align-items: center;
+}
+
+.link-content img {
+    margin-left: 10px;
 }
