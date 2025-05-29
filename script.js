@@ -666,20 +666,25 @@ function showFullAutocompleteList() {
         item.onclick = (e) => {
             e.stopPropagation(); // Prevent the click event from closing the dropdown
 
-            // Replace the last incomplete skill with the selected one
-            const lastCommaIndex = input.value.lastIndexOf(',');
-            const lastSpaceIndex = input.value.lastIndexOf(' ');
-            const lastSeparatorIndex = Math.max(lastCommaIndex, lastSpaceIndex);
-            const newValue = input.value.substring(0, lastSeparatorIndex + 1) + skillObj.translated;
-            input.value = newValue.trim();
+            // Get and clean existing skills
+            let selectedSkills = input.value
+                .split(',')
+                .map(skill => skill.trim())
+                .filter(skill => skill !== '');
 
-            selectedSkills.push(skillObj.translated);
+            // Avoid duplicates
+            if (!selectedSkills.includes(skillObj.translated)) {
+                selectedSkills.push(skillObj.translated);
+            }
 
-            // Rebuild the list to reflect the selected/unselected skills
+            // Update input with comma-separated list
+            input.value = selectedSkills.join(', ');
+
+            // Rebuild the list to reflect current selection
             showFullAutocompleteList();
-
-            input.focus(); // Keep the focus on the input field
+            input.focus(); // Keep focus on input
         };
+
 
         autocompleteList.appendChild(item);
     });
@@ -755,20 +760,25 @@ function showAutocomplete() {
         item.onclick = (e) => {
             e.stopPropagation(); // Prevent the click event from closing the dropdown
 
-            // Replace the last incomplete skill with the selected one
-            const lastCommaIndex = input.value.lastIndexOf(',');
-            const lastSpaceIndex = input.value.lastIndexOf(' ');
-            const lastSeparatorIndex = Math.max(lastCommaIndex, lastSpaceIndex);
-            const newValue = input.value.substring(0, lastSeparatorIndex + 1) + skillObj.translated;
-            input.value = newValue.trim();
+            // Get and clean existing skills
+            let selectedSkills = input.value
+                .split(',')
+                .map(skill => skill.trim())
+                .filter(skill => skill !== '');
 
-            selectedSkills.push(skillObj.translated);
+            // Avoid duplicates
+            if (!selectedSkills.includes(skillObj.translated)) {
+                selectedSkills.push(skillObj.translated);
+            }
 
-            // Rebuild the list to reflect the selected/unselected skills
+            // Update input with comma-separated list
+            input.value = selectedSkills.join(', ');
+
+            // Rebuild the list to reflect current selection
             showFullAutocompleteList();
-
-            input.focus(); // Keep the focus on the input field
+            input.focus(); // Keep focus on input
         };
+
 
         autocompleteList.appendChild(item);
     });
