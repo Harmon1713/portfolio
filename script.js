@@ -28,6 +28,9 @@ document.getElementById('english-btnx').addEventListener('click', () => translat
 document.getElementById('spanish-btnx').addEventListener('click', () => translatePage('es'));
 document.getElementById('portuguese-btnx').addEventListener('click', () => translatePage('pt')); */
 
+// Global fallback for language if not already declared
+let lang = localStorage.getItem('preferredLanguage') || 'en';
+
 // Function to change the language
 function changeLanguage(lang) {
     console.log("changeLanguage called with lang:", lang);
