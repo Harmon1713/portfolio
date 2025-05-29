@@ -119,11 +119,12 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Wake up Render backend server immediately when page loads
-            fetch("https://feedback-api-179p.onrender.com/api/feedback", {
-            method: "OPTIONS"  // Lightweight ping
+            fetch("https://feedback-api-179p.onrender.com", {
+                method: "GET"
             })
-            .then(() => console.log("Backend wake-up ping sent"))
-            .catch(err => console.warn("Wake-up ping failed:", err));
+                .then(() => console.log("Backend wake-up ping sent (GET)"))
+                .catch(err => console.warn("Wake-up ping failed:", err));
+
 
             const form = document.getElementById("feedback-form");
             const messageInput = document.getElementById("feedback-message");
