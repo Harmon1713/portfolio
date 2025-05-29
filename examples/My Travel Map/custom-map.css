@@ -121,27 +121,52 @@ body {
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  z-index: 999; /* lower than the list */
 }
-
 #visited-list {
   display: none;
-  margin-top: 10px;
-  width: 90%; /* Reduce the width to half of 33% (i.e., 16.5%) */
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 5px; /* Reduce padding */
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 10px;
   border-radius: 5px;
-  font-size: 0.8em; /* Reduce font size */
-  position: absolute; /* Ensure it does not affect the layout */
-  left: 10px; /* Align with the counter */
-  bottom: 60px; /* Position above the counter */
+  font-size: 0.8em;
+  z-index: 10;
+}
+
+#normal-list, #small-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 10px; /* space between rows and columns */
+  justify-content: flex-start;
+}
+
+.color-box {
+  width: 10px;
+  height: 14px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.country-label {
+  white-space: nowrap;
 }
 
 #normal-list div, #small-list div {
   display: flex;
   align-items: center;
-  margin-bottom: 5px;
-  color: black; /* Ensures list text is black */
+  gap: 4px;
+  color: black;
+  flex: 0 0 auto;          /* Let content size itself */
+  padding-right: 8px;      /* Small gap before wrapping to next row */
 }
+
+#normal-list div:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* light gray */
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 
 @media screen and (max-width: 1050px) {
   #content-container {

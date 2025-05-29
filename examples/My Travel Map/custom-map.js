@@ -308,7 +308,7 @@ Promise.all([
     .html(`Countries and Territories Visited: ${totalVisitedCount}`);
 
   // Create the list of visited countries and territories
-  const listContainer = counterContainer
+  const listContainer = d3.select("#map-container")
     .append("div")
     .attr("id", "visited-list")
     .style("display", "none")
@@ -331,8 +331,11 @@ Promise.all([
     .style("display", "flex")
     .style("align-items", "center")
     .style("margin-bottom", "5px")
-    .style("width", "50%")
-    .html(d => `<div style="width: 20px; height: 20px; background-color: ${visitedCountries[d]}; margin-right: 5px;"></div>${d}`)
+    //.style("width", "50%")
+    .html(d => `
+      <div class="color-box" style="background-color: ${visitedCountries[d]}"></div>
+      <span class="country-label">${d}</span>
+    `)
     .on("mouseover", function (event, d) {
       if (!selectedCountry) {
           const countryName = d;
@@ -384,7 +387,7 @@ Promise.all([
   // Add the list of small countries to the counter
   smallList.append("div")
     .style("margin-bottom", "5px")
-    .html(`<a href="#" id="small-country-toggle" style="text-decoration: underline; cursor: pointer;"><strong>Not shown on map due to size:</strong></a>`);
+    .html(`<a href="#" id="small-country-toggle" style="text-decoration: underline; cursor: pointer;"><strong>Not shown on map due to size (click):</strong></a>`);
 
   const smallCountryItems = smallList.selectAll("div.small-country")
     .data(smallCountries)
@@ -403,27 +406,46 @@ Promise.all([
   });
 
   // Toggle the display of the visited list on click
-  counterContainer.on("click", function (event) {
-    event.stopPropagation();
-    const list = d3.select("#visited-list");
-    const isVisible = list.style("display") === "block";
+  function positionVisitedList() {
+  const list = d3.select("#visited-list");
+  const counterEl = document.getElementById("visited-counter");
 
-    if (window.innerWidth < 900) {
-        const mapContainer = document.getElementById('map-container');
-        const mapContainerBottom = mapContainer.getBoundingClientRect().bottom;
+  const counterRect = counterEl.getBoundingClientRect();
+  const parentRect = counterEl.offsetParent.getBoundingClientRect();
 
-        // Set the top of the list to be at the bottom of the map container
-        list.style("top", `${mapContainerBottom}px`);
-        list.style("bottom", "auto");
-        list.style("width", `${mapContainer.offsetWidth}px`); // Make it as wide as the map container
-        list.style("height", "auto"); // Adjust the height as necessary
-    } else {
-        list.style("top", "auto");
-        list.style("bottom", isVisible ? "10px" : "auto");
-    }
+  const counterTopRelative = counterRect.top - parentRect.top;
+  const listBottom = counterTopRelative - 6; // 3px above the counter
 
-    list.style("display", isVisible ? "none" : "block");
-  });
+  list
+    .style("top", "auto")
+    .style("bottom", `${parentRect.height - listBottom}px`)
+    .style("left", `${counterEl.offsetLeft}px`)
+    .style("width", `${counterEl.offsetWidth - 20}px`)
+    .style("max-height", `${listBottom - 10}px`)
+    .style("overflow-y", "auto");
+}
+
+counterContainer.on("click", function (event) {
+  event.stopPropagation();
+  const list = d3.select("#visited-list");
+  const isVisible = list.style("display") === "block";
+
+  if (isVisible) {
+    list.style("display", "none");
+  } else {
+    list.style("display", "block");
+    positionVisitedList();
+  }
+});
+
+// Add this listener ONCE
+window.addEventListener("resize", function () {
+  resizeMap();
+  if (document.getElementById("visited-list").style.display === "block") {
+    positionVisitedList();
+  }
+});
+
 
   // Hide the visited list when clicking elsewhere on the page
   d3.select("body").on("click", function () {
