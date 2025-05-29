@@ -81,12 +81,12 @@
       <p>What did you think of this site? I'd love to know.</p>
       <form id="feedback-form">
         <div class="form-group">
-          <label for="message">Message:</label>
-          <textarea id="message" class="form-control" required></textarea>
+          <label for="feedback-message">Message:</label>
+          <textarea id="feedback-message" class="form-control" required></textarea>
         </div>
         <div class="form-group">
-          <label for="tag">Category:</label>
-          <select id="tag" class="form-control">
+          <label for="feedback-tag">Category:</label>
+          <select id="feedback-tag" class="form-control">
             <option value="praise">Praise</option>
             <option value="suggestion">Suggestion</option>
             <option value="bug">Bug</option>
@@ -117,37 +117,51 @@
 
   <!-- Feedback Form Script -->
   <script>
-    document.getElementById("feedback-form").addEventListener("submit", async function (e) {
-      e.preventDefault();
-
-      const message = document.getElementById("message").value;
-      const tag = document.getElementById("tag").value;
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById("feedback-form");
+      const messageInput = document.getElementById("feedback-message");
+      const tagSelect = document.getElementById("feedback-tag");
       const responseEl = document.getElementById("feedback-response");
 
-      try {
-        const res = await fetch("https://feedback-api-179p.onrender.com/api/feedback", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ message, tag }),
-        });
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
 
-        const data = await res.json();
+        const message = messageInput.value.trim();
+        const tag = tagSelect.value;
 
-        if (res.ok) {
-          responseEl.innerText = "Thank you for your feedback!";
-          responseEl.style.color = "green";
-          document.getElementById("feedback-form").reset();
-        } else {
-          responseEl.innerText = data.error || "Something went wrong.";
+        if (!message) {
+          responseEl.innerText = "Please enter a message.";
+          responseEl.style.color = "red";
+          return;
+        }
+
+        try {
+          const res = await fetch("https://feedback-api-179p.onrender.com/api/feedback", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ message, tag }),
+          });
+
+          const data = await res.json();
+
+          if (res.ok && data.success) {
+            responseEl.innerText = "Thank you for your feedback!";
+            responseEl.style.color = "green";
+            form.reset();
+          } else {
+            responseEl.innerText = data.error || "Something went wrong.";
+            responseEl.style.color = "red";
+          }
+        } catch (err) {
+          console.error("Submission failed:", err);
+          responseEl.innerText = "Network error. Please try again later.";
           responseEl.style.color = "red";
         }
-      } catch (err) {
-        responseEl.innerText = "Network error. Please try again later.";
-        responseEl.style.color = "red";
-      }
+      });
     });
   </script>
 </body>
+
 </html>
