@@ -5,35 +5,39 @@ require("dotenv").config();
 
 const app = express();
 
+// CORS configuration to allow GitHub Pages frontend
+const corsOptions = {
+  origin: "https://harmon1713.github.io", // Allow only your GitHub Pages site
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+  credentials: false
+};
+
+app.use(cors(corsOptions));
+
+// Handle preflight OPTIONS requests
+app.options("*", cors(corsOptions));
+
 // Middleware
 app.use(express.json());
-app.use(cors({
-  origin: 'https://harmon1713.github.io'
-}));
 
-
-// Import your feedback routes
+// Routes
 const feedbackRoutes = require("./routes/feedbackRoutes");
-
-// Mount your feedback routes under /api/feedback
 app.use("/api/feedback", feedbackRoutes);
 
-// Optional root route (just for testing)
+// Optional test route
 app.get("/", (req, res) => {
   res.send("Feedback API is running");
 });
 
-// Connect to MongoDB and start server
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => {
-  console.log("MongoDB connected");
-  app.listen(3000, () => {
-    console.log("Server running on http://localhost:3000");
+// MongoDB connection + server start
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("MongoDB connected");
+    app.listen(3000, () => {
+      console.log("Server running on http://localhost:3000");
+    });
+  })
+  .catch((err) => {
+    console.error("MongoDB connection error:", err);
   });
-})
-.catch((err) => {
-  console.error("MongoDB connection error:", err);
-});
