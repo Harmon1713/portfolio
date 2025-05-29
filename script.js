@@ -33,6 +33,7 @@ let lang = localStorage.getItem('preferredLanguage') || 'en';
 
 // Function to change the language
 function changeLanguage(lang) {
+    currentLang = lang;
     console.log("changeLanguage called with lang:", lang);
     const elements = document.querySelectorAll('[data-translate]');
     
@@ -615,7 +616,8 @@ const skills = ["HTML", "Bootstrap", "CSS", "JavaScript", "jQuery", "popper.js",
     "lubridate", "stringr", "data.table", "broom", "readr", "Statistical Modeling", "Ecdat", 
     "RColorBrewer", "Linear Regression", "lm()", "gvlma", "predictmeans", "Seaborn", "pylab", 
     "car", "caret", "magrittr", "lmtest", "popbio", "e1071", "API Integration", "plotly", 
-    "Retool", "Plotly JSON", "requests", "Workflow Automation", "Make", "Google Workspace"];
+    "Retool", "Plotly JSON", "requests", "Workflow Automation", "Make", "Google Workspace", 
+    "Node.js", "Express", "Render", "Google Apps Scripts", "Back-End Development", "Full Stack Development"];
 
 // Store the original list of projects
 const allProjects = Array.from(document.getElementsByClassName('project'));
@@ -1008,6 +1010,7 @@ function searchProjects() {
     } else {
         errorMessage.textContent = '';
     }    
+    changeLanguage(currentLang);
 }
 
 // Event listener to handle truncation on window resize

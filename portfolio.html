@@ -59,7 +59,7 @@
                     <div class="skills">
                         <div class="skill" onclick="showPopup('website')">
                             <img src="images/website-icon.png" alt="Website Design">
-                            <p data-translate="frontend">Front-End Development</p>
+                            <p data-translate="frontend">Full Stack Development</p>
                         </div>
                         <div class="skill" onclick="showPopup('app_dev')">
                             <img src="images/gui-icon.png" alt="Application Development">
@@ -92,7 +92,7 @@
         <div id="website-modal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closePopup('website')">&times;</span>
-                <h2 data-translate="frontendModal">Front-End Development</h2>
+                <h2 data-translate="frontendModal">Full Stack Development</h2>
                 <div class="modal-project modal-project-style" data-skills="HTML, CSS, JavaScript, Bootstrap, jQuery, popper.js">
     
                     <a href="https://github.com/Harmon1713/portfolio" class="modal-project-link" target="_blank" rel="noopener noreferrer">
@@ -101,7 +101,8 @@
                             <span data-translate="cppApp">Portfolio Website</span> <br>
                         </h3>
                         <div class="green-line"></div><br>
-                        <p><strong data-translate="cpp">HTML (Bootstrap), CSS, JavaScript (jQuery, popper.js)</strong></p><br>
+                        <span data-translate="cppAppfront">Front End</span> <br>
+                        <p><strong data-translate="cpp1">HTML (Bootstrap), CSS, JavaScript (jQuery, popper.js)</strong></p><br>
                         <div class="half-column">
                             <p data-translate="frontendContent">
                                 In this portfolio project, I have leveraged a range of technical skills 
@@ -116,6 +117,26 @@
                         </div>
                         <div class="half-column img-white" style="padding-left: 1%;">
                             <img src="images/portfolio_mh.png" alt="portfolio screenshot" width="100%">
+                        </div>
+                        <div class="clear"></div>
+                    </a>
+                </div>
+                <br><br>
+                <div class="modal-project modal-project-style" data-skills="Node.js, Express, Render, Google Apps Scripts">
+                    <a href="https://github.com/Harmon1713/portfolio/tree/main/examples/feedback-api" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <h3>
+                            <img src="images/logo_green2-rbg.png" alt="portfolio logo" width="10%"> <br>
+                            <span data-translate="cppApp">Portfolio Website</span> <br>
+                        </h3>
+                        <div class="green-line"></div><br>
+                        <span data-translate="cppAppback">Back End</span> <br>
+                        <p><strong data-translate="cpp2">Node.js, Express (Render), Google Apps Scripts</strong></p><br>
+                        <div class="half-column">
+                            <p data-translate="backendContent">
+                                Built and deployed RESTful APIs using Node.js and Express to handle dynamic routing, server-side logic, and database interactions. Integrated front-end interfaces with secure backend endpoints deployed on Render, enabling full-stack functionality and scalable hosting. Developed custom automation solutions using Google Apps Script to streamline workflows within Google Sheets, Forms, and Docs. Projects include automated email responses, form data processing, and live dashboard generation—demonstrating both scripting proficiency and API integration with Google Workspace tools.</p>
+                        </div>
+                        <div class="half-column img-white" style="padding-left: 1%;">
+                            <img src="images/feedback.png" alt="feedback screenshot" width="100%">
                         </div>
                         <div class="clear"></div>
                     </a>
@@ -609,14 +630,15 @@
 
             <!-- Projects -->
             <div id="projects">
-                <div class="project" data-skills="HTML, Bootstrap, CSS, JavaScript, jQuery, popper.js">
+                <div class="project" data-skills="Full Stack Development, Front End Development, HTML, Bootstrap, CSS, JavaScript, jQuery, popper.js">
                     <a href="https://github.com/Harmon1713/portfolio" class="modal-project-link" target="_blank" rel="noopener noreferrer">
                         <div class="project-content"> <!-- Wrapper div for styling -->
                             <h2><span data-translate="cppApp">Portfolio Website</span></h2>
+                            <span data-translate="cppAppfront">Front End</span> <br>
                             <div class="green-line"></div>
                             <p class="uses" data-translate="techUsed">Uses HTML, Bootstrap, CSS, JavaScript, jQuery, popper.js</p>
                             <div class="modal-project" data-skills="HTML, Bootstrap, CSS, JavaScript, jQuery, popper.js">
-                                <p><strong data-translate="cpp">HTML (Bootstrap), CSS, JavaScript (jQuery, popper.js)</strong></p><br>
+                                <p><strong data-translate="cpp1">HTML (Bootstrap), CSS, JavaScript (jQuery, popper.js)</strong></p><br>
                                 <div class="half-column">
                                     <p data-translate="frontendContent">
                                         In this portfolio project, I have leveraged a range of technical skills to create a dynamic and responsive web experience. The project employs HTML with Bootstrap for layout and design, ensuring responsive and mobile-friendly content. CSS manipulation is used extensively to dynamically adjust styles based on user interactions. JavaScript ES6 features enhance code readability and efficiency. The portfolio demonstrates asynchronous programming with the Fetch API for retrieving JSON data. DOM manipulation is employed to update content and styles dynamically, while event handling sets up interactions. The project also includes conditional logic to control application flow and array operations using methods like forEach, filter, and map for data manipulation. The use of local storage ensures language preferences are saved, providing a tailored user experience across sessions. Additionally, error handling and debugging techniques are implemented to manage exceptions and trace computations, ensuring reliable functionality throughout the application.
@@ -624,6 +646,29 @@
                                 </div>
                                 <div class="half-column" style="padding-left: 1%;">
                                     <img src="images/portfolio_mh.png" alt="portfolio screenshot" width="100%">
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project" data-skills="Full Stack Development, Back End Development, Node.js, Express, Render, Google Apps Scripts">
+                    <a href="https://github.com/Harmon1713/portfolio" class="modal-project-link" target="_blank" rel="noopener noreferrer">
+                        <div class="project-content"> <!-- Wrapper div for styling -->
+                            <h2><span data-translate="cppApp">Portfolio Website</span></h2>
+                            <span data-translate="cppAppback">Back End</span> <br>
+                            <div class="green-line"></div>
+                            <p class="uses" data-translate="techUsed">Uses Node.js, Express, Render, Google Apps Scripts</p>
+                            <div class="modal-project" data-skills="Node.js, Express, Render, Google Apps Scripts">
+                                <p><strong data-translate="cpp2">Node.js, Express (Render), Google Apps Scripts</strong></p><br>
+                                <div class="half-column">
+                                    <p data-translate="backendContent">
+                                        Built and deployed RESTful APIs using Node.js and Express to handle dynamic routing, server-side logic, and database interactions. Integrated front-end interfaces with secure backend endpoints deployed on Render, enabling full-stack functionality and scalable hosting. Developed custom automation solutions using Google Apps Script to streamline workflows within Google Sheets, Forms, and Docs. Projects include automated email responses, form data processing, and live dashboard generation—demonstrating both scripting proficiency and API integration with Google Workspace tools.</p>
+                                    </p>
+                                </div>
+                                <div class="half-column" style="padding-left: 1%;">
+                                    <img src="images/feedback.png" alt="feedback screenshot" width="100%">
                                 </div>
                                 <div class="clear"></div>
                             </div>
