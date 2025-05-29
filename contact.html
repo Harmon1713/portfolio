@@ -116,53 +116,61 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <!-- Feedback Form Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const form = document.getElementById("feedback-form");
-      const messageInput = document.getElementById("feedback-message");
-      const tagSelect = document.getElementById("feedback-tag");
-      const responseEl = document.getElementById("feedback-response");
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Wake up Render backend server immediately when page loads
+            fetch("https://feedback-api-179p.onrender.com/api/feedback", {
+            method: "OPTIONS"  // Lightweight ping
+            })
+            .then(() => console.log("Backend wake-up ping sent"))
+            .catch(err => console.warn("Wake-up ping failed:", err));
 
-      form.addEventListener("submit", async function (e) {
-        e.preventDefault();
-        console.log("Submit button clicked"); 
+            const form = document.getElementById("feedback-form");
+            const messageInput = document.getElementById("feedback-message");
+            const tagSelect = document.getElementById("feedback-tag");
+            const responseEl = document.getElementById("feedback-response");
 
-        const message = messageInput.value.trim();
-        const tag = tagSelect.value;
+            form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            console.log("Submit button clicked");
 
-        if (!message) {
-          responseEl.innerText = "Please enter a message.";
-          responseEl.style.color = "red";
-          return;
-        }
+            const message = messageInput.value.trim();
+            const tag = tagSelect.value;
 
-        try {
-          const res = await fetch("https://feedback-api-179p.onrender.com/api/feedback", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ message, tag }),
-          });
+            if (!message) {
+                responseEl.innerText = "Please enter a message.";
+                responseEl.style.color = "red";
+                return;
+            }
 
-          const data = await res.json();
+            try {
+                const res = await fetch("https://feedback-api-179p.onrender.com/api/feedback", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ message, tag }),
+                });
 
-          if (res.ok && data.success) {
-            responseEl.innerText = "Thank you for your feedback!";
-            responseEl.style.color = "green";
-            form.reset();
-          } else {
-            responseEl.innerText = data.error || "Something went wrong.";
-            responseEl.style.color = "red";
-          }
-        } catch (err) {
-          console.error("Submission failed:", err);
-          responseEl.innerText = "Network error. Please try again later.";
-          responseEl.style.color = "red";
-        }
-      });
-    });
-  </script>
+                const data = await res.json();
+
+                if (res.ok && data.success) {
+                responseEl.innerText = "Thank you for your feedback!";
+                responseEl.style.color = "green";
+                form.reset();
+                } else {
+                responseEl.innerText = data.error || "Something went wrong.";
+                responseEl.style.color = "red";
+                }
+            } catch (err) {
+                console.error("Submission failed:", err);
+                responseEl.innerText = "Network error. Please try again later.";
+                responseEl.style.color = "red";
+            }
+            });
+        });
+    </script>
+
 </body>
 
 </html>
