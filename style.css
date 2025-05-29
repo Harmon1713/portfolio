@@ -584,6 +584,25 @@ footer {
     margin-bottom: 2%; /* Add consistent spacing between divs */
 }
 
+/* Responsive feedback form sizing */
+#feedback-form {
+  max-width: 100%;
+  width: 50vw; /* 50% of viewport width */
+  margin: 0 auto; /* Center horizontally */
+}
+
+/* Keep inputs and select full width of form */
+#feedback-form .form-control {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  #feedback-form {
+    width: 90vw; /* almost full width on smaller devices */
+  }
+}
+
+
 /* Resume page */
 #resume-content {
     text-align: left; /* Set text alignment to left for the entire section */

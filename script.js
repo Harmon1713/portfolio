@@ -88,6 +88,16 @@ function changeLanguage(lang) {
 
     // Hide the language dropdown if visible
     hideLanguageDropdown();
+
+    // Update feedback thank-you section if visible
+    const thankYou = document.querySelector("#feedback-thankyou h4");
+    const againBtn = document.querySelector("#feedback-again");
+    if (thankYou && translations[lang].thankYouMessage) {
+        thankYou.innerText = translations[lang].thankYouMessage;
+    }
+    if (againBtn && translations[lang].submitMoreButton) {
+        againBtn.innerText = translations[lang].submitMoreButton;
+    }
 }
 
 // Function to clear cached modal content

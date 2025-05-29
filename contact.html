@@ -77,26 +77,39 @@
     <hr />
     <!-- Feedback Form -->
     <div class="mt-5">
-      <h2>Feedback</h2>
-      <p>What did you think of this site? I'd love to know.</p>
-      <form id="feedback-form">
-        <div class="form-group">
-          <label for="feedback-message">Message:</label>
-          <textarea id="feedback-message" class="form-control" required></textarea>
+        <h2 data-translate="feedbackHeader">Feedback</h2>
+        <p data-translate="feedbackDescription">What did you think of this site? I'd love to know.</p>
+
+        <!-- Form Container (will hide after submission) -->
+        <div id="feedback-container">
+            <form id="feedback-form">
+            <div class="form-group">
+                <label for="feedback-message" data-translate="messageLabel">Message:</label>
+                <textarea id="feedback-message" class="form-control" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="feedback-tag" data-translate="categoryLabel">Category:</label>
+                <select id="feedback-tag" class="form-control">
+                <option value="praise" data-translate="praiseOption">Praise</option>
+                <option value="suggestion" data-translate="suggestionOption">Suggestion</option>
+                <option value="bug" data-translate="bugOption">Bug</option>
+                <option value="other" data-translate="otherOption">Other</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success" data-translate="submitButton">Submit Feedback</button>
+            <p id="feedback-response" class="mt-3"></p>
+            </form>
         </div>
-        <div class="form-group">
-          <label for="feedback-tag">Category:</label>
-          <select id="feedback-tag" class="form-control">
-            <option value="praise">Praise</option>
-            <option value="suggestion">Suggestion</option>
-            <option value="bug">Bug</option>
-            <option value="other">Other</option>
-          </select>
+
+        <!-- Thank You Message Container (hidden by default) -->
+        <div id="feedback-thankyou" style="display: none;" class="text-center mt-4">
+            <h4 class="text-success">Thank you for your feedback!</h4>
+            <button id="feedback-again" class="btn btn-secondary mt-2">Submit more feedback</button>
         </div>
-        <button type="submit" class="btn btn-success">Submit Feedback</button>
-        <p id="feedback-response" class="mt-3"></p>
-      </form>
     </div>
+    <br>
+    <br>
+
   </main>
 
   <button onclick="scrollToTop()" id="scroll-top-btn" title="Go to top">^</button>
@@ -116,82 +129,129 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <!-- Feedback Form Script -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const form = document.getElementById("feedback-form");
-        const messageInput = document.getElementById("feedback-message");
-        const tagSelect = document.getElementById("feedback-tag");
-        const responseEl = document.getElementById("feedback-response");
-        const submitBtn = form.querySelector('button[type="submit"]');
+   <!-- <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById("feedback-form");
+    const messageInput = document.getElementById("feedback-message");
+    const tagSelect = document.getElementById("feedback-tag");
+    const responseEl = document.getElementById("feedback-response");
+    const submitBtn = form.querySelector("button[type='submit']");
 
-        // Disable submit button while backend wakes up
-        submitBtn.disabled = true;
-        submitBtn.innerText = "Backend server waking up...";
-        submitBtn.classList.remove('btn-success');
-        submitBtn.classList.add('btn-secondary');
+    console.log("Ping not sent yet");
 
-        console.log("Ping not sent yet");
+    // Wake the Render backend on load
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Backend server waking up...";
+    submitBtn.classList.remove("btn-success");
+    submitBtn.classList.add("btn-secondary");
 
-        // Ping backend server
-        const wakeUpPing = fetch("https://feedback-api-179p.onrender.com", { method: "GET" });
+    fetch("https://feedback-api-179p.onrender.com/", {
+      method: "GET"
+    })
+    .then(res => {
+      console.log("Ping sent");
+      if (!res.ok) throw new Error("Non-200 response: " + res.status);
+      console.log("Ping successful. backend awake");
 
-        console.log("Ping sent");
-
-        wakeUpPing
-        .then(() => {
-            console.log("Ping successful. Backend awake");
-            submitBtn.disabled = false;
-            submitBtn.innerText = "Submit Feedback";
-            submitBtn.classList.remove('btn-secondary');
-            submitBtn.classList.add('btn-success');
-        })
-        .catch(err => {
-            console.warn("Wake-up ping failed:", err);
-            responseEl.innerText = "Failed to contact backend. Please try again later.";
-            responseEl.style.color = "red";
-        });
-
-        form.addEventListener("submit", async function (e) {
-        e.preventDefault();
-        console.log("Submit button clicked");
-
-        const message = messageInput.value.trim();
-        const tag = tagSelect.value;
-
-        if (!message) {
-            responseEl.innerText = "Please enter a message.";
-            responseEl.style.color = "red";
-            return;
-        }
-
-        try {
-            const res = await fetch("https://feedback-api-179p.onrender.com/api/feedback", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ message, tag }),
-            });
-
-            const data = await res.json();
-
-            if (res.ok) {
-            responseEl.innerText = "Thank you for your feedback!";
-            responseEl.style.color = "green";
-            form.reset();
-            } else {
-            responseEl.innerText = data.error || "Something went wrong.";
-            responseEl.style.color = "red";
-            }
-        } catch (err) {
-            console.error("Submission failed:", err);
-            responseEl.innerText = "Network error. Please try again later.";
-            responseEl.style.color = "red";
-        }
-        });
+      submitBtn.disabled = false;
+      submitBtn.innerText = "Submit Feedback";
+      submitBtn.classList.remove("btn-secondary");
+      submitBtn.classList.add("btn-success");
+    })
+    .catch(err => {
+      console.error("Ping failed:", err);
+      responseEl.innerText = "Backend is unavailable. Please try again soon.";
+      responseEl.style.color = "red";
     });
-</script>
 
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      console.log("Submit button clicked");
+
+      const message = messageInput.value.trim();
+      const tag = tagSelect.value;
+
+      if (!message) {
+        responseEl.innerText = "Please enter a message.";
+        responseEl.style.color = "red";
+        return;
+      }
+
+      try {
+        const res = await fetch("https://feedback-api-179p.onrender.com/api/feedback", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ message, tag }),
+        });
+
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+          responseEl.innerText = "Thank you for your feedback!";
+          responseEl.style.color = "green";
+          form.reset();
+        } else {
+          responseEl.innerText = data.error || "Something went wrong.";
+          responseEl.style.color = "red";
+        }
+      } catch (err) {
+        console.error("Submission failed:", err);
+        responseEl.innerText = "Network error. Please try again later.";
+        responseEl.style.color = "red";
+      }
+    });
+  });
+</script> -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById("feedback-form");
+    const messageInput = document.getElementById("feedback-message");
+    const tagSelect = document.getElementById("feedback-tag");
+    const responseEl = document.getElementById("feedback-response");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const message = messageInput.value.trim();
+      const tag = tagSelect.value;
+
+      if (!message) {
+        responseEl.innerText = translations[currentLanguage].enterMessageError;
+        responseEl.style.color = "red";
+        return;
+      }
+
+      fetch("https://script.google.com/macros/s/AKfycbyQrKrk7OR5ndYslvTxAWdeMAclDaQkvsCm8ttCop7_hR2JFSFOQBotm__x9VtkkEYQmQ/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message, tag })
+      })
+      .then(() => {
+        // Hide form, show thank you
+        document.getElementById("feedback-container").style.display = "none";
+        document.getElementById("feedback-thankyou").style.display = "block";
+      })
+      .catch(err => {
+        responseEl.innerText = translations[currentLanguage].submissionError;
+        responseEl.style.color = "red";
+        console.error(err);
+      });
+    });
+
+    // Handle "Submit more feedback"
+    document.getElementById("feedback-again").addEventListener("click", function () {
+      form.reset();
+      document.getElementById("feedback-container").style.display = "block";
+      document.getElementById("feedback-thankyou").style.display = "none";
+      responseEl.innerText = ""; // Clear old messages
+    });
+  });
+</script>
 
 
 </body>
