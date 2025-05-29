@@ -7,7 +7,10 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://harmon1713.github.io'
+}));
+
 
 // Import your feedback routes
 const feedbackRoutes = require("./routes/feedbackRoutes");
