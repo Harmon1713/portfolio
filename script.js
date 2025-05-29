@@ -316,8 +316,8 @@ document.addEventListener('DOMContentLoaded', function() {
     changeLanguage(storedLanguage); // Apply the stored language preference
     translateSkillsDropdown(storedLanguage); // Translate skills in the dropdown
     translateProjectSkills(storedLanguage); // Ensure projects are translated on load
-    updateSearchInputTranslation(lang);
-    updateUsesSectionTranslation(lang);
+    updateSearchInputTranslation(storedLanguage);
+    updateUsesSectionTranslation(storedLanguage);
 });
 
 setTimeout(() => {
