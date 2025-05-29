@@ -211,6 +211,8 @@ const translations = {
       databasesText: " PostgreSQL, MySQL, MariaDB, MongoDB, Redis, DynamoDB, GitHub/Git LFS ",
       softwareLabel: "Software & Engineering:",
       softwareText: " Terraform, LabVIEW, AutoDesk Inventor, AutoCAD ",
+      devOpsLabel: "DevOps",
+      devOpsText: "Full Stack Development, API Integration, CI/CD Deployment, Web App Hosting (Render), Git-based Workflows",
 
       // Education
       educationTitle: "EDUCATION",
@@ -239,7 +241,6 @@ const translations = {
       fulbrighttask2: "Taught secondary school educators how to build and operate RoboRobo robots using Rogic software, ensuring they could effectively teach their students these skills.",
       fulbrighttask3: "Trained university students in working with VEX V5 Robotics and V5 Workcell, focusing on building and programming robots in Python and C++ with industrial applications.",
       volunteering2: "Head Softball Coach (Spring 2022)",
-      volunteering3: "Missionary (Summer & Fall 2019)",
       volunteering4: "Solar Eclipse High-Altitude Balloon Research through NASA in collaboration with Mercer Robotics Club (Spring, Summer, & Fall 2017)",
       volunteering5: "Honduras Outreach, Inc in collaboration with Mercer University (Summer 2015)",
 
@@ -512,6 +513,9 @@ const translations = {
       databasesText: " PostgreSQL, MySQL, MariaDB, MongoDB, Redis, DynamoDB, GitHub/Git LFS ",
       softwareLabel: "Software e Ingeniería:",
       softwareText: " Terraform, LabVIEW, AutoDesk Inventor, AutoCAD ",
+      devOpsLabel: "DevOps",
+      devOpsText: "Desarrollo Full Stack, integración de API, implementación de CI/CD, alojamiento de aplicaciones web (Render), flujos de trabajo basados ​​en Git",
+
       educationTitle: "EDUCACIÓN",
       education0: "Doctorado en Ingeniería Eléctrica | Universidad de Brasilia | Iniciado: 03/2025 | Fecha esperada de graduación: 12/2029",
       education1: "MSIT Informática de la Salud | Middle Georgia State University | 2018 | 4.0",
@@ -532,7 +536,6 @@ const translations = {
       fulbrighttask2: "Enseñé a educadoras de secundaria a construir y operar robots RoboRobo con el software Rogic, asegurando que pudieran enseñar eficazmente a sus estudiantes.",
       fulbrighttask3: "Capacité a estudiantes universitarias en el uso de VEX V5 Robotics y V5 Workcell, centrándome en la construcción y programación de robots en Python y C++ con aplicaciones industriales.",
       volunteering2: "Entrenadora Principal de Softbol (Primavera 2022)",
-      volunteering3: "Misionera (Verano y Otoño 2019)",
       volunteering4: "Investigación de Globos de Gran Altitud para Eclipse Solar con NASA y Mercer Robotics Club (Primavera, Verano y Otoño 2017)",
       volunteering5: "Honduras Outreach, Inc en colaboración con Mercer University (Verano 2015)",
       awardsHonorSocietiesTitle: "PREMIOS Y HONORES",
@@ -796,6 +799,8 @@ const translations = {
       databasesText: "PostgreSQL, MySQL, MariaDB, MongoDB, Redis, DynamoDB, GitHub/Git LFS",
       softwareLabel: "Software e Engenharia:",
       softwareText: "Terraform, LabVIEW, AutoDesk Inventor, AutoCAD",
+      devOpsLabel: "DevOps",
+      devOpsText: "Desenvolvimento Full Stack, Integração de APIs, Implantação de CI/CD, Hospedagem de Aplicativos Web (Render), Fluxos de Trabalho baseados em Git",
 
       educationTitle: "EDUCAÇÃO",
       education0: "Doutorado em Engenharia Elétrica | Universidade de Brasília | Início: 03/2025 | Previsão de conclusão: 12/2029",
@@ -820,7 +825,6 @@ const translations = {
       fulbrighttask2: "Ensinou professores do ensino médio a construir e operar robôs RoboRobo com o software Rogic, garantindo que pudessem ensinar essas habilidades.",
       fulbrighttask3: "Treinou estudantes universitários no uso de VEX V5 Robotics e V5 Workcell, com foco em construção e programação de robôs em Python e C++ com aplicações industriais.",
       volunteering2: "Treinadora Principal de Softbol (Primavera 2022)",
-      volunteering3: "Missionária (Verão & Outono 2019)",
       volunteering4: "Pesquisa com Balão de Alta Altitude do Eclipse Solar com a NASA em colaboração com o Mercer Robotics Club (Primavera, Verão e Outono 2017)",
       volunteering5: "Honduras Outreach, Inc em colaboração com a Universidade Mercer (Verão de 2015)",
 
